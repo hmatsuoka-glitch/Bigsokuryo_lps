@@ -35,13 +35,16 @@ export default function LineCTA() {
             OFFICIAL LINE
           </p>
           <h2 className="mt-3 font-sans font-black text-3xl md:text-5xl leading-snug heading-display">
-            気軽な質問は
+            LINEから
             <br />
-            LINEで、どうぞ。
+            お気軽にどうぞ！
           </h2>
           <p className="mt-5 text-white/90 text-sm md:text-base leading-loose">
-            現場のリアル・資格・面接前の不安――
-            匿名のまま気軽にトーク。返信は1営業日以内。
+            現場のこと、資格のこと、面接前のちょっとした不安まで――
+            <br />
+            なんでもお気軽にメッセージください！
+            <br />
+            採用担当が1営業日以内にお返事します ✋
           </p>
           <p className="mt-3 text-xs text-white/75">
             ID:{" "}

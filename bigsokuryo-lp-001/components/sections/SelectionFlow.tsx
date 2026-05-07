@@ -1,10 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 
-const flows = [
+type Track = "new" | "mid";
+
+const flows: Record<
+  Track,
   {
+    title: string;
+    note: string;
+    accent: string;
+    steps: { n: string; label: string; body: string; final?: boolean }[];
+  }
+> = {
+  new: {
     title: "新卒採用",
     note: "人柄重視。筆記試験・適性検査はありません。",
     accent: "bg-sky-500",
@@ -37,7 +48,7 @@ const flows = [
       },
     ],
   },
-  {
+  mid: {
     title: "中途採用",
     note: "入社時期はご相談に応じます。",
     accent: "bg-amber-600",
@@ -60,12 +71,15 @@ const flows = [
       },
     ],
   },
-];
+};
 
 export default function SelectionFlow() {
+  const [track, setTrack] = useState<Track>("new");
+  const current = flows[track];
+
   return (
     <section id="flow" className="py-24 md:py-32 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <Reveal>
           <p className="text-xs tracking-[0.5em] text-gold-dark text-center font-bold">
             SELECTION FLOW
@@ -85,54 +99,99 @@ export default function SelectionFlow() {
           />
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {flows.map((f) => (
-            <Reveal key={f.title}>
-              <div className=" border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-b from-white to-sand h-full hover-lift transition-all duration-500">
-                <div className="flex items-baseline justify-between">
-                  <h3 className="font-sans font-bold text-2xl md:text-3xl text-navy heading-display">
-                    {f.title}
-                  </h3>
-                  <span
-                    className={`inline-block w-2 h-2 rounded-full ${f.accent}`}
-                  />
-                </div>
-                <p className="mt-1 text-xs text-navy/55">{f.note}</p>
+        <Reveal
+          delay={0.1}
+          className="mt-12 mx-auto inline-flex p-1.5 bg-sand border border-navy/10 shadow-soft"
+        >
+          <div className="relative flex gap-1">
+            {(
+              [
+                { id: "new", label: "新卒採用" },
+                { id: "mid", label: "中途採用" },
+              ] as { id: Track; label: string }[]
+            ).map((t) => {
+              const active = track === t.id;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setTrack(t.id)}
+                  className={`relative px-7 py-3 text-xs md:text-sm tracking-[0.2em] font-bold transition-colors ${
+                    active ? "text-white" : "text-navy/65 hover:text-navy"
+                  }`}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="flow-track-pill"
+                      className="absolute inset-0 bg-navy shadow-soft"
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+                  <span className="relative">{t.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </Reveal>
 
-                <StaggerGroup className="mt-7 relative">
-                  <span
-                    aria-hidden
-                    className="absolute left-[15px] top-2 bottom-2 w-px bg-navy/15"
-                  />
-                  <ol className="space-y-5 relative">
-                    {f.steps.map((s) => (
-                      <StaggerItem key={s.n}>
-                        <li className="relative pl-12">
-                          <span
-                            className={`absolute left-0 top-0 w-8 h-8 rounded-full text-white text-[11px] grid place-items-center font-bold shadow-soft ${
-                              s.final ? "bg-gold" : "bg-navy"
-                            }`}
-                          >
-                            {s.n}
-                          </span>
-                          <p className="font-sans font-bold text-navy text-sm md:text-base">
-                            {s.label}
-                          </p>
-                          <p className="mt-1 text-xs md:text-sm text-navy/70 leading-relaxed">
-                            {s.body}
-                          </p>
-                        </li>
-                      </StaggerItem>
-                    ))}
-                  </ol>
-                </StaggerGroup>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={track}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.35 }}
+            className="mt-10"
+          >
+            <div className="border border-navy/10 shadow-soft p-6 md:p-10 bg-gradient-to-b from-white to-sand">
+              <div className="flex items-baseline justify-between flex-wrap gap-2">
+                <h3 className="font-sans font-bold text-2xl md:text-3xl text-navy heading-display">
+                  {current.title}
+                </h3>
+                <span
+                  className={`inline-block w-2.5 h-2.5 rounded-full ${current.accent}`}
+                />
               </div>
-            </Reveal>
-          ))}
-        </div>
+              <p className="mt-1 text-xs md:text-sm text-navy/55">
+                {current.note}
+              </p>
+
+              <StaggerGroup className="mt-7 relative">
+                <span
+                  aria-hidden
+                  className="absolute left-[15px] top-2 bottom-2 w-px bg-navy/15"
+                />
+                <ol className="space-y-5 relative">
+                  {current.steps.map((s) => (
+                    <StaggerItem key={s.n}>
+                      <li className="relative pl-12">
+                        <span
+                          className={`absolute left-0 top-0 w-8 h-8 rounded-full text-white text-[11px] grid place-items-center font-bold shadow-soft ${
+                            s.final ? "bg-gold" : "bg-navy"
+                          }`}
+                        >
+                          {s.n}
+                        </span>
+                        <p className="font-sans font-bold text-navy text-sm md:text-base">
+                          {s.label}
+                        </p>
+                        <p className="mt-1 text-xs md:text-sm text-navy/70 leading-relaxed">
+                          {s.body}
+                        </p>
+                      </li>
+                    </StaggerItem>
+                  ))}
+                </ol>
+              </StaggerGroup>
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
         <Reveal delay={0.1} className="mt-10">
-          <div className=" bg-sand border border-navy/10 px-6 py-5 text-center text-sm md:text-base text-navy/80">
+          <div className="bg-sand border border-navy/10 px-6 py-5 text-center text-sm md:text-base text-navy/80">
             選考に関するお問い合わせは、
             <a
               href="mailto:saiyou@bigsdc.co.jp"
