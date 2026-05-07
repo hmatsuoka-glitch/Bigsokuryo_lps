@@ -94,7 +94,7 @@ export default function BusinessFeatures() {
         <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
           {features.map((f) => (
             <StaggerItem key={f.title}>
-              <article className="group relative bg-white rounded-2xl p-5 md:p-7 border border-navy/10 shadow-soft overflow-hidden h-full hover-lift transition-all duration-500">
+              <article className="group relative bg-white  p-5 md:p-7 border border-navy/10 shadow-soft overflow-hidden h-full hover-lift transition-all duration-500">
                 <span
                   aria-hidden
                   className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full bg-gold/0 group-hover:bg-gold/15 transition-colors duration-700 blur-3xl"
@@ -143,7 +143,7 @@ export default function BusinessFeatures() {
         </StaggerGroup>
 
         <Reveal delay={0.1} className="mt-16">
-          <div className="bg-white rounded-2xl border border-navy/10 shadow-soft p-7 md:p-10 hover-lift transition-all duration-500">
+          <div className="bg-white  border border-navy/10 shadow-soft p-7 md:p-10 hover-lift transition-all duration-500">
             <div className="flex items-baseline justify-between flex-wrap gap-2">
               <p className="text-xs tracking-[0.4em] text-gold-dark font-bold">
                 CLIENTS

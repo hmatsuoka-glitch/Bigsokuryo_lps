@@ -69,7 +69,7 @@ export default function EntryForm() {
             お預かりした情報は採用業務以外に使用しません。
           </p>
 
-          <div className="mt-8 mx-auto max-w-md rounded-2xl bg-emerald-50 border border-emerald-200 p-4 flex items-center gap-3 hover:border-emerald-400 transition-colors">
+          <div className="mt-8 mx-auto max-w-md  bg-emerald-50 border border-emerald-200 p-4 flex items-center gap-3 hover:border-emerald-400 transition-colors">
             <span className="w-10 h-10 rounded-full bg-[#06C755] grid place-items-center text-white font-black text-base shrink-0 shadow-soft">
               L
             </span>
@@ -97,7 +97,7 @@ export default function EntryForm() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="mt-12 rounded-2xl bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 p-10 text-center shadow-soft"
+              className="mt-12  bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 p-10 text-center shadow-soft"
             >
               <motion.div
                 initial={{ scale: 0 }}
@@ -135,7 +135,7 @@ export default function EntryForm() {
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onSubmit={handleSubmit}
-              className="mt-12 grid gap-6 bg-white rounded-2xl border border-navy/10 shadow-soft p-6 md:p-10"
+              className="mt-12 grid gap-6 bg-white  border border-navy/10 shadow-soft p-6 md:p-10"
             >
               <Select
                 label="ご応募コース"
@@ -166,7 +166,7 @@ export default function EntryForm() {
                 <textarea
                   name="message"
                   rows={4}
-                  className="mt-2 w-full border border-navy/15 rounded-lg bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none resize-none text-sm transition-colors"
+                  className="mt-2 w-full border border-navy/15  bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none resize-none text-sm transition-colors"
                   placeholder="例：カジュアル面談希望／鉄道工事の現場について聞きたい／資格について知りたい など"
                 />
               </label>
@@ -257,7 +257,7 @@ function Field({ label, name, type, required, placeholder }: FieldProps) {
         type={type}
         required={required}
         placeholder={placeholder}
-        className="mt-2 w-full border border-navy/15 rounded-lg bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-sm transition-colors"
+        className="mt-2 w-full border border-navy/15  bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-sm transition-colors"
       />
     </label>
   );
@@ -281,7 +281,7 @@ function Select({ label, name, options, required }: SelectProps) {
         name={name}
         defaultValue=""
         required={required}
-        className="mt-2 w-full border border-navy/15 rounded-lg bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-sm transition-colors"
+        className="mt-2 w-full border border-navy/15  bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-sm transition-colors"
       >
         <option value="" disabled>
           選択してください

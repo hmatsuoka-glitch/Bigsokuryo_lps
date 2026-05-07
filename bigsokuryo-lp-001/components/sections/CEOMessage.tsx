@@ -65,9 +65,9 @@ export default function CEOMessage() {
             >
               <span
                 aria-hidden
-                className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-gold/40 to-transparent blur-xl"
+                className="absolute -inset-3  bg-gradient-to-br from-gold/40 to-transparent blur-xl"
               />
-              <div className="relative rounded-2xl overflow-hidden border-2 border-gold/30 shadow-soft-lg aspect-[19/20] bg-navy-dark">
+              <div className="relative  overflow-hidden border-2 border-gold/30 shadow-soft-lg aspect-[19/20] bg-navy-dark">
                 <Image
                   src="/message_img.jpg"
                   alt="代表取締役 村田 豊世"
@@ -135,7 +135,7 @@ export default function CEOMessage() {
         <StaggerGroup className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
           {principles.map((p, i) => (
             <StaggerItem key={p.title}>
-              <div className="group relative rounded-2xl border border-white/15 p-5 md:p-7 bg-white/5 backdrop-blur hover:bg-white/10 hover:border-gold/40 transition-all duration-500 hover-lift h-full">
+              <div className="group relative  border border-white/15 p-5 md:p-7 bg-white/5 backdrop-blur hover:bg-white/10 hover:border-gold/40 transition-all duration-500 hover-lift h-full">
                 <div className="flex items-baseline justify-between">
                   <span className="font-sans font-black text-4xl md:text-5xl text-gold/30 group-hover:text-gold transition-colors leading-none">
                     {String(i + 1).padStart(2, "0")}
@@ -156,7 +156,7 @@ export default function CEOMessage() {
         </StaggerGroup>
 
         <Reveal delay={0.2} className="mt-12">
-          <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur border border-white/20 px-7 py-6 text-sm md:text-base text-white/90 leading-loose">
+          <div className=" bg-gradient-to-br from-white/10 to-white/5 backdrop-blur border border-white/20 px-7 py-6 text-sm md:text-base text-white/90 leading-loose">
             <p className="text-xs tracking-[0.4em] text-gold-light font-bold mb-3">
               求める人材
             </p>

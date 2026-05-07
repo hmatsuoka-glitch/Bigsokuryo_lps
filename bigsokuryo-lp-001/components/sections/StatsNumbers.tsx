@@ -80,7 +80,7 @@ const stats: Stat[] = [
 function StatCard({ stat }: { stat: Stat }) {
   return (
     <div
-      className={`group relative bg-white rounded-2xl p-5 md:p-6 border transition-all duration-500 overflow-hidden ${
+      className={`group relative bg-white  p-5 md:p-6 border transition-all duration-500 overflow-hidden ${
         stat.highlight
           ? "border-gold/40 shadow-gold/30"
           : "border-navy/10 shadow-soft"

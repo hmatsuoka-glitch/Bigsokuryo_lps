@@ -185,7 +185,7 @@ export default function JobRequirements() {
               {summary[track].map((s) => (
                 <div
                   key={s.label}
-                  className="bg-white rounded-2xl border border-navy/10 shadow-soft p-4 hover-lift transition-all duration-500 text-center overflow-hidden"
+                  className="bg-white  border border-navy/10 shadow-soft p-4 hover-lift transition-all duration-500 text-center overflow-hidden"
                 >
                   <p className="font-sans font-black text-base md:text-xl lg:text-2xl text-navy tabular-nums whitespace-nowrap">
                     {s.stat}
@@ -197,7 +197,7 @@ export default function JobRequirements() {
               ))}
             </div>
 
-            <div className="mt-8 bg-white rounded-2xl border border-navy/10 shadow-soft overflow-hidden divide-y divide-navy/10">
+            <div className="mt-8 bg-white  border border-navy/10 shadow-soft overflow-hidden divide-y divide-navy/10">
               {current.rows.map((r) => (
                 <div
                   key={r.k}

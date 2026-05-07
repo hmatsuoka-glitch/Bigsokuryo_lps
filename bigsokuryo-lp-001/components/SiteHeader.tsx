@@ -109,7 +109,7 @@ export default function SiteHeader() {
                   <a
                     href={n.href}
                     onClick={() => setOpen(false)}
-                    className="block px-3 py-2 rounded text-navy/80 hover:bg-sand"
+                    className="block px-3 py-2  text-navy/80 hover:bg-sand"
                   >
                     {n.label}
                   </a>

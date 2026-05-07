@@ -75,7 +75,7 @@ export default function ProjectStories() {
               <motion.article
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className={`group relative rounded-2xl border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-br ${p.accent} overflow-hidden h-full`}
+                className={`group relative  border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-br ${p.accent} overflow-hidden h-full`}
               >
                 <span
                   aria-hidden

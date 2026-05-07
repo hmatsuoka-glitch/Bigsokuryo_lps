@@ -171,7 +171,7 @@ export default function Hero() {
           {heroStats.map((s) => (
             <div
               key={s.label}
-              className="bg-white/75 backdrop-blur-sm rounded-2xl p-4 border border-navy/10 shadow-soft hover-lift overflow-hidden"
+              className="bg-white/75 backdrop-blur-sm  p-4 border border-navy/10 shadow-soft hover-lift overflow-hidden"
             >
               <dt className="text-[11px] text-navy/60 tracking-widest truncate">
                 {s.label}

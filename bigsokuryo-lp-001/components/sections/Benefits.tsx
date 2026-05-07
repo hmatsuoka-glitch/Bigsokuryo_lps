@@ -86,7 +86,7 @@ export default function Benefits() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14">
-          <div className="bg-sand rounded-2xl border border-navy/10 shadow-soft overflow-hidden">
+          <div className="bg-sand  border border-navy/10 shadow-soft overflow-hidden">
             <div className="px-6 md:px-10 pt-7 pb-3 flex items-baseline justify-between flex-wrap gap-2">
               <p className="text-xs tracking-[0.4em] text-gold-dark font-bold">
                 ALLOWANCES
@@ -99,7 +99,7 @@ export default function Benefits() {
               {allowances.map(([k, v]) => (
                 <div
                   key={k}
-                  className="grid md:grid-cols-[200px_1fr] gap-3 py-4 text-sm md:text-base hover:bg-white/60 transition-colors -mx-2 px-2 rounded"
+                  className="grid md:grid-cols-[200px_1fr] gap-3 py-4 text-sm md:text-base hover:bg-white/60 transition-colors -mx-2 px-2 "
                 >
                   <dt className="text-navy/65 tracking-widest text-xs md:text-sm font-bold">
                     {k}
@@ -123,7 +123,7 @@ export default function Benefits() {
         <StaggerGroup className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {welfare.map((w) => (
             <StaggerItem key={w.title}>
-              <div className="group bg-sand rounded-2xl p-4 md:p-6 border border-navy/10 shadow-soft hover-lift hover:border-gold/40 transition-all duration-500 h-full">
+              <div className="group bg-sand  p-4 md:p-6 border border-navy/10 shadow-soft hover-lift hover:border-gold/40 transition-all duration-500 h-full">
                 <span className="inline-flex w-9 h-9 md:w-11 md:h-11 rounded-full bg-white grid place-items-center text-gold group-hover:bg-gold group-hover:text-white transition-colors">
                   {w.icon}
                 </span>

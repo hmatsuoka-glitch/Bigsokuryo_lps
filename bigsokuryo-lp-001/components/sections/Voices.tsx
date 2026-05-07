@@ -184,7 +184,7 @@ export default function Voices() {
             data-voice-card
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 240, damping: 22 }}
-            className="snap-start shrink-0 w-[78vw] sm:w-[360px] md:w-[400px] rounded-2xl bg-sand border border-navy/10 shadow-soft overflow-hidden flex flex-col group hover:border-gold/40 transition-colors"
+            className="snap-start shrink-0 w-[78vw] sm:w-[360px] md:w-[400px]  bg-sand border border-navy/10 shadow-soft overflow-hidden flex flex-col group hover:border-gold/40 transition-colors"
           >
             {/* Large portrait */}
             <div className="relative aspect-[4/5] bg-navy-dark overflow-hidden">

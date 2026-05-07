@@ -88,7 +88,7 @@ export default function SelectionFlow() {
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {flows.map((f) => (
             <Reveal key={f.title}>
-              <div className="rounded-2xl border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-b from-white to-sand h-full hover-lift transition-all duration-500">
+              <div className=" border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-b from-white to-sand h-full hover-lift transition-all duration-500">
                 <div className="flex items-baseline justify-between">
                   <h3 className="font-sans font-bold text-2xl md:text-3xl text-navy heading-display">
                     {f.title}
@@ -132,7 +132,7 @@ export default function SelectionFlow() {
         </div>
 
         <Reveal delay={0.1} className="mt-10">
-          <div className="rounded-2xl bg-sand border border-navy/10 px-6 py-5 text-center text-sm md:text-base text-navy/80">
+          <div className=" bg-sand border border-navy/10 px-6 py-5 text-center text-sm md:text-base text-navy/80">
             選考に関するお問い合わせは、
             <a
               href="mailto:saiyou@bigsdc.co.jp"

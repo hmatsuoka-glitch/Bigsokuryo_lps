@@ -70,7 +70,7 @@ export default function ChancePopup() {
               damping: 22,
               mass: 0.6,
             }}
-            className="relative w-[min(92vw,440px)] rounded-2xl bg-white shadow-soft-lg border border-gold/30 overflow-hidden"
+            className="relative w-[min(92vw,440px)]  bg-white shadow-soft-lg border border-gold/30 overflow-hidden"
           >
             {/* gradient header */}
             <div className="relative bg-gradient-to-br from-navy via-navy-dark to-navy-deep px-6 py-8 text-center">

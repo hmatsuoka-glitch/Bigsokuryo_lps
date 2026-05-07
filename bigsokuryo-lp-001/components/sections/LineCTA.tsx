@@ -45,7 +45,7 @@ export default function LineCTA() {
           </p>
           <p className="mt-3 text-xs text-white/75">
             ID:{" "}
-            <span className="font-mono bg-white/15 px-2 py-0.5 rounded">
+            <span className="font-mono bg-white/15 px-2 py-0.5 ">
               {SITE.lineId}
             </span>
           </p>
