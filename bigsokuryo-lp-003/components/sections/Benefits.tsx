@@ -84,7 +84,7 @@ export default function Benefits() {
         <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
           {highlights.map((h) => (
             <StaggerItem key={h.label}>
-              <div className="group rounded-2xl bg-gradient-to-br from-emerald-700 to-teal-800 p-6 text-white shadow-lg shadow-emerald-700/20 hover:shadow-2xl hover:shadow-emerald-700/40 hover:-translate-y-1 transition-all duration-500">
+              <div className="group bg-gradient-to-br from-emerald-700 to-teal-800 p-5 md:p-6 text-white shadow-lg shadow-emerald-700/20 hover:shadow-2xl hover:shadow-emerald-700/40 hover:-translate-y-1 transition-all duration-500">
                 <p className="font-serif text-3xl md:text-4xl font-bold tracking-tight">
                   <AnimatedCounter
                     to={h.to}
@@ -105,7 +105,7 @@ export default function Benefits() {
         <StaggerGroup className="mt-16 grid md:grid-cols-3 gap-6">
           {groups.map((g) => (
             <StaggerItem key={g.label}>
-              <div className="h-full rounded-2xl bg-sand/40 border border-emerald-700/10 p-6 hover:border-emerald-600/40 hover:bg-white hover:shadow-lg transition-all duration-300">
+              <div className="h-full bg-sand/40 border border-emerald-700/10 p-6 hover:border-emerald-600/40 hover:bg-white hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-2xl">{g.icon}</span>
                   <h3 className="text-xs tracking-[0.3em] text-emerald-700 font-bold">

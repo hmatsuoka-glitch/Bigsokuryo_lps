@@ -48,7 +48,7 @@ export default function FAQ() {
         <StaggerGroup className="mt-14 space-y-3">
           {faqs.map((item) => (
             <StaggerItem key={item.q}>
-              <details className="group bg-white rounded-2xl border border-emerald-700/15 px-6 py-5 hover:border-emerald-600/50 hover:shadow-lg transition-all duration-300 open:shadow-xl open:border-emerald-600/60">
+              <details className="group bg-white border border-emerald-700/15 px-6 py-5 hover:border-emerald-600/50 hover:shadow-lg transition-all duration-300 open:shadow-xl open:border-emerald-600/60">
                 <summary className="cursor-pointer list-none flex justify-between items-center gap-4 text-navy font-bold text-base">
                   <span className="flex items-start gap-3">
                     <span className="shrink-0 w-7 h-7 rounded-full bg-emerald-700/10 text-emerald-700 grid place-items-center text-sm font-bold">

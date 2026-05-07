@@ -137,7 +137,7 @@ export default function Hero() {
               }}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="group bg-white/80 backdrop-blur rounded-2xl px-4 py-4 border border-emerald-700/15 hover:border-emerald-600/50 hover:shadow-lg hover:shadow-emerald-700/10 transition-all"
+              className="group bg-white/80 backdrop-blur px-4 py-4 border border-emerald-700/15 hover:border-emerald-600/50 hover:shadow-lg hover:shadow-emerald-700/10 transition-all"
             >
               <dt className="text-[10px] tracking-[0.3em] text-emerald-700 font-bold">
                 {s.label}

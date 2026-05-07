@@ -50,28 +50,28 @@ export default function AreaLifestyle() {
           </h2>
         </Reveal>
 
-        <StaggerGroup className="mt-16 grid sm:grid-cols-2 gap-5">
+        <StaggerGroup className="mt-16 grid grid-cols-2 gap-3 md:gap-5">
           {points.map((p) => (
             <StaggerItem key={p.title}>
               <article
-                className={`group relative h-full overflow-hidden rounded-2xl bg-gradient-to-br ${p.accent} p-7 border border-white/60 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500`}
+                className={`group relative h-full overflow-hidden bg-gradient-to-br ${p.accent} p-5 md:p-7 border border-white/60 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500`}
               >
                 <div
                   aria-hidden
                   className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/40 blur-2xl group-hover:bg-white/70 transition-colors duration-500"
                 />
                 <div className="relative">
-                  <span className="text-3xl">{p.icon}</span>
-                  <h3 className="mt-4 font-serif text-xl md:text-2xl text-navy font-bold leading-snug">
+                  <span className="text-2xl md:text-3xl">{p.icon}</span>
+                  <h3 className="mt-3 md:mt-4 font-serif text-base md:text-2xl text-navy font-bold leading-snug">
                     {p.title}
                   </h3>
-                  <p className="mt-3 text-sm text-navy/75 leading-[1.85]">
+                  <p className="mt-2 md:mt-3 text-[12px] md:text-sm text-navy/75 leading-[1.8]">
                     {p.body}
                   </p>
                 </div>
                 <span
                   aria-hidden
-                  className="absolute bottom-5 right-6 text-emerald-700 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
+                  className="absolute bottom-3 right-4 md:bottom-5 md:right-6 text-emerald-700 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
                 >
                   →
                 </span>

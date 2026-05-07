@@ -42,7 +42,7 @@ export default function EntryForm({
         </Reveal>
 
         <Reveal delay={0.15}>
-          <form className="mt-12 grid gap-6 rounded-3xl bg-white p-8 md:p-10 shadow-xl shadow-emerald-700/10 border border-emerald-700/10">
+          <form className="mt-12 grid gap-6 bg-white p-8 md:p-10 shadow-xl shadow-emerald-700/10 border border-emerald-700/10">
             <label className="block">
               <span className="text-xs tracking-widest text-emerald-700 font-bold">
                 お名前
@@ -50,7 +50,7 @@ export default function EntryForm({
               <input
                 type="text"
                 required
-                className="mt-2 w-full rounded-xl border border-emerald-700/15 bg-emerald-50/40 px-4 py-3 text-navy placeholder:text-navy/30 focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all"
+                className="mt-2 w-full border border-emerald-700/15 bg-emerald-50/40 px-4 py-3 text-navy placeholder:text-navy/30 focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all"
                 placeholder="例）測量 太郎"
               />
             </label>
@@ -61,7 +61,7 @@ export default function EntryForm({
               <input
                 type="email"
                 required
-                className="mt-2 w-full rounded-xl border border-emerald-700/15 bg-emerald-50/40 px-4 py-3 text-navy placeholder:text-navy/30 focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all"
+                className="mt-2 w-full border border-emerald-700/15 bg-emerald-50/40 px-4 py-3 text-navy placeholder:text-navy/30 focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all"
                 placeholder="example@example.com"
               />
             </label>
@@ -71,7 +71,7 @@ export default function EntryForm({
               </span>
               <textarea
                 rows={5}
-                className="mt-2 w-full rounded-xl border border-emerald-700/15 bg-emerald-50/40 px-4 py-3 text-navy placeholder:text-navy/30 focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all resize-none"
+                className="mt-2 w-full border border-emerald-700/15 bg-emerald-50/40 px-4 py-3 text-navy placeholder:text-navy/30 focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all resize-none"
                 placeholder="文系・未経験ですが応募できますか？ など、お気軽にどうぞ。"
               />
             </label>
@@ -88,7 +88,7 @@ export default function EntryForm({
         </Reveal>
 
         <Reveal delay={0.25}>
-          <div className="mt-10 rounded-2xl bg-emerald-700/5 border border-emerald-700/15 p-6 md:p-7 text-sm text-navy/80 leading-[1.9]">
+          <div className="mt-10 bg-emerald-700/5 border border-emerald-700/15 p-6 md:p-7 text-sm text-navy/80 leading-[1.9]">
             <p className="font-bold text-navy mb-2 flex items-center gap-2">
               <span className="text-emerald-700">✉</span>
               直接の連絡を希望される方へ

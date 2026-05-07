@@ -27,7 +27,7 @@ const programs = [
 
 export default function SupportProgram() {
   return (
-    <section id="work" className="relative py-28 bg-white overflow-hidden">
+    <section id="work" className="relative py-24 md:py-28 bg-white overflow-hidden">
       <div className="relative max-w-5xl mx-auto px-6">
         <Reveal className="text-center">
           <p className="text-xs tracking-[0.4em] text-emerald-700 font-bold">
@@ -38,37 +38,29 @@ export default function SupportProgram() {
           </h2>
         </Reveal>
 
-        <StaggerGroup className="mt-16 relative">
-          {/* timeline line */}
-          <div
-            aria-hidden
-            className="absolute left-[31px] top-2 bottom-2 w-px bg-gradient-to-b from-emerald-700/0 via-emerald-700/40 to-emerald-700/0"
-          />
-
-          <div className="space-y-6">
-            {programs.map((p) => (
-              <StaggerItem key={p.step}>
-                <div className="group relative flex items-start gap-6 rounded-2xl border border-emerald-700/15 bg-white p-6 md:p-7 hover:border-emerald-600/50 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                  <div className="relative shrink-0">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 grid place-items-center text-white font-serif font-bold text-xl shadow-lg shadow-emerald-700/30 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                      {p.step}
-                    </div>
+        <StaggerGroup className="mt-12 md:mt-16 grid grid-cols-2 gap-3 md:gap-6">
+          {programs.map((p) => (
+            <StaggerItem key={p.step}>
+              <div className="group relative h-full border border-emerald-700/15 bg-white p-5 md:p-7 hover:border-emerald-600/50 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-emerald-600 to-teal-700 grid place-items-center text-white font-serif font-bold text-base md:text-xl shadow-lg shadow-emerald-700/30 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                    {p.step}
                   </div>
-                  <div className="pt-1">
+                  <div>
                     <p className="text-[10px] tracking-[0.3em] text-emerald-700 font-bold">
                       STEP
                     </p>
-                    <h3 className="mt-1 font-serif text-xl md:text-2xl text-navy font-bold leading-snug">
+                    <h3 className="mt-0.5 font-serif text-base md:text-2xl text-navy font-bold leading-snug">
                       {p.title}
                     </h3>
-                    <p className="mt-3 text-sm text-navy/75 leading-[1.9] max-w-xl">
-                      {p.body}
-                    </p>
                   </div>
                 </div>
-              </StaggerItem>
-            ))}
-          </div>
+                <p className="mt-3 md:mt-4 text-[12px] md:text-sm text-navy/75 leading-[1.85]">
+                  {p.body}
+                </p>
+              </div>
+            </StaggerItem>
+          ))}
         </StaggerGroup>
       </div>
     </section>

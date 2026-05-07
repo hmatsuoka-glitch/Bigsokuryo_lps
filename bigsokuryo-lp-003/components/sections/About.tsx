@@ -46,7 +46,7 @@ export default function About() {
           <StaggerGroup className="mt-8 space-y-3">
             {projects.map((p) => (
               <StaggerItem key={p.title}>
-                <div className="group flex items-center gap-4 rounded-xl border border-emerald-700/15 bg-white px-4 py-3 hover:border-emerald-600/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                <div className="group flex items-center gap-4 border border-emerald-700/15 bg-white px-4 py-3 hover:border-emerald-600/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
                   <span className="font-serif text-xl text-emerald-700 font-bold tabular-nums w-12">
                     {p.year}
                   </span>
@@ -78,7 +78,7 @@ export default function About() {
             文系・未経験から測量士になった先輩が、いまも現場の中心にいます。
           </p>
 
-          <figure className="relative rounded-2xl bg-gradient-to-br from-emerald-700 to-teal-800 p-8 text-white shadow-xl shadow-emerald-700/20">
+          <figure className="relative bg-gradient-to-br from-emerald-700 to-teal-800 p-8 text-white shadow-xl shadow-emerald-700/20">
             <span
               aria-hidden
               className="absolute top-4 left-6 font-serif text-7xl text-white/20 leading-none"

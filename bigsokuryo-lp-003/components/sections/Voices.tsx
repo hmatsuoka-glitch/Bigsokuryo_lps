@@ -67,35 +67,37 @@ export default function Voices() {
           </h2>
         </Reveal>
 
-        <StaggerGroup className="mt-16 grid md:grid-cols-2 gap-6">
+        <StaggerGroup className="mt-16 grid grid-cols-2 gap-3 md:gap-6">
           {voices.map((v) => (
             <StaggerItem key={v.name}>
-              <figure className="group h-full rounded-3xl bg-white p-8 border border-emerald-700/15 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500">
-                <div className="flex items-center gap-5">
+              <figure className="group h-full bg-white p-4 md:p-8 border border-emerald-700/15 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500">
+                <div className="flex items-center gap-3 md:gap-5">
                   <div
-                    className={`relative shrink-0 w-20 h-20 rounded-2xl overflow-hidden bg-gradient-to-br ${v.gradient} shadow-lg ring-2 ring-white group-hover:scale-105 group-hover:-rotate-2 transition-transform duration-500`}
+                    className={`relative shrink-0 w-14 h-14 md:w-20 md:h-20 overflow-hidden bg-gradient-to-br ${v.gradient} shadow-lg ring-2 ring-white group-hover:scale-105 transition-transform duration-500`}
                   >
                     <Image
                       src={v.photo}
                       alt={`${v.name}の写真`}
                       fill
-                      sizes="80px"
+                      sizes="(max-width: 768px) 56px, 80px"
                       className="object-cover"
                     />
                   </div>
-                  <figcaption>
-                    <p className="font-bold text-navy text-base md:text-lg">
+                  <figcaption className="min-w-0">
+                    <p className="font-bold text-navy text-sm md:text-lg leading-tight">
                       {v.name}
                     </p>
-                    <p className="text-xs text-navy/55 mt-0.5">
-                      {v.role}／{v.year}
+                    <p className="text-[10px] md:text-xs text-navy/55 mt-1 leading-snug">
+                      {v.role}<br className="md:hidden" />
+                      <span className="hidden md:inline">／</span>
+                      {v.year}
                     </p>
                   </figcaption>
                 </div>
-                <p className="mt-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-700/10 text-emerald-800 font-bold text-sm">
+                <p className="mt-4 md:mt-6 inline-flex items-center gap-1.5 px-2.5 md:px-3 py-1 rounded-full bg-emerald-700/10 text-emerald-800 font-bold text-[11px] md:text-sm">
                   ― {v.catch}
                 </p>
-                <blockquote className="mt-4 text-sm md:text-base text-navy/80 leading-[1.95]">
+                <blockquote className="mt-3 md:mt-4 text-xs md:text-base text-navy/80 leading-[1.85]">
                   {v.quote}
                 </blockquote>
               </figure>
