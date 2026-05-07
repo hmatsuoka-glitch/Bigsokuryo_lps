@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const projects = [
   {
     tag: "PUBLIC / OLYMPIC",
@@ -27,34 +29,52 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <p className="text-xs tracking-[0.4em] text-gold text-center">
-          PROJECT STORIES
-        </p>
-        <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy text-center">
-          東京の、誰もが知る現場で。
-        </h2>
-        <p className="mt-4 text-center text-navy/70 text-sm max-w-2xl mx-auto">
-          歴史的建造物から国際スポーツ大会、地下鉄の大規模移設まで。
-          ビッグ測量設計の社名が刻まれる現場の一部をご紹介します。
-        </p>
+        <Reveal className="text-center">
+          <p className="text-xs tracking-[0.4em] text-gold">PROJECT STORIES</p>
+          <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
+            東京の、誰もが知る現場で。
+          </h2>
+          <p className="mt-5 text-navy/70 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            歴史的建造物から国際スポーツ大会、地下鉄の大規模移設まで。
+            ビッグ測量設計の社名が刻まれる現場の一部をご紹介します。
+          </p>
+        </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
-          {projects.map((p) => (
-            <article
+        <div className="mt-14 grid md:grid-cols-2 gap-5 md:gap-6">
+          {projects.map((p, i) => (
+            <Reveal
               key={p.title}
-              className="rounded-2xl border border-navy/10 p-7 bg-gradient-to-br from-white to-sand hover:border-gold transition"
+              delay={i * 100}
+              className="card-hover group relative overflow-hidden rounded-2xl border border-navy/10 bg-gradient-to-br from-white to-sand/40 p-7 md:p-8 cursor-default"
             >
-              <p className="text-[11px] tracking-widest text-gold">{p.tag}</p>
-              <h3 className="mt-3 font-sans font-bold text-xl text-navy leading-snug">
-                {p.title}
-              </h3>
-              <p className="mt-2 text-xs text-navy/55">{p.year}</p>
-              <p className="mt-4 text-sm text-navy/75 leading-relaxed">
-                {p.body}
-              </p>
-            </article>
+              <div
+                aria-hidden
+                className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-[10px] tracking-widest text-gold font-bold">
+                    {p.tag}
+                  </span>
+                  <span className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
+                </div>
+                <h3 className="font-sans font-bold text-xl md:text-2xl text-navy leading-snug group-hover:text-navy-dark transition-colors">
+                  {p.title}
+                </h3>
+                <p className="mt-2 text-xs text-navy/55">{p.year}</p>
+                <p className="mt-4 text-sm text-navy/75 leading-relaxed">
+                  {p.body}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-1 text-xs tracking-widest text-gold opacity-70 group-hover:opacity-100 group-hover:gap-2 transition-all">
+                  READ MORE
+                  <span className="transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </span>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
