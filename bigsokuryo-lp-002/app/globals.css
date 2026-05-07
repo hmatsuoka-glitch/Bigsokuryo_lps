@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-sans: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
-  --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-sans), "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -67,7 +62,7 @@ body {
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -20px rgba(12, 43, 74, 0.25);
+  box-shadow: 0 20px 40px -20px rgba(15, 81, 50, 0.25);
   border-color: rgba(199, 155, 61, 0.6);
 }
 
