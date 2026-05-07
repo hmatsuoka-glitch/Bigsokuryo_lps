@@ -36,17 +36,17 @@ const config: Config = {
         ],
       },
       colors: {
-        // メイン: ビッグ測量のロゴから取った深いグリーン
+        // メイン: ロゴ本体の深いフォレストグリーン
         navy: {
           DEFAULT: "#0f5c2c",
           dark: "#0a4221",
           deep: "#063018",
         },
-        // アクセント: ロゴの瞳の赤
+        // アクセント: ロゴの明るい翼のグリーン（赤は使わない）
         gold: {
-          DEFAULT: "#c8161d",
-          light: "#e63946",
-          dark: "#8b0e13",
+          DEFAULT: "#2e8b3d",
+          light: "#5fb86b",
+          dark: "#1c6128",
         },
         sand: {
           DEFAULT: "#f6f4ee",
@@ -56,7 +56,7 @@ const config: Config = {
       boxShadow: {
         soft: "0 10px 40px -12px rgba(15, 92, 44, 0.18)",
         "soft-lg": "0 20px 60px -20px rgba(15, 92, 44, 0.28)",
-        gold: "0 12px 40px -10px rgba(200, 22, 29, 0.45)",
+        gold: "0 12px 40px -10px rgba(46, 139, 61, 0.45)",
       },
       keyframes: {
         marquee: {

@@ -21,7 +21,7 @@ const projects = [
     period: "戦争で失われた創建当時の姿へ",
     body: "歴史的価値の高い駅舎の復原。通行人や観光客の動線に配慮しながら現場を進行。「歴史的瞬間に携われた」誇りが、いまも社員に残ります。",
     keywords: ["復原工事", "歴史的構造物", "通行人配慮"],
-    accent: "from-red-50 to-white",
+    accent: "from-emerald-50 to-white",
     badge: "bg-gold",
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     period: "受注からオープンまで3ヶ月",
     body: "コンペを経て受注した工事展示室。施工管理とコンテンツ制作を一貫して実施し、4年経った今も映像が使われ続けています。「工事と地域を結ぶ」役割を測量会社が形にした事例。",
     keywords: ["企画・制作", "施工管理", "コンテンツ制作"],
-    accent: "from-emerald-50 to-red-50",
+    accent: "from-emerald-100 to-white",
     badge: "bg-gold-dark",
   },
 ];
