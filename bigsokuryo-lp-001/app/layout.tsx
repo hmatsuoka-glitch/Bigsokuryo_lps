@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "新卒採用 | 地図に、自分の名前を残す。｜ビッグ測量株式会社",
+  title:
+    "採用情報 | 思いやりを、技術にのせて。｜ビッグ測量設計株式会社",
   description:
-    "ビッグ測量株式会社の新卒・第二新卒採用ページ。未経験からスタートできる育成制度と、若手が活躍する現場をご紹介します。",
+    "東京・上野で1980年創業。鉄道・空港・トンネル・道路の工事測量と1ミクロン精度の特許技術を支える、ビッグ測量設計の採用LP。新卒・中途採用情報を掲載しています。",
 };
 
 export default function RootLayout({

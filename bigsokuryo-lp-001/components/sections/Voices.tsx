@@ -5,56 +5,96 @@ import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 
 const voices = [
   {
-    name: "M.K.（入社3年目／新卒）",
-    college: "工業高等専門学校 卒",
+    name: "高橋 博司",
+    year: "1991年入社",
+    role: "執行役員",
+    catch: "優しさと思いやり",
     quote:
-      "学校では設計を学んでいたので測量は未経験でしたが、先輩がマンツーマンで教えてくれ、現場で測ったデータが図面になる瞬間にハマりました。",
+      "お客様と部下が喜ぶ姿が見られると、何よりも嬉しい。採用は人柄重視で、特に「思いやり」と「コミュニケーション」を見ています。",
   },
   {
-    name: "S.H.（入社2年目／第二新卒）",
-    college: "文系大学 卒・営業職から転職",
+    name: "紙本 真介",
+    year: "2010年入社",
+    role: "応用技術測量部",
+    catch: "必要なのはガッツ！",
     quote:
-      "屋外で体を動かす仕事がしたくて転職。最初は専門用語にとまどいましたが、研修と国家資格取得の支援が手厚く、半年で測量士補に合格できました。",
+      "現場での難所は技術より気合でひっくり返ることがあります。だからこそ、続けたい・挑みたいという気持ちのある人と働きたい。",
   },
   {
-    name: "T.N.（入社4年目／新卒）",
-    college: "農学部 卒",
+    name: "成田 慎",
+    year: "2008年入社",
+    role: "ソリューションプロバイダ部",
+    catch: "文系でも大丈夫！",
     quote:
-      "ドローンや3Dスキャナを動かす仕事は、想像以上にクリエイティブ。自分の操作したデータが市の都市計画に使われたときは震えました。",
+      "私は文系出身。最初は専門用語に圧倒されましたが、社内勉強会と先輩のサポートで一歩ずつ習得できました。学部は問いません。",
+  },
+  {
+    name: "長砂 琢也",
+    year: "2012年入社",
+    role: "空間情報事業部",
+    catch: "とことん付き合う",
+    quote:
+      "難しい現場ほど、技術と粘りで応える。お客様と長く付き合える仕事です。",
+  },
+  {
+    name: "阿久津 尚大",
+    year: "2013年入社",
+    role: "空間情報事業部",
+    catch: "軽いくらいが・・",
+    quote:
+      "重い仕事ほど、コミュニケーションは軽やかに。チームで動く現場では、これが意外と効きます。",
+  },
+  {
+    name: "林 広崇",
+    year: "2019年入社",
+    role: "空間情報事業部",
+    catch: "アットホームな環境",
+    quote:
+      "上下のキョリが近く、相談すれば誰かが必ず拾ってくれる。だから新人でも安心して挑戦できます。",
   },
 ];
 
 export default function Voices() {
   return (
     <section id="voice" className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <Reveal>
           <p className="text-xs tracking-[0.4em] text-gold text-center">
-            EMPLOYEE VOICE
+            EMPLOYEE INTERVIEW
           </p>
           <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
-            先輩たちのリアル
+            社員インタビュー
           </h2>
+          <p className="mt-4 text-center text-sm text-navy/65 max-w-xl mx-auto">
+            測量歴30年超の執行役員から、入社5年目の若手まで。多様な世代の声から、現場のリアルが見えてきます。
+          </p>
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid md:grid-cols-3 gap-6">
+        <StaggerGroup className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {voices.map((v) => (
             <StaggerItem key={v.name}>
               <motion.figure
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="rounded-2xl bg-sand p-7 border border-navy/10 h-full"
+                className="rounded-2xl bg-sand p-7 border border-navy/10 h-full flex flex-col"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-sky-400 to-navy mb-5 grid place-items-center text-white font-serif">
-                  {v.name.charAt(0)}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-navy grid place-items-center text-white font-serif">
+                    {v.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-navy text-sm">{v.name}</p>
+                    <p className="text-[11px] text-navy/55">
+                      {v.year}　{v.role}
+                    </p>
+                  </div>
                 </div>
-                <blockquote className="text-sm text-navy/80 leading-relaxed">
-                  「{v.quote}」
+                <p className="mt-5 text-gold text-xs tracking-widest font-bold">
+                  「{v.catch}」
+                </p>
+                <blockquote className="mt-3 text-sm text-navy/80 leading-relaxed flex-1">
+                  {v.quote}
                 </blockquote>
-                <figcaption className="mt-5 text-xs text-navy/60">
-                  <p className="font-bold text-navy text-sm">{v.name}</p>
-                  {v.college}
-                </figcaption>
               </motion.figure>
             </StaggerItem>
           ))}

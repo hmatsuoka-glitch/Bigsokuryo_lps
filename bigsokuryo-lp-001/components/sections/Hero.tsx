@@ -2,13 +2,13 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import AnimatedCounter from "@/components/AnimatedCounter";
 
-const stats: { value: number; suffix: string; label: string }[] = [
-  { value: 94, suffix: "%", label: "新卒3年定着率" },
-  { value: 28, suffix: "名", label: "若手有資格者" },
-  { value: 100, suffix: "%", label: "資格取得支援" },
-  { value: 2, suffix: "回／年", label: "面談・1on1" },
+const tags = [
+  "鉄道工事測量",
+  "1ミクロン精度",
+  "3D点群",
+  "東京駅・渋谷駅・海の森",
+  "創業45年",
 ];
 
 export default function Hero() {
@@ -18,7 +18,7 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
   const orbY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const titleY = useTransform(scrollYProgress, [0, 1], [0, 40]);
+  const titleY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
     <section
@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="text-xs md:text-sm tracking-[0.4em] text-gold mb-6"
         >
-          NEW GRADUATE 2026 / 2027
+          BIG SURVEY &amp; DESIGN — RECRUIT
         </motion.p>
 
         <motion.h1
@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="font-serif text-4xl md:text-6xl leading-[1.3] text-navy text-balance"
         >
-          地図に、
+          思いやりを、
           <br />
           <motion.span
             initial={{ backgroundSize: "0% 0.4em" }}
@@ -76,9 +76,8 @@ export default function Hero() {
               backgroundPosition: "0 88%",
             }}
           >
-            自分の名前
+            技術にのせて。
           </motion.span>
-          を残す。
         </motion.h1>
 
         <motion.p
@@ -87,16 +86,33 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.7 }}
           className="mt-8 max-w-xl text-navy/80 leading-relaxed"
         >
-          あなたが歩いた道、あなたが測った土地が、
-          この街の図面に刻まれていく。
+          鉄道工事測量から、1ミクロンの構造物計測まで。
           <br />
-          ビッグ測量は、未経験からはじめる若手を本気で育てる会社です。
+          東京の地下と空、駅と街を支える測量会社、
+          <br />
+          ビッグ測量設計の採用情報です。
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.7 }}
+          transition={{ delay: 0.55, duration: 0.7 }}
+          className="mt-7 flex flex-wrap gap-2 max-w-xl"
+        >
+          {tags.map((t) => (
+            <span
+              key={t}
+              className="text-[11px] tracking-widest text-navy/70 border border-navy/15 bg-white/60 backdrop-blur px-3 py-1.5 rounded-full"
+            >
+              {t}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75, duration: 0.7 }}
           className="mt-10 flex flex-wrap gap-4"
         >
           <motion.a
@@ -110,31 +126,12 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            href="#voice"
+            href="#message"
             className="px-7 py-3 rounded-full border border-navy/30 text-navy text-sm tracking-widest hover:bg-navy hover:text-white transition-colors"
           >
-            先輩社員の声を聞く
+            代表メッセージを読む
           </motion.a>
         </motion.div>
-
-        <motion.dl
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.7 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl"
-        >
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="bg-white/70 backdrop-blur rounded-2xl p-5 border border-navy/10"
-            >
-              <dt className="text-xs text-navy/60">{s.label}</dt>
-              <dd className="mt-1 text-2xl font-bold text-navy">
-                <AnimatedCounter to={s.value} suffix={s.suffix} />
-              </dd>
-            </div>
-          ))}
-        </motion.dl>
 
         <motion.div
           aria-hidden

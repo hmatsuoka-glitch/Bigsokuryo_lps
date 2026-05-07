@@ -2,24 +2,19 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { FormEvent, useState } from "react";
-import { SITE } from "@/lib/site";
+import { COMPANY, SITE } from "@/lib/site";
 import { Reveal } from "@/components/Motion";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-const positions = [
-  "測量技術職（公共／民間）",
-  "3D計測オペレーター",
-  "CAD・図面作成スタッフ",
-  "点群処理・BIM/CIM",
-  "未定／相談したい",
-];
+const tracks = ["新卒採用（2027年卒）", "中途採用（経験者・既卒）", "迷っている／相談したい"];
 
 const sources = [
-  "学校の就職課",
-  "求人サイト",
+  "大学・学校の就職課",
+  "求人媒体・求人サイト",
   "知人・OB/OG紹介",
   "公式LINE",
+  "SNS",
   "その他",
 ];
 
@@ -43,7 +38,6 @@ export default function EntryForm() {
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
       } else {
-        // フォールバック: コンソール出力（実装前の確認用）
         console.info("[entry] preview submit", data);
         await new Promise((r) => setTimeout(r, 700));
       }
@@ -56,18 +50,19 @@ export default function EntryForm() {
   }
 
   return (
-    <section id="entry" className="py-24 bg-white">
+    <section id="entry" className="py-24 bg-sand">
       <div className="max-w-3xl mx-auto px-6">
         <Reveal>
           <p className="text-xs tracking-[0.4em] text-gold text-center">ENTRY</p>
           <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
-            新卒・第二新卒エントリー
+            エントリー
           </h2>
           <p className="mt-4 text-sm text-navy/70 text-center">
             ご質問・カジュアル面談のみのお問い合わせも歓迎です。
+            <br />
+            お預かりした情報は採用業務以外には使用しません。
           </p>
 
-          {/* LINE 副導線 */}
           <div className="mt-8 mx-auto max-w-md rounded-2xl bg-emerald-50 border border-emerald-200 p-4 flex items-center gap-3">
             <span className="w-9 h-9 rounded-full bg-[#06C755] grid place-items-center text-white font-bold text-sm">
               L
@@ -96,7 +91,7 @@ export default function EntryForm() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="mt-12 rounded-2xl bg-gradient-to-br from-emerald-50 to-sand border border-emerald-200 p-10 text-center"
+              className="mt-12 rounded-2xl bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 p-10 text-center"
             >
               <motion.div
                 initial={{ scale: 0 }}
@@ -115,7 +110,9 @@ export default function EntryForm() {
                 送信ありがとうございました
               </h3>
               <p className="mt-3 text-sm text-navy/70">
-                採用担当より2営業日以内にメールでご連絡いたします。<br />
+                {COMPANY.recruitContact.department} {COMPANY.recruitContact.name}より
+                2営業日以内にご連絡いたします。
+                <br />
                 急ぎの場合は公式LINEからもご連絡ください。
               </p>
               <button
@@ -134,52 +131,17 @@ export default function EntryForm() {
               onSubmit={handleSubmit}
               className="mt-12 grid gap-6"
             >
+              <Select label="ご応募コース" name="track" options={tracks} required />
+
               <div className="grid md:grid-cols-2 gap-6">
-                <Field
-                  label="お名前"
-                  name="name"
-                  type="text"
-                  required
-                  placeholder="山田 太郎"
-                />
-                <Field
-                  label="フリガナ"
-                  name="kana"
-                  type="text"
-                  placeholder="ヤマダ タロウ"
-                />
-                <Field
-                  label="メールアドレス"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="example@mail.com"
-                />
-                <Field
-                  label="電話番号"
-                  name="phone"
-                  type="tel"
-                  placeholder="090-0000-0000"
-                />
-                <Field
-                  label="学校名・学部学科"
-                  name="school"
-                  type="text"
-                  placeholder="○○大学 ○○学部"
-                />
-                <Field
-                  label="卒業（見込）年"
-                  name="grad_year"
-                  type="text"
-                  placeholder="2027年3月"
-                />
+                <Field label="お名前" name="name" type="text" required placeholder="山田 太郎" />
+                <Field label="フリガナ" name="kana" type="text" placeholder="ヤマダ タロウ" />
+                <Field label="メールアドレス" name="email" type="email" required placeholder="example@mail.com" />
+                <Field label="電話番号" name="phone" type="tel" placeholder="090-0000-0000" />
+                <Field label="学校／前職" name="school_or_prev" type="text" placeholder="○○大学 ○○学部 ／ ○○株式会社" />
+                <Field label="卒業（見込）年" name="grad_year" type="text" placeholder="2027年3月" />
               </div>
 
-              <Select
-                label="ご希望の職種"
-                name="position"
-                options={positions}
-              />
               <Select
                 label="本ページを知ったきっかけ"
                 name="source"
@@ -194,7 +156,7 @@ export default function EntryForm() {
                   name="message"
                   rows={4}
                   className="mt-2 w-full border border-navy/15 rounded-lg bg-white px-3 py-2.5 focus:border-gold focus:ring-1 focus:ring-gold outline-none resize-none text-sm"
-                  placeholder="例：カジュアル面談希望／資格について聞きたい／など"
+                  placeholder="例：カジュアル面談希望／鉄道工事の現場について聞きたい／資格について知りたい など"
                 />
               </label>
 
@@ -206,6 +168,7 @@ export default function EntryForm() {
                   className="mt-0.5 accent-navy"
                 />
                 <span>
+                  個人情報の取扱い・
                   <a href="#" className="underline">
                     プライバシーポリシー
                   </a>
@@ -239,6 +202,17 @@ export default function EntryForm() {
                   送信できませんでした。{error}
                 </motion.p>
               )}
+
+              <p className="text-center text-xs text-navy/55 mt-2">
+                直接のお問い合わせは{" "}
+                <a
+                  href={`mailto:${COMPANY.recruitContact.email}`}
+                  className="text-gold hover:underline"
+                >
+                  {COMPANY.recruitContact.email}
+                </a>{" "}
+                まで。
+              </p>
             </motion.form>
           )}
         </AnimatePresence>
@@ -277,15 +251,20 @@ type SelectProps = {
   label: string;
   name: string;
   options: string[];
+  required?: boolean;
 };
 
-function Select({ label, name, options }: SelectProps) {
+function Select({ label, name, options, required }: SelectProps) {
   return (
     <label className="block">
-      <span className="text-xs tracking-widest text-navy/70">{label}</span>
+      <span className="text-xs tracking-widest text-navy/70">
+        {label}
+        {required && <span className="ml-1 text-gold">*</span>}
+      </span>
       <select
         name={name}
         defaultValue=""
+        required={required}
         className="mt-2 w-full border border-navy/15 rounded-lg bg-white px-3 py-2.5 focus:border-gold focus:ring-1 focus:ring-gold outline-none text-sm"
       >
         <option value="" disabled>

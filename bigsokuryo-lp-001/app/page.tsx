@@ -3,27 +3,31 @@ import SiteFooter from "@/components/SiteFooter";
 import EntryForm from "@/components/EntryForm";
 import FloatingLineButton from "@/components/FloatingLineButton";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import GrowthSteps from "@/components/sections/GrowthSteps";
+import StatsNumbers from "@/components/sections/StatsNumbers";
+import BusinessFeatures from "@/components/sections/BusinessFeatures";
+import CEOMessage from "@/components/sections/CEOMessage";
 import Voices from "@/components/sections/Voices";
+import ProjectStories from "@/components/sections/ProjectStories";
 import Benefits from "@/components/sections/Benefits";
 import JobRequirements from "@/components/sections/JobRequirements";
+import SelectionFlow from "@/components/sections/SelectionFlow";
 import LineCTA from "@/components/sections/LineCTA";
-import FAQ from "@/components/sections/FAQ";
 
 export default function Page() {
   return (
     <>
-      <SiteHeader lpCode="LP-001 / 新卒採用" />
+      <SiteHeader />
       <main>
         <Hero />
-        <About />
-        <GrowthSteps />
+        <StatsNumbers />
+        <BusinessFeatures />
+        <CEOMessage />
         <Voices />
+        <ProjectStories />
         <Benefits />
         <JobRequirements />
+        <SelectionFlow />
         <LineCTA />
-        <FAQ />
         <EntryForm />
       </main>
       <SiteFooter />
