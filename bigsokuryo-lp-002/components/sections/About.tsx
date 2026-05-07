@@ -4,7 +4,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-start">
         <div className="md:col-span-5">
           <p className="text-xs tracking-[0.4em] text-gold">WHY US</p>
-          <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy leading-snug">
+          <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy leading-snug">
             「ただ測る」<br />会社では、ない。
           </h2>
         </div>

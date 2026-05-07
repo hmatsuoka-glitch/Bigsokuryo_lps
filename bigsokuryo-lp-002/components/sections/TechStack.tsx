@@ -14,7 +14,7 @@ export default function TechStack() {
         <p className="text-xs tracking-[0.4em] text-gold text-center">
           TECH STACK
         </p>
-        <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
+        <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy text-center">
           技術者が、技術で語れる環境。
         </h2>
         <p className="mt-4 text-center text-navy/70 text-sm max-w-xl mx-auto">

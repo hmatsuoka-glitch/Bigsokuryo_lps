@@ -22,7 +22,7 @@ export default function FAQ() {
     <section id="faq" className="py-24 bg-sand">
       <div className="max-w-3xl mx-auto px-6">
         <p className="text-xs tracking-[0.4em] text-gold text-center">FAQ</p>
-        <h2 className="mt-3 font-serif text-3xl text-navy text-center">
+        <h2 className="mt-3 font-sans font-bold text-3xl text-navy text-center">
           よくある質問
         </h2>
         <div className="mt-12 space-y-4">
