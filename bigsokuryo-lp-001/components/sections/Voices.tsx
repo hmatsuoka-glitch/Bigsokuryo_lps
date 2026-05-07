@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Reveal } from "@/components/Motion";
 
 const voices = [
   {
@@ -71,8 +72,51 @@ const voices = [
 ];
 
 export default function Voices() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
+
+  const cardStep = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return 320;
+    const card = el.querySelector<HTMLElement>("[data-voice-card]");
+    if (!card) return 320;
+    // include the column gap (20px = gap-5)
+    return card.offsetWidth + 20;
+  }, []);
+
+  const updateState = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const idx = Math.round(el.scrollLeft / cardStep());
+    setActive(Math.min(Math.max(idx, 0), voices.length - 1));
+    setCanPrev(el.scrollLeft > 4);
+    setCanNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  }, [cardStep]);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    updateState();
+    el.addEventListener("scroll", updateState, { passive: true });
+    window.addEventListener("resize", updateState);
+    return () => {
+      el.removeEventListener("scroll", updateState);
+      window.removeEventListener("resize", updateState);
+    };
+  }, [updateState]);
+
+  const scrollBy = (dir: 1 | -1) => {
+    scrollRef.current?.scrollBy({ left: cardStep() * dir, behavior: "smooth" });
+  };
+
+  const scrollTo = (i: number) => {
+    scrollRef.current?.scrollTo({ left: cardStep() * i, behavior: "smooth" });
+  };
+
   return (
-    <section id="voice" className="py-24 md:py-32 bg-white">
+    <section id="voice" className="py-24 md:py-32 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal>
           <p className="text-xs tracking-[0.5em] text-gold-dark text-center font-bold">
@@ -95,50 +139,127 @@ export default function Voices() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {voices.map((v) => (
-            <StaggerItem key={v.name}>
-              <motion.figure
-                whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="group relative rounded-2xl bg-sand p-7 border border-navy/10 shadow-soft h-full flex flex-col overflow-hidden hover:border-gold/40 transition-colors"
-              >
-                <span
-                  aria-hidden
-                  className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-gold/0 group-hover:bg-gold/15 transition-colors duration-500 blur-2xl"
-                />
-
-                <div className="relative flex items-center gap-4">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-soft shrink-0 bg-navy/5">
-                    <Image
-                      src={v.photo}
-                      alt={v.name}
-                      fill
-                      sizes="64px"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="font-sans font-bold text-navy text-base truncate">
-                      {v.name}
-                    </p>
-                    <p className="text-[11px] text-navy/55 mt-0.5 truncate">
-                      {v.year}　{v.role}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="relative mt-6 text-gold-dark text-sm tracking-wide font-bold border-l-2 border-gold pl-3">
-                  「{v.catch}」
-                </p>
-                <blockquote className="relative mt-4 text-sm text-navy/85 leading-loose flex-1">
-                  {v.quote}
-                </blockquote>
-              </motion.figure>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
+        {/* Header bar with progress + nav */}
+        <div className="mt-12 flex items-center justify-between gap-6">
+          <p className="text-xs tracking-widest text-navy/55 tabular-nums">
+            <span className="text-navy font-bold">
+              {String(active + 1).padStart(2, "0")}
+            </span>
+            {" / "}
+            {String(voices.length).padStart(2, "0")}
+          </p>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => scrollBy(-1)}
+              disabled={!canPrev}
+              aria-label="前のカード"
+              className="w-11 h-11 rounded-full border border-navy/15 bg-white grid place-items-center hover:bg-navy hover:text-white disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy transition-colors text-navy"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollBy(1)}
+              disabled={!canNext}
+              aria-label="次のカード"
+              className="w-11 h-11 rounded-full border border-navy/15 bg-white grid place-items-center hover:bg-navy hover:text-white disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy transition-colors text-navy"
+            >
+              →
+            </button>
+          </div>
+        </div>
       </div>
+
+      {/* Full-bleed slider */}
+      <div
+        ref={scrollRef}
+        className="voice-scroller mt-8 flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2"
+        style={{
+          paddingLeft: "max(1.5rem, calc((100vw - 72rem) / 2))",
+          paddingRight: "max(1.5rem, calc((100vw - 72rem) / 2))",
+        }}
+      >
+        {voices.map((v) => (
+          <motion.article
+            key={v.name}
+            data-voice-card
+            whileHover={{ y: -4 }}
+            transition={{ type: "spring", stiffness: 240, damping: 22 }}
+            className="snap-start shrink-0 w-[78vw] sm:w-[360px] md:w-[400px] rounded-2xl bg-sand border border-navy/10 shadow-soft overflow-hidden flex flex-col group hover:border-gold/40 transition-colors"
+          >
+            {/* Large portrait */}
+            <div className="relative aspect-[4/5] bg-navy-dark overflow-hidden">
+              <Image
+                src={v.photo}
+                alt={v.name}
+                fill
+                sizes="(max-width: 640px) 78vw, 400px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* gradient overlay */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy via-navy/70 to-transparent h-1/2 pointer-events-none" />
+              {/* meta */}
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <p className="text-[10px] tracking-[0.3em] text-gold-light font-bold">
+                  {v.year}　{v.role}
+                </p>
+                <p className="mt-1 font-sans font-black text-2xl md:text-3xl text-white heading-display drop-shadow">
+                  {v.name}
+                </p>
+              </div>
+              {/* gold corner accent */}
+              <span
+                aria-hidden
+                className="absolute top-4 left-4 text-[10px] tracking-[0.4em] text-gold-light/90 font-bold bg-navy/30 backdrop-blur px-2.5 py-1 rounded-full"
+              >
+                INTERVIEW
+              </span>
+            </div>
+
+            {/* Body */}
+            <div className="p-6 md:p-7 flex-1 flex flex-col bg-sand">
+              <p className="text-gold-dark text-sm md:text-base tracking-wide font-bold border-l-2 border-gold pl-3">
+                「{v.catch}」
+              </p>
+              <blockquote className="mt-4 text-sm text-navy/85 leading-loose flex-1">
+                {v.quote}
+              </blockquote>
+            </div>
+          </motion.article>
+        ))}
+      </div>
+
+      {/* Indicator dots */}
+      <div className="max-w-6xl mx-auto px-6 mt-6 flex justify-center gap-2">
+        {voices.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => scrollTo(i)}
+            aria-label={`${i + 1}番目のカードへ`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              i === active ? "w-8 bg-navy" : "w-1.5 bg-navy/20 hover:bg-navy/40"
+            }`}
+          />
+        ))}
+      </div>
+
+      <style jsx>{`
+        .voice-scroller::-webkit-scrollbar {
+          height: 6px;
+        }
+        .voice-scroller::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .voice-scroller::-webkit-scrollbar-thumb {
+          background: rgba(12, 43, 74, 0.12);
+          border-radius: 3px;
+        }
+        .voice-scroller::-webkit-scrollbar-thumb:hover {
+          background: rgba(12, 43, 74, 0.24);
+        }
+      `}</style>
     </section>
   );
 }
