@@ -107,24 +107,20 @@ export default function Hero() {
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="font-sans font-black text-5xl md:text-7xl text-navy heading-display text-balance"
+          className="font-sans font-black text-5xl md:text-6xl lg:text-7xl text-navy heading-display text-balance"
         >
           思いやりを、
           <br />
-          <motion.span
-            initial={{ backgroundSize: "0% 0.5em" }}
-            animate={{ backgroundSize: "100% 0.5em" }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="text-gradient-gold inline-block"
-            style={{
-              backgroundImage:
-                "linear-gradient(transparent 65%, rgba(199,155,61,0.18) 65%)",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "0 88%",
-            }}
-          >
-            技術にのせて。
-          </motion.span>
+          <span className="relative inline-block">
+            <motion.span
+              aria-hidden
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.7, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute left-0 right-0 bottom-[0.12em] h-[0.28em] bg-gold/25 origin-left rounded-sm -z-0"
+            />
+            <span className="relative text-gradient-gold">技術にのせて。</span>
+          </span>
         </motion.h1>
 
         <motion.p
@@ -177,12 +173,12 @@ export default function Hero() {
           {heroStats.map((s) => (
             <div
               key={s.label}
-              className="bg-white/75 backdrop-blur-sm rounded-2xl p-4 border border-navy/10 shadow-soft hover-lift"
+              className="bg-white/75 backdrop-blur-sm rounded-2xl p-4 border border-navy/10 shadow-soft hover-lift overflow-hidden"
             >
-              <dt className="text-[11px] text-navy/60 tracking-widest">
+              <dt className="text-[11px] text-navy/60 tracking-widest truncate">
                 {s.label}
               </dt>
-              <dd className="mt-1 font-sans font-black text-2xl md:text-3xl text-navy tabular-nums">
+              <dd className="mt-1 font-sans font-black text-xl md:text-2xl text-navy tabular-nums whitespace-nowrap">
                 <AnimatedCounter
                   to={s.value}
                   suffix={s.suffix}

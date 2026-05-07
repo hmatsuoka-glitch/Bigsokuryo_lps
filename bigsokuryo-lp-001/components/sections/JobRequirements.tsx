@@ -185,12 +185,12 @@ export default function JobRequirements() {
               {summary[track].map((s) => (
                 <div
                   key={s.label}
-                  className="bg-white rounded-2xl border border-navy/10 shadow-soft p-4 hover-lift transition-all duration-500 text-center"
+                  className="bg-white rounded-2xl border border-navy/10 shadow-soft p-4 hover-lift transition-all duration-500 text-center overflow-hidden"
                 >
-                  <p className="font-sans font-black text-xl md:text-2xl text-navy tabular-nums">
+                  <p className="font-sans font-black text-base md:text-xl lg:text-2xl text-navy tabular-nums whitespace-nowrap">
                     {s.stat}
                   </p>
-                  <p className="mt-1 text-[10px] tracking-widest text-navy/55">
+                  <p className="mt-1 text-[10px] tracking-widest text-navy/55 truncate">
                     {s.label}
                   </p>
                 </div>

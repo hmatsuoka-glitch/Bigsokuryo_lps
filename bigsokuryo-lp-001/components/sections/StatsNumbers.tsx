@@ -80,7 +80,7 @@ const stats: Stat[] = [
 function StatCard({ stat }: { stat: Stat }) {
   return (
     <div
-      className={`group relative bg-white rounded-2xl p-6 border transition-all duration-500 overflow-hidden ${
+      className={`group relative bg-white rounded-2xl p-5 md:p-6 border transition-all duration-500 overflow-hidden ${
         stat.highlight
           ? "border-gold/40 shadow-gold/30"
           : "border-navy/10 shadow-soft"
@@ -98,15 +98,15 @@ function StatCard({ stat }: { stat: Stat }) {
       />
 
       <div className="relative flex items-start justify-between gap-2">
-        <p className="text-[11px] text-navy/60 tracking-widest font-bold">
+        <p className="text-[11px] text-navy/60 tracking-widest font-bold truncate">
           {stat.label}
         </p>
-        <span className="text-gold/70 group-hover:text-gold group-hover:scale-110 transition">
+        <span className="text-gold/70 group-hover:text-gold group-hover:scale-110 transition shrink-0">
           {stat.icon}
         </span>
       </div>
 
-      <p className="relative mt-3 font-sans font-black text-3xl md:text-4xl text-navy tabular-nums leading-none">
+      <p className="relative mt-3 font-sans font-black text-2xl md:text-3xl lg:text-[2rem] text-navy tabular-nums leading-tight whitespace-nowrap">
         {stat.display ?? (
           <AnimatedCounter
             to={stat.value}
