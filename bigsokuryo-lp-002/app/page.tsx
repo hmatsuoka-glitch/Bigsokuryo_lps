@@ -28,7 +28,7 @@ export default function Page() {
         <FAQ />
         <EntryForm
           category="中途・キャリア"
-          accentClass="bg-gradient-to-r from-amber-600 to-rose-700 hover:opacity-90"
+          accentClass="bg-gradient-to-r from-brand to-brand-dark hover:opacity-90"
         />
       </main>
       <SiteFooter />
