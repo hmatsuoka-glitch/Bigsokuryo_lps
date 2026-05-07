@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
@@ -34,12 +35,22 @@ export default function SiteHeader() {
       className="sticky top-0 z-40 backdrop-blur border-b border-navy/10"
     >
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-6">
-        <a href="#" className="flex items-baseline gap-3 shrink-0">
-          <span className="font-sans font-black text-xl text-navy heading-display">
-            BIG <span className="text-gradient-gold">SOKURYO</span>
-          </span>
-          <span className="text-[10px] tracking-[0.3em] text-navy/50 hidden sm:inline">
-            since 1980
+        <a href="#" className="flex items-center gap-2.5 shrink-0">
+          <Image
+            src="/header_logo.png"
+            alt="ビッグ測量設計株式会社"
+            width={94}
+            height={70}
+            priority
+            className="h-9 w-auto"
+          />
+          <span className="hidden sm:flex items-baseline gap-2">
+            <span className="font-sans font-black text-lg text-navy heading-display leading-none">
+              BIG <span className="text-gradient-gold">SOKURYO</span>
+            </span>
+            <span className="text-[10px] tracking-[0.3em] text-navy/50">
+              since 1980
+            </span>
           </span>
         </a>
         <nav className="hidden lg:flex items-center gap-7 text-sm text-navy/80">

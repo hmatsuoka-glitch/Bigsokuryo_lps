@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 
 const principles = [
@@ -51,36 +53,76 @@ export default function CEOMessage() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-16">
-          <div className="relative">
-            <span
-              aria-hidden
-              className="absolute -left-2 -top-12 md:-left-8 md:-top-16 font-serif text-[160px] md:text-[220px] leading-none text-gold/20 select-none"
+        <div className="mt-16 grid md:grid-cols-[260px_1fr] lg:grid-cols-[300px_1fr] gap-10 md:gap-12 items-start">
+          {/* Portrait */}
+          <Reveal>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="relative mx-auto md:mx-0 w-56 md:w-full max-w-[300px]"
             >
-              “
-            </span>
-            <blockquote className="relative font-sans font-bold text-2xl md:text-4xl leading-[1.7] text-white text-balance heading-display">
-              マニュアル通りではなく、
-              <br className="hidden md:block" />
-              自分の頭で考えて
-              <span className="text-gold-light">行動する。</span>
-            </blockquote>
-          </div>
+              <span
+                aria-hidden
+                className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-gold/40 to-transparent blur-xl"
+              />
+              <div className="relative rounded-2xl overflow-hidden border-2 border-gold/30 shadow-soft-lg aspect-[19/20] bg-navy-dark">
+                <Image
+                  src="/message_img.jpg"
+                  alt="代表取締役 村田 豊世"
+                  fill
+                  sizes="(max-width: 768px) 224px, 300px"
+                  className="object-cover"
+                />
+                <span
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent"
+                />
+              </div>
+              <div className="mt-4 text-center md:text-left">
+                <p className="font-sans font-bold text-base text-white">
+                  村田 豊世
+                </p>
+                <p className="text-[11px] tracking-[0.3em] text-gold-light">
+                  REPRESENTATIVE DIRECTOR
+                </p>
+              </div>
+            </motion.div>
+          </Reveal>
 
-          <p className="mt-10 text-white/85 leading-loose max-w-2xl text-sm md:text-base">
-            5年・10年先の未来に結果を出せるかどうかは、いまの一歩で決まります。
-            失敗を恐れず、どんどんトライしてほしい。
-            思いやりは、社会への貢献です。
-            まず、自分の足で一歩を踏み出すことから始めよう。
-            若さには可能性がある。未来に向けて羽ばたけ！
-          </p>
-          <div className="mt-8 flex items-center gap-4">
-            <span className="w-10 h-px bg-gold" />
-            <p className="text-sm text-white/70 tracking-widest">
-              代表取締役　村田 豊世
+          {/* Quote + body */}
+          <Reveal delay={0.1}>
+            <div className="relative">
+              <span
+                aria-hidden
+                className="absolute -left-2 -top-12 md:-left-8 md:-top-16 font-serif text-[160px] md:text-[220px] leading-none text-gold/20 select-none"
+              >
+                “
+              </span>
+              <blockquote className="relative font-sans font-bold text-2xl md:text-4xl leading-[1.7] text-white text-balance heading-display">
+                マニュアル通りではなく、
+                <br className="hidden md:block" />
+                自分の頭で考えて
+                <span className="text-gold-light">行動する。</span>
+              </blockquote>
+            </div>
+
+            <p className="mt-8 text-white/85 leading-loose max-w-2xl text-sm md:text-base">
+              5年・10年先の未来に結果を出せるかどうかは、いまの一歩で決まります。
+              失敗を恐れず、どんどんトライしてほしい。
+              思いやりは、社会への貢献です。
+              まず、自分の足で一歩を踏み出すことから始めよう。
+              若さには可能性がある。未来に向けて羽ばたけ！
             </p>
-          </div>
-        </Reveal>
+            <div className="mt-8 flex items-center gap-4">
+              <span className="w-10 h-px bg-gold" />
+              <p className="text-sm text-white/70 tracking-widest">
+                代表取締役　村田 豊世
+              </p>
+            </div>
+          </Reveal>
+        </div>
 
         <Reveal delay={0.2} className="mt-20">
           <p className="text-xs tracking-[0.4em] text-gold-light font-bold">
