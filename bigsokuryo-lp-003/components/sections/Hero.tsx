@@ -20,31 +20,50 @@ export default function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-28 md:pt-28 md:pb-36">
         <p className="text-xs md:text-sm tracking-[0.4em] text-emerald-700 mb-6">
-          U / I TURN RECRUITMENT
+          PEOPLE-FIRST RECRUITMENT
         </p>
         <h1 className="font-serif text-4xl md:text-6xl leading-[1.3] text-navy text-balance">
-          測量と暮らしが、<br />
-          <span className="text-emerald-700">ちょうどいい。</span>
+          思いやりを、<br />
+          <span className="text-emerald-700">技術にのせて。</span>
         </h1>
         <p className="mt-8 max-w-xl text-navy/80 leading-relaxed">
-          通勤15分、川沿いの家、夕方には子どもと過ごす時間。<br />
-          地方で測量の専門性を発揮しながら、暮らしの輪郭をはっきりさせていく――
-          そんな働き方を、私たちは本気でつくっています。
+          1980年から、東京・上野で測量を続けてきました。<br />
+          文系出身者も、未経験者も、ここから測量人生を始めています。
+          スキルより人柄を、結果より過程を、私たちは大切にしています。
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a
             href="#entry"
             className="px-7 py-3 rounded-full bg-emerald-700 text-white text-sm tracking-widest hover:bg-emerald-900 transition"
           >
-            移住相談からはじめる
+            まず話を聞いてみる
           </a>
           <a
-            href="#area"
+            href="#about"
             className="px-7 py-3 rounded-full border border-emerald-700/40 text-emerald-900 text-sm tracking-widest hover:bg-emerald-700 hover:text-white transition"
           >
-            エリアを知る
+            会社を知る
           </a>
         </div>
+
+        <dl className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
+          {[
+            ["創業", "1980年"],
+            ["社員数", "163名"],
+            ["有給取得率", "79.9%"],
+            ["上野駅", "徒歩10分"],
+          ].map(([k, v]) => (
+            <div
+              key={k}
+              className="bg-white/70 backdrop-blur rounded-xl px-4 py-3 border border-emerald-700/15"
+            >
+              <dt className="text-[10px] tracking-[0.3em] text-emerald-700">
+                {k}
+              </dt>
+              <dd className="mt-1 font-serif text-xl text-navy">{v}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

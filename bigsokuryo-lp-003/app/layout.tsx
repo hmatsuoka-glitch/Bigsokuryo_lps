@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "U・Iターン採用 | 測量と暮らしが、ちょうどいい。｜ビッグ測量株式会社",
+  title: "人柄採用 | 思いやりを、技術にのせて。｜ビッグ測量設計株式会社",
   description:
-    "ビッグ測量株式会社のU・Iターン採用ページ。移住バディ制度や住宅・引越支援、地方暮らしの実感をご紹介します。",
+    "1980年創業、東京・上野で45年。文系・未経験から測量を始めた仲間が活躍するビッグ測量設計の人柄重視採用。有給取得率79.9%、健康企業宣言「銀の認定」、社員寮3万円/月、資格手当最大10万円。",
 };
 
 export default function RootLayout({

@@ -53,6 +53,23 @@ export default function EntryForm({
             送信する
           </button>
         </form>
+
+        <div className="mt-10 rounded-xl bg-emerald-50 border border-emerald-700/15 p-6 text-sm text-navy/80 leading-relaxed">
+          <p className="font-bold text-navy mb-2">直接の連絡を希望される方へ</p>
+          <p>
+            人事部 須藤 翠｜
+            <a
+              href="mailto:saiyou@bigsdc.co.jp"
+              className="text-emerald-700 hover:underline"
+            >
+              saiyou@bigsdc.co.jp
+            </a>
+          </p>
+          <p className="mt-3 text-xs text-navy/60">
+            ※ 当社は採用選考におけるハラスメントを固く禁じています。
+            選考の過程で気になることがあれば上記窓口にご連絡ください。
+          </p>
+        </div>
       </div>
     </section>
   );
