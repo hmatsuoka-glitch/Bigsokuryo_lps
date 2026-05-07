@@ -4,6 +4,7 @@ import EntryForm from "@/components/EntryForm";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import TechStack from "@/components/sections/TechStack";
+import Projects from "@/components/sections/Projects";
 import CareerModel from "@/components/sections/CareerModel";
 import Voices from "@/components/sections/Voices";
 import Benefits from "@/components/sections/Benefits";
@@ -20,6 +21,7 @@ export default function Page() {
         <Hero />
         <About />
         <TechStack />
+        <Projects />
         <CareerModel />
         <Voices />
         <Benefits />
