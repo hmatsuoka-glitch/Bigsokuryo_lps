@@ -73,12 +73,12 @@ export default function TechStack() {
             鉄道・道路・トンネル・空港の重要インフラ現場で、本物の機材と本物の案件に向き合えます。
           </p>
         </Reveal>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mt-14 grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {stack.map((s, i) => (
             <Reveal
               key={s.cat}
               delay={i * 70}
-              className={`card-hover group bg-white rounded-2xl p-6 border ${
+              className={`card-hover group bg-white  p-6 border ${
                 s.accent
                   ? "border-gold/40 bg-gradient-to-br from-white to-amber-50"
                   : "border-navy/10"
@@ -93,7 +93,7 @@ export default function TechStack() {
                   {s.cat}
                 </p>
                 {s.accent && (
-                  <span className="text-[10px] tracking-widest bg-gold text-navy font-bold px-2 py-0.5 rounded">
+                  <span className="text-[10px] tracking-widest bg-gold text-navy font-bold px-2 py-0.5 ">
                     PATENT
                   </span>
                 )}

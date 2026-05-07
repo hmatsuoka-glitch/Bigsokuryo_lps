@@ -42,12 +42,12 @@ export default function Projects() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-5 md:gap-6">
+        <div className="mt-14 grid grid-cols-2 gap-3 md:gap-6">
           {projects.map((p, i) => (
             <Reveal
               key={p.title}
               delay={i * 100}
-              className="card-hover group relative overflow-hidden rounded-2xl border border-navy/10 bg-gradient-to-br from-white to-sand/40 p-7 md:p-8 cursor-default"
+              className="card-hover group relative overflow-hidden  border border-navy/10 bg-gradient-to-br from-white to-sand/40 p-5 md:p-8 cursor-default"
             >
               <div
                 aria-hidden
