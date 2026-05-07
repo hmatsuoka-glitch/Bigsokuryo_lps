@@ -60,7 +60,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-gradient-to-br from-sky-100 via-white to-sand"
+      className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-sand"
     >
       <motion.div
         aria-hidden
@@ -70,7 +70,7 @@ export default function Hero() {
       <motion.div
         aria-hidden
         style={{ y: orbY, x: px2 }}
-        className="absolute -bottom-24 -left-24 w-[480px] h-[480px] rounded-full bg-sky-300/35 blur-3xl"
+        className="absolute -bottom-24 -left-24 w-[480px] h-[480px] rounded-full bg-navy/15 blur-3xl"
       />
       <motion.div
         aria-hidden

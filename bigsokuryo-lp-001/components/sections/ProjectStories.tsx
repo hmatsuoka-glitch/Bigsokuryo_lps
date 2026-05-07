@@ -11,8 +11,8 @@ const projects = [
     period: "2020 東京オリンピック・パラリンピック",
     body: "ボート・カヌー競技会場の基準点・水準・地形測量と埋設物調査。1班3人×3班で土日も体制を組み、広範囲かつ短期間で完遂。社名が成果に明記される妥協なき仕事。",
     keywords: ["公共測量", "基準点・水準・地形", "土日体制 1班3人×3班"],
-    accent: "from-sky-50 to-emerald-50",
-    badge: "bg-sky-600",
+    accent: "from-emerald-50 to-white",
+    badge: "bg-navy",
   },
   {
     no: "02",
@@ -21,8 +21,8 @@ const projects = [
     period: "戦争で失われた創建当時の姿へ",
     body: "歴史的価値の高い駅舎の復原。通行人や観光客の動線に配慮しながら現場を進行。「歴史的瞬間に携われた」誇りが、いまも社員に残ります。",
     keywords: ["復原工事", "歴史的構造物", "通行人配慮"],
-    accent: "from-amber-50 to-rose-50",
-    badge: "bg-amber-600",
+    accent: "from-red-50 to-white",
+    badge: "bg-gold",
   },
   {
     no: "03",
@@ -31,8 +31,8 @@ const projects = [
     period: "ホームを130m表参道側へ",
     body: "明治通りをまたぐ形でホームを大移動。線路敷設は数ミリのズレも許されないパズル作業。高さ10m超で器械を覗く、技術と集中力の現場。",
     keywords: ["鉄道工事測量", "数ミリ精度", "高所作業"],
-    accent: "from-slate-50 to-sky-50",
-    badge: "bg-slate-700",
+    accent: "from-emerald-100 to-emerald-50",
+    badge: "bg-navy-dark",
   },
   {
     no: "04",
@@ -41,8 +41,8 @@ const projects = [
     period: "受注からオープンまで3ヶ月",
     body: "コンペを経て受注した工事展示室。施工管理とコンテンツ制作を一貫して実施し、4年経った今も映像が使われ続けています。「工事と地域を結ぶ」役割を測量会社が形にした事例。",
     keywords: ["企画・制作", "施工管理", "コンテンツ制作"],
-    accent: "from-emerald-50 to-amber-50",
-    badge: "bg-emerald-700",
+    accent: "from-emerald-50 to-red-50",
+    badge: "bg-gold-dark",
   },
 ];
 

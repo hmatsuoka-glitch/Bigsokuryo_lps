@@ -69,19 +69,19 @@ export default function EntryForm() {
             お預かりした情報は採用業務以外に使用しません。
           </p>
 
-          <div className="mt-8 mx-auto max-w-md  bg-emerald-50 border border-emerald-200 p-4 flex items-center gap-3 hover:border-emerald-400 transition-colors">
+          <div className="mt-8 mx-auto max-w-md bg-emerald-50 border border-navy/20 p-4 flex items-center gap-3 hover:border-navy/40 transition-colors">
             <span className="w-10 h-10 rounded-full bg-[#06C755] grid place-items-center text-white font-black text-base shrink-0 shadow-soft">
               L
             </span>
             <div className="flex-1 text-sm">
-              <p className="font-bold text-emerald-900">
+              <p className="font-bold text-navy-dark">
                 先にLINEでサクッと相談したい方へ
               </p>
               <a
                 href={SITE.lineUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-700 underline-grow text-xs"
+                className="text-navy underline-grow text-xs"
               >
                 公式LINEを開く →
               </a>
@@ -97,7 +97,7 @@ export default function EntryForm() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="mt-12  bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 p-10 text-center shadow-soft"
+              className="mt-12 bg-gradient-to-br from-emerald-50 to-white border border-navy/20 p-10 text-center shadow-soft"
             >
               <motion.div
                 initial={{ scale: 0 }}
@@ -108,7 +108,7 @@ export default function EntryForm() {
                   stiffness: 200,
                   damping: 14,
                 }}
-                className="mx-auto w-16 h-16 rounded-full bg-emerald-500 grid place-items-center text-white text-3xl shadow-soft"
+                className="mx-auto w-16 h-16 rounded-full bg-navy grid place-items-center text-white text-3xl shadow-soft"
               >
                 ✓
               </motion.div>

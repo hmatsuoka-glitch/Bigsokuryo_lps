@@ -70,7 +70,7 @@ const stats: Stat[] = [
   },
   {
     value: 1,
-    display: <span className="text-amber-700">銀の認定</span>,
+    display: <span className="text-navy-dark">銀の認定</span>,
     label: "健康企業宣言",
     caption: "2025年7月取得",
     icon: <IconShield />,

@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Motion";
 
 export default function LineCTA() {
   return (
-    <section className="py-20 md:py-24 bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 text-white overflow-hidden relative">
+    <section className="py-20 md:py-24 bg-gradient-to-r from-navy-dark via-navy to-emerald-700 text-white overflow-hidden relative">
       <motion.div
         aria-hidden
         initial={{ opacity: 0 }}
@@ -61,7 +61,7 @@ export default function LineCTA() {
             href={SITE.lineUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 bg-white text-emerald-700 font-bold px-8 py-5 rounded-full shadow-soft-lg hover:shadow-gold transition-shadow"
+            className="group relative inline-flex items-center gap-3 bg-white text-navy font-bold px-8 py-5 rounded-full shadow-soft-lg hover:shadow-gold transition-shadow"
           >
             <span className="absolute inset-0 rounded-full bg-white animate-pulse opacity-50 -z-10 group-hover:animate-none" />
             <span className="w-10 h-10 rounded-full bg-[#06C755] grid place-items-center text-white text-xl font-black shadow-soft">

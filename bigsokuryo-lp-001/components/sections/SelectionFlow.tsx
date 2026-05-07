@@ -18,7 +18,7 @@ const flows: Record<
   new: {
     title: "新卒採用",
     note: "人柄重視。筆記試験・適性検査はありません。",
-    accent: "bg-sky-500",
+    accent: "bg-navy",
     steps: [
       {
         n: "01",
@@ -51,7 +51,7 @@ const flows: Record<
   mid: {
     title: "中途採用",
     note: "入社時期はご相談に応じます。",
-    accent: "bg-amber-600",
+    accent: "bg-gold",
     steps: [
       {
         n: "01",
