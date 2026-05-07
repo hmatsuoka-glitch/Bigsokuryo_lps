@@ -91,10 +91,10 @@ export default function BusinessFeatures() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid md:grid-cols-3 gap-5">
+        <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
           {features.map((f) => (
             <StaggerItem key={f.title}>
-              <article className="group relative bg-white rounded-2xl p-7 border border-navy/10 shadow-soft overflow-hidden h-full hover-lift transition-all duration-500">
+              <article className="group relative bg-white rounded-2xl p-5 md:p-7 border border-navy/10 shadow-soft overflow-hidden h-full hover-lift transition-all duration-500">
                 <span
                   aria-hidden
                   className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full bg-gold/0 group-hover:bg-gold/15 transition-colors duration-700 blur-3xl"
@@ -113,13 +113,13 @@ export default function BusinessFeatures() {
                   </span>
                 </div>
 
-                <h3 className="relative mt-5 font-sans font-bold text-xl md:text-2xl text-navy leading-snug heading-display">
+                <h3 className="relative mt-4 md:mt-5 font-sans font-bold text-base md:text-2xl text-navy leading-snug heading-display">
                   {f.title}
                 </h3>
-                <p className="relative mt-4 text-sm text-navy/80 leading-relaxed">
+                <p className="relative mt-3 md:mt-4 text-xs md:text-sm text-navy/80 leading-relaxed">
                   {f.body}
                 </p>
-                <ul className="relative mt-5 space-y-2">
+                <ul className="relative mt-4 md:mt-5 space-y-1.5 md:space-y-2">
                   {f.points.map((p) => (
                     <li
                       key={p}

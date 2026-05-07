@@ -85,10 +85,10 @@ export default function SelectionFlow() {
           />
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {flows.map((f) => (
             <Reveal key={f.title}>
-              <div className="rounded-2xl border border-navy/10 shadow-soft p-7 md:p-8 bg-gradient-to-b from-white to-sand h-full hover-lift transition-all duration-500">
+              <div className="rounded-2xl border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-b from-white to-sand h-full hover-lift transition-all duration-500">
                 <div className="flex items-baseline justify-between">
                   <h3 className="font-sans font-bold text-2xl md:text-3xl text-navy heading-display">
                     {f.title}

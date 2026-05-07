@@ -69,42 +69,42 @@ export default function ProjectStories() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid md:grid-cols-2 gap-5">
+        <StaggerGroup className="mt-14 grid grid-cols-2 gap-3 md:gap-5">
           {projects.map((p) => (
             <StaggerItem key={p.title}>
               <motion.article
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className={`group relative rounded-2xl border border-navy/10 shadow-soft p-8 bg-gradient-to-br ${p.accent} overflow-hidden h-full`}
+                className={`group relative rounded-2xl border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-br ${p.accent} overflow-hidden h-full`}
               >
                 <span
                   aria-hidden
-                  className="absolute -top-10 -right-10 font-sans font-black text-[140px] md:text-[180px] text-navy/[0.05] select-none leading-none"
+                  className="absolute -top-6 -right-6 md:-top-10 md:-right-10 font-sans font-black text-[100px] md:text-[180px] text-navy/[0.05] select-none leading-none"
                 >
                   {p.no}
                 </span>
 
-                <div className="relative flex items-baseline justify-between gap-3">
+                <div className="relative flex items-start justify-between gap-2 flex-wrap">
                   <span
-                    className={`text-[10px] tracking-[0.4em] font-bold text-white px-3 py-1 rounded-full ${p.badge}`}
+                    className={`text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.4em] font-bold text-white px-2.5 md:px-3 py-1 rounded-full ${p.badge}`}
                   >
                     {p.label}
                   </span>
-                  <p className="text-[11px] text-navy/55 text-right">
+                  <p className="text-[10px] md:text-[11px] text-navy/55 text-right">
                     {p.period}
                   </p>
                 </div>
-                <h3 className="relative mt-5 font-sans font-bold text-xl md:text-2xl text-navy leading-snug heading-display">
+                <h3 className="relative mt-4 md:mt-5 font-sans font-bold text-base md:text-2xl text-navy leading-snug heading-display">
                   {p.title}
                 </h3>
-                <p className="relative mt-4 text-sm text-navy/85 leading-loose">
+                <p className="relative mt-3 md:mt-4 text-xs md:text-sm text-navy/85 leading-relaxed md:leading-loose">
                   {p.body}
                 </p>
-                <ul className="relative mt-5 flex flex-wrap gap-2">
+                <ul className="relative mt-4 md:mt-5 flex flex-wrap gap-1.5 md:gap-2">
                   {p.keywords.map((k) => (
                     <li
                       key={k}
-                      className="text-[11px] tracking-widest text-navy/75 border border-navy/15 bg-white/70 backdrop-blur px-2.5 py-1 rounded-full"
+                      className="text-[10px] md:text-[11px] tracking-widest text-navy/75 border border-navy/15 bg-white/70 backdrop-blur px-2 md:px-2.5 py-0.5 md:py-1 rounded-full"
                     >
                       {k}
                     </li>

@@ -120,17 +120,17 @@ export default function Benefits() {
           </h3>
         </Reveal>
 
-        <StaggerGroup className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <StaggerGroup className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {welfare.map((w) => (
             <StaggerItem key={w.title}>
-              <div className="group bg-sand rounded-2xl p-6 border border-navy/10 shadow-soft hover-lift hover:border-gold/40 transition-all duration-500 h-full">
-                <span className="inline-flex w-11 h-11 rounded-full bg-white grid place-items-center text-gold group-hover:bg-gold group-hover:text-white transition-colors">
+              <div className="group bg-sand rounded-2xl p-4 md:p-6 border border-navy/10 shadow-soft hover-lift hover:border-gold/40 transition-all duration-500 h-full">
+                <span className="inline-flex w-9 h-9 md:w-11 md:h-11 rounded-full bg-white grid place-items-center text-gold group-hover:bg-gold group-hover:text-white transition-colors">
                   {w.icon}
                 </span>
-                <p className="mt-4 font-sans font-bold text-base text-navy heading-display">
+                <p className="mt-3 md:mt-4 font-sans font-bold text-sm md:text-base text-navy heading-display">
                   {w.title}
                 </p>
-                <p className="mt-2 text-xs text-navy/70 leading-relaxed">
+                <p className="mt-1.5 md:mt-2 text-[11px] md:text-xs text-navy/70 leading-relaxed">
                   {w.body}
                 </p>
               </div>

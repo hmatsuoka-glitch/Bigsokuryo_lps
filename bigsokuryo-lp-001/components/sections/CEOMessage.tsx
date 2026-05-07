@@ -132,22 +132,22 @@ export default function CEOMessage() {
           </h3>
         </Reveal>
 
-        <StaggerGroup className="mt-10 grid md:grid-cols-3 gap-5">
+        <StaggerGroup className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
           {principles.map((p, i) => (
             <StaggerItem key={p.title}>
-              <div className="group relative rounded-2xl border border-white/15 p-7 bg-white/5 backdrop-blur hover:bg-white/10 hover:border-gold/40 transition-all duration-500 hover-lift h-full">
+              <div className="group relative rounded-2xl border border-white/15 p-5 md:p-7 bg-white/5 backdrop-blur hover:bg-white/10 hover:border-gold/40 transition-all duration-500 hover-lift h-full">
                 <div className="flex items-baseline justify-between">
-                  <span className="font-sans font-black text-5xl text-gold/30 group-hover:text-gold transition-colors leading-none">
+                  <span className="font-sans font-black text-4xl md:text-5xl text-gold/30 group-hover:text-gold transition-colors leading-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[10px] tracking-[0.3em] text-white/40">
+                  <span className="text-[9px] md:text-[10px] tracking-[0.3em] text-white/40">
                     PRINCIPLE
                   </span>
                 </div>
-                <h4 className="mt-5 font-sans font-bold text-xl heading-display">
+                <h4 className="mt-4 md:mt-5 font-sans font-bold text-base md:text-xl heading-display">
                   {p.title}
                 </h4>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
+                <p className="mt-2 md:mt-3 text-xs md:text-sm text-white/80 leading-relaxed">
                   {p.body}
                 </p>
               </div>
