@@ -13,7 +13,7 @@ export default function SiteHeader({
     <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-navy/10">
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         <div className="flex items-baseline gap-3">
-          <span className="font-serif text-xl font-bold text-navy">
+          <span className="font-sans font-bold text-xl text-navy">
             BIG <span className="text-gold">SOKURYO</span>
           </span>
           <span className="text-[10px] tracking-[0.3em] text-navy/50">

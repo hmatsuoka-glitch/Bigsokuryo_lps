@@ -26,7 +26,7 @@ export default function CareerModel() {
         <p className="text-xs tracking-[0.4em] text-gold text-center">
           CAREER MODEL
         </p>
-        <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
+        <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy text-center">
           3つのキャリアトラック
         </h2>
 
@@ -36,7 +36,7 @@ export default function CareerModel() {
               key={t.role}
               className="rounded-2xl border border-navy/10 p-7 bg-gradient-to-b from-white to-sand"
             >
-              <h3 className="font-serif text-xl text-navy">{t.role}</h3>
+              <h3 className="font-sans font-bold text-xl text-navy">{t.role}</h3>
               <p className="mt-2 text-gold text-sm font-bold tracking-wide">
                 想定年収 {t.salary}
               </p>

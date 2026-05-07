@@ -20,7 +20,7 @@ export default function Voices() {
         <p className="text-xs tracking-[0.4em] text-gold text-center">
           INTERVIEW
         </p>
-        <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
+        <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy text-center">
           ジョインしたエンジニアたち
         </h2>
         <div className="mt-14 grid md:grid-cols-2 gap-6">
@@ -30,7 +30,7 @@ export default function Voices() {
               className="rounded-2xl bg-white p-8 border border-navy/10"
             >
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-rose-700 grid place-items-center text-white font-serif">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-rose-700 grid place-items-center text-white font-sans font-bold">
                   {v.name.charAt(0)}
                 </div>
                 <figcaption>

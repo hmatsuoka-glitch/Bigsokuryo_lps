@@ -3,7 +3,7 @@ export default function SiteFooter() {
     <footer className="bg-navy-dark text-white/70 py-14">
       <div className="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-3">
         <div>
-          <p className="font-serif text-xl text-white">
+          <p className="font-sans font-bold text-xl text-white">
             BIG <span className="text-gold">SOKURYO</span>
           </p>
           <p className="mt-3 text-sm leading-relaxed">

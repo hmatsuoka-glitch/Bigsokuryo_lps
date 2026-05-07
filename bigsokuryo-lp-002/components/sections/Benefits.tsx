@@ -16,7 +16,7 @@ export default function Benefits() {
         <p className="text-xs tracking-[0.4em] text-gold text-center">
           BENEFITS
         </p>
-        <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
+        <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy text-center">
           技術が、正しく報われる。
         </h2>
         <div className="mt-14 divide-y divide-navy/10 border-t border-navy/10">

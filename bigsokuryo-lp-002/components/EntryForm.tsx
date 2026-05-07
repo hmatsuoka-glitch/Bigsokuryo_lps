@@ -11,7 +11,7 @@ export default function EntryForm({
     <section id="entry" className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <p className="text-xs tracking-[0.4em] text-gold text-center">ENTRY</p>
-        <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
+        <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy text-center">
           {category}エントリー
         </h2>
         <p className="mt-4 text-sm text-navy/70 text-center">

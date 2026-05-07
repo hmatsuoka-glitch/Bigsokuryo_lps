@@ -23,7 +23,7 @@ export default function Hero() {
         <p className="text-xs md:text-sm tracking-[0.4em] text-gold mb-6">
           MID-CAREER RECRUITMENT
         </p>
-        <h1 className="font-serif text-4xl md:text-6xl leading-[1.25] text-balance">
+        <h1 className="font-sans font-bold text-4xl md:text-6xl leading-[1.25] text-balance">
           あなたの技術が、<br />
           <span className="text-gold">地域の標準</span>になる。
         </h1>
