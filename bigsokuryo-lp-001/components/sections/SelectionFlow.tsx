@@ -1,11 +1,13 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 
 const flows = [
   {
     title: "新卒採用",
     note: "人柄重視。筆記試験・適性検査はありません。",
+    accent: "bg-sky-500",
     steps: [
       {
         n: "01",
@@ -31,13 +33,14 @@ const flows = [
         n: "★",
         label: "内定",
         body: "内定通知を郵送いたします。",
+        final: true,
       },
     ],
-    color: "from-sky-50 to-white",
   },
   {
     title: "中途採用",
     note: "入社時期はご相談に応じます。",
+    accent: "bg-amber-600",
     steps: [
       {
         n: "01",
@@ -53,38 +56,50 @@ const flows = [
         n: "★",
         label: "内定",
         body: "内定通知を郵送いたします。",
+        final: true,
       },
     ],
-    color: "from-amber-50 to-white",
   },
 ];
 
 export default function SelectionFlow() {
   return (
-    <section id="flow" className="py-24 bg-white">
+    <section id="flow" className="py-24 md:py-32 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal>
-          <p className="text-xs tracking-[0.4em] text-gold text-center">
+          <p className="text-xs tracking-[0.5em] text-gold-dark text-center font-bold">
             SELECTION FLOW
           </p>
-          <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
+          <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             採用フロー
           </h2>
-          <p className="mt-4 text-center text-sm text-navy/65 max-w-xl mx-auto">
+          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
             エントリーから内定まで、ありのままのあなたで臨んでいただける選考です。
           </p>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mx-auto mt-7 h-px w-16 bg-gold origin-left"
+          />
         </Reveal>
 
         <div className="mt-14 grid md:grid-cols-2 gap-6">
           {flows.map((f) => (
             <Reveal key={f.title}>
-              <div
-                className={`rounded-2xl border border-navy/10 p-7 bg-gradient-to-b ${f.color} h-full`}
-              >
-                <h3 className="font-serif text-2xl text-navy">{f.title}</h3>
+              <div className="rounded-2xl border border-navy/10 shadow-soft p-7 md:p-8 bg-gradient-to-b from-white to-sand h-full hover-lift transition-all duration-500">
+                <div className="flex items-baseline justify-between">
+                  <h3 className="font-sans font-bold text-2xl md:text-3xl text-navy heading-display">
+                    {f.title}
+                  </h3>
+                  <span
+                    className={`inline-block w-2 h-2 rounded-full ${f.accent}`}
+                  />
+                </div>
                 <p className="mt-1 text-xs text-navy/55">{f.note}</p>
 
-                <StaggerGroup className="mt-6 relative">
+                <StaggerGroup className="mt-7 relative">
                   <span
                     aria-hidden
                     className="absolute left-[15px] top-2 bottom-2 w-px bg-navy/15"
@@ -93,13 +108,17 @@ export default function SelectionFlow() {
                     {f.steps.map((s) => (
                       <StaggerItem key={s.n}>
                         <li className="relative pl-12">
-                          <span className="absolute left-0 top-0 w-8 h-8 rounded-full bg-navy text-white text-[11px] grid place-items-center font-bold">
+                          <span
+                            className={`absolute left-0 top-0 w-8 h-8 rounded-full text-white text-[11px] grid place-items-center font-bold shadow-soft ${
+                              s.final ? "bg-gold" : "bg-navy"
+                            }`}
+                          >
                             {s.n}
                           </span>
-                          <p className="font-bold text-navy text-sm">
+                          <p className="font-sans font-bold text-navy text-sm md:text-base">
                             {s.label}
                           </p>
-                          <p className="mt-1 text-xs text-navy/70 leading-relaxed">
+                          <p className="mt-1 text-xs md:text-sm text-navy/70 leading-relaxed">
                             {s.body}
                           </p>
                         </li>
@@ -113,11 +132,11 @@ export default function SelectionFlow() {
         </div>
 
         <Reveal delay={0.1} className="mt-10">
-          <div className="rounded-2xl bg-sand border border-navy/10 px-6 py-5 text-center text-sm text-navy/75">
+          <div className="rounded-2xl bg-sand border border-navy/10 px-6 py-5 text-center text-sm md:text-base text-navy/80">
             選考に関するお問い合わせは、
             <a
               href="mailto:saiyou@bigsdc.co.jp"
-              className="text-gold font-bold hover:underline"
+              className="text-gold-dark font-bold underline-grow"
             >
               saiyou@bigsdc.co.jp
             </a>

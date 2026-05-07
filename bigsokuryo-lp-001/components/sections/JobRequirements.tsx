@@ -9,6 +9,21 @@ type Track = "new" | "mid";
 
 const accessLines = COMPANY.access.join(" / ");
 
+const summary: Record<Track, { stat: string; label: string }[]> = {
+  new: [
+    { stat: "210,000円〜", label: "月給（大卒）" },
+    { stat: "340万円", label: "1年目年収実績" },
+    { stat: "年2回", label: "賞与（計2か月）" },
+    { stat: "120日+", label: "年間休日目安" },
+  ],
+  mid: [
+    { stat: "210,000円〜", label: "月給（経験考慮）" },
+    { stat: "520万円", label: "30歳5年目年収" },
+    { stat: "3か月", label: "試用期間（待遇変更なし）" },
+    { stat: "随時", label: "入社時期相談可" },
+  ],
+};
+
 const dataset: Record<
   Track,
   { label: string; rows: { k: string; v: React.ReactNode }[] }
@@ -46,10 +61,7 @@ const dataset: Record<
         k: "休日休暇",
         v: "土・日・祝／夏季休暇（8/10〜15）／GW／年末年始（12/30〜1/5）／慶弔特別休暇",
       },
-      {
-        k: "保険",
-        v: "健康保険・厚生年金保険・雇用保険・労災保険",
-      },
+      { k: "保険", v: "健康保険・厚生年金保険・雇用保険・労災保険" },
     ],
   },
   mid: {
@@ -87,10 +99,7 @@ const dataset: Record<
         k: "休日休暇",
         v: "土・日・祝／夏季（8/10〜15）／GW／年末年始（12/28〜1/5）／慶弔特別休暇",
       },
-      {
-        k: "保険",
-        v: "健康保険・厚生年金保険・雇用保険・労災保険",
-      },
+      { k: "保険", v: "健康保険・厚生年金保険・雇用保険・労災保険" },
     ],
   },
 };
@@ -100,23 +109,30 @@ export default function JobRequirements() {
   const current = dataset[track];
 
   return (
-    <section id="requirements" className="py-24 bg-sand">
+    <section id="requirements" className="py-24 md:py-32 bg-sand">
       <div className="max-w-5xl mx-auto px-6">
         <Reveal>
-          <p className="text-xs tracking-[0.4em] text-gold text-center">
+          <p className="text-xs tracking-[0.5em] text-gold-dark text-center font-bold">
             JOB REQUIREMENTS
           </p>
-          <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
+          <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             募集要項
           </h2>
-          <p className="mt-4 text-center text-sm text-navy/65">
+          <p className="mt-5 text-center text-sm md:text-base text-navy/70">
             新卒・中途の2トラックでお迎えしています。気になる方を選んでご覧ください。
           </p>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mx-auto mt-7 h-px w-16 bg-gold origin-left"
+          />
         </Reveal>
 
         <Reveal
           delay={0.1}
-          className="mt-10 mx-auto inline-flex p-1 bg-white rounded-full border border-navy/10 shadow-sm"
+          className="mt-12 mx-auto inline-flex p-1.5 bg-white rounded-full border border-navy/10 shadow-soft"
         >
           <div className="relative flex gap-1">
             {(
@@ -130,27 +146,25 @@ export default function JobRequirements() {
                 <button
                   key={t.id}
                   onClick={() => setTrack(t.id)}
-                  className={`relative px-6 py-2.5 text-xs md:text-sm tracking-widest transition-colors rounded-full ${
+                  className={`relative px-7 py-3 text-xs md:text-sm tracking-[0.2em] font-bold transition-colors rounded-full ${
                     active ? "text-white" : "text-navy/65 hover:text-navy"
                   }`}
                 >
                   {active && (
                     <motion.span
                       layoutId="track-pill"
-                      className="absolute inset-0 bg-navy rounded-full"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      className="absolute inset-0 bg-navy rounded-full shadow-soft"
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
                   <span className="relative">{t.label}</span>
                 </button>
               );
             })}
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.15} className="mt-10">
-          <div className="text-center text-sm text-navy/70">
-            {current.label}
           </div>
         </Reveal>
 
@@ -161,21 +175,43 @@ export default function JobRequirements() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35 }}
-            className="mt-6 bg-white rounded-2xl border border-navy/10 overflow-hidden divide-y divide-navy/10"
           >
-            {current.rows.map((r) => (
-              <div
-                key={r.k}
-                className="grid md:grid-cols-[200px_1fr] gap-4 px-6 md:px-8 py-5 hover:bg-sand/40 transition-colors"
-              >
-                <dt className="text-xs md:text-sm tracking-widest text-gold font-bold pt-0.5">
-                  {r.k}
-                </dt>
-                <dd className="text-sm md:text-base text-navy/85 leading-relaxed">
-                  {r.v}
-                </dd>
-              </div>
-            ))}
+            <p className="mt-10 text-center text-sm text-navy/70">
+              {current.label}
+            </p>
+
+            {/* Quick summary stats */}
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+              {summary[track].map((s) => (
+                <div
+                  key={s.label}
+                  className="bg-white rounded-2xl border border-navy/10 shadow-soft p-4 hover-lift transition-all duration-500 text-center"
+                >
+                  <p className="font-sans font-black text-xl md:text-2xl text-navy tabular-nums">
+                    {s.stat}
+                  </p>
+                  <p className="mt-1 text-[10px] tracking-widest text-navy/55">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 bg-white rounded-2xl border border-navy/10 shadow-soft overflow-hidden divide-y divide-navy/10">
+              {current.rows.map((r) => (
+                <div
+                  key={r.k}
+                  className="grid md:grid-cols-[200px_1fr] gap-4 px-6 md:px-8 py-5 hover:bg-sand/50 transition-colors"
+                >
+                  <dt className="text-xs md:text-sm tracking-widest text-gold-dark font-bold pt-0.5">
+                    {r.k}
+                  </dt>
+                  <dd className="text-sm md:text-base text-navy/90 leading-loose">
+                    {r.v}
+                  </dd>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>

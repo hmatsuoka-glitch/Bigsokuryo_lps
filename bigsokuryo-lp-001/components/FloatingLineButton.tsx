@@ -14,11 +14,13 @@ export default function FloatingLineButton() {
       target="_blank"
       rel="noopener noreferrer"
       style={{ opacity, y }}
-      className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-50 group"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-40 group"
       aria-label="公式LINEで相談する"
     >
       <span className="absolute inset-0 rounded-full bg-[#06C755]/40 animate-ping group-hover:hidden" />
-      <span className="relative flex items-center gap-2 bg-[#06C755] text-white pl-4 pr-5 py-3 rounded-full shadow-lg shadow-emerald-900/20 hover:scale-105 transition-transform">
+      <span className="relative flex items-center gap-2 bg-[#06C755] text-white pl-4 pr-5 py-3 rounded-full shadow-soft-lg">
         <LineGlyph />
         <span className="text-sm font-bold tracking-wide">LINEで相談</span>
       </span>

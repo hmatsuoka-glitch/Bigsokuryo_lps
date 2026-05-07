@@ -2,6 +2,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import EntryForm from "@/components/EntryForm";
 import FloatingLineButton from "@/components/FloatingLineButton";
+import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/sections/Hero";
 import StatsNumbers from "@/components/sections/StatsNumbers";
 import BusinessFeatures from "@/components/sections/BusinessFeatures";
@@ -16,6 +17,7 @@ import LineCTA from "@/components/sections/LineCTA";
 export default function Page() {
   return (
     <>
+      <ScrollProgress />
       <SiteHeader />
       <main>
         <Hero />

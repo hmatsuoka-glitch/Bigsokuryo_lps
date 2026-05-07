@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 
 const projects = [
@@ -10,7 +11,8 @@ const projects = [
     period: "2020 東京オリンピック・パラリンピック",
     body: "ボート・カヌー競技会場の建設に向けた、基準点・水準・地形測量と埋設物調査。広範囲かつ短期間、雨が天敵という環境のなか、1班3人体制×3班で土日も体制を組んで完遂。社名が成果に明記される、一切の妥協が許されない仕事です。",
     keywords: ["公共測量", "基準点・水準・地形", "土日体制 1班3人×3班"],
-    accent: "from-sky-100 to-emerald-50",
+    accent: "from-sky-50 to-emerald-50",
+    badge: "bg-sky-600",
   },
   {
     no: "02",
@@ -20,6 +22,7 @@ const projects = [
     body: "歴史的価値の高い駅舎の復原。通行人や観光客の安全と動線に配慮しながら、観光客への道案内も行いながら現場を進めました。「歴史的瞬間に携われた」という誇りが、いまも社員に残っています。",
     keywords: ["復原工事", "歴史的構造物", "通行人配慮"],
     accent: "from-amber-50 to-rose-50",
+    badge: "bg-amber-600",
   },
   {
     no: "03",
@@ -28,7 +31,8 @@ const projects = [
     period: "ホームを130m表参道側へ",
     body: "明治通りをまたぐ形で、ホームを大移動。線路敷設は数ミリのズレも許されないパズル作業。高さ10m以上で器械を覗くシーンもあり、技術と集中力が試される現場でした。",
     keywords: ["鉄道工事測量", "数ミリ精度", "高所作業"],
-    accent: "from-slate-100 to-sky-50",
+    accent: "from-slate-50 to-sky-50",
+    badge: "bg-slate-700",
   },
   {
     no: "04",
@@ -38,55 +42,77 @@ const projects = [
     body: "コンペティションを経て受注した工事展示室。施工管理とコンテンツ制作を一貫して実施し、リピーター多数の空間に。制作から4年経った映像が今も様々な場面で使われています。「工事と地域を結ぶ」役割を、測量会社が形にした事例です。",
     keywords: ["企画・制作", "施工管理", "コンテンツ制作"],
     accent: "from-emerald-50 to-amber-50",
+    badge: "bg-emerald-700",
   },
 ];
 
 export default function ProjectStories() {
   return (
-    <section id="projects" className="py-24 bg-sand">
+    <section id="projects" className="py-24 md:py-32 bg-sand">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal>
-          <p className="text-xs tracking-[0.4em] text-gold text-center">
+          <p className="text-xs tracking-[0.5em] text-gold-dark text-center font-bold">
             PROJECT STORY
           </p>
-          <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
+          <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             プロジェクトストーリー
           </h2>
-          <p className="mt-4 text-center text-sm text-navy/65 max-w-xl mx-auto">
-            東京の景色を支える測量。私たちが関わってきた、忘れられない現場の話。
+          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+            東京の景色を支える測量。
+            <br className="md:hidden" />
+            私たちが関わってきた、忘れられない現場の話。
           </p>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mx-auto mt-7 h-px w-16 bg-gold origin-left"
+          />
         </Reveal>
 
         <StaggerGroup className="mt-14 grid md:grid-cols-2 gap-5">
           {projects.map((p) => (
-            <StaggerItem
-              key={p.title}
-              className={`rounded-2xl border border-navy/10 p-7 bg-gradient-to-br ${p.accent} hover:-translate-y-1 transition-transform`}
-            >
-              <div className="flex items-baseline justify-between gap-3">
-                <p className="text-xs tracking-[0.4em] text-gold font-bold">
-                  {p.no} / {p.label}
-                </p>
-                <p className="text-[11px] text-navy/55 text-right">
-                  {p.period}
-                </p>
-              </div>
-              <h3 className="mt-3 font-serif text-2xl text-navy leading-snug">
-                {p.title}
-              </h3>
-              <p className="mt-4 text-sm text-navy/80 leading-relaxed">
-                {p.body}
-              </p>
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {p.keywords.map((k) => (
-                  <li
-                    key={k}
-                    className="text-[11px] tracking-widest text-navy/70 border border-navy/15 bg-white/60 backdrop-blur px-2.5 py-1 rounded-full"
+            <StaggerItem key={p.title}>
+              <motion.article
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                className={`group relative rounded-2xl border border-navy/10 shadow-soft p-8 bg-gradient-to-br ${p.accent} overflow-hidden h-full`}
+              >
+                <span
+                  aria-hidden
+                  className="absolute -top-10 -right-10 font-sans font-black text-[140px] md:text-[180px] text-navy/[0.05] select-none leading-none"
+                >
+                  {p.no}
+                </span>
+
+                <div className="relative flex items-baseline justify-between gap-3">
+                  <span
+                    className={`text-[10px] tracking-[0.4em] font-bold text-white px-3 py-1 rounded-full ${p.badge}`}
                   >
-                    {k}
-                  </li>
-                ))}
-              </ul>
+                    {p.label}
+                  </span>
+                  <p className="text-[11px] text-navy/55 text-right">
+                    {p.period}
+                  </p>
+                </div>
+                <h3 className="relative mt-5 font-sans font-bold text-xl md:text-2xl text-navy leading-snug heading-display">
+                  {p.title}
+                </h3>
+                <p className="relative mt-4 text-sm text-navy/85 leading-loose">
+                  {p.body}
+                </p>
+                <ul className="relative mt-5 flex flex-wrap gap-2">
+                  {p.keywords.map((k) => (
+                    <li
+                      key={k}
+                      className="text-[11px] tracking-widest text-navy/75 border border-navy/15 bg-white/70 backdrop-blur px-2.5 py-1 rounded-full"
+                    >
+                      {k}
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
             </StaggerItem>
           ))}
         </StaggerGroup>

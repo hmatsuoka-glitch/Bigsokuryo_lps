@@ -8,18 +8,20 @@ type Props = {
   suffix?: string;
   prefix?: string;
   duration?: number;
+  decimals?: number;
 };
 
 export default function AnimatedCounter({
   to,
   suffix = "",
   prefix = "",
-  duration = 1.6,
+  duration = 1.8,
+  decimals,
 }: Props) {
   const ref = useRef<HTMLSpanElement | null>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const motionValue = useMotionValue(0);
-  const [display, setDisplay] = useState("0");
+  const [display, setDisplay] = useState(decimals ? (0).toFixed(decimals) : "0");
 
   useEffect(() => {
     if (!inView) return;
@@ -27,11 +29,15 @@ export default function AnimatedCounter({
       duration,
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (latest) => {
-        setDisplay(Math.round(latest).toLocaleString());
+        if (decimals !== undefined) {
+          setDisplay(latest.toFixed(decimals));
+        } else {
+          setDisplay(Math.round(latest).toLocaleString());
+        }
       },
     });
     return () => controls.stop();
-  }, [inView, to, duration, motionValue]);
+  }, [inView, to, duration, motionValue, decimals]);
 
   return (
     <motion.span ref={ref} className="inline-block tabular-nums">
