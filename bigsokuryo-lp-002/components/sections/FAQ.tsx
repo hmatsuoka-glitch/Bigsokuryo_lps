@@ -1,9 +1,11 @@
+import Reveal from "@/components/Reveal";
+
 const flow = [
-  { step: "STEP 1", label: "エントリー", body: "当サイトのフォーム、または各求人媒体より。" },
-  { step: "STEP 2", label: "書類選考", body: "履歴書・職務経歴書をもとに選考。" },
-  { step: "STEP 3", label: "1 次面接", body: "現場責任者との個別面接。" },
-  { step: "STEP 4", label: "最終面接", body: "部署責任者との個別面接。" },
-  { step: "STEP 5", label: "内定", body: "内定通知を郵送。入社時期は相談に応じます。" },
+  { step: "01", label: "エントリー", body: "当サイトのフォーム、または各求人媒体より。" },
+  { step: "02", label: "書類選考", body: "履歴書・職務経歴書をもとに選考。" },
+  { step: "03", label: "1 次面接", body: "現場責任者との個別面接。" },
+  { step: "04", label: "最終面接", body: "部署責任者との個別面接。" },
+  { step: "05", label: "内定", body: "内定通知を郵送。入社時期は相談に応じます。" },
 ];
 
 const faqs = [
@@ -39,44 +41,57 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-24 bg-sand">
-      <div className="max-w-4xl mx-auto px-6">
-        <p className="text-xs tracking-[0.4em] text-gold text-center">FLOW & FAQ</p>
-        <h2 className="mt-3 font-sans font-bold text-3xl text-navy text-center">
-          選考フロー & よくある質問
-        </h2>
+    <section id="faq" className="py-28 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
+        <Reveal className="text-center">
+          <p className="text-xs tracking-[0.4em] text-gold">FLOW &amp; FAQ</p>
+          <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
+            選考フロー &amp; よくある質問
+          </h2>
+        </Reveal>
 
-        <ol className="mt-12 grid md:grid-cols-5 gap-3">
-          {flow.map((f) => (
-            <li
+        <ol className="mt-14 grid md:grid-cols-5 gap-3">
+          {flow.map((f, i) => (
+            <Reveal
               key={f.step}
-              className="rounded-xl bg-white border border-navy/10 p-5"
+              delay={i * 100}
+              as="li"
+              className="card-hover group rounded-xl bg-gradient-to-br from-white to-sand/40 border border-navy/10 p-5 relative"
             >
-              <p className="text-[11px] tracking-widest text-gold">{f.step}</p>
-              <p className="mt-2 font-sans font-bold text-navy">{f.label}</p>
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-xl font-bold text-gold/40 leading-none">
+                  {f.step}
+                </span>
+                <span className="h-px flex-1 bg-navy/10 group-hover:bg-gold/40 transition-colors" />
+              </div>
+              <p className="mt-3 font-sans font-bold text-navy">{f.label}</p>
               <p className="mt-2 text-xs text-navy/65 leading-relaxed">
                 {f.body}
               </p>
-            </li>
+            </Reveal>
           ))}
         </ol>
 
-        <div className="mt-14 space-y-4">
-          {faqs.map((item) => (
-            <details
+        <div className="mt-16 max-w-3xl mx-auto space-y-3">
+          {faqs.map((item, i) => (
+            <Reveal
               key={item.q}
-              className="group bg-white rounded-xl border border-navy/10 px-6 py-5"
+              delay={i * 60}
+              as="div"
+              className="bg-sand/40 rounded-xl border border-navy/10 transition-all hover:border-gold/40"
             >
-              <summary className="cursor-pointer list-none flex justify-between items-center text-navy font-bold gap-4">
-                <span className="flex-1">{item.q}</span>
-                <span className="text-gold group-open:rotate-45 transition flex-none">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                {item.a}
-              </p>
-            </details>
+              <details className="group px-6 py-5">
+                <summary className="cursor-pointer list-none flex justify-between items-center text-navy font-bold gap-4">
+                  <span className="flex-1">{item.q}</span>
+                  <span className="w-7 h-7 rounded-full bg-gold/10 grid place-items-center text-gold group-open:rotate-45 group-open:bg-gold group-open:text-white transition-all flex-none">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 text-sm text-navy/70 leading-relaxed pr-10">
+                  {item.a}
+                </p>
+              </details>
+            </Reveal>
           ))}
         </div>
       </div>

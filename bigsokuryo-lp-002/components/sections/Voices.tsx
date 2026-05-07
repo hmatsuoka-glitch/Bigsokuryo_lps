@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const voices = [
   {
     name: "応用技術測量部 (入社 14 年)",
@@ -21,26 +23,35 @@ const voices = [
 
 export default function Voices() {
   return (
-    <section id="voice" className="py-24 bg-sand">
+    <section id="voice" className="py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <p className="text-xs tracking-[0.4em] text-gold text-center">
-          INTERVIEW
-        </p>
-        <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy text-center">
-          現場で働くエンジニアたち
-        </h2>
-        <p className="mt-4 text-center text-navy/70 text-sm max-w-xl mx-auto">
-          「優しさと思いやり」を企業理念にする、いわゆる &quot;野武士集団&quot;。
-          仲間を大切にする文化が、長く続く理由です。
-        </p>
-        <div className="mt-14 grid md:grid-cols-3 gap-6">
-          {voices.map((v) => (
-            <figure
+        <Reveal className="text-center">
+          <p className="text-xs tracking-[0.4em] text-gold">INTERVIEW</p>
+          <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
+            現場で働くエンジニアたち
+          </h2>
+          <p className="mt-5 text-center text-navy/70 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            「優しさと思いやり」を企業理念にする、いわゆる &quot;野武士集団&quot;。
+            仲間を大切にする文化が、長く続く理由です。
+          </p>
+        </Reveal>
+
+        <div className="mt-14 grid md:grid-cols-3 gap-5 md:gap-6">
+          {voices.map((v, i) => (
+            <Reveal
               key={v.name}
-              className="rounded-2xl bg-white p-7 border border-navy/10"
+              delay={i * 120}
+              as="article"
+              className="card-hover group rounded-2xl bg-gradient-to-br from-white to-sand/30 p-7 border border-navy/10 relative"
             >
+              <span
+                aria-hidden
+                className="absolute top-5 right-6 text-6xl font-serif text-gold/20 leading-none select-none"
+              >
+                &ldquo;
+              </span>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-rose-700 grid place-items-center text-white font-sans font-bold flex-none">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-rose-700 grid place-items-center text-white font-sans font-bold flex-none transition-transform group-hover:scale-110">
                   {v.name.charAt(0)}
                 </div>
                 <figcaption className="min-w-0">
@@ -51,9 +62,9 @@ export default function Voices() {
                 </figcaption>
               </div>
               <blockquote className="mt-6 text-sm text-navy/80 leading-relaxed">
-                「{v.quote}」
+                {v.quote}
               </blockquote>
-            </figure>
+            </Reveal>
           ))}
         </div>
       </div>

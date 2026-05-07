@@ -1,6 +1,9 @@
+import Reveal from "@/components/Reveal";
+
 const groups = [
   {
     label: "給与・賞与",
+    icon: "¥",
     items: [
       ["月給", "21 万円以上 (前職・経験考慮 / 試用期間 3 ヶ月)"],
       ["賞与", "年 2 回 (7/15・12/15) / 計 2 ヶ月分"],
@@ -10,6 +13,7 @@ const groups = [
   },
   {
     label: "諸手当",
+    icon: "+",
     items: [
       ["交通費", "全額支給"],
       ["残業手当", "全額支給"],
@@ -27,6 +31,7 @@ const groups = [
   },
   {
     label: "休日・休暇",
+    icon: "◐",
     items: [
       ["勤務時間", "8:00 - 17:00 (実働 8 時間 / 休憩 60 分)"],
       ["休日", "土・日・祝"],
@@ -38,6 +43,7 @@ const groups = [
   },
   {
     label: "福利厚生・社内制度",
+    icon: "✦",
     items: [
       ["保険", "健康・厚生年金・雇用・労災"],
       ["資格支援", "測量士 / 測量士補 試験費用 会社負担"],
@@ -54,33 +60,46 @@ const groups = [
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <p className="text-xs tracking-[0.4em] text-gold text-center">
-          BENEFITS
-        </p>
-        <h2 className="mt-3 font-sans font-bold text-3xl md:text-4xl text-navy text-center">
-          技術が、正しく報われる。
-        </h2>
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
-          {groups.map((g) => (
-            <div
+    <section id="benefits" className="py-28 bg-sand relative overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-gold/10 blur-3xl"
+      />
+      <div className="relative max-w-6xl mx-auto px-6">
+        <Reveal className="text-center">
+          <p className="text-xs tracking-[0.4em] text-gold">BENEFITS</p>
+          <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
+            技術が、正しく報われる。
+          </h2>
+        </Reveal>
+        <div className="mt-14 grid md:grid-cols-2 gap-5 md:gap-6">
+          {groups.map((g, i) => (
+            <Reveal
               key={g.label}
-              className="rounded-2xl border border-navy/10 p-7 bg-sand/40"
+              delay={i * 100}
+              className="card-hover rounded-2xl border border-navy/10 p-7 md:p-8 bg-white relative overflow-hidden"
             >
-              <p className="text-xs tracking-widest text-gold">{g.label}</p>
-              <dl className="mt-5 divide-y divide-navy/10">
+              <div
+                aria-hidden
+                className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-gold/15 grid place-items-center text-3xl text-gold/70 font-bold"
+              >
+                {g.icon}
+              </div>
+              <p className="text-xs tracking-widest text-gold relative">
+                {g.label}
+              </p>
+              <dl className="mt-5 divide-y divide-navy/10 relative">
                 {g.items.map(([k, v]) => (
                   <div
                     key={k}
-                    className="grid grid-cols-3 gap-4 py-3 text-sm"
+                    className="grid grid-cols-3 gap-4 py-3 text-sm hover:bg-sand/50 -mx-2 px-2 rounded transition-colors"
                   >
                     <dt className="text-navy/60 text-xs md:text-sm">{k}</dt>
                     <dd className="col-span-2 text-navy">{v}</dd>
                   </div>
                 ))}
               </dl>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
