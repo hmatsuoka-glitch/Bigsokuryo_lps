@@ -63,10 +63,6 @@ export default function CEOMessage() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="relative mx-auto md:mx-0 w-56 md:w-full max-w-[300px]"
             >
-              <span
-                aria-hidden
-                className="absolute -inset-3  bg-gradient-to-br from-gold/40 to-transparent blur-xl"
-              />
               <div className="relative  overflow-hidden border-2 border-gold/30 shadow-soft-lg aspect-[19/20] bg-navy-dark">
                 <Image
                   src="/message_img.jpg"
@@ -94,12 +90,6 @@ export default function CEOMessage() {
           {/* Quote + body */}
           <Reveal delay={0.1}>
             <div className="relative">
-              <span
-                aria-hidden
-                className="absolute -left-2 -top-12 md:-left-8 md:-top-16 font-serif text-[160px] md:text-[220px] leading-none text-gold/20 select-none"
-              >
-                “
-              </span>
               <blockquote className="relative font-sans font-bold text-2xl md:text-4xl leading-[1.7] text-white text-balance heading-display">
                 マニュアル通りではなく、
                 <br className="hidden md:block" />
