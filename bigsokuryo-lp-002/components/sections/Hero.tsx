@@ -1,9 +1,21 @@
+// 背景写真は public/hero.jpg に配置してください (差し替え時もファイル名は固定)
+const HERO_IMAGE_SRC = "/hero.jpg";
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <div
         aria-hidden
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('${HERO_IMAGE_SRC}')` }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy/85"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
             "radial-gradient(circle at 80% 20%, rgba(199,155,61,0.35), transparent 45%), radial-gradient(circle at 10% 80%, rgba(255,255,255,0.08), transparent 50%)",
@@ -11,7 +23,7 @@ export default function Hero() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.07]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
