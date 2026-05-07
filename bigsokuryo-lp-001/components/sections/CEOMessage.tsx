@@ -132,9 +132,9 @@ export default function CEOMessage() {
           </h3>
         </Reveal>
 
-        <StaggerGroup className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+        <StaggerGroup className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 items-stretch">
           {principles.map((p, i) => (
-            <StaggerItem key={p.title}>
+            <StaggerItem key={p.title} className="h-full">
               <div className="group relative  border border-white/15 p-5 md:p-7 bg-white/5 backdrop-blur hover:bg-white/10 hover:border-gold/40 transition-all duration-500 hover-lift h-full">
                 <div className="flex items-baseline justify-between">
                   <span className="font-sans font-black text-4xl md:text-5xl text-gold/30 group-hover:text-gold transition-colors leading-none">

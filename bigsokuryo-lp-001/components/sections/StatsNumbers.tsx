@@ -80,7 +80,7 @@ const stats: Stat[] = [
 function StatCard({ stat }: { stat: Stat }) {
   return (
     <div
-      className={`group relative bg-white  p-5 md:p-6 border transition-all duration-500 overflow-hidden ${
+      className={`group relative bg-white  p-5 md:p-6 border transition-all duration-500 overflow-hidden h-full flex flex-col ${
         stat.highlight
           ? "border-gold/40 shadow-gold/30"
           : "border-navy/10 shadow-soft"
@@ -115,7 +115,7 @@ function StatCard({ stat }: { stat: Stat }) {
           />
         )}
       </p>
-      <p className="relative mt-3 text-xs text-navy/55 leading-relaxed">
+      <p className="relative mt-3 text-xs text-navy/55 leading-relaxed mt-auto pt-3">
         {stat.caption}
       </p>
     </div>
@@ -145,9 +145,9 @@ export default function StatsNumbers() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 items-stretch">
           {stats.map((s) => (
-            <StaggerItem key={s.label}>
+            <StaggerItem key={s.label} className="h-full">
               <StatCard stat={s} />
             </StaggerItem>
           ))}

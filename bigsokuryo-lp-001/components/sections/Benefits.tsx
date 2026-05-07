@@ -120,9 +120,9 @@ export default function Benefits() {
           </h3>
         </Reveal>
 
-        <StaggerGroup className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        <StaggerGroup className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 items-stretch">
           {welfare.map((w) => (
-            <StaggerItem key={w.title}>
+            <StaggerItem key={w.title} className="h-full">
               <div className="group bg-sand  p-4 md:p-6 border border-navy/10 shadow-soft hover-lift hover:border-gold/40 transition-all duration-500 h-full">
                 <span className="inline-flex w-9 h-9 md:w-11 md:h-11 rounded-full bg-white grid place-items-center text-gold group-hover:bg-gold group-hover:text-white transition-colors">
                   {w.icon}

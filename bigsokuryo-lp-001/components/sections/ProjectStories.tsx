@@ -69,9 +69,9 @@ export default function ProjectStories() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid grid-cols-2 gap-3 md:gap-5">
+        <StaggerGroup className="mt-14 grid grid-cols-2 gap-3 md:gap-5 items-stretch">
           {projects.map((p) => (
-            <StaggerItem key={p.title}>
+            <StaggerItem key={p.title} className="h-full">
               <motion.article
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}

@@ -91,9 +91,9 @@ export default function BusinessFeatures() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+        <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 items-stretch">
           {features.map((f) => (
-            <StaggerItem key={f.title}>
+            <StaggerItem key={f.title} className="h-full">
               <article className="group relative bg-white  p-5 md:p-7 border border-navy/10 shadow-soft overflow-hidden h-full hover-lift transition-all duration-500">
                 <span
                   aria-hidden
