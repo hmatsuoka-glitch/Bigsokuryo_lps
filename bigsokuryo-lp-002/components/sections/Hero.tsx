@@ -52,16 +52,16 @@ export default function Hero() {
           </span>
         </div>
         <h1 className="font-sans font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.2] tracking-tight text-balance">
-          1ミクロンの精度で、<br />
+          鉄道・道路・トンネル。<br />
           <span className="bg-gradient-to-r from-gold via-amber-300 to-gold bg-clip-text text-transparent">
-            東京の動脈
+            東京
           </span>
-          を測る。
+          を、ミリ単位で測る。
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-white/90 leading-relaxed">
           1980 年創業、社員 163 名。<br />
-          鉄道・道路・トンネル・空港 ―― 東京の重要インフラ工事を、
-          特許取得の高精度測量技術で支えてきた東上野の総合測量会社です。
+          東京駅・銀座線渋谷駅・五輪会場 ―― 誰もが知る現場の地盤を、
+          創業 45 年で支えてきた東上野の総合測量会社です。
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a
