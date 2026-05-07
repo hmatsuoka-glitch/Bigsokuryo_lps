@@ -8,7 +8,7 @@ const features = [
     no: "01",
     tag: "FIELD",
     title: "鉄道工事測量に強い",
-    body: "線路閉鎖作業や営業線近接作業など、ミリ単位のズレも許されない鉄道現場で多数の実績。東京駅丸の内駅舎復原、銀座線渋谷駅移設など、首都圏の主要プロジェクトに参画。",
+    body: "ミリ単位のズレも許されない鉄道現場で多数の実績。東京駅・銀座線渋谷駅など、首都圏の主要プロジェクトに参画。",
     points: ["鉄道工事測量", "空港工事測量", "トンネル工事測量", "道路工事測量"],
     icon: <IconRail />,
   },
@@ -16,7 +16,7 @@ const features = [
     no: "02",
     tag: "PATENT",
     title: "特許技術 1ミクロン精度計測",
-    body: "構造物上の基準点測量方法及びシステムで特許取得。0.001mmという、人の目では捉えられないスケールで構造物の変位を捉えます。レーザートラッカーやMONMOSとの組合せで精密アライメントにも対応。",
+    body: "「構造物上の基準点測量方法」で特許取得。0.001mm単位で構造物の変位を捉え、精密アライメントにも対応します。",
     points: [
       "特許「構造物上の基準点測量方法」",
       "レーザートラッカー2台",
@@ -28,7 +28,7 @@ const features = [
     no: "03",
     tag: "3D",
     title: "3D点群・写真測量・3DCG",
-    body: "3Dレーザースキャナで非接触に点群データを取得し、危険箇所の調査も安全に。写真測量・オルソモザイクと組み合わせて、文化財調査や駅構内の支障物調査までを一気通貫で。",
+    body: "3Dレーザーで非接触に点群を取得。写真測量と組み合わせ、文化財調査や駅構内支障物調査まで一気通貫で対応。",
     points: [
       "SCAN STATION P50 ほか3Dレーザー",
       "Pix4Dmapper / Autodesk Infrastructure",
@@ -80,9 +80,7 @@ export default function BusinessFeatures() {
             事業の特徴
           </h2>
           <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
-            「現場 × 特許技術 × 3D」の3本柱で、
-            <br className="md:hidden" />
-            ほかの会社にはない測量を提供しています。
+            「現場 × 特許技術 × 3D」の3本柱で、ほかにない測量を。
           </p>
           <motion.div
             initial={{ scaleX: 0 }}

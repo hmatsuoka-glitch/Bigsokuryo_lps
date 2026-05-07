@@ -134,7 +134,7 @@ export default function StatsNumbers() {
             数字で見るビッグ測量
           </h2>
           <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
-            創業から積み上げてきた、技術と環境のたしかな指標。
+            技術と環境を、確かな指標で。
           </p>
           <motion.div
             initial={{ scaleX: 0 }}

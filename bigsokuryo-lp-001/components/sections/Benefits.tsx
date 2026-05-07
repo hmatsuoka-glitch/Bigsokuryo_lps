@@ -74,9 +74,7 @@ export default function Benefits() {
             福利厚生・諸手当
           </h2>
           <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
-            手当の充実度と、暮らしを支える制度。
-            <br className="md:hidden" />
-            働き続けられる環境にこだわっています。
+            手当と制度で、働き続けられる環境を。
           </p>
           <motion.div
             initial={{ scaleX: 0 }}

@@ -7,15 +7,15 @@ import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 const principles = [
   {
     title: "約束を守る",
-    body: "期限と自分の発言に責任を持つ。これは社会のルールを守ることと同じです。",
+    body: "期限と発言に責任を持つ。社会のルールを守ることと同じ。",
   },
   {
     title: "嘘をつかない",
-    body: "失敗を素早く処理するために、隠さない・はぐらかさない。誠実さが現場を救います。",
+    body: "失敗を素早く処理するため、隠さない・はぐらかさない。",
   },
   {
     title: "思いやりを持つ",
-    body: "相手の考えと望みを常に想像する。思いやりは、社会への貢献そのもの。",
+    body: "相手の考えと望みを想像する。それが社会への貢献。",
   },
 ];
 
@@ -109,11 +109,10 @@ export default function CEOMessage() {
             </div>
 
             <p className="mt-8 text-white/85 leading-loose max-w-2xl text-sm md:text-base">
-              5年・10年先の未来に結果を出せるかどうかは、いまの一歩で決まります。
-              失敗を恐れず、どんどんトライしてほしい。
-              思いやりは、社会への貢献です。
-              まず、自分の足で一歩を踏み出すことから始めよう。
-              若さには可能性がある。未来に向けて羽ばたけ！
+              5年・10年先に結果を出せるかは、いまの一歩で決まる。
+              失敗を恐れず、トライしてほしい。
+              思いやりは、社会への貢献。若さには可能性がある。
+              未来に向けて羽ばたけ！
             </p>
             <div className="mt-8 flex items-center gap-4">
               <span className="w-10 h-px bg-gold" />

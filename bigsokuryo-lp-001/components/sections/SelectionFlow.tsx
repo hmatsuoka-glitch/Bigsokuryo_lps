@@ -12,12 +12,12 @@ const flows = [
       {
         n: "01",
         label: "1次選考　コミュニケーション考査",
-        body: "人事担当との対話。測量機械の実技体験ありますが、操作スキルではなく姿勢・協調性を見ます。",
+        body: "人事担当との対話。実技体験あり（評価対象は姿勢・協調性）。",
       },
       {
         n: "02",
         label: "2次選考　工事測量講話",
-        body: "現場管理者からの講話で、会社理解を深めていただきます。",
+        body: "現場管理者からの講話で会社理解を深めます。",
       },
       {
         n: "03",
@@ -27,7 +27,7 @@ const flows = [
       {
         n: "04",
         label: "最終選考　社長面接",
-        body: "代表との個別面接。お互いの未来観を確かめる場です。",
+        body: "代表との個別面接。お互いの未来観を確かめる場。",
       },
       {
         n: "★",
@@ -74,7 +74,7 @@ export default function SelectionFlow() {
             採用フロー
           </h2>
           <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
-            エントリーから内定まで、ありのままのあなたで臨んでいただける選考です。
+            ありのままのあなたで臨める選考です。
           </p>
           <motion.div
             initial={{ scaleX: 0 }}

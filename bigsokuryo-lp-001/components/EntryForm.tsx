@@ -64,9 +64,9 @@ export default function EntryForm() {
             エントリー
           </h2>
           <p className="mt-5 text-sm md:text-base text-navy/75 text-center leading-relaxed">
-            ご質問・カジュアル面談のみのお問い合わせも歓迎です。
+            カジュアル面談のみのご相談も歓迎。
             <br />
-            お預かりした情報は採用業務以外には使用しません。
+            お預かりした情報は採用業務以外に使用しません。
           </p>
 
           <div className="mt-8 mx-auto max-w-md rounded-2xl bg-emerald-50 border border-emerald-200 p-4 flex items-center gap-3 hover:border-emerald-400 transition-colors">

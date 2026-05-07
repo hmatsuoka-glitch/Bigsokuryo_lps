@@ -40,8 +40,8 @@ export default function LineCTA() {
             LINEで、どうぞ。
           </h2>
           <p className="mt-5 text-white/90 text-sm md:text-base leading-loose">
-            「現場のリアル」「資格のこと」「面接前のちょっとした不安」――
-            匿名のままトークでやり取りできます。返信は採用担当より1営業日以内。
+            現場のリアル・資格・面接前の不安――
+            匿名のまま気軽にトーク。返信は1営業日以内。
           </p>
           <p className="mt-3 text-xs text-white/75">
             ID:{" "}

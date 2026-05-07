@@ -119,7 +119,7 @@ export default function JobRequirements() {
             募集要項
           </h2>
           <p className="mt-5 text-center text-sm md:text-base text-navy/70">
-            新卒・中途の2トラックでお迎えしています。気になる方を選んでご覧ください。
+            新卒・中途の2トラックでお迎えしています。
           </p>
           <motion.div
             initial={{ scaleX: 0 }}
