@@ -54,7 +54,7 @@ export default function About() {
               <Reveal
                 key={s.label}
                 delay={i * 120}
-                className="card-hover rounded-2xl border border-navy/10 p-5 md:p-6 bg-gradient-to-br from-white to-sand/40"
+                className="card-hover  border border-navy/10 p-5 md:p-6 bg-gradient-to-br from-white to-sand/40"
               >
                 <p className="text-3xl md:text-4xl font-bold text-navy tracking-tight">
                   <AnimatedNumber end={s.value} />
@@ -68,7 +68,7 @@ export default function About() {
           </div>
           <Reveal
             delay={300}
-            className="rounded-2xl border border-navy/10 p-6 md:p-7 bg-white"
+            className=" border border-navy/10 p-6 md:p-7 bg-white"
           >
             <p className="text-xs tracking-widest text-gold mb-4">
               主な取引先 (一部)

@@ -308,7 +308,7 @@ const welfare = [
 
 function TableCardView({ card }: { card: TableCard }) {
   return (
-    <div className="rounded-2xl bg-sand/45 border border-navy/10 p-7 md:p-9">
+    <div className=" bg-sand/45 border border-navy/10 p-7 md:p-9">
       <div className="flex items-baseline justify-between flex-wrap gap-3 pb-5 mb-2 border-b border-navy/15">
         <p className="text-xs tracking-[0.4em] text-gold">{card.eyebrow}</p>
         <p className="text-[11px] text-navy/55">{card.note}</p>
@@ -317,7 +317,7 @@ function TableCardView({ card }: { card: TableCard }) {
         {card.items.map((item) => (
           <div
             key={item.k}
-            className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-6 py-4 md:py-5 transition-colors hover:bg-white/40 -mx-3 px-3 rounded"
+            className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-6 py-4 md:py-5 transition-colors hover:bg-white/40 -mx-3 px-3 "
           >
             <dt className="md:col-span-1 text-sm md:text-[15px] font-bold text-navy self-start">
               {item.k}
@@ -363,19 +363,19 @@ export default function Benefits() {
           <div className="mt-8 mx-auto h-px w-16 bg-gold/60" />
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-4 md:gap-5">
+        <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
           {highlights.map((h, i) => (
             <Reveal
               key={h.label}
               delay={i * 120}
-              className="card-hover relative bg-white rounded-2xl border border-navy/10 p-7 overflow-hidden"
+              className="card-hover relative bg-white  border border-navy/10 p-7 overflow-hidden"
             >
               <div
                 aria-hidden
                 className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gold/10 blur-2xl"
               />
               <div className="relative flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold to-amber-400 grid place-items-center text-navy flex-none shadow-md">
+                <div className="w-12 h-12  bg-gradient-to-br from-gold to-amber-400 grid place-items-center text-navy flex-none shadow-md">
                   {h.icon}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -429,9 +429,9 @@ export default function Benefits() {
               <Reveal
                 key={w.title}
                 delay={i * 60}
-                className="card-hover group rounded-2xl bg-sand/55 border border-navy/10 p-5 md:p-6 flex flex-col gap-4 hover:bg-white"
+                className="card-hover group  bg-sand/55 border border-navy/10 p-5 md:p-6 flex flex-col gap-4 hover:bg-white"
               >
-                <div className="w-10 h-10 rounded-lg bg-white border border-navy/10 grid place-items-center text-gold flex-none transition-all group-hover:bg-gold group-hover:text-white group-hover:border-gold">
+                <div className="w-10 h-10  bg-white border border-navy/10 grid place-items-center text-gold flex-none transition-all group-hover:bg-gold group-hover:text-white group-hover:border-gold">
                   {w.icon}
                 </div>
                 <div className="flex-1">
@@ -448,7 +448,7 @@ export default function Benefits() {
         </div>
 
         <Reveal delay={400} className="mt-16 max-w-3xl mx-auto">
-          <div className="card-hover flex flex-wrap items-center gap-5 bg-gradient-to-r from-navy via-navy-dark to-navy text-white rounded-2xl p-6 md:p-7 border border-gold/30 relative overflow-hidden">
+          <div className="card-hover flex flex-wrap items-center gap-5 bg-gradient-to-r from-navy via-navy-dark to-navy text-white  p-6 md:p-7 border border-gold/30 relative overflow-hidden">
             <div
               aria-hidden
               className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-gold/20 blur-3xl"

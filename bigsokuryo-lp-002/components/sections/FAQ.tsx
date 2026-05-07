@@ -50,13 +50,13 @@ export default function FAQ() {
           </h2>
         </Reveal>
 
-        <ol className="mt-14 grid md:grid-cols-5 gap-3">
+        <ol className="mt-14 grid grid-cols-2 md:grid-cols-5 gap-3">
           {flow.map((f, i) => (
             <Reveal
               key={f.step}
               delay={i * 100}
               as="li"
-              className="card-hover group rounded-xl bg-gradient-to-br from-white to-sand/40 border border-navy/10 p-5 relative"
+              className="card-hover group  bg-gradient-to-br from-white to-sand/40 border border-navy/10 p-3 md:p-5 relative"
             >
               <div className="flex items-center gap-2">
                 <span className="font-mono text-xl font-bold text-gold/40 leading-none">
@@ -78,7 +78,7 @@ export default function FAQ() {
               key={item.q}
               delay={i * 60}
               as="div"
-              className="bg-sand/40 rounded-xl border border-navy/10 transition-all hover:border-gold/40"
+              className="bg-sand/40  border border-navy/10 transition-all hover:border-gold/40"
             >
               <details className="group px-6 py-5">
                 <summary className="cursor-pointer list-none flex justify-between items-center text-navy font-bold gap-4">

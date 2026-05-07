@@ -45,13 +45,13 @@ export default function CareerModel() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-5 md:gap-6">
+        <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
           {tracks.map((t, i) => (
             <Reveal
               key={t.role}
               delay={i * 120}
               as="article"
-              className="card-hover group rounded-2xl border border-navy/10 p-7 bg-white relative overflow-hidden"
+              className="card-hover group  border border-navy/10 p-4 md:p-7 bg-white relative overflow-hidden"
             >
               <div
                 aria-hidden
@@ -84,7 +84,7 @@ export default function CareerModel() {
 
         <Reveal
           delay={200}
-          className="mt-16 rounded-2xl border border-navy/10 bg-white p-7 md:p-10 shadow-sm"
+          className="mt-16  border border-navy/10 bg-white p-7 md:p-10 shadow-sm"
         >
           <div className="flex items-baseline justify-between flex-wrap gap-4 mb-8">
             <p className="text-xs tracking-widest text-gold">
@@ -99,7 +99,7 @@ export default function CareerModel() {
               <Reveal
                 key={s.y}
                 delay={i * 150}
-                className="bg-gradient-to-br from-sand to-white rounded-xl p-5 border border-navy/10 text-center card-hover"
+                className="bg-gradient-to-br from-sand to-white  p-5 border border-navy/10 text-center card-hover"
               >
                 <p className="text-xs tracking-widest text-navy/60">{s.y}</p>
                 <p className="mt-3 text-3xl md:text-4xl font-bold text-navy tracking-tight">

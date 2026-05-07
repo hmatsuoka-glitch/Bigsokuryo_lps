@@ -83,11 +83,11 @@ function PhotoFrame({
     size === "lg"
       ? "w-full aspect-square md:aspect-[4/5]"
       : size === "md"
-      ? "w-20 h-20"
-      : "w-16 h-16";
+      ? "w-14 h-14 md:w-20 md:h-20"
+      : "w-12 h-12 md:w-16 md:h-16";
   return (
     <div
-      className={`${sizeClass} rounded-2xl overflow-hidden flex-none ring-1 ring-navy/10 bg-sand relative`}
+      className={`${sizeClass}  overflow-hidden flex-none ring-1 ring-navy/10 bg-sand relative`}
     >
       <img
         src={src}
@@ -122,7 +122,7 @@ export default function Voices() {
         </Reveal>
 
         <Reveal delay={150} className="mt-14">
-          <article className="card-hover group grid md:grid-cols-12 gap-6 md:gap-10 bg-gradient-to-br from-sand/40 via-white to-sand/30 border border-navy/10 rounded-2xl p-6 md:p-10 relative overflow-hidden">
+          <article className="card-hover group grid md:grid-cols-12 gap-6 md:gap-10 bg-gradient-to-br from-sand/40 via-white to-sand/30 border border-navy/10  p-6 md:p-10 relative overflow-hidden">
             <div
               aria-hidden
               className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-gold/10 blur-3xl"
@@ -154,13 +154,13 @@ export default function Voices() {
           </article>
         </Reveal>
 
-        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div className="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {voices.map((v, i) => (
             <Reveal
               key={v.name}
               delay={i * 90}
               as="article"
-              className="card-hover group rounded-2xl bg-white p-6 md:p-7 border border-navy/10 relative overflow-hidden flex flex-col"
+              className="card-hover group  bg-white p-4 md:p-7 border border-navy/10 relative overflow-hidden flex flex-col"
             >
               <span
                 aria-hidden
