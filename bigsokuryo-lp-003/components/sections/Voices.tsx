@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 
 const voices = [
@@ -10,6 +11,7 @@ const voices = [
     catch: "文系でも大丈夫！",
     quote:
       "文系出身で入社。最初は測量機器の名前すら知らなかったけれど、先輩がじっくり教えてくれました。今は社内システム開発も担当しています。",
+    photo: "/成田.jpg",
     gradient: "from-emerald-500 to-teal-700",
   },
   {
@@ -19,6 +21,7 @@ const voices = [
     catch: "アットホームな環境",
     quote:
       "現場と内勤を行き来する日々。困ったときに「これどうやるの？」と気軽に聞ける空気があります。質問が小さくても、誰も嫌な顔をしないのがいい。",
+    photo: "/林.jpg",
     gradient: "from-teal-500 to-emerald-700",
   },
   {
@@ -28,6 +31,7 @@ const voices = [
     catch: "必要なのはガッツ！",
     quote:
       "鉄道工事測量はミリ単位の世界。最初の数年は本当に大変だったけれど、ガッツがあれば技術は後からついてきます。3D点群もレーザートラッカーも、ここで覚えました。",
+    photo: "/紙元.jpg",
     gradient: "from-amber-500 to-emerald-700",
   },
   {
@@ -37,6 +41,7 @@ const voices = [
     catch: "軽いくらいが、ちょうどいい",
     quote:
       "ピリピリした現場じゃない。野武士集団と言われたりもするけれど、根っこは思いやり。雑談から生まれる工夫が、現場の段取りを変えていきます。",
+    photo: "/阿久津.jpg",
     gradient: "from-sky-500 to-teal-700",
   },
 ];
@@ -66,14 +71,22 @@ export default function Voices() {
           {voices.map((v) => (
             <StaggerItem key={v.name}>
               <figure className="group h-full rounded-3xl bg-white p-8 border border-emerald-700/15 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-5">
                   <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${v.gradient} grid place-items-center text-white font-serif font-bold text-2xl shadow-lg group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500`}
+                    className={`relative shrink-0 w-20 h-20 rounded-2xl overflow-hidden bg-gradient-to-br ${v.gradient} shadow-lg ring-2 ring-white group-hover:scale-105 group-hover:-rotate-2 transition-transform duration-500`}
                   >
-                    {v.name.charAt(0)}
+                    <Image
+                      src={v.photo}
+                      alt={`${v.name}の写真`}
+                      fill
+                      sizes="80px"
+                      className="object-cover"
+                    />
                   </div>
                   <figcaption>
-                    <p className="font-bold text-navy text-base">{v.name}</p>
+                    <p className="font-bold text-navy text-base md:text-lg">
+                      {v.name}
+                    </p>
                     <p className="text-xs text-navy/55 mt-0.5">
                       {v.role}／{v.year}
                     </p>

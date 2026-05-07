@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 
 const projects = [
@@ -88,8 +89,22 @@ export default function About() {
               お客様と、部下が喜ぶ姿が見られると嬉しい。<br />
               会社の真ん中にあるのは、思いやりです。
             </blockquote>
-            <figcaption className="mt-5 text-xs tracking-widest text-emerald-100/80">
-              執行役員 高橋 博司｜1991年入社
+            <figcaption className="mt-6 flex items-center gap-4">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shrink-0">
+                <Image
+                  src="/高橋.jpg"
+                  alt="執行役員 高橋 博司"
+                  fill
+                  sizes="56px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="text-xs tracking-widest text-emerald-100/85 leading-relaxed">
+                <p className="text-sm font-bold text-white tracking-normal">
+                  高橋 博司
+                </p>
+                執行役員｜1991年入社
+              </div>
             </figcaption>
           </figure>
         </Reveal>
