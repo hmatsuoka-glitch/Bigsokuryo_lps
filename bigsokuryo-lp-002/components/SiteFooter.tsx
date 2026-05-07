@@ -4,12 +4,16 @@ export default function SiteFooter() {
       <div className="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-3">
         <div>
           <p className="font-sans font-bold text-xl text-white">
-            BIG <span className="text-gold">SOKURYO</span>
+            BIG <span className="text-gold">SOKURYO</span> &amp; DESIGN
           </p>
           <p className="mt-3 text-sm leading-relaxed">
-            ビッグ測量株式会社<br />
-            〒000-0000 ○○県○○市○○町1-2-3<br />
-            TEL: 000-000-0000
+            ビッグ測量設計株式会社<br />
+            〒110-0015 東京都台東区東上野 1-26-8<br />
+            TEL: 03-3837-0291 / FAX: 03-3837-5694<br />
+            営業時間: 8:00 - 17:00 (土日祝定休)
+          </p>
+          <p className="mt-3 text-xs text-white/50 leading-relaxed">
+            測量業者登録 国土交通大臣登録 一般 第 (9)-14858 号
           </p>
         </div>
         <div>
@@ -30,7 +34,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="mt-10 text-center text-xs text-white/40">
-        © BIG SOKURYO Co., Ltd.
+        © Big Survey &amp; Design Co., Ltd.
       </div>
     </footer>
   );

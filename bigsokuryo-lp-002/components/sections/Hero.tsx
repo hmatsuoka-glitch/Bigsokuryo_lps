@@ -33,16 +33,16 @@ export default function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-28 md:pt-28 md:pb-36">
         <p className="text-xs md:text-sm tracking-[0.4em] text-gold mb-6">
-          MID-CAREER RECRUITMENT
+          MID-CAREER RECRUITMENT / 経験者採用
         </p>
         <h1 className="font-sans font-bold text-4xl md:text-6xl leading-[1.25] text-balance">
-          あなたの技術が、<br />
-          <span className="text-gold">地域の標準</span>になる。
+          1ミクロンの精度で、<br />
+          <span className="text-gold">東京の動脈</span>を測る。
         </h1>
-        <p className="mt-8 max-w-xl text-white/80 leading-relaxed">
-          測量士・土地家屋調査士・3D計測オペレーター ――
-          技術を磨いてきたあなたへ。<br />
-          ここには、その腕を最大限活かせる現場と、評価の仕組みがあります。
+        <p className="mt-8 max-w-xl text-white/85 leading-relaxed">
+          1980年創業、社員163名。<br />
+          鉄道・道路・トンネル・空港 ―― 東京の重要インフラ工事を、
+          特許取得の高精度測量技術で支えてきた東上野の総合測量会社です。
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a
@@ -55,9 +55,27 @@ export default function Hero() {
             href="#career"
             className="px-7 py-3 rounded-full border border-white/40 text-white text-sm tracking-widest hover:bg-white hover:text-navy transition"
           >
-            キャリアモデルを見る
+            キャリアトラックを見る
           </a>
         </div>
+        <ul className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4 text-white/90">
+          <li>
+            <p className="text-2xl md:text-3xl font-bold text-gold">163<span className="text-base ml-1">名</span></p>
+            <p className="text-[11px] tracking-widest text-white/60 mt-1">SINCE 1980</p>
+          </li>
+          <li>
+            <p className="text-2xl md:text-3xl font-bold text-gold">0.001<span className="text-base ml-1">mm</span></p>
+            <p className="text-[11px] tracking-widest text-white/60 mt-1">特許 高精度測量</p>
+          </li>
+          <li>
+            <p className="text-2xl md:text-3xl font-bold text-gold">79.9<span className="text-base ml-1">%</span></p>
+            <p className="text-[11px] tracking-widest text-white/60 mt-1">有給取得率</p>
+          </li>
+          <li>
+            <p className="text-2xl md:text-3xl font-bold text-gold">銀</p>
+            <p className="text-[11px] tracking-widest text-white/60 mt-1">健康企業宣言 認定</p>
+          </li>
+        </ul>
       </div>
     </section>
   );

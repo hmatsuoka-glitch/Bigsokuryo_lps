@@ -22,8 +22,9 @@ export default function SiteHeader({
         </div>
         <nav className="hidden md:flex items-center gap-7 text-sm text-navy/80">
           <a href="#about" className="hover:text-gold">私たち</a>
-          <a href="#work" className="hover:text-gold">仕事</a>
-          <a href="#voice" className="hover:text-gold">社員の声</a>
+          <a href="#work" className="hover:text-gold">技術</a>
+          <a href="#projects" className="hover:text-gold">実績</a>
+          <a href="#career" className="hover:text-gold">キャリア</a>
           <a href="#benefits" className="hover:text-gold">待遇</a>
           <a href="#faq" className="hover:text-gold">FAQ</a>
         </nav>
