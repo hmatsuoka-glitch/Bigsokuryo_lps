@@ -19,7 +19,7 @@ export default function Benefits() {
         <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
           移住を後押しする、制度。
         </h2>
-        <div className="mt-14 divide-y divide-emerald-700/15 border-t border-emerald-700/15">
+        <dl className="mt-14 divide-y divide-emerald-700/15 border-t border-emerald-700/15">
           {benefits.map(([k, v]) => (
             <div
               key={k}
@@ -31,7 +31,7 @@ export default function Benefits() {
               <dd className="col-span-2 text-navy">{v}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </section>
   );
