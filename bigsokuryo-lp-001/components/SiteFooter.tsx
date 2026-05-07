@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function SiteFooter() {
   return (
     <footer className="bg-navy-dark text-white/70 py-14">
@@ -15,11 +13,11 @@ export default function SiteFooter() {
           </p>
         </div>
         <div>
-          <p className="text-white text-sm tracking-widest mb-3">LPカタログ</p>
+          <p className="text-white text-sm tracking-widest mb-3">採用情報</p>
           <ul className="text-sm space-y-1.5">
-            <li><Link href="/lp-001" className="hover:text-gold">LP-001 新卒採用</Link></li>
-            <li><Link href="/lp-002" className="hover:text-gold">LP-002 中途採用</Link></li>
-            <li><Link href="/lp-003" className="hover:text-gold">LP-003 U・Iターン</Link></li>
+            <li>新卒採用</li>
+            <li>中途採用</li>
+            <li>U・Iターン採用</li>
           </ul>
         </div>
         <div>

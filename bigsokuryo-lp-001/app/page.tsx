@@ -1,13 +1,6 @@
-import type { Metadata } from "next";
-import SiteHeader from "@/components/recruit/SiteHeader";
-import SiteFooter from "@/components/recruit/SiteFooter";
-import EntryForm from "@/components/recruit/EntryForm";
-
-export const metadata: Metadata = {
-  title: "新卒採用 | 地図に、自分の名前を残す。",
-  description:
-    "ビッグ測量株式会社の新卒・第二新卒採用ページ。未経験からスタートできる育成制度と、若手が活躍する現場をご紹介します。",
-};
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import EntryForm from "@/components/EntryForm";
 
 const growthSteps = [
   { year: "1年目", label: "現場研修", body: "先輩とペアで現場へ。基本機材の扱いと観測の流れを身につけます。" },
@@ -37,10 +30,10 @@ const voices = [
   },
 ];
 
-export default function NewGradLP() {
+export default function Page() {
   return (
     <>
-      <SiteHeader lpCode="LP-001 / 新卒採用" tone="navy" />
+      <SiteHeader lpCode="LP-001 / 新卒採用" />
 
       <main>
         {/* HERO */}

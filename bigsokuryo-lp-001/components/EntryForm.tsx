@@ -1,7 +1,5 @@
 type Props = {
-  /** ボタンの主アクション色 */
   accentClass?: string;
-  /** カテゴリラベル（新卒/中途/Uターン など） */
   category: string;
 };
 

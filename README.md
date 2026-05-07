@@ -1,41 +1,43 @@
 # Bigsokuryo Recruit LPs
 
-ビッグ測量株式会社 採用ランディングページ集（Next.js App Router / TypeScript / Tailwind CSS）。
+ビッグ測量株式会社 採用ランディングページ集。
 
-ターゲット別に3パターンを用意しています。
+**1リポジトリに3つの独立Next.jsアプリ**を並べた構成です。各アプリは個別にVercelへデプロイでき、それぞれのVercelプロジェクトのルートURL (`https://<project>.vercel.app/`) でLPが直接表示されます。
 
-| ルート | ターゲット | コンセプト |
+| サブディレクトリ | ターゲット | コンセプト |
 | --- | --- | --- |
-| [`/lp-001`](./app/lp-001) | 新卒・第二新卒 | 「地図に、自分の名前を残す。」成長・育成軸 |
-| [`/lp-002`](./app/lp-002) | 中途・経験者 | 「あなたの技術が、地域の標準になる。」専門性・待遇軸 |
-| [`/lp-003`](./app/lp-003) | U・Iターン希望者 | 「測量と暮らしが、ちょうどいい。」地域・ライフスタイル軸 |
+| [`bigsokuryo-lp-001/`](./bigsokuryo-lp-001) | 新卒・第二新卒 | 「地図に、自分の名前を残す。」成長・育成軸 |
+| [`bigsokuryo-lp-002/`](./bigsokuryo-lp-002) | 中途・経験者 | 「あなたの技術が、地域の標準になる。」専門性・待遇軸 |
+| [`bigsokuryo-lp-003/`](./bigsokuryo-lp-003) | U・Iターン希望者 | 「測量と暮らしが、ちょうどいい。」地域・ライフスタイル軸 |
 
-## セットアップ
+## ローカル開発
+
+各サブディレクトリに移動して個別に起動します。
 
 ```bash
+cd bigsokuryo-lp-001
 npm install
 npm run dev
-# http://localhost:3000 でインデックス
-# http://localhost:3000/lp-001 など各LP
+# http://localhost:3000
 ```
 
-## ビルド
+## Vercel デプロイ設定
 
-```bash
-npm run build
-npm run start
-```
+各Vercelプロジェクトで以下を設定します。
 
-## ディレクトリ構成
+| 項目 | 値 |
+| --- | --- |
+| **Framework Preset** | Next.js |
+| **Root Directory** | `bigsokuryo-lp-001` / `bigsokuryo-lp-002` / `bigsokuryo-lp-003` |
+| Build Command | `next build`（自動） |
+| Install Command | `npm install`（自動） |
+| Output Directory | `.next`（自動） |
 
-```
-app/
-├── layout.tsx          # 共通レイアウト
-├── globals.css         # Tailwind + 共通スタイル
-├── page.tsx            # 3LPへのインデックス
-├── lp-001/page.tsx     # 新卒向け
-├── lp-002/page.tsx     # 中途向け
-└── lp-003/page.tsx     # U・Iターン向け
-components/
-└── recruit/            # LPで共有するセクションコンポーネント
-```
+**重要**: Root Directory を指定しないと、リポジトリ直下にNext.jsプロジェクトがないためビルド失敗または404になります。
+
+## 技術スタック
+
+- Next.js 14.2 (App Router)
+- React 18
+- TypeScript 5
+- Tailwind CSS 3
