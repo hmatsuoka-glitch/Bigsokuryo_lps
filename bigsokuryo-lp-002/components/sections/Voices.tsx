@@ -87,7 +87,7 @@ function PhotoFrame({
       : "w-12 h-12 md:w-16 md:h-16";
   return (
     <div
-      className={`${sizeClass}  overflow-hidden flex-none ring-1 ring-navy/10 bg-sand relative`}
+      className={`${sizeClass} overflow-hidden flex-none ring-1 ring-navy/10 bg-sand relative`}
     >
       <img
         src={src}
@@ -102,9 +102,50 @@ function PhotoFrame({
   );
 }
 
-export default function Voices() {
+function MobileCard({
+  m,
+  isFeatured,
+}: {
+  m: Member;
+  isFeatured?: boolean;
+}) {
   return (
-    <section id="voice" className="py-28 bg-white relative overflow-hidden">
+    <article className="snap-center flex-none w-[85vw] max-w-[380px] bg-white border border-navy/10 p-5 flex flex-col">
+      <div className="aspect-square overflow-hidden bg-sand">
+        <img
+          src={m.photo}
+          alt={m.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <p className="mt-5 text-[10px] tracking-[0.4em] text-gold">
+        {isFeatured ? "FEATURED MESSAGE" : m.dept}
+      </p>
+      <p className="mt-2 text-xs text-navy/55">
+        {isFeatured && m.role ? `${m.role} / ${m.joined}` : m.joined}
+      </p>
+      <h3 className="mt-1 font-sans font-bold text-xl text-navy leading-tight">
+        {m.name}
+      </h3>
+      <p className="mt-4 font-sans font-bold text-2xl text-navy leading-snug border-l-2 border-gold pl-3">
+        「{m.catch}」
+      </p>
+      <p className="mt-4 text-sm text-navy/75 leading-relaxed">{m.body}</p>
+    </article>
+  );
+}
+
+export default function Voices() {
+  const all: (Member & { isFeatured: boolean })[] = [
+    { ...featured, isFeatured: true },
+    ...voices.map((v) => ({ ...v, isFeatured: false })),
+  ];
+
+  return (
+    <section
+      id="voice"
+      className="py-20 md:py-28 bg-white relative overflow-hidden"
+    >
       <div
         aria-hidden
         className="absolute -top-24 right-0 w-96 h-96 rounded-full bg-amber-100/40 blur-3xl"
@@ -121,73 +162,90 @@ export default function Voices() {
           </p>
         </Reveal>
 
-        <Reveal delay={150} className="mt-14">
-          <article className="card-hover group grid md:grid-cols-12 gap-6 md:gap-10 bg-gradient-to-br from-sand/40 via-white to-sand/30 border border-navy/10  p-6 md:p-10 relative overflow-hidden">
-            <div
-              aria-hidden
-              className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-gold/10 blur-3xl"
-            />
-            <div className="relative md:col-span-5">
-              <PhotoFrame
-                src={featured.photo}
-                alt={featured.name}
-                size="lg"
-              />
-            </div>
-            <div className="relative md:col-span-7 flex flex-col justify-center">
-              <p className="text-[10px] tracking-[0.4em] text-gold">
-                FEATURED MESSAGE
-              </p>
-              <p className="mt-3 text-xs tracking-widest text-navy/55">
-                {featured.role} / {featured.joined}
-              </p>
-              <h3 className="mt-1 font-sans font-bold text-2xl md:text-3xl text-navy">
-                {featured.name}
-              </h3>
-              <p className="mt-5 text-2xl md:text-3xl font-sans font-bold leading-tight bg-gradient-to-r from-navy to-navy/70 bg-clip-text text-transparent">
-                「{featured.catch}」
-              </p>
-              <p className="mt-5 text-sm md:text-base text-navy/75 leading-relaxed">
-                {featured.body}
-              </p>
-            </div>
-          </article>
-        </Reveal>
+        <div className="md:hidden mt-10">
+          <div className="-mx-6 px-6 overflow-x-auto snap-x snap-mandatory flex gap-3 pb-4 scroll-px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {all.map((m) => (
+              <MobileCard key={m.name} m={m} isFeatured={m.isFeatured} />
+            ))}
+          </div>
+          <div className="mt-3 flex items-center justify-center gap-3 text-[10px] tracking-[0.3em] text-navy/45">
+            <span aria-hidden>←</span>
+            <span>SWIPE</span>
+            <span aria-hidden>→</span>
+          </div>
+        </div>
 
-        <div className="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-          {voices.map((v, i) => (
-            <Reveal
-              key={v.name}
-              delay={i * 90}
-              as="article"
-              className="card-hover group  bg-white p-4 md:p-7 border border-navy/10 relative overflow-hidden flex flex-col"
-            >
-              <span
+        <div className="hidden md:block">
+          <Reveal delay={150} className="mt-14">
+            <article className="card-hover group grid md:grid-cols-12 gap-6 md:gap-10 bg-gradient-to-br from-sand/40 via-white to-sand/30 border border-navy/10 p-6 md:p-10 relative overflow-hidden">
+              <div
                 aria-hidden
-                className="absolute -top-2 right-4 text-7xl font-serif text-gold/15 leading-none select-none pointer-events-none"
-              >
-                &ldquo;
-              </span>
-              <div className="relative flex items-start gap-4">
-                <PhotoFrame src={v.photo} alt={v.name} size="md" />
-                <div className="min-w-0 flex-1">
-                  <p className="text-[10px] tracking-widest text-gold">
-                    {v.dept}
-                  </p>
-                  <p className="mt-1.5 font-sans font-bold text-navy text-lg leading-tight">
-                    {v.name}
-                  </p>
-                  <p className="text-[11px] text-navy/55 mt-0.5">{v.joined}</p>
-                </div>
+                className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-gold/10 blur-3xl"
+              />
+              <div className="relative md:col-span-5">
+                <PhotoFrame
+                  src={featured.photo}
+                  alt={featured.name}
+                  size="lg"
+                />
               </div>
-              <p className="relative mt-5 font-sans font-bold text-base text-navy leading-snug border-l-2 border-gold pl-3">
-                「{v.catch}」
-              </p>
-              <p className="relative mt-4 text-sm text-navy/75 leading-relaxed flex-1">
-                {v.body}
-              </p>
-            </Reveal>
-          ))}
+              <div className="relative md:col-span-7 flex flex-col justify-center">
+                <p className="text-[10px] tracking-[0.4em] text-gold">
+                  FEATURED MESSAGE
+                </p>
+                <p className="mt-3 text-xs tracking-widest text-navy/55">
+                  {featured.role} / {featured.joined}
+                </p>
+                <h3 className="mt-1 font-sans font-bold text-2xl md:text-3xl text-navy">
+                  {featured.name}
+                </h3>
+                <p className="mt-5 text-2xl md:text-3xl font-sans font-bold leading-tight bg-gradient-to-r from-navy to-navy/70 bg-clip-text text-transparent">
+                  「{featured.catch}」
+                </p>
+                <p className="mt-5 text-sm md:text-base text-navy/75 leading-relaxed">
+                  {featured.body}
+                </p>
+              </div>
+            </article>
+          </Reveal>
+
+          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+            {voices.map((v, i) => (
+              <Reveal
+                key={v.name}
+                delay={i * 90}
+                as="article"
+                className="card-hover group bg-white p-4 md:p-7 border border-navy/10 relative overflow-hidden flex flex-col"
+              >
+                <span
+                  aria-hidden
+                  className="absolute -top-2 right-4 text-7xl font-serif text-gold/15 leading-none select-none pointer-events-none"
+                >
+                  &ldquo;
+                </span>
+                <div className="relative flex items-start gap-4">
+                  <PhotoFrame src={v.photo} alt={v.name} size="md" />
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[10px] tracking-widest text-gold">
+                      {v.dept}
+                    </p>
+                    <p className="mt-1.5 font-sans font-bold text-navy text-lg leading-tight">
+                      {v.name}
+                    </p>
+                    <p className="text-[11px] text-navy/55 mt-0.5">
+                      {v.joined}
+                    </p>
+                  </div>
+                </div>
+                <p className="relative mt-4 md:mt-5 font-sans font-bold text-sm md:text-base text-navy leading-snug border-l-2 border-gold pl-3">
+                  「{v.catch}」
+                </p>
+                <p className="relative mt-4 text-sm text-navy/75 leading-relaxed flex-1">
+                  {v.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
