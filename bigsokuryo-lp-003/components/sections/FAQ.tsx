@@ -1,3 +1,7 @@
+"use client";
+
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
+
 const faqs = [
   {
     q: "文系・未経験でも応募できますか？",
@@ -27,32 +31,47 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-24 bg-emerald-50">
-      <div className="max-w-3xl mx-auto px-6">
-        <p className="text-xs tracking-[0.4em] text-emerald-700 text-center">
-          FAQ
-        </p>
-        <h2 className="mt-3 font-serif text-3xl text-navy text-center">
-          よくある質問
-        </h2>
-        <div className="mt-12 space-y-4">
+    <section
+      id="faq"
+      className="relative py-28 bg-gradient-to-b from-emerald-50 to-white overflow-hidden"
+    >
+      <div className="relative max-w-3xl mx-auto px-6">
+        <Reveal className="text-center">
+          <p className="text-xs tracking-[0.4em] text-emerald-700 font-bold">
+            FAQ
+          </p>
+          <h2 className="mt-4 font-serif text-3xl md:text-5xl text-navy font-bold tracking-tight">
+            よくある<span className="text-emerald-700">質問</span>
+          </h2>
+        </Reveal>
+
+        <StaggerGroup className="mt-14 space-y-3">
           {faqs.map((item) => (
-            <details
-              key={item.q}
-              className="group bg-white rounded-xl border border-emerald-700/20 px-6 py-5"
-            >
-              <summary className="cursor-pointer list-none flex justify-between items-center text-navy font-bold">
-                {item.q}
-                <span className="text-emerald-700 group-open:rotate-45 transition">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                {item.a}
-              </p>
-            </details>
+            <StaggerItem key={item.q}>
+              <details className="group bg-white rounded-2xl border border-emerald-700/15 px-6 py-5 hover:border-emerald-600/50 hover:shadow-lg transition-all duration-300 open:shadow-xl open:border-emerald-600/60">
+                <summary className="cursor-pointer list-none flex justify-between items-center gap-4 text-navy font-bold text-base">
+                  <span className="flex items-start gap-3">
+                    <span className="shrink-0 w-7 h-7 rounded-full bg-emerald-700/10 text-emerald-700 grid place-items-center text-sm font-bold">
+                      Q
+                    </span>
+                    <span className="leading-snug">{item.q}</span>
+                  </span>
+                  <span className="shrink-0 w-8 h-8 rounded-full bg-emerald-700/10 text-emerald-700 grid place-items-center text-lg font-bold group-open:rotate-45 group-open:bg-emerald-700 group-open:text-white transition-all">
+                    +
+                  </span>
+                </summary>
+                <div className="mt-4 pl-10 flex gap-3">
+                  <span className="shrink-0 w-7 h-7 rounded-full bg-emerald-700 text-white grid place-items-center text-xs font-bold">
+                    A
+                  </span>
+                  <p className="text-sm md:text-base text-navy/75 leading-[1.95]">
+                    {item.a}
+                  </p>
+                </div>
+              </details>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </section>
   );
