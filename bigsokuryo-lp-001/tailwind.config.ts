@@ -42,11 +42,11 @@ const config: Config = {
           dark: "#0a4221",
           deep: "#063018",
         },
-        // アクセント: ロゴの明るい翼のグリーン（赤は使わない）
+        // アクセント: チャコール／ブラック系（締まりとモダンさを加える）
         gold: {
-          DEFAULT: "#2e8b3d",
-          light: "#5fb86b",
-          dark: "#1c6128",
+          DEFAULT: "#1f2937",
+          light: "#4b5563",
+          dark: "#0f172a",
         },
         sand: {
           DEFAULT: "#f6f4ee",
@@ -56,7 +56,7 @@ const config: Config = {
       boxShadow: {
         soft: "0 10px 40px -12px rgba(15, 92, 44, 0.18)",
         "soft-lg": "0 20px 60px -20px rgba(15, 92, 44, 0.28)",
-        gold: "0 12px 40px -10px rgba(46, 139, 61, 0.45)",
+        gold: "0 12px 40px -10px rgba(15, 23, 42, 0.35)",
       },
       keyframes: {
         marquee: {
