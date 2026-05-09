@@ -30,26 +30,30 @@ export default function Hero() {
           priority
           quality={95}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1600px"
-          style={{ objectPosition: "center 25%" }}
-          className="object-cover"
+          style={{
+            objectPosition: "center 25%",
+            imageRendering: "auto",
+          }}
+          className="object-cover saturate-[0.95]"
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy/40 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy/30 to-navy-deep/15"
         />
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="absolute left-5 right-5 bottom-6 md:left-12 md:bottom-10 max-w-3xl"
+          className="absolute left-5 right-5 bottom-6 md:left-12 md:bottom-12 max-w-3xl"
         >
-          <p className="text-[10px] md:text-xs tracking-[0.4em] text-white/80 font-bold">
+          <p className="text-[10px] md:text-xs tracking-[0.4em] text-white/85 font-bold">
             BIG SURVEY &amp; DESIGN — RECRUIT
           </p>
-          <h1 className="mt-3 font-sans font-black text-3xl md:text-5xl lg:text-6xl text-white leading-[1.25] heading-display">
-            思いやりを、
-            <br />
-            <span className="text-navy bg-white px-2">技術にのせて。</span>
+          <h1 className="mt-4 font-sans font-black text-3xl md:text-5xl lg:text-6xl text-white heading-display">
+            <span className="block leading-[1.5]">思いやりを、</span>
+            <span className="inline-block mt-2 md:mt-3 leading-[1.4] text-navy bg-white px-3 py-1">
+              技術にのせて。
+            </span>
           </h1>
         </motion.div>
       </div>
