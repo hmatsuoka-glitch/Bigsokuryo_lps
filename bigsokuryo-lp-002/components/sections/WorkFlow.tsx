@@ -24,7 +24,7 @@ const steps = [
   {
     no: "05",
     label: "成果品納品",
-    body: "発注者へ成果品を提出。「ビッグ測量設計」社名が成果に明記され、責任を負います。",
+    body: "発注者へ成果品を提出。「ビッグ測量設計」社名が成果に明記されます。",
   },
   {
     no: "06",
@@ -37,12 +37,8 @@ export default function WorkFlow() {
   return (
     <section
       id="flow"
-      className="py-20 md:py-28 bg-sand relative overflow-hidden"
+      className="py-20 md:py-28 bg-sand/40 relative overflow-hidden"
     >
-      <div
-        aria-hidden
-        className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-brand/8 blur-3xl"
-      />
       <div className="relative max-w-6xl mx-auto px-6">
         <Reveal>
           <p className="text-xs tracking-[0.4em] text-gold">WORK FLOW</p>
@@ -51,35 +47,38 @@ export default function WorkFlow() {
           </h2>
           <p className="mt-5 text-sm md:text-base text-navy/70 max-w-2xl leading-relaxed">
             ヒアリングから納品・アフターサポートまで、6 ステップで一気通貫。
-            各工程で測量士・施工管理技士・解析エンジニアが連携します。
           </p>
         </Reveal>
 
-        <ol className="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
-          {steps.map((s, i) => (
-            <Reveal
-              key={s.no}
-              delay={i * 90}
-              as="li"
-              className="card-hover group bg-white border border-navy/10 p-5 md:p-7 relative flex flex-col"
-            >
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-2xl md:text-3xl font-bold text-brand">
-                  {s.no}
-                </span>
-                <span
-                  aria-hidden
-                  className="h-px flex-1 bg-navy/15 group-hover:bg-brand/60 transition-colors"
-                />
-              </div>
-              <h3 className="mt-3 font-sans font-bold text-lg md:text-xl text-navy leading-snug">
-                {s.label}
-              </h3>
-              <p className="mt-3 text-sm text-navy/75 leading-relaxed">
-                {s.body}
-              </p>
-            </Reveal>
-          ))}
+        <ol className="mt-12 md:mt-16 relative">
+          <span
+            aria-hidden
+            className="hidden md:block absolute left-[34px] top-2 bottom-2 w-px bg-navy/15"
+          />
+          <div className="space-y-3 md:space-y-5">
+            {steps.map((s, i) => (
+              <Reveal
+                key={s.no}
+                delay={i * 60}
+                as="li"
+                className="card-hover group relative grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr] gap-4 md:gap-8 items-start bg-white border border-navy/10 p-5 md:p-7"
+              >
+                <div className="md:flex md:flex-col md:items-center">
+                  <span className="font-mono text-3xl md:text-4xl font-bold text-brand leading-none">
+                    {s.no}
+                  </span>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-sans font-bold text-lg md:text-xl text-navy leading-snug">
+                    {s.label}
+                  </h3>
+                  <p className="mt-2 md:mt-3 text-sm md:text-[15px] text-navy/75 leading-relaxed">
+                    {s.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </ol>
       </div>
     </section>
