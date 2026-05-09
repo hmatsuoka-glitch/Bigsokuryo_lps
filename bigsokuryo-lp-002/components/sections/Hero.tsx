@@ -1,18 +1,10 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
 
-// 背景写真は public/hero.jpg を優先表示。無い場合は message_img.jpg にフォールバックできるようご自由に差し替えてください。
 const HERO_IMAGE_SRC = "/message_img.jpg";
-
-const stats = [
-  { value: 163, suffix: "名", label: "SOCIAL / 社員数", decimals: 0 },
-  { value: 0.001, suffix: "mm", label: "特許 高精度測量", decimals: 3 },
-  { value: 79.9, suffix: "%", label: "有給取得率", decimals: 1 },
-  { value: 45, suffix: "年", label: "創業からの歴史", decimals: 0 },
-];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
+    <section className="relative overflow-hidden bg-brand text-white">
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center animate-kenburns"
@@ -20,86 +12,71 @@ export default function Hero() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/65 to-navy/90"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 80% 20%, rgba(199,155,61,0.4), transparent 45%), radial-gradient(circle at 10% 80%, rgba(255,255,255,0.08), transparent 50%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-sand/20"
+        className="absolute inset-0 bg-gradient-to-b from-brand-dark/70 via-brand-dark/55 to-brand-dark/90"
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-28 md:pt-32 md:pb-40">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 mb-8 animate-float">
-          <span className="w-2 h-2 rounded-full bg-gold" />
-          <span className="text-[11px] tracking-[0.3em] text-white/90">
-            MID-CAREER RECRUITMENT
-          </span>
-        </div>
-        <h1 className="font-sans font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.2] tracking-tight text-balance">
-          鉄道・道路・トンネル。<br />
-          <span className="bg-gradient-to-r from-gold via-amber-300 to-gold bg-clip-text text-transparent">
-            東京
-          </span>
-          を、ミリ単位で測る。
-        </h1>
-        <p className="mt-8 max-w-xl text-base md:text-lg text-white/90 leading-relaxed">
-          1980 年創業、社員 163 名。<br />
-          東京駅・銀座線渋谷駅・五輪会場 ―― 誰もが知る現場の地盤を、
-          創業 45 年で支えてきた東上野の総合測量会社です。
-        </p>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a
-            href="#entry"
-            className="cta-shine group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gold text-navy font-bold text-sm tracking-widest hover:bg-white transition-colors"
-          >
-            まずはカジュアル面談
-            <span className="transition-transform group-hover:translate-x-1">→</span>
-          </a>
-          <a
-            href="#career"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/40 text-white text-sm tracking-widest hover:bg-white hover:text-navy hover:border-white transition-colors"
-          >
-            キャリアトラックを見る
-          </a>
+      <div className="relative max-w-6xl mx-auto px-6 min-h-[88vh] md:min-h-[92vh] flex flex-col">
+        <div className="flex-1 flex items-end pt-24 pb-12 md:pb-16">
+          <div>
+            <p className="text-[10px] md:text-xs tracking-[0.4em] text-gold mb-5">
+              MID-CAREER RECRUITMENT / 経験者採用
+            </p>
+            <h1 className="font-sans font-bold text-3xl md:text-6xl lg:text-7xl leading-[1.25] tracking-tight">
+              鉄道・道路・トンネル。<br />
+              東京を、<span className="text-gold">ミリ単位</span>で測る。
+            </h1>
+            <p className="mt-6 max-w-xl text-sm md:text-base text-white/85 leading-relaxed">
+              1980 年創業、社員 163 名。<br />
+              東京駅・銀座線渋谷駅・五輪会場 ―― 誰もが知る現場の地盤を、
+              創業 45 年で支えてきた東上野の総合測量会社です。
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 md:gap-4">
+              <a
+                href="#entry"
+                className="cta-shine group inline-flex items-center gap-2 px-7 py-3 bg-gold text-navy font-bold text-xs md:text-sm tracking-widest hover:bg-white transition-colors"
+              >
+                エントリー
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+              <a
+                href="#business"
+                className="inline-flex items-center gap-2 px-7 py-3 border border-white/40 text-white text-xs md:text-sm tracking-widest hover:bg-white hover:text-navy hover:border-white transition-colors"
+              >
+                事業内容を見る
+              </a>
+            </div>
+          </div>
         </div>
 
-        <ul className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6">
-          {stats.map((s) => (
-            <li
-              key={s.label}
-              className="border-l-2 border-gold/60 pl-4 hover:border-gold transition-colors"
-            >
-              <p className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-                <AnimatedNumber
-                  end={s.value}
-                  decimals={s.decimals}
-                  className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent"
-                />
-                <span className="text-base ml-1 text-gold">{s.suffix}</span>
-              </p>
-              <p className="text-[11px] tracking-widest text-white/60 mt-2">
-                {s.label}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <div className="border-t border-white/15 py-5 grid grid-cols-2 md:grid-cols-4 gap-y-4">
+          <Stat value={163} suffix="名" label="社員数" />
+          <Stat value={45} suffix="年" label="創業" />
+          <Stat value={0.001} decimals={3} suffix="mm" label="特許 高精度測量" />
+          <Stat value={79.9} decimals={1} suffix="%" label="有給取得率" />
+        </div>
       </div>
     </section>
+  );
+}
+
+function Stat({
+  value,
+  decimals = 0,
+  suffix,
+  label,
+}: {
+  value: number;
+  decimals?: number;
+  suffix: string;
+  label: string;
+}) {
+  return (
+    <div className="border-l border-white/15 pl-4 first:border-l-0 first:pl-0 md:pl-5">
+      <p className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-none">
+        <AnimatedNumber end={value} decimals={decimals} />
+        <span className="text-sm ml-1 text-gold">{suffix}</span>
+      </p>
+      <p className="mt-2 text-[10px] tracking-widest text-white/60">{label}</p>
+    </div>
   );
 }

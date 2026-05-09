@@ -6,64 +6,57 @@ type Props = {
 };
 
 export default function EntryForm({
-  accentClass = "bg-navy hover:bg-gold",
+  accentClass = "bg-brand hover:bg-brand-dark",
   category,
 }: Props) {
   return (
-    <section
-      id="entry"
-      className="py-28 bg-gradient-to-b from-sand/40 to-white relative overflow-hidden"
-    >
-      <div
-        aria-hidden
-        className="absolute -top-20 right-0 w-80 h-80 rounded-full bg-amber-200/30 blur-3xl"
-      />
+    <section id="entry" className="py-20 md:py-28 bg-sand/40">
       <div className="relative max-w-3xl mx-auto px-6">
-        <Reveal className="text-center">
-          <p className="text-xs tracking-[0.4em] text-gold">ENTRY</p>
+        <Reveal>
+          <p className="text-xs tracking-[0.4em] text-gold">APPLY</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
-            {category}エントリー
+            エントリー
           </h2>
-          <p className="mt-5 text-sm md:text-base text-navy/70 max-w-lg mx-auto">
-            ご質問・カジュアル面談のみのお問い合わせも歓迎です。
+          <p className="mt-5 text-sm md:text-base text-navy/70 leading-relaxed">
+            {category}採用へのご応募・ご質問はこちらから。
+            カジュアル面談のみのお問い合わせも歓迎です。
             人事部 須藤宛 (saiyou@bigsdc.co.jp) に直接ご連絡いただいても構いません。
           </p>
         </Reveal>
 
-        <Reveal delay={150}>
-          <form className="mt-12 grid gap-6">
-            <label className="block group">
-              <span className="text-xs tracking-widest text-navy/70 group-focus-within:text-gold transition-colors">
-                お名前
-              </span>
+        <Reveal delay={150} className="mt-10 md:mt-14">
+          <form className="bg-white border border-navy/10 p-6 md:p-10 grid gap-6">
+            <Field label="お名前" required>
               <input
                 type="text"
                 required
-                className="mt-2 w-full border-b-2 border-navy/20 bg-transparent py-2.5 focus:border-gold outline-none transition-colors"
+                className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors"
               />
-            </label>
-            <label className="block group">
-              <span className="text-xs tracking-widest text-navy/70 group-focus-within:text-gold transition-colors">
-                メールアドレス
-              </span>
-              <input
-                type="email"
-                required
-                className="mt-2 w-full border-b-2 border-navy/20 bg-transparent py-2.5 focus:border-gold outline-none transition-colors"
-              />
-            </label>
-            <label className="block group">
-              <span className="text-xs tracking-widest text-navy/70 group-focus-within:text-gold transition-colors">
-                ご質問・志望動機 (任意)
-              </span>
+            </Field>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Field label="メールアドレス" required>
+                <input
+                  type="email"
+                  required
+                  className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors"
+                />
+              </Field>
+              <Field label="電話番号">
+                <input
+                  type="tel"
+                  className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors"
+                />
+              </Field>
+            </div>
+            <Field label="ご質問・志望動機">
               <textarea
-                rows={4}
-                className="mt-2 w-full border-b-2 border-navy/20 bg-transparent py-2.5 focus:border-gold outline-none resize-none transition-colors"
+                rows={5}
+                className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none resize-none transition-colors"
               />
-            </label>
+            </Field>
             <button
               type="submit"
-              className={`cta-shine mt-6 ${accentClass} text-white py-4 rounded-full text-sm tracking-[0.25em] font-bold transition-all hover:shadow-lg hover:-translate-y-0.5`}
+              className={`cta-shine mt-2 ${accentClass} text-white py-4 text-sm tracking-[0.25em] font-bold transition-all hover:shadow-lg`}
             >
               送信する →
             </button>
@@ -71,5 +64,29 @@ export default function EntryForm({
         </Reveal>
       </div>
     </section>
+  );
+}
+
+function Field({
+  label,
+  required,
+  children,
+}: {
+  label: string;
+  required?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <label className="block">
+      <span className="flex items-center gap-2 text-xs tracking-widest text-navy/70 mb-2">
+        {label}
+        {required && (
+          <span className="text-[10px] bg-brand text-white px-1.5 py-0.5 tracking-normal">
+            必須
+          </span>
+        )}
+      </span>
+      {children}
+    </label>
   );
 }
