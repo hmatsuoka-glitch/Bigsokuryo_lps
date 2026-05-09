@@ -24,12 +24,12 @@ export default function Hero() {
       {/* Top photo band */}
       <div className="relative w-full aspect-[16/10] sm:aspect-[16/8] md:aspect-[16/6] overflow-hidden bg-navy-dark">
         <Image
-          src="/message_img.jpg"
+          src="/bigsokuryo_top.jpg"
           alt="ビッグ測量設計"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-80"
+          className="object-cover object-center"
         />
         <div
           aria-hidden
