@@ -1,14 +1,24 @@
+import Image from "next/image";
 import { COMPANY } from "@/lib/site";
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-navy-dark text-white/70 py-14">
+    <footer className="bg-navy-deep text-white/75 py-14">
       <div className="max-w-6xl mx-auto px-6 grid gap-10 md:grid-cols-3">
         <div>
-          <p className="font-serif text-xl text-white">
-            BIG <span className="text-gold">SOKURYO</span>
-          </p>
-          <p className="mt-2 text-xs text-white/50">{COMPANY.nameEn}</p>
+          <div className="flex items-center gap-2.5">
+            <Image
+              src="/header_logo.png"
+              alt="ビッグ測量設計株式会社"
+              width={94}
+              height={70}
+              className="h-9 w-auto bg-white p-1"
+            />
+            <p className="font-sans font-black text-lg text-white heading-display leading-none">
+              BIG <span className="text-white/80">SOKURYO</span>
+            </p>
+          </div>
+          <p className="mt-2 text-xs text-white/55">{COMPANY.nameEn}</p>
           <p className="mt-4 text-sm leading-relaxed">
             {COMPANY.name}
             <br />
@@ -37,11 +47,11 @@ export default function SiteFooter() {
           </p>
           <a
             href={`mailto:${COMPANY.recruitContact.email}`}
-            className="text-sm text-gold hover:underline break-all"
+            className="text-sm text-white hover:underline break-all"
           >
             {COMPANY.recruitContact.email}
           </a>
-          <p className="mt-3 text-xs text-white/50">
+          <p className="mt-3 text-xs text-white/55">
             営業時間 {COMPANY.hours}
           </p>
         </div>

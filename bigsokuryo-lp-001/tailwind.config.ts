@@ -36,13 +36,13 @@ const config: Config = {
         ],
       },
       colors: {
-        // メイン: ロゴ本体の深いフォレストグリーン
+        // メイン: ロゴから取った鮮やかなブランドグリーン
         navy: {
-          DEFAULT: "#0f5c2c",
-          dark: "#0a4221",
-          deep: "#063018",
+          DEFAULT: "#00a040",
+          dark: "#007a30",
+          deep: "#004d1f",
         },
-        // アクセント: チャコール／ブラック系（締まりとモダンさを加える）
+        // アクセント: チャコール／ブラック系
         gold: {
           DEFAULT: "#1f2937",
           light: "#4b5563",
@@ -54,8 +54,8 @@ const config: Config = {
         },
       },
       boxShadow: {
-        soft: "0 10px 40px -12px rgba(15, 92, 44, 0.18)",
-        "soft-lg": "0 20px 60px -20px rgba(15, 92, 44, 0.28)",
+        soft: "0 10px 40px -12px rgba(0, 160, 64, 0.18)",
+        "soft-lg": "0 20px 60px -20px rgba(0, 160, 64, 0.28)",
         gold: "0 12px 40px -10px rgba(15, 23, 42, 0.35)",
       },
       keyframes: {
