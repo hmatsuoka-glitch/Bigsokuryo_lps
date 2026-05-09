@@ -22,14 +22,16 @@ export default function Hero() {
   return (
     <section className="relative bg-white">
       {/* Top photo band */}
-      <div className="relative w-full aspect-[16/10] sm:aspect-[16/8] md:aspect-[16/6] overflow-hidden bg-navy-dark">
+      <div className="relative w-full aspect-[4/5] sm:aspect-[16/10] md:aspect-[16/8] lg:aspect-[16/7] overflow-hidden bg-navy-dark">
         <Image
           src="/bigsokuryo_top.jpg"
           alt="ビッグ測量設計"
           fill
           priority
-          sizes="100vw"
-          className="object-cover object-center"
+          quality={95}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1600px"
+          style={{ objectPosition: "center 25%" }}
+          className="object-cover"
         />
         <div
           aria-hidden
