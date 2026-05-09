@@ -2,29 +2,26 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import EntryForm from "@/components/EntryForm";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import TechStack from "@/components/sections/TechStack";
+import OurBusiness from "@/components/sections/OurBusiness";
+import WorkFlow from "@/components/sections/WorkFlow";
+import AboutUs from "@/components/sections/AboutUs";
 import Projects from "@/components/sections/Projects";
-import CareerModel from "@/components/sections/CareerModel";
 import Voices from "@/components/sections/Voices";
-import Benefits from "@/components/sections/Benefits";
+import Recruit from "@/components/sections/Recruit";
 import FAQ from "@/components/sections/FAQ";
 
 export default function Page() {
   return (
     <>
-      <SiteHeader
-        lpCode="LP-002 / 中途採用"
-        ctaLabel="カジュアル面談"
-      />
+      <SiteHeader lpCode="LP-002 / 中途採用" ctaLabel="エントリー" />
       <main>
         <Hero />
-        <About />
-        <TechStack />
+        <OurBusiness />
+        <WorkFlow />
+        <AboutUs />
         <Projects />
-        <CareerModel />
         <Voices />
-        <Benefits />
+        <Recruit />
         <FAQ />
         <EntryForm
           category="中途・キャリア"
