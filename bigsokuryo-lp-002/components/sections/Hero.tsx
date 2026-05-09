@@ -1,7 +1,7 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
 
-// 背景写真は public/hero.jpg に配置してください (差し替え時もファイル名は固定)
-const HERO_IMAGE_SRC = "/hero.jpg";
+// 背景写真は public/hero.jpg を優先表示。無い場合は message_img.jpg にフォールバックできるようご自由に差し替えてください。
+const HERO_IMAGE_SRC = "/message_img.jpg";
 
 const stats = [
   { value: 163, suffix: "名", label: "SOCIAL / 社員数", decimals: 0 },
