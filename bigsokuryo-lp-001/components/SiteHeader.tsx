@@ -45,8 +45,8 @@ export default function SiteHeader() {
             className="h-9 w-auto"
           />
           <span className="hidden sm:flex items-baseline gap-2">
-            <span className="font-sans font-black text-lg text-navy heading-display leading-none">
-              BIG <span className="text-gradient-gold">SOKURYO</span>
+            <span className="font-sans font-black text-base md:text-lg text-navy heading-display leading-none">
+              ビック測量株式会社
             </span>
             <span className="text-[10px] tracking-[0.3em] text-navy/50">
               since 1980
