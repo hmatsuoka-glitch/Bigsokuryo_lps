@@ -16,6 +16,7 @@ import JobRequirements from "@/components/sections/JobRequirements";
 import SelectionFlow from "@/components/sections/SelectionFlow";
 import LineCTA from "@/components/sections/LineCTA";
 import TopicsBand from "@/components/sections/TopicsBand";
+import Merits from "@/components/sections/Merits";
 
 export default function Page() {
   return (
@@ -25,6 +26,7 @@ export default function Page() {
       <main>
         <Hero />
         <StatsNumbers />
+        <Merits />
         <BusinessFeatures />
         <CtaBand
           eyebrow="MESSAGE"
