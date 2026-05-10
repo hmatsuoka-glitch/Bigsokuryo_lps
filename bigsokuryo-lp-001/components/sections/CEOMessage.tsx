@@ -6,16 +6,16 @@ import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
 
 const principles = [
   {
-    title: "約束を守る",
-    body: "期限と発言に責任を持つ。社会のルールを守ることと同じ。",
+    title: "優しさと思いやり",
+    body: "創業から変わらない基本精神。困難な依頼も、社員全員で寄り添い支える。",
   },
   {
-    title: "嘘をつかない",
-    body: "失敗を素早く処理するため、隠さない・はぐらかさない。",
+    title: "常にチャレンジ",
+    body: "失敗を恐れず新しい技術へ。3Dレーザー・CIM・AI・IoT、進化を止めない。",
   },
   {
-    title: "思いやりを持つ",
-    body: "相手の考えと望みを想像する。それが社会への貢献。",
+    title: "正直に、誠実に",
+    body: "法令遵守を基本に、社会に対して正直に、誠実であれ。それが信頼の源泉。",
   },
 ];
 
@@ -90,19 +90,22 @@ export default function CEOMessage() {
           {/* Quote + body */}
           <Reveal delay={0.1}>
             <div className="relative">
+              <p className="text-[10px] md:text-xs tracking-[0.5em] text-gold-light font-bold mb-3">
+                ONLY ONE
+              </p>
               <blockquote className="relative font-sans font-bold text-2xl md:text-4xl leading-[1.7] text-white text-balance heading-display">
-                確かな技術で、
+                高い人格と優れた技術で、
                 <br className="hidden md:block" />
-                社会の信頼に
-                <span className="text-gold-light">応える。</span>
+                <span className="text-gold-light">日本のインフラ</span>
+                に貢献する。
               </blockquote>
             </div>
 
             <p className="mt-8 text-white/85 leading-loose max-w-2xl text-sm md:text-base">
-              創業から45年、私たちは「正確に測ること」で社会の基盤を支えてきました。
-              鉄道・道路・公共インフラ――一度の測量が、何十年と街を支える。
-              だからこそ、技術への投資と人を育てる文化を大切にしてきました。
-              次の世代とともに、新しい時代の測量会社をつくっていきます。
+              昭和55年、東京・上野で創業。
+              東北・上越新幹線 上野地下駅の工事測量からはじまり、いまは鉄道・道路・空港・トンネル・宅地造成・上下水道までを手掛けています。
+              創業以来、「優しさと思いやり」を基本に、常にチャレンジの精神で最先端の技術を磨き続けてきました。
+              社会に対して正直に、誠実であれ ―― 皆様の信頼に応えることが、私たちの全てです。
             </p>
             <div className="mt-8 flex items-center gap-4">
               <span className="w-10 h-px bg-gold" />
