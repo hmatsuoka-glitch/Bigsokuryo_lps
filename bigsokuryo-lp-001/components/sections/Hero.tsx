@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AnimatedCounter from "@/components/AnimatedCounter";
 import HeroIllustration from "@/components/HeroIllustration";
 
 const tags = [
@@ -10,12 +9,6 @@ const tags = [
   "3D点群",
   "東京駅・渋谷駅・海の森",
   "創業45年",
-];
-
-const heroStats: { value: number; suffix?: string; label: string; decimals?: number }[] = [
-  { value: 45, suffix: "年", label: "創業" },
-  { value: 163, suffix: "名", label: "社員数" },
-  { value: 79.9, suffix: "%", label: "有給取得率", decimals: 1 },
 ];
 
 export default function Hero() {
@@ -97,30 +90,6 @@ export default function Hero() {
             代表メッセージを読む
           </a>
         </motion.div>
-
-        {/* 3 stats row */}
-        <motion.dl
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.7 }}
-          className="mt-14 grid grid-cols-3 gap-3 md:gap-6 border-y border-navy/15 py-6 md:py-8"
-        >
-          {heroStats.map((s) => (
-            <div key={s.label} className="text-center">
-              <dt className="text-[10px] md:text-xs text-navy/60 tracking-widest">
-                {s.label}
-              </dt>
-              <dd className="mt-1 font-sans font-black text-2xl md:text-4xl text-navy tabular-nums whitespace-nowrap">
-                <AnimatedCounter
-                  to={s.value}
-                  suffix={s.suffix}
-                  decimals={s.decimals}
-                />
-              </dd>
-            </div>
-          ))}
-        </motion.dl>
       </div>
     </section>
   );

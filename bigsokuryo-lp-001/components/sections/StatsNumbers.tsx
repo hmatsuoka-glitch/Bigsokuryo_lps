@@ -65,33 +65,20 @@ const stats: Stat[] = [
 function StatCard({ stat }: { stat: Stat }) {
   return (
     <div
-      className={`group relative bg-white  p-5 md:p-6 border transition-all duration-500 overflow-hidden h-full flex flex-col ${
+      className={`bg-white p-5 md:p-6 border overflow-hidden h-full flex flex-col ${
         stat.highlight
-          ? "border-gold/40 shadow-gold/30"
-          : "border-navy/10 shadow-soft"
-      } hover-lift`}
+          ? "border-gold/40"
+          : "border-navy/10"
+      }`}
     >
-      {/* hover glow */}
-      <span
-        aria-hidden
-        className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/0 group-hover:bg-gold/20 transition-colors duration-500 blur-2xl"
-      />
-      {/* top accent */}
-      <span
-        aria-hidden
-        className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-gold/0 to-transparent group-hover:via-gold transition-colors duration-500"
-      />
-
-      <div className="relative flex items-start justify-between gap-2">
+      <div className="flex items-start justify-between gap-2">
         <p className="text-[11px] text-navy/60 tracking-widest font-bold truncate">
           {stat.label}
         </p>
-        <span className="text-gold/70 group-hover:text-gold group-hover:scale-110 transition shrink-0">
-          {stat.icon}
-        </span>
+        <span className="text-gold/70 shrink-0">{stat.icon}</span>
       </div>
 
-      <p className="relative mt-3 font-sans font-black text-2xl md:text-3xl lg:text-[2rem] text-navy tabular-nums leading-tight whitespace-nowrap">
+      <p className="mt-3 font-sans font-black text-2xl md:text-3xl lg:text-[2rem] text-navy tabular-nums leading-tight whitespace-nowrap">
         {stat.display ?? (
           <AnimatedCounter
             to={stat.value}
@@ -100,7 +87,7 @@ function StatCard({ stat }: { stat: Stat }) {
           />
         )}
       </p>
-      <p className="relative mt-3 text-xs text-navy/55 leading-relaxed mt-auto pt-3">
+      <p className="mt-3 text-xs text-navy/55 leading-relaxed mt-auto pt-3">
         {stat.caption}
       </p>
     </div>
