@@ -28,13 +28,6 @@ export default function Page() {
         <StatsNumbers />
         <Merits />
         <BusinessFeatures />
-        <CtaBand
-          eyebrow="MESSAGE"
-          title="代表が語る、ビッグ測量設計の想い。"
-          caption="マニュアル通りではなく、自分の頭で考えて行動する。代表からのメッセージをご覧ください。"
-          href="#message"
-          ctaLabel="代表メッセージを読む"
-        />
         <CEOMessage />
         <Voices />
         <ProjectStories />
