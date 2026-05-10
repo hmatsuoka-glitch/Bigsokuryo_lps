@@ -31,15 +31,6 @@ const stats: Stat[] = [
     icon: <IconUsers />,
   },
   {
-    value: 0.001,
-    suffix: "mm",
-    decimals: 3,
-    label: "計測精度",
-    caption: "1ミクロンの特許技術",
-    icon: <IconPrecision />,
-    highlight: true,
-  },
-  {
     value: 79.9,
     suffix: "%",
     decimals: 1,
@@ -62,17 +53,11 @@ const stats: Stat[] = [
     icon: <IconCertificate />,
   },
   {
-    value: 55,
-    suffix: "台",
-    label: "トータルステーション",
-    caption: "レベル55台、GNSS5台",
-    icon: <IconScope />,
-  },
-  {
     value: 1,
     display: <span className="text-navy-dark">銀の認定</span>,
-    label: "健康企業宣言",
-    caption: "2025年7月取得",
+    label: "健康経営",
+    caption:
+      "「健康企業宣言」で銀の認定を2025年7月取得。社員の健康に積極的に取り組む企業として認定。",
     icon: <IconShield />,
   },
 ];

@@ -51,12 +51,8 @@ section + section {
   }
 
   .hover-lift {
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.4s ease;
-  }
-  .hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 60px -20px rgba(15, 92, 44, 0.25);
+    /* Hover-lift is intentionally disabled site-wide. The class
+       remains so existing markup keeps compiling. */
   }
 
   .underline-grow {

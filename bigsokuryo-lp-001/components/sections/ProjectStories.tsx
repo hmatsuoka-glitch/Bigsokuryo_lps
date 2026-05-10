@@ -73,9 +73,7 @@ export default function ProjectStories() {
           {projects.map((p) => (
             <StaggerItem key={p.title} className="h-full">
               <motion.article
-                whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className={`group relative  border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-br ${p.accent} overflow-hidden h-full`}
+                className={`relative  border border-navy/10 shadow-soft p-5 md:p-8 bg-gradient-to-br ${p.accent} overflow-hidden h-full`}
               >
                 <span
                   aria-hidden
