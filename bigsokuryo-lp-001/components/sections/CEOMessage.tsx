@@ -66,7 +66,7 @@ export default function CEOMessage() {
               <div className="relative  overflow-hidden border-2 border-gold/30 shadow-soft-lg aspect-[19/20] bg-navy-dark">
                 <Image
                   src="/message_img.jpg"
-                  alt="代表取締役 村田 豊世"
+                  alt="代表取締役 村田 優紀"
                   fill
                   sizes="(max-width: 768px) 224px, 300px"
                   className="object-cover"
@@ -78,7 +78,7 @@ export default function CEOMessage() {
               </div>
               <div className="mt-4 text-center md:text-left">
                 <p className="font-sans font-bold text-base text-white">
-                  村田 豊世
+                  村田 優紀
                 </p>
                 <p className="text-[11px] tracking-[0.3em] text-gold-light">
                   REPRESENTATIVE DIRECTOR
@@ -91,23 +91,23 @@ export default function CEOMessage() {
           <Reveal delay={0.1}>
             <div className="relative">
               <blockquote className="relative font-sans font-bold text-2xl md:text-4xl leading-[1.7] text-white text-balance heading-display">
-                マニュアル通りではなく、
+                確かな技術で、
                 <br className="hidden md:block" />
-                自分の頭で考えて
-                <span className="text-gold-light">行動する。</span>
+                社会の信頼に
+                <span className="text-gold-light">応える。</span>
               </blockquote>
             </div>
 
             <p className="mt-8 text-white/85 leading-loose max-w-2xl text-sm md:text-base">
-              5年・10年先に結果を出せるかは、いまの一歩で決まる。
-              失敗を恐れず、トライしてほしい。
-              思いやりは、社会への貢献。若さには可能性がある。
-              未来に向けて羽ばたけ！
+              創業から45年、私たちは「正確に測ること」で社会の基盤を支えてきました。
+              鉄道・道路・公共インフラ――一度の測量が、何十年と街を支える。
+              だからこそ、技術への投資と人を育てる文化を大切にしてきました。
+              次の世代とともに、新しい時代の測量会社をつくっていきます。
             </p>
             <div className="mt-8 flex items-center gap-4">
               <span className="w-10 h-px bg-gold" />
               <p className="text-sm text-white/70 tracking-widest">
-                代表取締役　村田 豊世
+                代表取締役　村田 優紀
               </p>
             </div>
           </Reveal>
