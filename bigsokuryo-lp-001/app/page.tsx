@@ -15,6 +15,7 @@ import Benefits from "@/components/sections/Benefits";
 import JobRequirements from "@/components/sections/JobRequirements";
 import SelectionFlow from "@/components/sections/SelectionFlow";
 import LineCTA from "@/components/sections/LineCTA";
+import TopicsBand from "@/components/sections/TopicsBand";
 
 export default function Page() {
   return (
@@ -45,6 +46,7 @@ export default function Page() {
         <Benefits />
         <JobRequirements />
         <SelectionFlow />
+        <TopicsBand />
         <LineCTA />
         <EntryForm />
       </main>

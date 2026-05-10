@@ -229,6 +229,9 @@ export default function EntryForm() {
                 </a>{" "}
                 まで。
               </p>
+              <p className="text-center text-[11px] text-navy/45 mt-1 leading-relaxed">
+                採用選考時、合否をちらつかせた連絡先要求等の不適切な行為は一切行いません。
+              </p>
             </motion.form>
           )}
         </AnimatePresence>
