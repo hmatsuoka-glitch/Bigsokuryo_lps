@@ -109,14 +109,9 @@ export default function StatsNumbers() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid grid-cols-1 sm:grid-cols-6 gap-4 items-stretch">
-          {stats.slice(0, 2).map((s) => (
-            <StaggerItem key={s.label} className="h-full sm:col-span-3">
-              <StatCard stat={s} />
-            </StaggerItem>
-          ))}
-          {stats.slice(2).map((s) => (
-            <StaggerItem key={s.label} className="h-full sm:col-span-2">
+        <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-4 items-stretch">
+          {stats.map((s) => (
+            <StaggerItem key={s.label} className="h-full">
               <StatCard stat={s} />
             </StaggerItem>
           ))}
