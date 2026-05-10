@@ -1,6 +1,5 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import EntryForm from "@/components/EntryForm";
 import FloatingLineButton from "@/components/FloatingLineButton";
 import ScrollProgress from "@/components/ScrollProgress";
 import ChancePopup from "@/components/ChancePopup";
@@ -54,7 +53,6 @@ export default function Page() {
         <SelectionFlow />
         <TopicsBand />
         <LineCTA />
-        <EntryForm />
       </main>
       <SiteFooter />
       <FloatingLineButton />

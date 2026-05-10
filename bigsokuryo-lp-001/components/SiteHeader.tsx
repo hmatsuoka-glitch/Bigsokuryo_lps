@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { SITE } from "@/lib/site";
 
 const navItems = [
   { href: "#numbers", label: "数字" },
@@ -68,10 +69,15 @@ export default function SiteHeader() {
           <motion.a
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            href="#entry"
-            className="hidden sm:inline-flex items-center px-5 py-2.5 text-xs tracking-[0.2em] bg-navy text-white rounded-full hover:bg-gold transition-colors font-bold shadow-soft"
+            href={SITE.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs tracking-[0.2em] bg-[#06C755] text-white rounded-full hover:opacity-90 transition-opacity font-bold shadow-soft"
           >
-            エントリー
+            <span className="w-4 h-4 rounded-full bg-white text-[#06C755] grid place-items-center text-[10px] font-black">
+              L
+            </span>
+            LINEで応募
           </motion.a>
           <button
             onClick={() => setOpen((o) => !o)}
@@ -117,11 +123,16 @@ export default function SiteHeader() {
               ))}
               <li className="col-span-2 mt-2">
                 <a
-                  href="#entry"
+                  href={SITE.lineUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="block text-center bg-navy text-white py-3 rounded-full font-bold text-xs tracking-[0.2em]"
+                  className="flex items-center justify-center gap-2 bg-[#06C755] text-white py-3 rounded-full font-bold text-xs tracking-[0.2em]"
                 >
-                  エントリーする
+                  <span className="w-4 h-4 rounded-full bg-white text-[#06C755] grid place-items-center text-[10px] font-black">
+                    L
+                  </span>
+                  LINEで応募する
                 </a>
               </li>
             </ul>

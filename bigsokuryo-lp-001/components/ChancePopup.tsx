@@ -146,26 +146,19 @@ export default function ChancePopup() {
 
               <div className="mt-6 grid gap-2.5">
                 <a
-                  href="#entry"
-                  onClick={dismiss}
-                  className="group inline-flex items-center justify-center gap-2 bg-navy text-white py-3.5 rounded-full text-sm tracking-[0.2em] font-bold hover:bg-gold transition-colors shadow-soft"
-                >
-                  エントリーフォームへ
-                  <span className="inline-block transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
-                <a
                   href={SITE.lineUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={dismiss}
-                  className="inline-flex items-center justify-center gap-2 bg-[#06C755] text-white py-3 rounded-full text-xs tracking-[0.2em] font-bold hover:opacity-90 transition-opacity"
+                  className="group inline-flex items-center justify-center gap-3 bg-[#06C755] text-white py-3.5 rounded-full text-sm tracking-[0.2em] font-bold hover:opacity-90 transition-opacity shadow-soft"
                 >
-                  <span className="w-5 h-5 rounded-full bg-white text-[#06C755] grid place-items-center text-xs font-black">
+                  <span className="w-6 h-6 rounded-full bg-white text-[#06C755] grid place-items-center text-xs font-black">
                     L
                   </span>
-                  LINEで相談する
+                  公式LINEで応募する
+                  <span className="inline-block transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
                 </a>
               </div>
 

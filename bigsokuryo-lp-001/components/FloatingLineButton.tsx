@@ -14,15 +14,12 @@ export default function FloatingLineButton() {
       target="_blank"
       rel="noopener noreferrer"
       style={{ opacity, y }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-40 group"
-      aria-label="公式LINEで相談する"
+      className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-40"
+      aria-label="公式LINE"
     >
-      <span className="absolute inset-0 rounded-full bg-[#06C755]/40 animate-ping group-hover:hidden" />
-      <span className="relative flex items-center gap-2 bg-[#06C755] text-white pl-4 pr-5 py-3 rounded-full shadow-soft-lg">
+      <span className="absolute inset-0 rounded-full bg-[#06C755]/40 animate-ping" />
+      <span className="relative flex w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#06C755] grid place-items-center text-white shadow-soft-lg">
         <LineGlyph />
-        <span className="text-sm font-bold tracking-wide">LINEで相談</span>
       </span>
     </motion.a>
   );
@@ -31,8 +28,8 @@ export default function FloatingLineButton() {
 function LineGlyph() {
   return (
     <svg
-      width="20"
-      height="20"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       fill="currentColor"
       aria-hidden
