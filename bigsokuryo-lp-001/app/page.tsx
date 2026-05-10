@@ -5,6 +5,7 @@ import FloatingLineButton from "@/components/FloatingLineButton";
 import ScrollProgress from "@/components/ScrollProgress";
 import ChancePopup from "@/components/ChancePopup";
 import CtaBand from "@/components/CtaBand";
+import PhotoBand from "@/components/PhotoBand";
 import Hero from "@/components/sections/Hero";
 import StatsNumbers from "@/components/sections/StatsNumbers";
 import BusinessFeatures from "@/components/sections/BusinessFeatures";
@@ -28,9 +29,19 @@ export default function Page() {
         <StatsNumbers />
         <Merits />
         <BusinessFeatures />
+        <PhotoBand
+          src="/big-phot.jpg"
+          alt="空港工事測量の現場"
+          caption="OUR FIELD — 空港・道路・鉄道・公共インフラの現場"
+        />
         <CEOMessage />
         <Voices />
         <ProjectStories />
+        <PhotoBand
+          src="/big-phot2.jpg"
+          alt="大規模工事現場"
+          caption="PROJECTS — 首都圏の大規模インフラを支える"
+        />
         <CtaBand
           eyebrow="JOB DETAIL"
           title="まずは募集要項を、見てみませんか？"
