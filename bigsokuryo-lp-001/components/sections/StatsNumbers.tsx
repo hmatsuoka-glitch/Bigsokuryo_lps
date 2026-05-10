@@ -52,14 +52,6 @@ const stats: Stat[] = [
     caption: "ほか測量士補49名",
     icon: <IconCertificate />,
   },
-  {
-    value: 1,
-    display: <span className="text-navy-dark">銀の認定</span>,
-    label: "健康経営",
-    caption:
-      "「健康企業宣言」で銀の認定を2025年7月取得。社員の健康に積極的に取り組む企業として認定。",
-    icon: <IconShield />,
-  },
 ];
 
 function StatCard({ stat }: { stat: Stat }) {
@@ -117,9 +109,14 @@ export default function StatsNumbers() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 items-stretch">
-          {stats.map((s) => (
-            <StaggerItem key={s.label} className="h-full">
+        <StaggerGroup className="mt-14 grid grid-cols-1 sm:grid-cols-6 gap-4 items-stretch">
+          {stats.slice(0, 2).map((s) => (
+            <StaggerItem key={s.label} className="h-full sm:col-span-3">
+              <StatCard stat={s} />
+            </StaggerItem>
+          ))}
+          {stats.slice(2).map((s) => (
+            <StaggerItem key={s.label} className="h-full sm:col-span-2">
               <StatCard stat={s} />
             </StaggerItem>
           ))}

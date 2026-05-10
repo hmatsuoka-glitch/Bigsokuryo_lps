@@ -94,32 +94,21 @@ export default function BusinessFeatures() {
         <StaggerGroup className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 items-stretch">
           {features.map((f) => (
             <StaggerItem key={f.title} className="h-full">
-              <article className="group relative bg-white  p-5 md:p-7 border border-navy/10 shadow-soft overflow-hidden h-full hover-lift transition-all duration-500">
-                <span
-                  aria-hidden
-                  className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full bg-gold/0 group-hover:bg-gold/15 transition-colors duration-700 blur-3xl"
-                />
-                <span
-                  aria-hidden
-                  className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-light via-gold to-gold-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                />
-
-                <div className="relative flex items-start justify-between">
-                  <span className="text-gold/80 group-hover:text-gold transition-colors">
-                    {f.icon}
-                  </span>
+              <article className="bg-white p-5 md:p-7 border border-navy/10 overflow-hidden h-full">
+                <div className="flex items-start justify-between">
+                  <span className="text-gold/80">{f.icon}</span>
                   <span className="text-[10px] tracking-[0.3em] text-navy/40">
                     {f.no} / {f.tag}
                   </span>
                 </div>
 
-                <h3 className="relative mt-4 md:mt-5 font-sans font-bold text-base md:text-2xl text-navy leading-snug heading-display">
+                <h3 className="mt-4 md:mt-5 font-sans font-bold text-base md:text-2xl text-navy leading-snug heading-display">
                   {f.title}
                 </h3>
-                <p className="relative mt-3 md:mt-4 text-xs md:text-sm text-navy/80 leading-relaxed">
+                <p className="mt-3 md:mt-4 text-xs md:text-sm text-navy/80 leading-relaxed">
                   {f.body}
                 </p>
-                <ul className="relative mt-4 md:mt-5 space-y-1.5 md:space-y-2">
+                <ul className="mt-4 md:mt-5 space-y-1.5 md:space-y-2">
                   {f.points.map((p) => (
                     <li
                       key={p}
@@ -130,13 +119,6 @@ export default function BusinessFeatures() {
                     </li>
                   ))}
                 </ul>
-
-                <span
-                  aria-hidden
-                  className="relative mt-6 inline-flex items-center gap-1 text-[11px] tracking-widest text-gold-dark opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-500"
-                >
-                  READ DETAIL <span>→</span>
-                </span>
               </article>
             </StaggerItem>
           ))}
