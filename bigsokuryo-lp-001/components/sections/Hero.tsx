@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import HeroIllustration from "@/components/HeroIllustration";
 
 const tags = [
   "鉄道工事測量",
@@ -23,22 +23,10 @@ export default function Hero() {
     <section className="relative bg-white">
       {/* Top photo band */}
       <div className="relative w-full aspect-[4/5] sm:aspect-[16/10] md:aspect-[16/8] lg:aspect-[16/7] overflow-hidden bg-navy-dark">
-        <Image
-          src="/bigsokuryo_top.jpg"
-          alt="ビッグ測量設計"
-          fill
-          priority
-          quality={95}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1600px"
-          style={{
-            objectPosition: "center 25%",
-            imageRendering: "auto",
-          }}
-          className="object-cover saturate-[0.95]"
-        />
+        <HeroIllustration className="absolute inset-0 w-full h-full" />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy/30 to-navy-deep/15"
+          className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-transparent to-navy-deep/20"
         />
         <motion.div
           initial={{ opacity: 0, y: 12 }}
