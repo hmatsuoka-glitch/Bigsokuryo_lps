@@ -29,8 +29,22 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section
+      id="projects"
+      className="py-20 md:py-28 bg-white relative overflow-hidden"
+    >
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/project_img_03.jpg')" }}
+      />
+      <div aria-hidden className="absolute inset-0 bg-white/82" />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/60"
+      />
+
+      <div className="relative max-w-6xl mx-auto px-6">
         <Reveal className="text-center">
           <p className="text-xs tracking-[0.4em] text-gold">PROJECT STORIES</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
@@ -47,7 +61,7 @@ export default function Projects() {
             <Reveal
               key={p.title}
               delay={i * 100}
-              className="group relative overflow-hidden  border border-navy/10 bg-gradient-to-br from-white to-sand/40 p-5 md:p-8 cursor-default"
+              className="group relative overflow-hidden border border-navy/10 bg-white/95 backdrop-blur-sm p-5 md:p-8 cursor-default"
             >
               <div
                 aria-hidden
