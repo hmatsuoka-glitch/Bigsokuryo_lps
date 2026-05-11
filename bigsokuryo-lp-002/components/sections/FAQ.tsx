@@ -56,7 +56,7 @@ export default function FAQ() {
               key={f.step}
               delay={i * 100}
               as="li"
-              className="card-hover group  bg-gradient-to-br from-white to-sand/40 border border-navy/10 p-3 md:p-5 relative"
+              className="group  bg-gradient-to-br from-white to-sand/40 border border-navy/10 p-3 md:p-5 relative"
             >
               <div className="flex items-center gap-2">
                 <span className="font-mono text-xl font-bold text-gold/40 leading-none">

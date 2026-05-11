@@ -51,7 +51,7 @@ export default function CareerModel() {
               key={t.role}
               delay={i * 120}
               as="article"
-              className="card-hover group  border border-navy/10 p-4 md:p-7 bg-white relative overflow-hidden"
+              className="group  border border-navy/10 p-4 md:p-7 bg-white relative overflow-hidden"
             >
               <div
                 aria-hidden
@@ -72,7 +72,7 @@ export default function CareerModel() {
                 {t.skills.map((s) => (
                   <li
                     key={s}
-                    className="text-[11px] tracking-widest border border-navy/20 px-2.5 py-1 rounded-full text-black/70 transition-all hover:border-gold hover:text-navy hover:bg-sand"
+                    className="text-[11px] tracking-widest border border-navy/20 px-2.5 py-1 rounded-full text-black/70 transition-all hover:border-gold hover:text-navy"
                   >
                     {s}
                   </li>
@@ -99,7 +99,7 @@ export default function CareerModel() {
               <Reveal
                 key={s.y}
                 delay={i * 150}
-                className="bg-gradient-to-br from-sand to-white  p-5 border border-navy/10 text-center card-hover"
+                className="bg-gradient-to-br from-sand to-white  p-5 border border-navy/10 text-center"
               >
                 <p className="text-xs tracking-widest text-black/60">{s.y}</p>
                 <p className="mt-3 text-3xl md:text-4xl font-bold text-navy tracking-tight">

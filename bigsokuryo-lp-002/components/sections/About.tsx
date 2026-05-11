@@ -54,7 +54,7 @@ export default function About() {
               <Reveal
                 key={s.label}
                 delay={i * 120}
-                className="card-hover  border border-navy/10 p-5 md:p-6 bg-gradient-to-br from-white to-sand/40"
+                className=" border border-navy/10 p-5 md:p-6 bg-gradient-to-br from-white to-sand/40"
               >
                 <p className="text-3xl md:text-4xl font-bold text-navy tracking-tight">
                   <AnimatedNumber end={s.value} />
@@ -77,7 +77,7 @@ export default function About() {
               {clients.map((c) => (
                 <li
                   key={c}
-                  className="border border-navy/15 rounded-full px-3 py-1.5 transition-all hover:border-gold hover:text-navy hover:bg-sand/60 hover:-translate-y-0.5 cursor-default"
+                  className="border border-navy/15 rounded-full px-3 py-1.5 transition-all hover:border-gold hover:text-navy/60 hover:-translate-y-0.5 cursor-default"
                 >
                   {c}
                 </li>
