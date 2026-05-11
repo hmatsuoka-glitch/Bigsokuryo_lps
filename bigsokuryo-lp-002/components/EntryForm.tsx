@@ -14,7 +14,7 @@ export default function EntryForm({
     <section id="entry" className="py-20 md:py-28 bg-sand/40">
       <div className="relative max-w-3xl mx-auto px-6">
         <Reveal>
-          <p className="text-xs tracking-[0.4em] text-gold">APPLY</p>
+          <p className="text-xs tracking-[0.4em] text-brand">APPLY</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             エントリー
           </h2>
@@ -28,7 +28,7 @@ export default function EntryForm({
         <Reveal delay={120} className="mt-10 md:mt-14">
           <div className="bg-white border border-navy/10 p-6 md:p-8">
             <div className="flex items-baseline justify-between flex-wrap gap-3 pb-5 mb-5 border-b border-navy/10">
-              <p className="text-xs tracking-[0.4em] text-gold">QUICK CONTACT</p>
+              <p className="text-xs tracking-[0.4em] text-brand">QUICK CONTACT</p>
               <p className="text-[11px] text-black/55">最短ルートで応募する</p>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">

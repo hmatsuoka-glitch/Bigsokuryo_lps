@@ -28,7 +28,7 @@ export default function Recruit() {
     <section id="recruit" className="py-20 md:py-28 bg-white">
       <div className="relative max-w-6xl mx-auto px-6">
         <Reveal>
-          <p className="text-xs tracking-[0.4em] text-gold">RECRUIT</p>
+          <p className="text-xs tracking-[0.4em] text-brand">RECRUIT</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             募集要項
           </h2>
@@ -45,7 +45,7 @@ export default function Recruit() {
                 key={f.no}
                 className="bg-brand text-white p-5 md:p-6 flex flex-col"
               >
-                <p className="font-mono text-3xl md:text-4xl font-bold text-gold leading-none">
+                <p className="font-mono text-3xl md:text-4xl font-bold text-brand leading-none">
                   {f.no}
                 </p>
                 <p className="mt-4 font-sans font-bold text-base md:text-lg leading-tight">
@@ -62,7 +62,7 @@ export default function Recruit() {
         <Reveal delay={250} className="mt-10 md:mt-14">
           <div className="border border-navy/10">
             <div className="flex items-baseline justify-between flex-wrap gap-3 px-6 md:px-10 pt-6 pb-4 border-b border-navy/15">
-              <p className="text-xs tracking-[0.4em] text-gold">REQUIREMENTS</p>
+              <p className="text-xs tracking-[0.4em] text-brand">REQUIREMENTS</p>
               <p className="text-[11px] text-black/55">中途・正社員</p>
             </div>
             <dl>

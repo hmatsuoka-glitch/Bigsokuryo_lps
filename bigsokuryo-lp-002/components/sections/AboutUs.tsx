@@ -12,7 +12,7 @@ export default function AboutUs() {
     <section id="about" className="py-20 md:py-28 bg-sand/40">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal className="text-center">
-          <p className="text-xs tracking-[0.4em] text-gold">ABOUT US</p>
+          <p className="text-xs tracking-[0.4em] text-brand">ABOUT US</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             数字で見るビッグ測量設計
           </h2>
@@ -24,7 +24,7 @@ export default function AboutUs() {
               key={s.label}
               className="border-r border-b border-navy/15 p-6 md:p-8 bg-white"
             >
-              <p className="text-[10px] md:text-xs tracking-[0.3em] text-gold">
+              <p className="text-[10px] md:text-xs tracking-[0.3em] text-brand">
                 {s.note}
               </p>
               <p className="mt-3 text-4xl md:text-5xl font-bold text-navy tracking-tight leading-none">

@@ -44,7 +44,7 @@ export default function FAQ() {
     <section id="faq" className="py-28 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <Reveal className="text-center">
-          <p className="text-xs tracking-[0.4em] text-gold">FLOW &amp; FAQ</p>
+          <p className="text-xs tracking-[0.4em] text-brand">FLOW &amp; FAQ</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             選考フロー &amp; よくある質問
           </h2>
@@ -59,10 +59,10 @@ export default function FAQ() {
               className="group  bg-gradient-to-br from-white to-sand/40 border border-navy/10 p-3 md:p-5 relative"
             >
               <div className="flex items-center gap-2">
-                <span className="font-mono text-xl font-bold text-gold/40 leading-none">
+                <span className="font-mono text-xl font-bold text-brand/40 leading-none">
                   {f.step}
                 </span>
-                <span className="h-px flex-1 bg-navy/10 group-hover:bg-gold/40 transition-colors" />
+                <span className="h-px flex-1 bg-navy/10 group-hover:bg-brand/40 transition-colors" />
               </div>
               <p className="mt-3 font-sans font-bold text-navy">{f.label}</p>
               <p className="mt-2 text-xs text-black/65 leading-relaxed">
@@ -78,12 +78,12 @@ export default function FAQ() {
               key={item.q}
               delay={i * 60}
               as="div"
-              className="bg-sand/40  border border-navy/10 transition-all hover:border-gold/40"
+              className="bg-sand/40  border border-navy/10 transition-all hover:border-brand/40"
             >
               <details className="group px-6 py-5">
                 <summary className="cursor-pointer list-none flex justify-between items-center text-navy font-bold gap-4">
                   <span className="flex-1">{item.q}</span>
-                  <span className="w-7 h-7 rounded-full bg-gold/10 grid place-items-center text-gold group-open:rotate-45 group-open:bg-gold group-open:text-white transition-all flex-none">
+                  <span className="w-7 h-7 rounded-full bg-brand/10 grid place-items-center text-brand group-open:rotate-45 group-open:bg-brand group-open:text-white transition-all flex-none">
                     +
                   </span>
                 </summary>

@@ -41,7 +41,7 @@ export default function WorkFlow() {
     >
       <div className="relative max-w-6xl mx-auto px-6">
         <Reveal>
-          <p className="text-xs tracking-[0.4em] text-gold">WORK FLOW</p>
+          <p className="text-xs tracking-[0.4em] text-brand">WORK FLOW</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             仕事の流れ
           </h2>

@@ -28,12 +28,12 @@ export default function SiteFooter() {
           </div>
 
           <div className="md:col-span-4">
-            <p className="text-[10px] tracking-[0.4em] text-gold mb-2">
+            <p className="text-[10px] tracking-[0.4em] text-brand mb-2">
               CONTACT
             </p>
             <a
               href="tel:03-3837-0291"
-              className="block font-mono text-3xl md:text-4xl font-bold text-white hover:text-gold transition-colors"
+              className="block font-mono text-3xl md:text-4xl font-bold text-white hover:text-brand transition-colors"
             >
               03-3837-0291
             </a>
@@ -42,7 +42,7 @@ export default function SiteFooter() {
             </p>
             <a
               href="mailto:saiyou@bigsdc.co.jp"
-              className="mt-1 inline-block text-sm text-white/80 underline underline-offset-4 hover:text-gold transition-colors"
+              className="mt-1 inline-block text-sm text-white/80 underline underline-offset-4 hover:text-brand transition-colors"
             >
               saiyou@bigsdc.co.jp
             </a>
@@ -58,16 +58,16 @@ export default function SiteFooter() {
           </div>
 
           <div className="md:col-span-3">
-            <p className="text-[10px] tracking-[0.4em] text-gold mb-3">
+            <p className="text-[10px] tracking-[0.4em] text-brand mb-3">
               SITE MAP
             </p>
             <ul className="text-sm space-y-2">
-              <li><a href="#business" className="hover:text-gold transition-colors">事業内容</a></li>
-              <li><a href="#flow" className="hover:text-gold transition-colors">仕事の流れ</a></li>
-              <li><a href="#about" className="hover:text-gold transition-colors">数字で見る</a></li>
-              <li><a href="#voice" className="hover:text-gold transition-colors">社員紹介</a></li>
-              <li><a href="#recruit" className="hover:text-gold transition-colors">募集要項</a></li>
-              <li><a href="#entry" className="hover:text-gold transition-colors">エントリー</a></li>
+              <li><a href="#business" className="hover:text-brand transition-colors">事業内容</a></li>
+              <li><a href="#flow" className="hover:text-brand transition-colors">仕事の流れ</a></li>
+              <li><a href="#about" className="hover:text-brand transition-colors">数字で見る</a></li>
+              <li><a href="#voice" className="hover:text-brand transition-colors">社員紹介</a></li>
+              <li><a href="#recruit" className="hover:text-brand transition-colors">募集要項</a></li>
+              <li><a href="#entry" className="hover:text-brand transition-colors">エントリー</a></li>
             </ul>
           </div>
         </div>

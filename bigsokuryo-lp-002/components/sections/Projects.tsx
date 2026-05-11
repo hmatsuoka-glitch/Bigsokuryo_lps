@@ -38,15 +38,15 @@ export default function Projects() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/project_img_03.jpg')" }}
       />
-      <div aria-hidden className="absolute inset-0 bg-white/82" />
+      <div aria-hidden className="absolute inset-0 bg-white/92" />
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/60"
+        className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white/80"
       />
 
       <div className="relative max-w-6xl mx-auto px-6">
         <Reveal className="text-center">
-          <p className="text-xs tracking-[0.4em] text-gold">PROJECT STORIES</p>
+          <p className="text-xs tracking-[0.4em] text-brand">PROJECT STORIES</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             東京の、誰もが知る現場で。
           </h2>
@@ -65,14 +65,14 @@ export default function Projects() {
             >
               <div
                 aria-hidden
-                className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-brand/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               />
               <div className="relative">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[10px] tracking-widest text-gold font-bold">
+                  <span className="text-[10px] tracking-widest text-brand font-bold">
                     {p.tag}
                   </span>
-                  <span className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
+                  <span className="h-px flex-1 bg-gradient-to-r from-brand/40 to-transparent" />
                 </div>
                 <h3 className="font-sans font-bold text-xl md:text-2xl text-navy leading-snug group-hover:text-navy-dark transition-colors">
                   {p.title}
@@ -81,7 +81,7 @@ export default function Projects() {
                 <p className="mt-4 text-sm text-black/75 leading-relaxed">
                   {p.body}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1 text-xs tracking-widest text-gold opacity-70 group-hover:opacity-100 group-hover:gap-2 transition-all">
+                <span className="mt-5 inline-flex items-center gap-1 text-xs tracking-widest text-brand opacity-70 group-hover:opacity-100 group-hover:gap-2 transition-all">
                   READ MORE
                   <span className="transition-transform group-hover:translate-x-1">
                     →
