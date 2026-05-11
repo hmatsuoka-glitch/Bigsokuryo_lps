@@ -13,15 +13,6 @@ const tracks = [
   "迷っている／相談したい",
 ];
 
-const sources = [
-  "大学・学校の就職課",
-  "求人媒体・求人サイト",
-  "知人・OB/OG紹介",
-  "公式LINE",
-  "SNS",
-  "その他",
-];
-
 export default function EntryForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
@@ -152,18 +143,11 @@ export default function EntryForm() {
                 <Field label="メールアドレス" name="email" type="email" required placeholder="example@mail.com" />
                 <Field label="電話番号" name="phone" type="tel" placeholder="090-0000-0000" />
                 <Field label="学校／前職" name="school_or_prev" type="text" placeholder="○○大学 ○○学部 ／ ○○株式会社" />
-                <Field label="卒業（見込）年" name="grad_year" type="text" placeholder="2027年3月" />
               </div>
-
-              <Select
-                label="本ページを知ったきっかけ"
-                name="source"
-                options={sources}
-              />
 
               <label className="block">
                 <span className="text-xs tracking-widest text-zinc-600 font-bold">
-                  ご質問・志望動機（任意）
+                  ご質問（任意）
                 </span>
                 <textarea
                   name="message"
