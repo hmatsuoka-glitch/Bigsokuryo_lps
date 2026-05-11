@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Reveal from "./Reveal";
 import { LineButton } from "./LineButton";
 
@@ -6,10 +9,46 @@ type Props = {
   category: string;
 };
 
+type Status = "idle" | "submitting" | "ok" | "error";
+
 export default function EntryForm({
   accentClass = "bg-brand hover:bg-brand-dark",
   category,
 }: Props) {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formEl = e.currentTarget;
+    const fd = new FormData(formEl);
+    const payload = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      phone: String(fd.get("phone") || ""),
+      message: String(fd.get("message") || ""),
+    };
+
+    setStatus("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data?.error || "送信に失敗しました");
+      setStatus("ok");
+      formEl.reset();
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg(err instanceof Error ? err.message : "送信に失敗しました");
+    }
+  }
+
+  const submitting = status === "submitting";
+
   return (
     <section id="entry" className="py-20 md:py-28 bg-sand/40">
       <div className="relative max-w-3xl mx-auto px-6">
@@ -55,40 +94,65 @@ export default function EntryForm({
             </span>
             <span aria-hidden className="h-px flex-1 bg-navy/15" />
           </div>
-          <form className="bg-white border border-navy/10 p-6 md:p-10 grid gap-6">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white border border-navy/10 p-6 md:p-10 grid gap-6"
+            noValidate
+          >
             <Field label="お名前" required>
               <input
+                name="name"
                 type="text"
                 required
-                className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors"
+                disabled={submitting}
+                className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors disabled:bg-sand/30"
               />
             </Field>
             <div className="grid md:grid-cols-2 gap-6">
               <Field label="メールアドレス" required>
                 <input
+                  name="email"
                   type="email"
                   required
-                  className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors"
+                  disabled={submitting}
+                  className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors disabled:bg-sand/30"
                 />
               </Field>
               <Field label="電話番号">
                 <input
+                  name="phone"
                   type="tel"
-                  className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors"
+                  disabled={submitting}
+                  className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none transition-colors disabled:bg-sand/30"
                 />
               </Field>
             </div>
             <Field label="ご質問・志望動機">
               <textarea
+                name="message"
                 rows={5}
-                className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none resize-none transition-colors"
+                disabled={submitting}
+                className="w-full border border-navy/20 bg-white px-4 py-3 text-sm md:text-base focus:border-brand outline-none resize-none transition-colors disabled:bg-sand/30"
               />
             </Field>
+
+            {status === "ok" && (
+              <div className="bg-brand/10 border border-brand/30 text-brand-dark text-sm px-4 py-3">
+                送信ありがとうございました。確認メールをお送りしましたのでご確認ください。2〜3 営業日以内にご連絡いたします。
+              </div>
+            )}
+            {status === "error" && (
+              <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3">
+                {errorMsg}
+              </div>
+            )}
+
             <button
               type="submit"
-              className={`mt-2 ${accentClass} text-white py-4 text-sm tracking-[0.25em] font-bold transition-all hover:shadow-lg`}
+              disabled={submitting}
+              className={`mt-2 ${accentClass} text-white py-4 text-sm tracking-[0.25em] font-bold transition-all hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed`}
             >
-              送信する →
+              {submitting ? "送信中..." : "送信する →"}
             </button>
           </form>
         </Reveal>
