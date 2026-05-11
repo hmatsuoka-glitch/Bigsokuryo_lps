@@ -73,7 +73,7 @@ export default function Benefits() {
           <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             福利厚生・諸手当
           </h2>
-          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-sm md:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
             手当と制度で、働き続けられる環境を。
           </p>
           <motion.div
@@ -91,7 +91,7 @@ export default function Benefits() {
               <p className="text-xs tracking-[0.4em] text-gold-dark font-bold">
                 ALLOWANCES
               </p>
-              <p className="text-[11px] text-navy/55">
+              <p className="text-[11px] text-zinc-500">
                 諸手当（新卒・中途共通）
               </p>
             </div>
@@ -101,10 +101,10 @@ export default function Benefits() {
                   key={k}
                   className="grid md:grid-cols-[200px_1fr] gap-3 py-4 text-sm md:text-base hover:bg-white/60 transition-colors -mx-2 px-2 "
                 >
-                  <dt className="text-navy/65 tracking-widest text-xs md:text-sm font-bold">
+                  <dt className="text-zinc-600 tracking-widest text-xs md:text-sm font-bold">
                     {k}
                   </dt>
-                  <dd className="text-navy/90 leading-relaxed">{v}</dd>
+                  <dd className="text-zinc-800 leading-relaxed">{v}</dd>
                 </div>
               ))}
             </dl>
@@ -130,7 +130,7 @@ export default function Benefits() {
                 <p className="mt-3 md:mt-4 font-sans font-bold text-sm md:text-base text-navy heading-display">
                   {w.title}
                 </p>
-                <p className="mt-1.5 md:mt-2 text-[11px] md:text-xs text-navy/70 leading-relaxed">
+                <p className="mt-1.5 md:mt-2 text-[11px] md:text-xs text-zinc-600 leading-relaxed">
                   {w.body}
                 </p>
               </div>

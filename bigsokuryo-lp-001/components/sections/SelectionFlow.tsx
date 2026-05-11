@@ -87,7 +87,7 @@ export default function SelectionFlow() {
           <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             採用フロー
           </h2>
-          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-sm md:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
             ありのままのあなたで臨める選考です。
           </p>
           <motion.div
@@ -116,7 +116,7 @@ export default function SelectionFlow() {
                   key={t.id}
                   onClick={() => setTrack(t.id)}
                   className={`relative px-7 py-3 text-xs md:text-sm tracking-[0.2em] font-bold transition-colors ${
-                    active ? "text-white" : "text-navy/65 hover:text-navy"
+                    active ? "text-white" : "text-zinc-600 hover:text-navy"
                   }`}
                 >
                   {active && (
@@ -155,7 +155,7 @@ export default function SelectionFlow() {
                   className={`inline-block w-2.5 h-2.5 rounded-full ${current.accent}`}
                 />
               </div>
-              <p className="mt-1 text-xs md:text-sm text-navy/55">
+              <p className="mt-1 text-xs md:text-sm text-zinc-500">
                 {current.note}
               </p>
 
@@ -178,7 +178,7 @@ export default function SelectionFlow() {
                         <p className="font-sans font-bold text-navy text-sm md:text-base">
                           {s.label}
                         </p>
-                        <p className="mt-1 text-xs md:text-sm text-navy/70 leading-relaxed">
+                        <p className="mt-1 text-xs md:text-sm text-zinc-600 leading-relaxed">
                           {s.body}
                         </p>
                       </li>
@@ -191,7 +191,7 @@ export default function SelectionFlow() {
         </AnimatePresence>
 
         <Reveal delay={0.1} className="mt-10">
-          <div className="bg-sand border border-navy/10 px-6 py-5 text-center text-sm md:text-base text-navy/80">
+          <div className="bg-sand border border-navy/10 px-6 py-5 text-center text-sm md:text-base text-zinc-700">
             選考に関するお問い合わせは、
             <a
               href="mailto:saiyou@bigsdc.co.jp"

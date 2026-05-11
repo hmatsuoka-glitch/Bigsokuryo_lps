@@ -39,7 +39,7 @@ export default function TopicsBand() {
                 最近のお知らせ
               </h2>
             </div>
-            <span className="text-[11px] text-navy/55">
+            <span className="text-[11px] text-zinc-500">
               人事ブログより抜粋
             </span>
           </div>
@@ -49,13 +49,13 @@ export default function TopicsBand() {
           {topics.map((t) => (
             <StaggerItem key={t.title}>
               <article className="grid grid-cols-[auto_auto_1fr] items-center gap-3 md:gap-6 py-4 hover:bg-sand/40 transition-colors px-2 -mx-2">
-                <time className="text-[11px] md:text-xs text-navy/55 tabular-nums tracking-wider">
+                <time className="text-[11px] md:text-xs text-zinc-500 tabular-nums tracking-wider">
                   {t.date}
                 </time>
                 <span className="text-[10px] md:text-[11px] tracking-[0.3em] font-bold text-navy bg-sand px-2.5 py-1">
                   {t.label}
                 </span>
-                <p className="text-sm md:text-base text-navy/85 leading-relaxed">
+                <p className="text-sm md:text-base text-zinc-800 leading-relaxed">
                   {t.title}
                 </p>
               </article>

@@ -64,7 +64,7 @@ export default function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15, duration: 0.6 }}
-          className="mt-8 text-base md:text-lg text-navy-deep/80 leading-loose"
+          className="mt-8 text-base md:text-lg text-zinc-700 leading-loose"
         >
           鉄道工事測量から、1ミクロンの構造物計測まで。
           <br />

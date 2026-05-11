@@ -67,7 +67,7 @@ export default function Merits() {
             <br className="md:hidden" />
             3つのメリット
           </h2>
-          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-sm md:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
             技術・育成・暮らし。3つの軸で、長く続けられる仕事を。
           </p>
           <motion.div
@@ -96,7 +96,7 @@ export default function Merits() {
                   <span className="text-gold/80 group-hover:text-gold transition-colors">
                     {m.icon}
                   </span>
-                  <span className="text-[10px] tracking-[0.3em] text-navy/40 font-bold">
+                  <span className="text-[10px] tracking-[0.3em] text-zinc-400 font-bold">
                     {m.no} / {m.tag}
                   </span>
                 </div>
@@ -104,14 +104,14 @@ export default function Merits() {
                 <h3 className="relative mt-5 font-sans font-bold text-lg md:text-xl text-navy leading-snug heading-display">
                   {m.title}
                 </h3>
-                <p className="relative mt-3 text-sm text-navy/80 leading-relaxed">
+                <p className="relative mt-3 text-sm text-zinc-700 leading-relaxed">
                   {m.caption}
                 </p>
                 <ul className="relative mt-5 space-y-2 pt-5 border-t border-navy/10">
                   {m.points.map((p) => (
                     <li
                       key={p}
-                      className="flex items-start gap-2.5 text-xs md:text-sm text-navy/85"
+                      className="flex items-start gap-2.5 text-xs md:text-sm text-zinc-800"
                     >
                       <span className="mt-1.5 w-1 h-1 rounded-full bg-gold shrink-0" />
                       {p}

@@ -49,12 +49,12 @@ export default function SiteHeader() {
             <span className="font-sans font-black text-base md:text-lg text-navy heading-display leading-none">
               ビック測量株式会社
             </span>
-            <span className="text-[10px] tracking-[0.3em] text-navy/50">
+            <span className="text-[10px] tracking-[0.3em] text-zinc-500">
               since 1980
             </span>
           </span>
         </a>
-        <nav className="hidden lg:flex items-center gap-7 text-sm text-navy/80">
+        <nav className="hidden lg:flex items-center gap-7 text-sm text-zinc-700">
           {navItems.map((n) => (
             <a
               key={n.href}
@@ -115,7 +115,7 @@ export default function SiteHeader() {
                   <a
                     href={n.href}
                     onClick={() => setOpen(false)}
-                    className="block px-3 py-2  text-navy/80 hover:bg-sand"
+                    className="block px-3 py-2  text-zinc-700 hover:bg-sand"
                   >
                     {n.label}
                   </a>

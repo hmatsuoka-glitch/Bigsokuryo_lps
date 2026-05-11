@@ -122,14 +122,14 @@ export default function ChancePopup() {
 
             {/* body */}
             <div className="px-6 py-6 text-center">
-              <p className="text-sm md:text-base text-navy/85 leading-relaxed">
+              <p className="text-sm md:text-base text-zinc-800 leading-relaxed">
                 2027年卒・中途の
                 <strong className="text-navy">エントリー受付中</strong>。
                 <br />
                 カジュアル面談だけのご相談も歓迎です。
               </p>
 
-              <ul className="mt-4 grid gap-1.5 text-xs text-navy/75 mx-auto max-w-fit">
+              <ul className="mt-4 grid gap-1.5 text-xs text-zinc-700 mx-auto max-w-fit">
                 <li className="flex items-center gap-2">
                   <span className="w-1 h-1 rounded-full bg-gold shrink-0" />
                   人柄重視・筆記試験なし
@@ -165,7 +165,7 @@ export default function ChancePopup() {
               <button
                 type="button"
                 onClick={dismiss}
-                className="mt-4 text-[11px] text-navy/45 hover:text-navy/70 transition-colors"
+                className="mt-4 text-[11px] text-zinc-400 hover:text-zinc-600 transition-colors"
               >
                 今は閉じる
               </button>

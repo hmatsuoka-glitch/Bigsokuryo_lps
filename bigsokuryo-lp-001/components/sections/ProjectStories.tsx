@@ -57,7 +57,7 @@ export default function ProjectStories() {
           <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             プロジェクトストーリー
           </h2>
-          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-sm md:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
             私たちが関わってきた、東京の景色を支える現場の話。
           </p>
           <motion.div
@@ -88,21 +88,21 @@ export default function ProjectStories() {
                   >
                     {p.label}
                   </span>
-                  <p className="text-[10px] md:text-[11px] text-navy/55 text-right">
+                  <p className="text-[10px] md:text-[11px] text-zinc-500 text-right">
                     {p.period}
                   </p>
                 </div>
                 <h3 className="relative mt-4 md:mt-5 font-sans font-bold text-base md:text-2xl text-navy leading-snug heading-display">
                   {p.title}
                 </h3>
-                <p className="relative mt-3 md:mt-4 text-xs md:text-sm text-navy/85 leading-relaxed md:leading-loose">
+                <p className="relative mt-3 md:mt-4 text-xs md:text-sm text-zinc-800 leading-relaxed md:leading-loose">
                   {p.body}
                 </p>
                 <ul className="relative mt-4 md:mt-5 flex flex-wrap gap-1.5 md:gap-2">
                   {p.keywords.map((k) => (
                     <li
                       key={k}
-                      className="text-[10px] md:text-[11px] tracking-widest text-navy/75 border border-navy/15 bg-white/70 backdrop-blur px-2 md:px-2.5 py-0.5 md:py-1 rounded-full"
+                      className="text-[10px] md:text-[11px] tracking-widest text-zinc-700 border border-navy/15 bg-white/70 backdrop-blur px-2 md:px-2.5 py-0.5 md:py-1 rounded-full"
                     >
                       {k}
                     </li>

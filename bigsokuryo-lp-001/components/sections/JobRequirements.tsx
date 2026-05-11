@@ -40,7 +40,7 @@ const dataset: Record<
           <div className="space-y-1">
             <p>8:00〜17:00（実働8h／休憩60分）</p>
             <p>20:00〜翌5:00（実働8h／休憩60分）</p>
-            <p className="text-xs text-navy/55">※夜勤は短縮労働あり</p>
+            <p className="text-xs text-zinc-500">※夜勤は短縮労働あり</p>
           </div>
         ),
       },
@@ -51,7 +51,7 @@ const dataset: Record<
             <p>大学卒　月給 210,000円</p>
             <p>専門学校卒　月給 207,000円</p>
             <p>高等学校卒　月給 205,000円</p>
-            <p className="text-xs text-navy/55">大卒1年目年収実績 340万円</p>
+            <p className="text-xs text-zinc-500">大卒1年目年収実績 340万円</p>
           </div>
         ),
       },
@@ -87,8 +87,8 @@ const dataset: Record<
         v: (
           <div className="space-y-1">
             <p>月給 210,000円以上（前職・経験を考慮）</p>
-            <p className="text-xs text-navy/55">試用期間3ヶ月（待遇変更なし）</p>
-            <p className="text-xs text-navy/55">
+            <p className="text-xs text-zinc-500">試用期間3ヶ月（待遇変更なし）</p>
+            <p className="text-xs text-zinc-500">
               30歳経験者年収実績：1年目390万／2年目470万／3年目500万／5年目520万
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function JobRequirements() {
           <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             募集要項
           </h2>
-          <p className="mt-5 text-center text-sm md:text-base text-navy/70">
+          <p className="mt-5 text-center text-sm md:text-base text-zinc-600">
             新卒・中途の2トラックでお迎えしています。
           </p>
           <motion.div
@@ -147,7 +147,7 @@ export default function JobRequirements() {
                   key={t.id}
                   onClick={() => setTrack(t.id)}
                   className={`relative px-7 py-3 text-xs md:text-sm tracking-[0.2em] font-bold transition-colors rounded-full ${
-                    active ? "text-white" : "text-navy/65 hover:text-navy"
+                    active ? "text-white" : "text-zinc-600 hover:text-navy"
                   }`}
                 >
                   {active && (
@@ -176,7 +176,7 @@ export default function JobRequirements() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35 }}
           >
-            <p className="mt-10 text-center text-sm text-navy/70">
+            <p className="mt-10 text-center text-sm text-zinc-600">
               {current.label}
             </p>
 
@@ -190,7 +190,7 @@ export default function JobRequirements() {
                   <p className="font-sans font-black text-base md:text-xl lg:text-2xl text-navy tabular-nums whitespace-nowrap">
                     {s.stat}
                   </p>
-                  <p className="mt-1 text-[10px] tracking-widest text-navy/55 truncate">
+                  <p className="mt-1 text-[10px] tracking-widest text-zinc-500 truncate">
                     {s.label}
                   </p>
                 </div>
@@ -206,7 +206,7 @@ export default function JobRequirements() {
                   <dt className="text-xs md:text-sm tracking-widest text-gold-dark font-bold pt-0.5">
                     {r.k}
                   </dt>
-                  <dd className="text-sm md:text-base text-navy/90 leading-loose">
+                  <dd className="text-sm md:text-base text-zinc-800 leading-loose">
                     {r.v}
                   </dd>
                 </div>

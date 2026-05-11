@@ -125,7 +125,7 @@ export default function Voices() {
           <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             社員インタビュー
           </h2>
-          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-sm md:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
             執行役員から若手まで、多様な世代の声でリアルを伝えます。
           </p>
           <motion.div
@@ -139,7 +139,7 @@ export default function Voices() {
 
         {/* Header bar with progress + nav */}
         <div className="mt-12 flex items-center justify-between gap-6">
-          <p className="text-xs tracking-widest text-navy/55 tabular-nums">
+          <p className="text-xs tracking-widest text-zinc-500 tabular-nums">
             <span className="text-navy font-bold">
               {String(active + 1).padStart(2, "0")}
             </span>
@@ -218,7 +218,7 @@ export default function Voices() {
               <p className="text-gold-dark text-sm md:text-base tracking-wide font-bold border-l-2 border-gold pl-3">
                 「{v.catch}」
               </p>
-              <blockquote className="mt-4 text-sm text-navy/85 leading-loose flex-1">
+              <blockquote className="mt-4 text-sm text-zinc-800 leading-loose flex-1">
                 {v.quote}
               </blockquote>
             </div>

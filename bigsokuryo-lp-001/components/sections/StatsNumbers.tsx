@@ -64,7 +64,7 @@ function StatCard({ stat }: { stat: Stat }) {
       }`}
     >
       <div className="flex items-start justify-between gap-2">
-        <p className="text-[11px] text-navy/60 tracking-widest font-bold truncate">
+        <p className="text-[11px] text-zinc-500 tracking-widest font-bold truncate">
           {stat.label}
         </p>
         <span className="text-gold/70 shrink-0">{stat.icon}</span>
@@ -79,7 +79,7 @@ function StatCard({ stat }: { stat: Stat }) {
           />
         )}
       </p>
-      <p className="mt-3 text-xs text-navy/55 leading-relaxed mt-auto pt-3">
+      <p className="mt-3 text-xs text-zinc-500 leading-relaxed mt-auto pt-3">
         {stat.caption}
       </p>
     </div>
@@ -97,7 +97,7 @@ export default function StatsNumbers() {
           <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             数字で見るビッグ測量
           </h2>
-          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-sm md:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
             技術と環境を、確かな指標で。
           </p>
           <motion.div

@@ -79,7 +79,7 @@ export default function BusinessFeatures() {
           <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
             事業の特徴
           </h2>
-          <p className="mt-5 text-center text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-sm md:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
             「現場 × 特許技術 × 3D」の3本柱で、ほかにない測量を。
           </p>
           <motion.div
@@ -97,7 +97,7 @@ export default function BusinessFeatures() {
               <article className="bg-white p-5 md:p-7 border border-navy/10 overflow-hidden h-full">
                 <div className="flex items-start justify-between">
                   <span className="text-gold/80">{f.icon}</span>
-                  <span className="text-[10px] tracking-[0.3em] text-navy/40">
+                  <span className="text-[10px] tracking-[0.3em] text-zinc-400">
                     {f.no} / {f.tag}
                   </span>
                 </div>
@@ -105,14 +105,14 @@ export default function BusinessFeatures() {
                 <h3 className="mt-4 md:mt-5 font-sans font-bold text-base md:text-2xl text-navy leading-snug heading-display">
                   {f.title}
                 </h3>
-                <p className="mt-3 md:mt-4 text-xs md:text-sm text-navy/80 leading-relaxed">
+                <p className="mt-3 md:mt-4 text-xs md:text-sm text-zinc-700 leading-relaxed">
                   {f.body}
                 </p>
                 <ul className="mt-4 md:mt-5 space-y-1.5 md:space-y-2">
                   {f.points.map((p) => (
                     <li
                       key={p}
-                      className="flex items-start gap-2.5 text-xs text-navy/75"
+                      className="flex items-start gap-2.5 text-xs text-zinc-700"
                     >
                       <span className="mt-1.5 w-1 h-1 rounded-full bg-gold shrink-0" />
                       {p}
@@ -130,7 +130,7 @@ export default function BusinessFeatures() {
               <p className="text-xs tracking-[0.4em] text-gold-dark font-bold">
                 CLIENTS
               </p>
-              <p className="text-[11px] text-navy/50">
+              <p className="text-[11px] text-zinc-500">
                 ※ 順不同・敬称略
               </p>
             </div>
@@ -140,10 +140,10 @@ export default function BusinessFeatures() {
             <div className="mt-7 grid md:grid-cols-2 gap-8">
               {clientGroups.map((g) => (
                 <div key={g.label}>
-                  <p className="text-xs tracking-widest text-navy/55 mb-3 font-bold">
+                  <p className="text-xs tracking-widest text-zinc-500 mb-3 font-bold">
                     {g.label}
                   </p>
-                  <p className="text-sm text-navy/85 leading-loose">
+                  <p className="text-sm text-zinc-800 leading-loose">
                     {g.items.join(" ／ ")}
                   </p>
                 </div>
