@@ -2,7 +2,7 @@ const HERO_IMAGE_SRC = "/works_img.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand text-white">
+    <section className="relative overflow-hidden bg-black text-white">
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center"
@@ -10,19 +10,19 @@ export default function Hero() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-brand-dark/70 via-brand-dark/55 to-brand-dark/90"
+        className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/75 via-black/40 to-transparent"
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 min-h-[88vh] md:min-h-[92vh] flex items-end pt-24 pb-16 md:pb-24">
+      <div className="relative max-w-6xl mx-auto px-6 min-h-screen flex items-end pt-20 pb-12 md:pb-16">
         <div>
           <p className="text-[10px] md:text-xs tracking-[0.4em] text-gold mb-5">
             MID-CAREER RECRUITMENT / 経験者採用
           </p>
-          <h1 className="font-sans font-bold text-3xl md:text-6xl lg:text-7xl leading-[1.25] tracking-tight">
+          <h1 className="font-sans font-bold text-3xl md:text-6xl lg:text-7xl leading-[1.25] tracking-tight drop-shadow-lg">
             鉄道・道路・トンネル。<br />
             東京を、<span className="text-gold">ミリ単位</span>で測る。
           </h1>
-          <p className="mt-6 max-w-xl text-sm md:text-base text-white/85 leading-relaxed">
+          <p className="mt-6 max-w-xl text-sm md:text-base text-white/90 leading-relaxed drop-shadow">
             1980 年創業、社員 163 名。<br />
             東京駅・銀座線渋谷駅・五輪会場 ―― 誰もが知る現場の地盤を、
             創業 45 年で支えてきた東上野の総合測量会社です。
