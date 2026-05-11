@@ -1,6 +1,6 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
 
-const HERO_IMAGE_SRC = "/message_img.jpg";
+const HERO_IMAGE_SRC = "/works_img.jpg";
 
 export default function Hero() {
   return (
