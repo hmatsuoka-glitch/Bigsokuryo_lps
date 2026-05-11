@@ -42,7 +42,7 @@ export default function About() {
             「ただ測る」<br />
             会社では、ない。
           </h2>
-          <p className="mt-6 text-sm md:text-base text-navy/75 leading-relaxed">
+          <p className="mt-6 text-sm md:text-base text-black/75 leading-relaxed">
             創業 1980 年。鉄道工事測量を起点に、東京の重要インフラ整備を
             技術で支えてきた総合測量会社です。線路閉鎖作業・営業線近接作業
             など高難度の鉄道現場で積み上げた実績が、私たちの背骨です。
@@ -60,7 +60,7 @@ export default function About() {
                   <AnimatedNumber end={s.value} />
                   <span className="text-sm ml-1 text-gold">{s.suffix}</span>
                 </p>
-                <p className="text-[11px] tracking-widest text-navy/60 mt-3">
+                <p className="text-[11px] tracking-widest text-black/60 mt-3">
                   {s.label}
                 </p>
               </Reveal>
@@ -73,7 +73,7 @@ export default function About() {
             <p className="text-xs tracking-widest text-gold mb-4">
               主な取引先 (一部)
             </p>
-            <ul className="flex flex-wrap gap-2 text-xs md:text-sm text-navy/85">
+            <ul className="flex flex-wrap gap-2 text-xs md:text-sm text-black/85">
               {clients.map((c) => (
                 <li
                   key={c}
@@ -85,7 +85,7 @@ export default function About() {
             </ul>
           </Reveal>
           <Reveal delay={400}>
-            <p className="text-sm md:text-base text-navy/75 leading-relaxed border-l-4 border-gold pl-5 py-1">
+            <p className="text-sm md:text-base text-black/75 leading-relaxed border-l-4 border-gold pl-5 py-1">
               東京都・JR グループ・大手ゼネコン ―― 名前を聞けば誰もが知る現場で、
               <strong className="text-navy">「ビッグ測量設計」</strong>の社名は
               成果に明記され、責任とともに刻まれます。

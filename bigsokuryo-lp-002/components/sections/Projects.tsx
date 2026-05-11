@@ -36,7 +36,7 @@ export default function Projects() {
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             東京の、誰もが知る現場で。
           </h2>
-          <p className="mt-5 text-navy/70 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-5 text-black/70 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             歴史的建造物から国際スポーツ大会、地下鉄の大規模移設まで。
             ビッグ測量設計の社名が刻まれる現場の一部をご紹介します。
           </p>
@@ -63,8 +63,8 @@ export default function Projects() {
                 <h3 className="font-sans font-bold text-xl md:text-2xl text-navy leading-snug group-hover:text-navy-dark transition-colors">
                   {p.title}
                 </h3>
-                <p className="mt-2 text-xs text-navy/55">{p.year}</p>
-                <p className="mt-4 text-sm text-navy/75 leading-relaxed">
+                <p className="mt-2 text-xs text-black/55">{p.year}</p>
+                <p className="mt-4 text-sm text-black/75 leading-relaxed">
                   {p.body}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1 text-xs tracking-widest text-gold opacity-70 group-hover:opacity-100 group-hover:gap-2 transition-all">

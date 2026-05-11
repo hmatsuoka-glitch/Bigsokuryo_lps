@@ -39,7 +39,7 @@ export default function CareerModel() {
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             3 つのキャリアトラック
           </h2>
-          <p className="mt-5 text-center text-navy/70 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-black/70 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             経験と志向に合わせて、入社時に主担当領域を相談します。
             領域横断のキャリアチェンジも歓迎。
           </p>
@@ -65,14 +65,14 @@ export default function CareerModel() {
                   {t.role}
                 </h3>
               </div>
-              <p className="mt-5 text-sm text-navy/75 leading-relaxed">
+              <p className="mt-5 text-sm text-black/75 leading-relaxed">
                 {t.body}
               </p>
               <ul className="mt-6 flex flex-wrap gap-2">
                 {t.skills.map((s) => (
                   <li
                     key={s}
-                    className="text-[11px] tracking-widest border border-navy/20 px-2.5 py-1 rounded-full text-navy/70 transition-all hover:border-gold hover:text-navy hover:bg-sand"
+                    className="text-[11px] tracking-widest border border-navy/20 px-2.5 py-1 rounded-full text-black/70 transition-all hover:border-gold hover:text-navy hover:bg-sand"
                   >
                     {s}
                   </li>
@@ -90,7 +90,7 @@ export default function CareerModel() {
             <p className="text-xs tracking-widest text-gold">
               SALARY TRACK / 30 歳経験者の年収実績
             </p>
-            <p className="text-[11px] text-navy/50 tracking-wider">
+            <p className="text-[11px] text-black/50 tracking-wider">
               UNIT: 万円 / YEAR
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function CareerModel() {
                 delay={i * 150}
                 className="bg-gradient-to-br from-sand to-white  p-5 border border-navy/10 text-center card-hover"
               >
-                <p className="text-xs tracking-widest text-navy/60">{s.y}</p>
+                <p className="text-xs tracking-widest text-black/60">{s.y}</p>
                 <p className="mt-3 text-3xl md:text-4xl font-bold text-navy tracking-tight">
                   <AnimatedNumber end={s.v} duration={1600 + i * 200} />
                   <span className="text-sm ml-1 text-gold">万</span>
@@ -109,7 +109,7 @@ export default function CareerModel() {
               </Reveal>
             ))}
           </div>
-          <p className="mt-7 text-xs md:text-sm text-navy/65 leading-relaxed">
+          <p className="mt-7 text-xs md:text-sm text-black/65 leading-relaxed">
             ※ 30 歳・経験者として入社した社員の実績例。月給は前職・経験を考慮したうえで個別オファー (試用期間 3 ヶ月)。
             職務手当 (主任 1 万 / 係長 2 万 / 課長補佐 3 万 / 課長 10 万) と
             資格手当 (技術士 月 10 万 / 測量士 月 1.5 万 ほか) が別途加算されます。

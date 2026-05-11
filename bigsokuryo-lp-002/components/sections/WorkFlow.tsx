@@ -45,7 +45,7 @@ export default function WorkFlow() {
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             仕事の流れ
           </h2>
-          <p className="mt-5 text-sm md:text-base text-navy/70 max-w-2xl leading-relaxed">
+          <p className="mt-5 text-sm md:text-base text-black/70 max-w-2xl leading-relaxed">
             ヒアリングから納品・アフターサポートまで、6 ステップで一気通貫。
           </p>
         </Reveal>
@@ -72,7 +72,7 @@ export default function WorkFlow() {
                   <h3 className="font-sans font-bold text-lg md:text-xl text-navy leading-snug">
                     {s.label}
                   </h3>
-                  <p className="mt-2 md:mt-3 text-sm md:text-[15px] text-navy/75 leading-relaxed">
+                  <p className="mt-2 md:mt-3 text-sm md:text-[15px] text-black/75 leading-relaxed">
                     {s.body}
                   </p>
                 </div>

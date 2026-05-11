@@ -121,7 +121,7 @@ function MobileCard({
       <p className="mt-5 text-[10px] tracking-[0.4em] text-gold">
         {isFeatured ? "FEATURED MESSAGE" : m.dept}
       </p>
-      <p className="mt-2 text-xs text-navy/55">
+      <p className="mt-2 text-xs text-black/55">
         {isFeatured && m.role ? `${m.role} / ${m.joined}` : m.joined}
       </p>
       <h3 className="mt-1 font-sans font-bold text-xl text-navy leading-tight">
@@ -130,7 +130,7 @@ function MobileCard({
       <p className="mt-4 font-sans font-bold text-2xl text-navy leading-snug border-l-2 border-gold pl-3">
         「{m.catch}」
       </p>
-      <p className="mt-4 text-sm text-navy/75 leading-relaxed">{m.body}</p>
+      <p className="mt-4 text-sm text-black/75 leading-relaxed">{m.body}</p>
     </article>
   );
 }
@@ -156,7 +156,7 @@ export default function Voices() {
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             現場で働く人を、知る。
           </h2>
-          <p className="mt-5 text-center text-navy/70 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-center text-black/70 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             「優しさと思いやり」を企業理念にする、いわゆる &quot;野武士集団&quot;。
             仲間を大切にする文化が、長く続く理由です。
           </p>
@@ -168,7 +168,7 @@ export default function Voices() {
               <MobileCard key={m.name} m={m} isFeatured={m.isFeatured} />
             ))}
           </div>
-          <div className="mt-3 flex items-center justify-center gap-3 text-[10px] tracking-[0.3em] text-navy/45">
+          <div className="mt-3 flex items-center justify-center gap-3 text-[10px] tracking-[0.3em] text-black/45">
             <span aria-hidden>←</span>
             <span>SWIPE</span>
             <span aria-hidden>→</span>
@@ -193,7 +193,7 @@ export default function Voices() {
                 <p className="text-[10px] tracking-[0.4em] text-gold">
                   FEATURED MESSAGE
                 </p>
-                <p className="mt-3 text-xs tracking-widest text-navy/55">
+                <p className="mt-3 text-xs tracking-widest text-black/55">
                   {featured.role} / {featured.joined}
                 </p>
                 <h3 className="mt-1 font-sans font-bold text-2xl md:text-3xl text-navy">
@@ -202,7 +202,7 @@ export default function Voices() {
                 <p className="mt-5 text-2xl md:text-3xl font-sans font-bold leading-tight bg-gradient-to-r from-navy to-navy/70 bg-clip-text text-transparent">
                   「{featured.catch}」
                 </p>
-                <p className="mt-5 text-sm md:text-base text-navy/75 leading-relaxed">
+                <p className="mt-5 text-sm md:text-base text-black/75 leading-relaxed">
                   {featured.body}
                 </p>
               </div>
@@ -232,7 +232,7 @@ export default function Voices() {
                     <p className="mt-1.5 font-sans font-bold text-navy text-lg leading-tight">
                       {v.name}
                     </p>
-                    <p className="text-[11px] text-navy/55 mt-0.5">
+                    <p className="text-[11px] text-black/55 mt-0.5">
                       {v.joined}
                     </p>
                   </div>
@@ -240,7 +240,7 @@ export default function Voices() {
                 <p className="relative mt-4 md:mt-5 font-sans font-bold text-sm md:text-base text-navy leading-snug border-l-2 border-gold pl-3">
                   「{v.catch}」
                 </p>
-                <p className="relative mt-4 text-sm text-navy/75 leading-relaxed flex-1">
+                <p className="relative mt-4 text-sm text-black/75 leading-relaxed flex-1">
                   {v.body}
                 </p>
               </Reveal>

@@ -311,7 +311,7 @@ function TableCardView({ card }: { card: TableCard }) {
     <div className=" bg-sand/45 border border-navy/10 p-7 md:p-9">
       <div className="flex items-baseline justify-between flex-wrap gap-3 pb-5 mb-2 border-b border-navy/15">
         <p className="text-xs tracking-[0.4em] text-gold">{card.eyebrow}</p>
-        <p className="text-[11px] text-navy/55">{card.note}</p>
+        <p className="text-[11px] text-black/55">{card.note}</p>
       </div>
       <dl className="divide-y divide-navy/10">
         {card.items.map((item) => (
@@ -322,7 +322,7 @@ function TableCardView({ card }: { card: TableCard }) {
             <dt className="md:col-span-1 text-sm md:text-[15px] font-bold text-navy self-start">
               {item.k}
             </dt>
-            <dd className="md:col-span-3 text-sm md:text-[15px] text-navy/85 leading-relaxed">
+            <dd className="md:col-span-3 text-sm md:text-[15px] text-black/85 leading-relaxed">
               {item.v}
             </dd>
           </div>
@@ -357,7 +357,7 @@ export default function Benefits() {
             </span>
             。
           </h2>
-          <p className="mt-5 text-sm md:text-base text-navy/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-sm md:text-base text-black/70 max-w-xl mx-auto leading-relaxed">
             手当の充実度と、暮らしを支える制度。働き続けられる環境にこだわっています。
           </p>
           <div className="mt-8 mx-auto h-px w-16 bg-gold/60" />
@@ -384,17 +384,17 @@ export default function Benefits() {
                       end={h.value}
                       decimals={h.decimals ?? 0}
                     />
-                    <span className="text-base ml-1 text-navy/80">
+                    <span className="text-base ml-1 text-black/80">
                       {h.unit}
                     </span>
                     {h.unitSub && (
-                      <span className="text-xs ml-0.5 text-navy/55">
+                      <span className="text-xs ml-0.5 text-black/55">
                         {h.unitSub}
                       </span>
                     )}
                   </p>
                   <p className="mt-3 text-sm font-bold text-navy">{h.label}</p>
-                  <p className="text-xs text-navy/55 mt-0.5">{h.note}</p>
+                  <p className="text-xs text-black/55 mt-0.5">{h.note}</p>
                 </div>
               </div>
             </Reveal>
@@ -419,7 +419,7 @@ export default function Benefits() {
             <h3 className="mt-3 font-sans font-bold text-2xl md:text-4xl text-navy tracking-tight">
               福利厚生・社内制度
             </h3>
-            <p className="mt-4 text-sm text-navy/65 max-w-lg mx-auto">
+            <p className="mt-4 text-sm text-black/65 max-w-lg mx-auto">
               長く働ける土台を、会社が用意する。
             </p>
           </Reveal>
@@ -438,7 +438,7 @@ export default function Benefits() {
                   <p className="font-bold text-navy text-sm md:text-base leading-tight">
                     {w.title}
                   </p>
-                  <p className="mt-2 text-xs md:text-[13px] text-navy/65 leading-relaxed">
+                  <p className="mt-2 text-xs md:text-[13px] text-black/65 leading-relaxed">
                     {w.desc}
                   </p>
                 </div>
