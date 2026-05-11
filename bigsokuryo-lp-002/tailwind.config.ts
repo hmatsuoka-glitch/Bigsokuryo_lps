@@ -9,14 +9,14 @@ const config: Config = {
       },
       colors: {
         // ビッグ測量設計 ブランドカラー
-        // ロゴから抽出したフォレストグリーン
+        // 添付画像から取得した鮮やかなグリーン
         navy: {
-          DEFAULT: "#005A33",
-          dark: "#003D22",
+          DEFAULT: "#16A34A",
+          dark: "#0E7C36",
         },
         brand: {
-          DEFAULT: "#005A33",
-          dark: "#003D22",
+          DEFAULT: "#16A34A",
+          dark: "#0E7C36",
         },
         // LINE 公式カラー
         line: {
