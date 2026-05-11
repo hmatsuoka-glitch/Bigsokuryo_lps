@@ -189,19 +189,6 @@ export default function SelectionFlow() {
             </div>
           </motion.div>
         </AnimatePresence>
-
-        <Reveal delay={0.1} className="mt-10">
-          <div className="bg-sand border border-navy/10 px-6 py-5 text-center text-sm md:text-base text-zinc-700">
-            選考に関するお問い合わせは、
-            <a
-              href="mailto:saiyou@bigsdc.co.jp"
-              className="text-gold-dark font-bold underline-grow"
-            >
-              saiyou@bigsdc.co.jp
-            </a>
-            （人事部 須藤）まで。
-          </div>
-        </Reveal>
       </div>
     </section>
   );
