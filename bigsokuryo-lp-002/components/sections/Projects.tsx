@@ -38,10 +38,10 @@ export default function Projects() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/project_img_03.jpg')" }}
       />
-      <div aria-hidden className="absolute inset-0 bg-white/92" />
+      <div aria-hidden className="absolute inset-0 bg-white/97" />
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white/80"
+        className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/85"
       />
 
       <div className="relative max-w-6xl mx-auto px-6">
