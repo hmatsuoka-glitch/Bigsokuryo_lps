@@ -1,20 +1,20 @@
 "use server";
 
+import nodemailer from "nodemailer";
+
 /**
- * 応募フォームの送信ハンドラ。
+ * 応募フォームの送信ハンドラ（Next.js Server Action）。
  *
- * このコードは Next.js の Server Action として実行されます。
- * クライアントから submitEntry(formData) で呼び出され、
- * サーバー側で:
- *   - 入力のバリデーション
- *   - サーバーログへの記録（必須）
- *   - 任意の通知（環境変数で外部送信先を切り替え）
- * を行います。
+ * 通知は Gmail SMTP 経由で送信します。Vercel の Environment Variables に
+ * 以下が設定されている前提です:
+ *   - GMAIL_USER         送信元の Gmail アカウント (例: noreply.bigsdc@gmail.com)
+ *                        SMTP ログインユーザー兼 From アドレス
+ *   - GMAIL_APP_PASSWORD Google アカウントで発行したアプリパスワード
+ *                        通常のパスワードでは SMTP 認証できないので必須
+ *   - ADMIN_EMAIL        通知の受信先 (採用担当宛 / 例: saiyou@bigsdc.co.jp)
  *
- * 通知方式を増やしたい場合は notify() を編集してください。
- *   - Resend (メール): RESEND_API_KEY と RECRUIT_NOTIFY_TO を環境変数に設定
- *   - Slack: SLACK_WEBHOOK_URL を環境変数に設定
- *   - そのほか: webhook 等を fetch で呼び出すコードを追加
+ * すべてのレシピでもログには記録するので、env が未設定でもフォーム自体は
+ * "success" を返します（メールが飛ばないだけ）。
  */
 
 export type EntryState =
@@ -39,7 +39,6 @@ export async function submitEntry(formData: FormData): Promise<EntryState> {
   const message = String(formData.get("message") ?? "").trim();
   const agree = formData.get("agree");
 
-  // バリデーション: 必須項目
   if (!name) {
     return { status: "error", message: "お名前を入力してください。" };
   }
@@ -62,46 +61,45 @@ export async function submitEntry(formData: FormData): Promise<EntryState> {
     receivedAt: new Date().toISOString(),
   };
 
+  // 1) サーバーログには必ず記録（Vercel Logs から検索可能）
+  console.info("[entry] received", payload);
+
+  // 2) Gmail SMTP でメール通知
   try {
-    // 1) サーバーログに記録（Vercel のログから検索可能）
-    console.info("[entry] received", payload);
-
-    // 2) 任意の通知
-    await notify(payload);
-
+    await sendByGmail(payload);
     return { status: "success" };
   } catch (err) {
-    console.error("[entry] failed", err);
+    console.error("[entry] gmail send failed", err);
     return {
       status: "error",
       message:
         err instanceof Error
-          ? err.message
+          ? `送信処理でエラーが発生しました: ${err.message}`
           : "送信処理でエラーが発生しました。",
     };
   }
 }
 
-/**
- * 通知の振り分け。環境変数が設定されている方式だけ発火します。
- * すべて未設定なら、サーバーログ記録のみで完了します。
- */
-async function notify(payload: EntryPayload): Promise<void> {
-  await Promise.all([
-    notifyByResend(payload),
-    notifyBySlack(payload),
-  ]);
-}
+async function sendByGmail(payload: EntryPayload): Promise<void> {
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  const to = process.env.ADMIN_EMAIL;
 
-async function notifyByResend(payload: EntryPayload): Promise<void> {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.RECRUIT_NOTIFY_TO;
-  const from =
-    process.env.RECRUIT_NOTIFY_FROM ?? "onboarding@resend.dev";
+  // env 未設定の場合はメール送信はスキップ。ログだけ残して成功扱い
+  if (!user || !pass || !to) {
+    console.warn(
+      "[entry] GMAIL_USER / GMAIL_APP_PASSWORD / ADMIN_EMAIL が未設定のためメール送信をスキップしました"
+    );
+    return;
+  }
 
-  if (!apiKey || !to) return;
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
 
   const subject = `【ビック測量 採用LP】新着応募 ${payload.name} 様`;
+
   const text = [
     "ビック測量設計株式会社 採用LPからの新着応募です。",
     "",
@@ -115,42 +113,39 @@ async function notifyByResend(payload: EntryPayload): Promise<void> {
     payload.message || "(未入力)",
   ].join("\n");
 
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ from, to: [to], subject, text }),
-  });
+  const html = `
+    <div style="font-family: -apple-system, 'Hiragino Sans', sans-serif; color: #1f2937; line-height: 1.7;">
+      <h2 style="color: #0f5c2c; margin: 0 0 16px;">採用LP 新着応募</h2>
+      <p style="margin: 0 0 24px; color: #4b5563;">ビック測量設計株式会社 採用LPからの新着応募です。</p>
+      <table style="border-collapse: collapse; width: 100%; max-width: 560px;">
+        <tbody>
+          <tr><td style="padding: 8px 12px; background: #f6f4ee; width: 110px; font-weight: bold;">受付日時</td><td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${escapeHtml(payload.receivedAt)}</td></tr>
+          <tr><td style="padding: 8px 12px; background: #f6f4ee; font-weight: bold;">お名前</td><td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${escapeHtml(payload.name)}</td></tr>
+          <tr><td style="padding: 8px 12px; background: #f6f4ee; font-weight: bold;">電話番号</td><td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${escapeHtml(payload.phone)}</td></tr>
+          <tr><td style="padding: 8px 12px; background: #f6f4ee; font-weight: bold;">メール</td><td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${escapeHtml(payload.email) || "<span style='color:#9ca3af'>(未入力)</span>"}</td></tr>
+          <tr><td style="padding: 8px 12px; background: #f6f4ee; font-weight: bold;">年齢</td><td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${escapeHtml(payload.age) || "<span style='color:#9ca3af'>(未入力)</span>"}</td></tr>
+        </tbody>
+      </table>
+      <h3 style="color: #0f5c2c; margin: 24px 0 8px;">ご質問・メッセージ</h3>
+      <p style="white-space: pre-wrap; background: #f6f4ee; padding: 12px; margin: 0;">${escapeHtml(payload.message) || "<span style='color:#9ca3af'>(未入力)</span>"}</p>
+    </div>
+  `;
 
-  if (!res.ok) {
-    throw new Error(`Resend HTTP ${res.status}`);
-  }
+  await transporter.sendMail({
+    from: user,
+    to,
+    replyTo: payload.email || undefined,
+    subject,
+    text,
+    html,
+  });
 }
 
-async function notifyBySlack(payload: EntryPayload): Promise<void> {
-  const url = process.env.SLACK_WEBHOOK_URL;
-  if (!url) return;
-
-  const text = [
-    `*新着応募* 👤 ${payload.name}`,
-    `📞 ${payload.phone}`,
-    payload.email && `✉️ ${payload.email}`,
-    payload.age && `🎂 ${payload.age}`,
-    payload.message && `💬 ${payload.message}`,
-    `🕒 ${payload.receivedAt}`,
-  ]
-    .filter(Boolean)
-    .join("\n");
-
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text }),
-  });
-
-  if (!res.ok) {
-    throw new Error(`Slack HTTP ${res.status}`);
-  }
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
