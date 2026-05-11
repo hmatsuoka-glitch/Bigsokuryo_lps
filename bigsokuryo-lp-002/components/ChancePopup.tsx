@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { LineButton } from "./LineButton";
 
 const DELAY_MS = 35_000;
 const STORAGE_KEY = "bigsokuryo_lp002_chance_popup_dismissed";
@@ -86,17 +87,17 @@ export default function ChancePopup() {
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-none" />
-              <span>メールで匿名相談 OK</span>
+              <span>LINE で匿名相談 OK</span>
             </li>
           </ul>
+
+          <LineButton size="lg" className="mt-7 w-full" />
+
           <a
-            href="#entry"
+            href="mailto:saiyou@bigsdc.co.jp"
             onClick={close}
-            className="mt-7 flex items-center justify-center gap-3 bg-brand hover:bg-brand-dark text-white font-bold text-sm md:text-base tracking-wider px-6 py-4 rounded-full transition shadow-md"
+            className="mt-3 flex items-center justify-center gap-2 border border-brand text-brand hover:bg-brand hover:text-white font-bold text-sm tracking-wider px-6 py-3 rounded-full transition-colors"
           >
-            <span className="w-7 h-7 rounded-full bg-white text-brand grid place-items-center text-xs font-bold">
-              ✉
-            </span>
             メールで応募する
             <span aria-hidden>→</span>
           </a>

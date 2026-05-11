@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { LineButton } from "./LineButton";
 
 type Props = {
   accentClass?: string;
@@ -20,11 +21,40 @@ export default function EntryForm({
           <p className="mt-5 text-sm md:text-base text-black/70 leading-relaxed">
             {category}採用へのご応募・ご質問はこちらから。
             カジュアル面談のみのお問い合わせも歓迎です。
-            人事部 須藤宛 (saiyou@bigsdc.co.jp) に直接ご連絡いただいても構いません。
+            公式 LINE・メール・フォームの 3 つからお選びください。
           </p>
         </Reveal>
 
-        <Reveal delay={150} className="mt-10 md:mt-14">
+        <Reveal delay={120} className="mt-10 md:mt-14">
+          <div className="bg-white border border-navy/10 p-6 md:p-8">
+            <div className="flex items-baseline justify-between flex-wrap gap-3 pb-5 mb-5 border-b border-navy/10">
+              <p className="text-xs tracking-[0.4em] text-gold">QUICK CONTACT</p>
+              <p className="text-[11px] text-black/55">最短ルートで応募する</p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <LineButton size="lg" className="w-full" />
+              <a
+                href="mailto:saiyou@bigsdc.co.jp"
+                className="inline-flex items-center justify-center gap-2 border border-brand text-brand hover:bg-brand hover:text-white font-bold text-sm md:text-base tracking-wider px-6 py-4 rounded-full transition-colors"
+              >
+                メールで応募する
+                <span aria-hidden>→</span>
+              </a>
+            </div>
+            <p className="mt-3 text-[11px] text-black/55 text-center">
+              ※ LINE は匿名でのご相談も可能です
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={200} className="mt-8 md:mt-10">
+          <div className="flex items-center gap-4 mb-6">
+            <span aria-hidden className="h-px flex-1 bg-navy/15" />
+            <span className="text-[10px] tracking-[0.4em] text-black/45">
+              OR FORM
+            </span>
+            <span aria-hidden className="h-px flex-1 bg-navy/15" />
+          </div>
           <form className="bg-white border border-navy/10 p-6 md:p-10 grid gap-6">
             <Field label="お名前" required>
               <input
@@ -56,7 +86,7 @@ export default function EntryForm({
             </Field>
             <button
               type="submit"
-              className={`cta-shine mt-2 ${accentClass} text-white py-4 text-sm tracking-[0.25em] font-bold transition-all hover:shadow-lg`}
+              className={`mt-2 ${accentClass} text-white py-4 text-sm tracking-[0.25em] font-bold transition-all hover:shadow-lg`}
             >
               送信する →
             </button>

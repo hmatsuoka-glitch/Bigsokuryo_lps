@@ -46,6 +46,15 @@ export default function SiteFooter() {
             >
               saiyou@bigsdc.co.jp
             </a>
+            <a
+              href="https://lin.ee/your-line-id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-line hover:bg-line-dark text-white text-xs font-bold tracking-wider rounded-full transition-colors"
+            >
+              公式 LINE で応募
+              <span aria-hidden>→</span>
+            </a>
           </div>
 
           <div className="md:col-span-3">
