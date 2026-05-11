@@ -68,7 +68,7 @@ export default function TechStack() {
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             技術が、技術で語れる環境。
           </h2>
-          <p className="mt-5 text-navy/70 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-5 text-black/70 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             特許取得の高精度測量から最新の 3D 計測まで、全て自社保有。
             鉄道・道路・トンネル・空港の重要インフラ現場で、本物の機材と本物の案件に向き合えます。
           </p>
@@ -98,7 +98,7 @@ export default function TechStack() {
                   </span>
                 )}
               </div>
-              <ul className="mt-4 space-y-2 text-sm text-navy/85">
+              <ul className="mt-4 space-y-2 text-sm text-black/85">
                 {s.items.map((i) => (
                   <li key={i} className="flex items-start gap-2.5">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-none transition-transform group-hover:scale-150" />
@@ -110,7 +110,7 @@ export default function TechStack() {
           ))}
         </div>
         <Reveal delay={300} className="mt-12 text-center">
-          <p className="text-xs tracking-widest text-navy/50">
+          <p className="text-xs tracking-widest text-black/50">
             測量業者登録 国土交通大臣登録 一般 第 (9)-14858 号
           </p>
         </Reveal>

@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import EntryForm from "@/components/EntryForm";
+import ChancePopup from "@/components/ChancePopup";
 import Hero from "@/components/sections/Hero";
 import OurBusiness from "@/components/sections/OurBusiness";
 import WorkFlow from "@/components/sections/WorkFlow";
@@ -29,6 +30,7 @@ export default function Page() {
         />
       </main>
       <SiteFooter />
+      <ChancePopup />
     </>
   );
 }

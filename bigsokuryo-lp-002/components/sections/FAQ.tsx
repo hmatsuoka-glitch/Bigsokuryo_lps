@@ -65,7 +65,7 @@ export default function FAQ() {
                 <span className="h-px flex-1 bg-navy/10 group-hover:bg-gold/40 transition-colors" />
               </div>
               <p className="mt-3 font-sans font-bold text-navy">{f.label}</p>
-              <p className="mt-2 text-xs text-navy/65 leading-relaxed">
+              <p className="mt-2 text-xs text-black/65 leading-relaxed">
                 {f.body}
               </p>
             </Reveal>
@@ -87,7 +87,7 @@ export default function FAQ() {
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-sm text-navy/70 leading-relaxed pr-10">
+                <p className="mt-4 text-sm text-black/70 leading-relaxed pr-10">
                   {item.a}
                 </p>
               </details>

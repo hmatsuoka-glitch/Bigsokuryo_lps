@@ -38,18 +38,18 @@ export default function AboutUs() {
               </p>
               <p className="mt-3 text-3xl md:text-5xl font-bold text-navy tracking-tight leading-none">
                 <AnimatedNumber end={s.value} decimals={s.decimals ?? 0} />
-                <span className="text-sm md:text-lg ml-1 text-navy/65">
+                <span className="text-sm md:text-lg ml-1 text-black/65">
                   {s.suffix}
                 </span>
               </p>
-              <p className="mt-4 text-xs md:text-sm text-navy/75">{s.label}</p>
+              <p className="mt-4 text-xs md:text-sm text-black/75">{s.label}</p>
             </Reveal>
           ))}
         </div>
 
         <Reveal delay={400} className="mt-10 md:mt-14 max-w-3xl">
           <div className="border-l-4 border-brand pl-5 py-1">
-            <p className="text-sm md:text-base text-navy/85 leading-relaxed">
+            <p className="text-sm md:text-base text-black/85 leading-relaxed">
               鉄道工事測量を起点に、東京の重要インフラ整備を技術で支えてきた総合測量会社。
               「健康企業宣言 銀の認定」(2025 年 7 月) 取得。
             </p>

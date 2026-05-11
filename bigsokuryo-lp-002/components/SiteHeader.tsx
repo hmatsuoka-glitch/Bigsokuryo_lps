@@ -18,11 +18,11 @@ export default function SiteHeader({
             alt="ビッグ測量設計株式会社"
             className="h-8 md:h-9 w-auto flex-none"
           />
-          <span className="hidden sm:inline text-[10px] tracking-[0.3em] text-navy/55 truncate">
+          <span className="hidden sm:inline text-[10px] tracking-[0.3em] text-black/55 truncate">
             {lpCode}
           </span>
         </a>
-        <nav className="hidden lg:flex items-center gap-6 text-sm text-navy/80">
+        <nav className="hidden lg:flex items-center gap-6 text-sm text-black/80">
           <a href="#business" className="hover:text-brand">事業内容</a>
           <a href="#flow" className="hover:text-brand">仕事の流れ</a>
           <a href="#about" className="hover:text-brand">数字で見る</a>

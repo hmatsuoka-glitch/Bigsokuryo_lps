@@ -36,7 +36,7 @@ export default function OurBusiness() {
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             事業内容
           </h2>
-          <p className="mt-5 text-sm md:text-base text-navy/70 max-w-2xl leading-relaxed">
+          <p className="mt-5 text-sm md:text-base text-black/70 max-w-2xl leading-relaxed">
             測量を軸に、設計・施工管理・企画・システム開発まで。
             東京の重要インフラ整備を、5 つの事業領域で一気通貫に支えます。
           </p>
@@ -72,7 +72,7 @@ export default function OurBusiness() {
                   <h3 className="font-sans font-bold text-2xl md:text-3xl text-navy leading-tight">
                     {b.title}
                   </h3>
-                  <p className="mt-4 md:mt-5 text-sm md:text-base text-navy/75 leading-relaxed">
+                  <p className="mt-4 md:mt-5 text-sm md:text-base text-black/75 leading-relaxed">
                     {b.body}
                   </p>
                 </div>

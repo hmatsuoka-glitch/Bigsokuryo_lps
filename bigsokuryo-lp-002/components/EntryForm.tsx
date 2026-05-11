@@ -17,7 +17,7 @@ export default function EntryForm({
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             エントリー
           </h2>
-          <p className="mt-5 text-sm md:text-base text-navy/70 leading-relaxed">
+          <p className="mt-5 text-sm md:text-base text-black/70 leading-relaxed">
             {category}採用へのご応募・ご質問はこちらから。
             カジュアル面談のみのお問い合わせも歓迎です。
             人事部 須藤宛 (saiyou@bigsdc.co.jp) に直接ご連絡いただいても構いません。
@@ -78,7 +78,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="flex items-center gap-2 text-xs tracking-widest text-navy/70 mb-2">
+      <span className="flex items-center gap-2 text-xs tracking-widest text-black/70 mb-2">
         {label}
         {required && (
           <span className="text-[10px] bg-brand text-white px-1.5 py-0.5 tracking-normal">

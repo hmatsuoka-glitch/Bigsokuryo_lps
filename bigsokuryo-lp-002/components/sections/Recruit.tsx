@@ -32,7 +32,7 @@ export default function Recruit() {
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             募集要項
           </h2>
-          <p className="mt-5 text-sm md:text-base text-navy/70 max-w-2xl leading-relaxed">
+          <p className="mt-5 text-sm md:text-base text-black/70 max-w-2xl leading-relaxed">
             経験者・中途採用 (測量アシスタント / 正社員)。
             入社時期はご事情に合わせて柔軟に相談に応じます。
           </p>
@@ -63,7 +63,7 @@ export default function Recruit() {
           <div className="border border-navy/10">
             <div className="flex items-baseline justify-between flex-wrap gap-3 px-6 md:px-10 pt-6 pb-4 border-b border-navy/15">
               <p className="text-xs tracking-[0.4em] text-gold">REQUIREMENTS</p>
-              <p className="text-[11px] text-navy/55">中途・正社員</p>
+              <p className="text-[11px] text-black/55">中途・正社員</p>
             </div>
             <dl>
               {summary.map((item, i) => (
@@ -76,7 +76,7 @@ export default function Recruit() {
                   <dt className="md:col-span-1 text-sm md:text-[15px] font-bold text-navy">
                     {item.k}
                   </dt>
-                  <dd className="md:col-span-3 text-sm md:text-[15px] text-navy/85 leading-relaxed">
+                  <dd className="md:col-span-3 text-sm md:text-[15px] text-black/85 leading-relaxed">
                     {item.v}
                   </dd>
                 </div>
