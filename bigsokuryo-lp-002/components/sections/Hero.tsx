@@ -20,7 +20,7 @@ export default function Hero() {
           </p>
           <h1 className="font-sans font-bold text-3xl md:text-6xl lg:text-7xl leading-[1.25] tracking-tight drop-shadow-lg">
             鉄道・道路・トンネル。<br />
-            東京を、<span className="text-gold">ミリ単位</span>で測る。
+            東京を、<span className="underline underline-offset-[10px] decoration-2 decoration-white/40">ミリ単位</span>で測る。
           </h1>
           <p className="mt-6 max-w-xl text-sm md:text-base text-white/90 leading-relaxed drop-shadow">
             1980 年創業、社員 163 名。<br />
