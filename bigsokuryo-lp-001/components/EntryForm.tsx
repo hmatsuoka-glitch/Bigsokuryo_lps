@@ -1,42 +1,24 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { FormEvent, useState } from "react";
+import { useRef, useState, useTransition } from "react";
 import { COMPANY, SITE } from "@/lib/site";
 import { Reveal } from "@/components/Motion";
-
-type Status = "idle" | "submitting" | "success" | "error";
+import { submitEntry, type EntryState } from "@/app/actions";
 
 export default function EntryForm() {
-  const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState<string | null>(null);
+  const [state, setState] = useState<EntryState>({ status: "idle" });
+  const [isPending, startTransition] = useTransition();
+  const formRef = useRef<HTMLFormElement>(null);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("submitting");
-    setError(null);
-
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
-
-    try {
-      if (SITE.entryEndpoint) {
-        const res = await fetch(SITE.entryEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      } else {
-        // フォールバック: 送信先未設定。コンソールに出すだけ
-        console.info("[entry] preview submit", data);
-        await new Promise((r) => setTimeout(r, 700));
+  function handleAction(formData: FormData) {
+    startTransition(async () => {
+      const result = await submitEntry(formData);
+      setState(result);
+      if (result.status === "success") {
+        formRef.current?.reset();
       }
-      setStatus("success");
-      e.currentTarget.reset();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "送信に失敗しました");
-      setStatus("error");
-    }
+    });
   }
 
   return (
@@ -77,7 +59,7 @@ export default function EntryForm() {
         </Reveal>
 
         <AnimatePresence mode="wait">
-          {status === "success" ? (
+          {state.status === "success" ? (
             <motion.div
               key="success"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -110,7 +92,7 @@ export default function EntryForm() {
               </p>
               <button
                 type="button"
-                onClick={() => setStatus("idle")}
+                onClick={() => setState({ status: "idle" })}
                 className="mt-6 text-xs text-zinc-500 underline-grow"
               >
                 もう一度送る
@@ -119,27 +101,48 @@ export default function EntryForm() {
           ) : (
             <motion.form
               key="form"
+              ref={formRef}
+              action={handleAction}
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onSubmit={handleSubmit}
               className="mt-12 grid gap-6 bg-white border border-navy/10 shadow-soft p-6 md:p-10"
             >
-              <div className="grid md:grid-cols-2 gap-6">
-                <Field label="お名前" name="name" type="text" required placeholder="山田 太郎" />
-                <Field label="フリガナ" name="kana" type="text" placeholder="ヤマダ タロウ" />
-                <Field label="メールアドレス" name="email" type="email" required placeholder="example@mail.com" />
-                <Field label="電話番号" name="phone" type="tel" placeholder="090-0000-0000" />
-              </div>
+              <Field
+                label="お名前"
+                name="name"
+                type="text"
+                required
+                placeholder="山田 太郎"
+              />
+              <Field
+                label="電話番号"
+                name="phone"
+                type="tel"
+                required
+                placeholder="090-0000-0000"
+              />
+              <Field
+                label="メールアドレス"
+                name="email"
+                type="email"
+                placeholder="example@mail.com"
+              />
+              <Field
+                label="年齢"
+                name="age"
+                type="text"
+                placeholder="例:28"
+              />
 
               <label className="block">
                 <span className="text-xs tracking-widest text-zinc-600 font-bold">
-                  ご質問（任意）
+                  ご質問(任意)
                 </span>
                 <textarea
                   name="message"
                   rows={4}
                   className="mt-2 w-full border border-navy/15 bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none resize-none text-sm transition-colors"
-                  placeholder="例：カジュアル面談希望／鉄道工事の現場について聞きたい／資格について知りたい など"
+                  placeholder="例:カジュアル面談希望／鉄道工事の現場について聞きたい／資格について知りたい など"
                 />
               </label>
 
@@ -160,13 +163,13 @@ export default function EntryForm() {
               </label>
 
               <motion.button
-                whileHover={{ scale: status === "submitting" ? 1 : 1.02 }}
+                whileHover={{ scale: isPending ? 1 : 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                disabled={status === "submitting"}
+                disabled={isPending}
                 className="group mt-2 bg-navy hover:bg-navy-dark text-white py-4 text-sm tracking-[0.25em] font-bold transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-soft"
               >
-                {status === "submitting" ? (
+                {isPending ? (
                   <>
                     <span className="w-4 h-4 rounded-full border-2 border-white/40 border-t-white animate-spin" />
                     送信中...
@@ -181,13 +184,13 @@ export default function EntryForm() {
                 )}
               </motion.button>
 
-              {status === "error" && (
+              {state.status === "error" && (
                 <motion.p
                   initial={{ opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="text-center text-sm text-red-600"
                 >
-                  送信できませんでした。{error}
+                  {state.message}
                 </motion.p>
               )}
 
