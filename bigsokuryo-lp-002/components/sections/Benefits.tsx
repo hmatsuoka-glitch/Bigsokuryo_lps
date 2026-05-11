@@ -368,7 +368,7 @@ export default function Benefits() {
             <Reveal
               key={h.label}
               delay={i * 120}
-              className="card-hover relative bg-white  border border-navy/10 p-7 overflow-hidden"
+              className="relative bg-white  border border-navy/10 p-7 overflow-hidden"
             >
               <div
                 aria-hidden
@@ -429,7 +429,7 @@ export default function Benefits() {
               <Reveal
                 key={w.title}
                 delay={i * 60}
-                className="card-hover group  bg-sand/55 border border-navy/10 p-5 md:p-6 flex flex-col gap-4 hover:bg-white"
+                className="group  bg-sand/55 border border-navy/10 p-5 md:p-6 flex flex-col gap-4 hover:bg-white"
               >
                 <div className="w-10 h-10  bg-white border border-navy/10 grid place-items-center text-gold flex-none transition-all group-hover:bg-gold group-hover:text-white group-hover:border-gold">
                   {w.icon}
@@ -448,7 +448,7 @@ export default function Benefits() {
         </div>
 
         <Reveal delay={400} className="mt-16 max-w-3xl mx-auto">
-          <div className="card-hover flex flex-wrap items-center gap-5 bg-gradient-to-r from-navy via-navy-dark to-navy text-white  p-6 md:p-7 border border-gold/30 relative overflow-hidden">
+          <div className="flex flex-wrap items-center gap-5 bg-gradient-to-r from-navy via-navy-dark to-navy text-white  p-6 md:p-7 border border-gold/30 relative overflow-hidden">
             <div
               aria-hidden
               className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-gold/20 blur-3xl"

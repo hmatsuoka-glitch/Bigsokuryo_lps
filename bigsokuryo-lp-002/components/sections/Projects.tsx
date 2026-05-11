@@ -47,7 +47,7 @@ export default function Projects() {
             <Reveal
               key={p.title}
               delay={i * 100}
-              className="card-hover group relative overflow-hidden  border border-navy/10 bg-gradient-to-br from-white to-sand/40 p-5 md:p-8 cursor-default"
+              className="group relative overflow-hidden  border border-navy/10 bg-gradient-to-br from-white to-sand/40 p-5 md:p-8 cursor-default"
             >
               <div
                 aria-hidden

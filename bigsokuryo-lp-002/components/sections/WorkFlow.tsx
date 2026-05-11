@@ -61,7 +61,7 @@ export default function WorkFlow() {
                 key={s.no}
                 delay={i * 60}
                 as="li"
-                className="card-hover group relative grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr] gap-4 md:gap-8 items-start bg-white border border-navy/10 p-5 md:p-7"
+                className="group relative grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr] gap-4 md:gap-8 items-start bg-white border border-navy/10 p-5 md:p-7"
               >
                 <div className="md:flex md:flex-col md:items-center">
                   <span className="font-mono text-3xl md:text-4xl font-bold text-brand leading-none">

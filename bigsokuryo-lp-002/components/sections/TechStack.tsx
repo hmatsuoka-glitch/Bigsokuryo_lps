@@ -78,7 +78,7 @@ export default function TechStack() {
             <Reveal
               key={s.cat}
               delay={i * 70}
-              className={`card-hover group bg-white  p-6 border ${
+              className={`group bg-white  p-6 border ${
                 s.accent
                   ? "border-gold/40 bg-gradient-to-br from-white to-amber-50"
                   : "border-navy/10"
