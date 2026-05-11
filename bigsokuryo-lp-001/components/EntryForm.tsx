@@ -7,12 +7,6 @@ import { Reveal } from "@/components/Motion";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-const tracks = [
-  "新卒採用（2027年卒）",
-  "中途採用（経験者・既卒）",
-  "迷っている／相談したい",
-];
-
 export default function EntryForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
@@ -130,19 +124,11 @@ export default function EntryForm() {
               onSubmit={handleSubmit}
               className="mt-12 grid gap-6 bg-white border border-navy/10 shadow-soft p-6 md:p-10"
             >
-              <Select
-                label="ご応募コース"
-                name="track"
-                options={tracks}
-                required
-              />
-
               <div className="grid md:grid-cols-2 gap-6">
                 <Field label="お名前" name="name" type="text" required placeholder="山田 太郎" />
                 <Field label="フリガナ" name="kana" type="text" placeholder="ヤマダ タロウ" />
                 <Field label="メールアドレス" name="email" type="email" required placeholder="example@mail.com" />
                 <Field label="電話番号" name="phone" type="tel" placeholder="090-0000-0000" />
-                <Field label="学校／前職" name="school_or_prev" type="text" placeholder="○○大学 ○○学部 ／ ○○株式会社" />
               </div>
 
               <label className="block">
@@ -248,39 +234,6 @@ function Field({ label, name, type, required, placeholder }: FieldProps) {
         placeholder={placeholder}
         className="mt-2 w-full border border-navy/15 bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-sm transition-colors"
       />
-    </label>
-  );
-}
-
-type SelectProps = {
-  label: string;
-  name: string;
-  options: string[];
-  required?: boolean;
-};
-
-function Select({ label, name, options, required }: SelectProps) {
-  return (
-    <label className="block">
-      <span className="text-xs tracking-widest text-zinc-600 font-bold">
-        {label}
-        {required && <span className="ml-1 text-gold-dark">*</span>}
-      </span>
-      <select
-        name={name}
-        defaultValue=""
-        required={required}
-        className="mt-2 w-full border border-navy/15 bg-white px-3.5 py-3 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-sm transition-colors"
-      >
-        <option value="" disabled>
-          選択してください
-        </option>
-        {options.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
-      </select>
     </label>
   );
 }
