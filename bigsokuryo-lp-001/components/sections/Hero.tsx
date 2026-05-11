@@ -15,48 +15,48 @@ const tags = [
 export default function Hero() {
   return (
     <section className="relative bg-white">
-      {/* Top photo band */}
-      <div className="relative w-full aspect-[4/5] sm:aspect-[16/10] md:aspect-[16/8] lg:aspect-[16/7] overflow-hidden bg-navy-dark">
+      {/* Top photo band — natural 3:2 aspect, no overlay so the full
+          source photo is shown without aggressive cropping */}
+      <div className="relative w-full aspect-[3/2] md:aspect-[16/8] overflow-hidden bg-navy-dark">
         <Image
           src="/works_img.jpg"
           alt="ビッグ測量設計の現場"
           fill
           priority
           quality={95}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1600px"
-          style={{ objectPosition: "center 35%" }}
+          sizes="(max-width: 1024px) 100vw, 1600px"
+          style={{ objectPosition: "center" }}
           className="object-cover"
         />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy/30 to-navy-deep/30"
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="absolute left-5 right-5 bottom-6 md:left-12 md:bottom-12 max-w-3xl"
-        >
-          <p className="text-[10px] md:text-xs tracking-[0.4em] text-white/85 font-bold">
-            BIG SURVEY &amp; DESIGN — RECRUIT
-          </p>
-          <h1 className="mt-4 font-sans font-black text-3xl md:text-5xl lg:text-6xl text-white heading-display">
-            <span className="block leading-[1.5]">思いやりを、</span>
-            <span className="inline-block mt-2 md:mt-3 leading-[1.4] text-navy bg-white px-3 py-1">
-              技術にのせて。
-            </span>
-          </h1>
-        </motion.div>
       </div>
 
       {/* Body band */}
-      <div className="max-w-5xl mx-auto px-6 py-12 md:py-16">
+      <div className="max-w-5xl mx-auto px-6 py-14 md:py-20">
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-[11px] md:text-xs tracking-[0.5em] text-gold-dark font-bold"
+        >
+          BIG SURVEY &amp; DESIGN — RECRUIT
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-5 font-sans font-black text-5xl md:text-7xl lg:text-8xl text-navy heading-display leading-[1.15]"
+        >
+          <span className="block">思いやりを、</span>
+          <span className="block mt-2">技術にのせて。</span>
+        </motion.h1>
+
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap gap-2"
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="mt-8 flex flex-wrap gap-2"
         >
           {tags.map((t) => (
             <span
@@ -72,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.15, duration: 0.6 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
           className="mt-8 text-base md:text-lg text-zinc-700 leading-loose"
         >
           鉄道工事測量から、1ミクロンの構造物計測まで。
@@ -84,7 +84,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.6 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
           className="mt-10 flex flex-wrap gap-3"
         >
           <a
