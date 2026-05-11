@@ -26,7 +26,7 @@ export default function OurBusiness() {
     <section id="business" className="py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal>
-          <p className="text-xs tracking-[0.4em] text-gold">OUR BUSINESS</p>
+          <p className="text-xs tracking-[0.4em] text-brand">OUR BUSINESS</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             事業内容
           </h2>
@@ -45,7 +45,7 @@ export default function OurBusiness() {
               <p className="font-mono text-4xl md:text-5xl font-bold text-brand leading-none">
                 {b.no}
               </p>
-              <p className="mt-4 text-[10px] md:text-xs tracking-[0.3em] text-gold">
+              <p className="mt-4 text-[10px] md:text-xs tracking-[0.3em] text-brand">
                 {b.eyebrow}
               </p>
               <h3 className="mt-3 font-sans font-bold text-2xl md:text-3xl text-navy leading-tight">

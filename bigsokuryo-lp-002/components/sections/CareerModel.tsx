@@ -31,11 +31,11 @@ export default function CareerModel() {
     <section id="career" className="py-28 bg-sand relative overflow-hidden">
       <div
         aria-hidden
-        className="absolute top-1/3 left-0 w-80 h-80 rounded-full bg-gold/10 blur-3xl"
+        className="absolute top-1/3 left-0 w-80 h-80 rounded-full bg-brand/10 blur-3xl"
       />
       <div className="relative max-w-6xl mx-auto px-6">
         <Reveal className="text-center">
-          <p className="text-xs tracking-[0.4em] text-gold">CAREER MODEL</p>
+          <p className="text-xs tracking-[0.4em] text-brand">CAREER MODEL</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             3 つのキャリアトラック
           </h2>
@@ -55,10 +55,10 @@ export default function CareerModel() {
             >
               <div
                 aria-hidden
-                className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold via-amber-400 to-gold scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
+                className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand via-amber-400 to-brand scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
               />
               <div className="flex items-start gap-3">
-                <span className="font-mono text-3xl font-bold text-gold/40 leading-none">
+                <span className="font-mono text-3xl font-bold text-brand/40 leading-none">
                   0{i + 1}
                 </span>
                 <h3 className="font-sans font-bold text-xl text-navy leading-snug">
@@ -72,7 +72,7 @@ export default function CareerModel() {
                 {t.skills.map((s) => (
                   <li
                     key={s}
-                    className="text-[11px] tracking-widest border border-navy/20 px-2.5 py-1 rounded-full text-black/70 transition-all hover:border-gold hover:text-navy"
+                    className="text-[11px] tracking-widest border border-navy/20 px-2.5 py-1 rounded-full text-black/70 transition-all hover:border-brand hover:text-navy"
                   >
                     {s}
                   </li>
@@ -87,7 +87,7 @@ export default function CareerModel() {
           className="mt-16  border border-navy/10 bg-white p-7 md:p-10 shadow-sm"
         >
           <div className="flex items-baseline justify-between flex-wrap gap-4 mb-8">
-            <p className="text-xs tracking-widest text-gold">
+            <p className="text-xs tracking-widest text-brand">
               SALARY TRACK / 30 歳経験者の年収実績
             </p>
             <p className="text-[11px] text-black/50 tracking-wider">
@@ -104,7 +104,7 @@ export default function CareerModel() {
                 <p className="text-xs tracking-widest text-black/60">{s.y}</p>
                 <p className="mt-3 text-3xl md:text-4xl font-bold text-navy tracking-tight">
                   <AnimatedNumber end={s.v} duration={1600 + i * 200} />
-                  <span className="text-sm ml-1 text-gold">万</span>
+                  <span className="text-sm ml-1 text-brand">万</span>
                 </p>
               </Reveal>
             ))}

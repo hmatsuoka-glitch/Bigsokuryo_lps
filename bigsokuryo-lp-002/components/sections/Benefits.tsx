@@ -310,7 +310,7 @@ function TableCardView({ card }: { card: TableCard }) {
   return (
     <div className=" bg-sand/45 border border-navy/10 p-7 md:p-9">
       <div className="flex items-baseline justify-between flex-wrap gap-3 pb-5 mb-2 border-b border-navy/15">
-        <p className="text-xs tracking-[0.4em] text-gold">{card.eyebrow}</p>
+        <p className="text-xs tracking-[0.4em] text-brand">{card.eyebrow}</p>
         <p className="text-[11px] text-black/55">{card.note}</p>
       </div>
       <dl className="divide-y divide-navy/10">
@@ -340,7 +340,7 @@ export default function Benefits() {
     >
       <div
         aria-hidden
-        className="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full bg-gold/10 blur-3xl"
+        className="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full bg-brand/10 blur-3xl"
       />
       <div
         aria-hidden
@@ -349,10 +349,10 @@ export default function Benefits() {
 
       <div className="relative max-w-6xl mx-auto px-6">
         <Reveal className="text-center">
-          <p className="text-xs tracking-[0.4em] text-gold">BENEFITS</p>
+          <p className="text-xs tracking-[0.4em] text-brand">BENEFITS</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl lg:text-6xl text-navy leading-tight tracking-tight">
             技術が、
-            <span className="bg-gradient-to-r from-gold via-amber-500 to-gold bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand via-amber-500 to-brand bg-clip-text text-transparent">
               正しく報われる
             </span>
             。
@@ -360,7 +360,7 @@ export default function Benefits() {
           <p className="mt-5 text-sm md:text-base text-black/70 max-w-xl mx-auto leading-relaxed">
             手当の充実度と、暮らしを支える制度。働き続けられる環境にこだわっています。
           </p>
-          <div className="mt-8 mx-auto h-px w-16 bg-gold/60" />
+          <div className="mt-8 mx-auto h-px w-16 bg-brand/60" />
         </Reveal>
 
         <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
@@ -372,10 +372,10 @@ export default function Benefits() {
             >
               <div
                 aria-hidden
-                className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gold/10 blur-2xl"
+                className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-brand/10 blur-2xl"
               />
               <div className="relative flex items-start gap-4">
-                <div className="w-12 h-12  bg-gradient-to-br from-gold to-amber-400 grid place-items-center text-navy flex-none shadow-md">
+                <div className="w-12 h-12  bg-gradient-to-br from-brand to-amber-400 grid place-items-center text-navy flex-none shadow-md">
                   {h.icon}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -415,7 +415,7 @@ export default function Benefits() {
 
         <div className="mt-20">
           <Reveal className="text-center">
-            <p className="text-xs tracking-[0.4em] text-gold">WELFARE</p>
+            <p className="text-xs tracking-[0.4em] text-brand">WELFARE</p>
             <h3 className="mt-3 font-sans font-bold text-2xl md:text-4xl text-navy tracking-tight">
               福利厚生・社内制度
             </h3>
@@ -431,7 +431,7 @@ export default function Benefits() {
                 delay={i * 60}
                 className="group  bg-sand/55 border border-navy/10 p-5 md:p-6 flex flex-col gap-4 hover:bg-white"
               >
-                <div className="w-10 h-10  bg-white border border-navy/10 grid place-items-center text-gold flex-none transition-all group-hover:bg-gold group-hover:text-white group-hover:border-gold">
+                <div className="w-10 h-10  bg-white border border-navy/10 grid place-items-center text-brand flex-none transition-all group-hover:bg-brand group-hover:text-white group-hover:border-brand">
                   {w.icon}
                 </div>
                 <div className="flex-1">
@@ -448,16 +448,16 @@ export default function Benefits() {
         </div>
 
         <Reveal delay={400} className="mt-16 max-w-3xl mx-auto">
-          <div className="flex flex-wrap items-center gap-5 bg-gradient-to-r from-navy via-navy-dark to-navy text-white  p-6 md:p-7 border border-gold/30 relative overflow-hidden">
+          <div className="flex flex-wrap items-center gap-5 bg-gradient-to-r from-navy via-navy-dark to-navy text-white  p-6 md:p-7 border border-brand/30 relative overflow-hidden">
             <div
               aria-hidden
-              className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-gold/20 blur-3xl"
+              className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-brand/20 blur-3xl"
             />
-            <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-gold via-amber-300 to-amber-500 grid place-items-center text-navy text-2xl font-bold flex-none shadow-lg">
+            <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-brand via-amber-300 to-amber-500 grid place-items-center text-navy text-2xl font-bold flex-none shadow-lg">
               銀
             </div>
             <div className="relative flex-1 min-w-0">
-              <p className="text-[10px] tracking-[0.3em] text-gold">
+              <p className="text-[10px] tracking-[0.3em] text-brand">
                 CERTIFIED
               </p>
               <p className="font-bold mt-1.5 text-base md:text-lg">

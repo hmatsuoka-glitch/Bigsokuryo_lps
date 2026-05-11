@@ -33,11 +33,11 @@ export default function About() {
     <section id="about" className="py-28 bg-white relative">
       <div
         aria-hidden
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent to-gold/40"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent to-brand/40"
       />
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-start">
         <Reveal className="md:col-span-5 md:sticky md:top-24">
-          <p className="text-xs tracking-[0.4em] text-gold">WHY US</p>
+          <p className="text-xs tracking-[0.4em] text-brand">WHY US</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-[1.2]">
             「ただ測る」<br />
             会社では、ない。
@@ -58,7 +58,7 @@ export default function About() {
               >
                 <p className="text-3xl md:text-4xl font-bold text-navy tracking-tight">
                   <AnimatedNumber end={s.value} />
-                  <span className="text-sm ml-1 text-gold">{s.suffix}</span>
+                  <span className="text-sm ml-1 text-brand">{s.suffix}</span>
                 </p>
                 <p className="text-[11px] tracking-widest text-black/60 mt-3">
                   {s.label}
@@ -70,14 +70,14 @@ export default function About() {
             delay={300}
             className=" border border-navy/10 p-6 md:p-7 bg-white"
           >
-            <p className="text-xs tracking-widest text-gold mb-4">
+            <p className="text-xs tracking-widest text-brand mb-4">
               主な取引先 (一部)
             </p>
             <ul className="flex flex-wrap gap-2 text-xs md:text-sm text-black/85">
               {clients.map((c) => (
                 <li
                   key={c}
-                  className="border border-navy/15 rounded-full px-3 py-1.5 transition-all hover:border-gold hover:text-navy/60 hover:-translate-y-0.5 cursor-default"
+                  className="border border-navy/15 rounded-full px-3 py-1.5 transition-all hover:border-brand hover:text-navy/60 hover:-translate-y-0.5 cursor-default"
                 >
                   {c}
                 </li>
@@ -85,7 +85,7 @@ export default function About() {
             </ul>
           </Reveal>
           <Reveal delay={400}>
-            <p className="text-sm md:text-base text-black/75 leading-relaxed border-l-4 border-gold pl-5 py-1">
+            <p className="text-sm md:text-base text-black/75 leading-relaxed border-l-4 border-brand pl-5 py-1">
               東京都・JR グループ・大手ゼネコン ―― 名前を聞けば誰もが知る現場で、
               <strong className="text-navy">「ビッグ測量設計」</strong>の社名は
               成果に明記され、責任とともに刻まれます。

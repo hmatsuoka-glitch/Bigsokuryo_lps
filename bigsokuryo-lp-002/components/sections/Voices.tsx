@@ -81,7 +81,7 @@ function MemberCard({ m }: { m: Member }) {
           className="w-full h-full object-cover"
         />
       </div>
-      <p className="mt-5 text-[10px] tracking-[0.4em] text-gold">
+      <p className="mt-5 text-[10px] tracking-[0.4em] text-brand">
         {m.isFeatured ? "FEATURED MESSAGE" : m.dept}
       </p>
       <p className="mt-2 text-xs text-black/55">
@@ -90,7 +90,7 @@ function MemberCard({ m }: { m: Member }) {
       <h3 className="mt-1 font-sans font-bold text-xl text-navy leading-tight">
         {m.name}
       </h3>
-      <p className="mt-4 font-sans font-bold text-2xl text-navy leading-snug border-l-2 border-gold pl-3">
+      <p className="mt-4 font-sans font-bold text-2xl text-navy leading-snug border-l-2 border-brand pl-3">
         「{m.catch}」
       </p>
       <p className="mt-4 text-sm text-black/75 leading-relaxed">{m.body}</p>
@@ -103,7 +103,7 @@ export default function Voices() {
     <section id="voice" className="py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal className="text-center">
-          <p className="text-xs tracking-[0.4em] text-gold">INTERVIEW</p>
+          <p className="text-xs tracking-[0.4em] text-brand">INTERVIEW</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             現場で働く人を、知る。
           </h2>

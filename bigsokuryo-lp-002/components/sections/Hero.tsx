@@ -15,7 +15,7 @@ export default function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-6 min-h-screen flex items-end pt-20 pb-12 md:pb-16">
         <div>
-          <p className="text-[10px] md:text-xs tracking-[0.4em] text-gold mb-5">
+          <p className="text-[10px] md:text-xs tracking-[0.4em] text-brand mb-5">
             MID-CAREER RECRUITMENT / 経験者採用
           </p>
           <h1 className="font-sans font-bold text-3xl md:text-6xl lg:text-7xl leading-[1.25] tracking-tight drop-shadow-lg">
@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-3 md:gap-4">
             <a
               href="#entry"
-              className="inline-flex items-center gap-2 px-7 py-3 bg-gold text-navy font-bold text-xs md:text-sm tracking-widest hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-brand text-white font-bold text-xs md:text-sm tracking-widest hover:bg-white transition-colors"
             >
               エントリー
               <span aria-hidden>→</span>

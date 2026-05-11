@@ -56,7 +56,7 @@ export default function TechStack() {
     <section id="work" className="py-28 bg-sand relative overflow-hidden">
       <div
         aria-hidden
-        className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-gold/10 blur-3xl"
+        className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-brand/10 blur-3xl"
       />
       <div
         aria-hidden
@@ -64,7 +64,7 @@ export default function TechStack() {
       />
       <div className="relative max-w-6xl mx-auto px-6">
         <Reveal className="text-center">
-          <p className="text-xs tracking-[0.4em] text-gold">TECH STACK</p>
+          <p className="text-xs tracking-[0.4em] text-brand">TECH STACK</p>
           <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
             技術が、技術で語れる環境。
           </h2>
@@ -80,20 +80,20 @@ export default function TechStack() {
               delay={i * 70}
               className={`group bg-white  p-6 border ${
                 s.accent
-                  ? "border-gold/40 bg-gradient-to-br from-white to-amber-50"
+                  ? "border-brand/40 bg-gradient-to-br from-white to-amber-50"
                   : "border-navy/10"
               }`}
             >
               <div className="flex items-center justify-between">
                 <p
                   className={`text-xs tracking-widest ${
-                    s.accent ? "text-amber-600 font-bold" : "text-gold"
+                    s.accent ? "text-amber-600 font-bold" : "text-brand"
                   }`}
                 >
                   {s.cat}
                 </p>
                 {s.accent && (
-                  <span className="text-[10px] tracking-widest bg-gold text-navy font-bold px-2 py-0.5 ">
+                  <span className="text-[10px] tracking-widest bg-brand text-white font-bold px-2 py-0.5 ">
                     PATENT
                   </span>
                 )}
@@ -101,7 +101,7 @@ export default function TechStack() {
               <ul className="mt-4 space-y-2 text-sm text-black/85">
                 {s.items.map((i) => (
                   <li key={i} className="flex items-start gap-2.5">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-none transition-transform group-hover:scale-150" />
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-none transition-transform group-hover:scale-150" />
                     <span>{i}</span>
                   </li>
                 ))}
