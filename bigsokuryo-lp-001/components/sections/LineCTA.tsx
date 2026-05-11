@@ -44,7 +44,7 @@ export default function LineCTA() {
             <br />
             なんでもお気軽にメッセージください！
             <br />
-            採用担当が1営業日以内にお返事します ✋
+            採用担当が1営業日以内にお返事します。
           </p>
           <p className="mt-3 text-xs text-white/75">
             ID:{" "}

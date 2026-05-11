@@ -45,7 +45,7 @@ export default function Page() {
         <CtaBand
           eyebrow="JOB DETAIL"
           title="まずは募集要項を、見てみませんか？"
-          caption="新卒・中途の2トラック。給与・賞与・休暇までしっかり開示しています。"
+          caption="給与・賞与・休暇など、ビック測量の募集要項をご確認いただけます。"
           href="#requirements"
           ctaLabel="募集要項を確認する"
         />
