@@ -56,6 +56,8 @@ export async function POST(req: Request) {
   });
 
   const adminBody = [
+    "big-sokuryo02 から応募がありました。",
+    "",
     "ビッグ測量設計 LP-002 (中途採用) より新規エントリーがありました。",
     "",
     `■ お名前: ${name}`,
@@ -99,7 +101,7 @@ export async function POST(req: Request) {
       from: `"ビッグ測量設計 LP" <${gmailUser}>`,
       to: adminEmail,
       replyTo: email,
-      subject: `【LP-002 中途採用】新規エントリー: ${name} 様`,
+      subject: `【big-sokuryo02 から応募がありました】${name} 様`,
       text: adminBody,
     });
 
