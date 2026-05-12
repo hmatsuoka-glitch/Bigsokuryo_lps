@@ -1,9 +1,8 @@
 import Script from "next/script";
 
-// GA4: ID をハードコード (環境変数で上書き可)
-// Clarity: 環境変数 NEXT_PUBLIC_CLARITY_ID を Vercel に設定してください
+// GA4 / Microsoft Clarity の ID をハードコード (環境変数で上書き可)
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-1MSR8FB45P";
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID;
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || "wpsrudy3id";
 
 export default function Analytics() {
   return (
