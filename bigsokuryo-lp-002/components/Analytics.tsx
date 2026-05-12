@@ -1,11 +1,8 @@
 import Script from "next/script";
 
-// Vercel の Environment Variables に以下を設定してください:
-//   NEXT_PUBLIC_GA_ID       例: G-XXXXXXXXXX  (Google Analytics 4 の測定 ID)
-//   NEXT_PUBLIC_CLARITY_ID  例: abcdefghij    (Microsoft Clarity のプロジェクト ID)
-// 値が未設定のものは読み込まれません (ローカル開発時に静かにスキップ)。
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// GA4: ID をハードコード (環境変数で上書き可)
+// Clarity: 環境変数 NEXT_PUBLIC_CLARITY_ID を Vercel に設定してください
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-1MSR8FB45P";
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID;
 
 export default function Analytics() {
