@@ -5,24 +5,23 @@ type Props = {
 };
 
 export default function SiteHeader({
-  lpCode,
   ctaLabel = "エントリー",
   ctaHref = "#entry",
 }: Props) {
   return (
     <header className="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-navy/10">
       <div className="max-w-6xl mx-auto px-4 md:px-5 h-14 md:h-16 flex items-center justify-between gap-3">
-        <a href="#" className="flex items-center gap-2 md:gap-3 min-w-0">
+        <a href="#" className="flex items-center gap-2 min-w-0">
           <img
             src="/header_logo.png"
             alt="ビック測量株式会社"
-            className="h-8 md:h-10 w-auto flex-none"
+            className="h-7 md:h-9 w-auto flex-none"
           />
-          <span className="flex items-baseline gap-1.5 md:gap-2 min-w-0">
-            <span className="font-bold text-navy text-sm md:text-base truncate">
+          <span className="flex items-baseline gap-1 md:gap-2 min-w-0">
+            <span className="font-bold text-navy text-xs md:text-base truncate">
               ビック測量株式会社
             </span>
-            <span className="hidden sm:inline text-[10px] md:text-xs tracking-[0.15em] text-black/55 flex-none">
+            <span className="hidden md:inline text-[10px] tracking-[0.15em] text-black/55 flex-none">
               since 1980
             </span>
           </span>
@@ -36,7 +35,7 @@ export default function SiteHeader({
         </nav>
         <a
           href={ctaHref}
-          className="inline-flex items-center px-3 md:px-4 py-2 text-[11px] md:text-xs tracking-widest bg-brand text-white rounded-full hover:bg-brand-dark transition flex-none"
+          className="inline-flex items-center px-2.5 md:px-4 py-1.5 md:py-2 text-[10px] md:text-xs tracking-widest bg-brand text-white rounded-full hover:bg-brand-dark transition flex-none"
         >
           {ctaLabel}
         </a>
