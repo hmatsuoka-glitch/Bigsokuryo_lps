@@ -39,14 +39,14 @@ export default function Recruit() {
         </Reveal>
 
         <Reveal delay={150} className="mt-10 md:mt-14">
-          <ol className="grid grid-cols-1 lg:grid-cols-5 gap-3 md:gap-3">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3">
             {flow.map((f, i) => (
               <li
                 key={f.no}
-                className="relative bg-brand text-white p-6 md:p-6 flex flex-col"
+                className="relative bg-brand text-white p-5 md:p-6 flex flex-col"
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-4xl md:text-4xl font-bold text-white leading-none">
+                  <span className="font-mono text-3xl md:text-4xl font-bold text-white leading-none">
                     {f.no}
                   </span>
                   <span
@@ -54,10 +54,10 @@ export default function Recruit() {
                     className="h-px flex-1 bg-white/40"
                   />
                 </div>
-                <p className="mt-5 font-sans font-bold text-lg md:text-lg leading-tight">
+                <p className="mt-4 font-sans font-bold text-base md:text-lg leading-tight">
                   {f.label}
                 </p>
-                <p className="mt-3 text-sm md:text-[13px] text-white/85 leading-relaxed">
+                <p className="mt-3 text-xs md:text-[13px] text-white/85 leading-relaxed">
                   {f.body}
                 </p>
                 {i < flow.length - 1 && (
@@ -70,7 +70,7 @@ export default function Recruit() {
                     </span>
                     <span
                       aria-hidden
-                      className="lg:hidden absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-7 h-7 rounded-full bg-white text-brand grid place-items-center text-sm font-bold shadow"
+                      className="lg:hidden sm:hidden absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-6 h-6 rounded-full bg-white text-brand grid place-items-center text-sm font-bold shadow"
                     >
                       ↓
                     </span>
