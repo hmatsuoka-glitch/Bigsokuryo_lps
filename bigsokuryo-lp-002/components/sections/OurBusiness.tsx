@@ -32,7 +32,7 @@ export default function OurBusiness() {
           </h2>
           <p className="mt-5 text-sm md:text-base text-black/70 max-w-2xl leading-relaxed">
             測量を軸に、設計・施工管理・企画・システム開発まで。
-            東京の重要インフラ整備を、5 つの事業領域で一気通貫に支えます。
+            東京の重要インフラ整備を、3 つの事業領域で一気通貫に支えます。
           </p>
         </Reveal>
 
