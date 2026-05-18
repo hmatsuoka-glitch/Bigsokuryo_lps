@@ -34,7 +34,7 @@ const merits: Merit[] = [
       "「目で見て盗め」ではなく、理論を言葉で。半年で一通りの業務を覚えられる教育体制で、文系・未経験からでも踏み出せます。",
     points: [
       "資格試験費用 全額会社負担",
-      "社内勉強会 年2回",
+      "社内勉強会 年3回",
       "先輩がとことん付き合う風土",
     ],
     icon: <IconBook />,
@@ -48,7 +48,7 @@ const merits: Merit[] = [
     points: [
       "資格手当 最大 月10万円",
       "社員寮 月3万円 / 保養所(湯沢)",
-      "有給取得率 79.9%",
+      "有給取得率 88.6%",
     ],
     icon: <IconHeart />,
   },
@@ -63,7 +63,7 @@ export default function Merits() {
             WHY BIG SOKURYO
           </p>
           <h2 className="mt-3 font-sans font-black text-4xl md:text-5xl text-navy text-center heading-display">
-            ビック測量で働く、
+            ビッグ測量で働く、
             <br className="md:hidden" />
             3つのメリット
           </h2>

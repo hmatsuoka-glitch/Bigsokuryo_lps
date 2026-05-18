@@ -98,10 +98,10 @@ async function sendByGmail(payload: EntryPayload): Promise<void> {
     auth: { user, pass },
   });
 
-  const subject = `【ビック測量 LP-001】新着応募 ${payload.name} 様`;
+  const subject = `【ビッグ測量 LP-001】新着応募 ${payload.name} 様`;
 
   const text = [
-    "ビック測量設計株式会社 採用LP-001 から新着応募がありました。",
+    "ビッグ測量設計株式会社 採用LP-001 から新着応募がありました。",
     "",
     `受付日時: ${payload.receivedAt}`,
     `お名前  : ${payload.name}`,
@@ -117,7 +117,7 @@ async function sendByGmail(payload: EntryPayload): Promise<void> {
     <div style="font-family: -apple-system, 'Hiragino Sans', sans-serif; color: #1f2937; line-height: 1.7;">
       <p style="display: inline-block; background: #0f5c2c; color: #fff; padding: 4px 12px; font-size: 12px; letter-spacing: 0.2em; margin: 0 0 12px;">LP-001</p>
       <h2 style="color: #0f5c2c; margin: 0 0 16px;">採用LP-001 から新着応募がありました</h2>
-      <p style="margin: 0 0 24px; color: #4b5563;">ビック測量設計株式会社 採用LP-001 (新卒採用LP) からの応募です。</p>
+      <p style="margin: 0 0 24px; color: #4b5563;">ビッグ測量設計株式会社 採用LP-001 (新卒採用LP) からの応募です。</p>
       <table style="border-collapse: collapse; width: 100%; max-width: 560px;">
         <tbody>
           <tr><td style="padding: 8px 12px; background: #f6f4ee; width: 110px; font-weight: bold;">受付日時</td><td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${escapeHtml(payload.receivedAt)}</td></tr>

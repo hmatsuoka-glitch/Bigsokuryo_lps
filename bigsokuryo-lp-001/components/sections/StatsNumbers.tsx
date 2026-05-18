@@ -24,14 +24,14 @@ const stats: Stat[] = [
     icon: <IconHistory />,
   },
   {
-    value: 163,
+    value: 179,
     suffix: "名",
     label: "社員数",
-    caption: "2024年3月現在",
+    caption: "最新時点",
     icon: <IconUsers />,
   },
   {
-    value: 79.9,
+    value: 88.6,
     suffix: "%",
     decimals: 1,
     label: "有給取得率",

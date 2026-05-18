@@ -5,7 +5,7 @@ export const COMPANY = {
   founded: "1980年10月29日",
   capital: "1,000万円",
   representative: "村田 優紀",
-  employees: "163名（2024年3月現在）",
+  employees: "179名",
   registration: "国土交通大臣登録 一般 第（９）-１４８５８号",
   address: "〒110-0015 東京都台東区東上野1丁目26番8号",
   tel: "03-3837-0291",

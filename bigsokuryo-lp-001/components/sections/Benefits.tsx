@@ -42,22 +42,17 @@ const welfare: { title: string; body: string; icon: React.ReactNode }[] = [
   },
   {
     title: "社内勉強会",
-    body: "技術向上を目的とした勉強会を年2回開催。",
+    body: "技術向上を目的とした勉強会を年3回開催。",
     icon: <IconLight />,
   },
   {
-    title: "有給取得率 79.9%",
+    title: "有給取得率 88.6%",
     body: "繁忙期を含めて取得しやすい体制を継続中。",
     icon: <IconClock />,
   },
   {
-    title: "無料マッサージ",
-    body: "有資格者によるマッサージを社内で受けられます。",
-    icon: <IconHand />,
-  },
-  {
     title: "産休・育休制度",
-    body: "女性社員の継続就業を会社として全力でサポート。",
+    body: "社員の継続就業を会社として全力でサポート。",
     icon: <IconHeart />,
   },
 ];
@@ -204,15 +199,6 @@ function IconClock() {
     <IconBase>
       <circle cx="12" cy="12" r="9" />
       <path d="M12 7v5l3 2" />
-    </IconBase>
-  );
-}
-function IconHand() {
-  return (
-    <IconBase>
-      <path d="M7 10V5a2 2 0 014 0v5" />
-      <path d="M11 10V4a2 2 0 014 0v6" />
-      <path d="M15 10V6a2 2 0 014 0v8a7 7 0 01-14 0v-3l-2-1 2-3a3 3 0 014 0" />
     </IconBase>
   );
 }
