@@ -19,7 +19,7 @@ export default function Hero() {
           source photo is shown without aggressive cropping */}
       <div className="relative w-full aspect-[3/2] md:aspect-[16/8] overflow-hidden bg-navy-dark">
         <Image
-          src="/works_img.jpg"
+          src="/top-img.JPG"
           alt="ビッグ測量設計の現場"
           fill
           priority
