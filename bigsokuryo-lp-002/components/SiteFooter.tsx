@@ -33,7 +33,7 @@ export default function SiteFooter() {
             </p>
             <ul className="text-sm space-y-2">
               <li><a href="#business" className="hover:text-brand transition-colors">事業内容</a></li>
-              <li><a href="#flow" className="hover:text-brand transition-colors">仕事の流れ</a></li>
+              <li><a href="#flow" className="hover:text-brand transition-colors">1 日の流れ</a></li>
               <li><a href="#about" className="hover:text-brand transition-colors">数字で見る</a></li>
               <li><a href="#voice" className="hover:text-brand transition-colors">社員紹介</a></li>
               <li><a href="#recruit" className="hover:text-brand transition-colors">募集要項</a></li>

@@ -23,7 +23,7 @@ export default function Hero() {
             東京を、<span className="underline underline-offset-[10px] decoration-2 decoration-white/40">ミリ単位</span>で測る。
           </h1>
           <p className="mt-6 max-w-xl text-sm md:text-base text-white/90 leading-relaxed drop-shadow">
-            1980 年創業、社員 163 名。<br />
+            1980 年創業、社員 179 名。<br />
             東京駅・銀座線渋谷駅・五輪会場 ―― 誰もが知る現場の地盤を、
             創業 45 年で支えてきた東上野の総合測量会社です。
           </p>

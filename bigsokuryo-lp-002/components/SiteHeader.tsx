@@ -29,7 +29,7 @@ export default function SiteHeader({
         </a>
         <nav className="hidden lg:flex items-center gap-6 text-sm text-black/80">
           <a href="#business" className="hover:text-brand">事業内容</a>
-          <a href="#flow" className="hover:text-brand">仕事の流れ</a>
+          <a href="#flow" className="hover:text-brand">1 日の流れ</a>
           <a href="#about" className="hover:text-brand">数字で見る</a>
           <a href="#voice" className="hover:text-brand">社員紹介</a>
           <a href="#recruit" className="hover:text-brand">募集要項</a>

@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 const stats = [
   { value: 45, suffix: "年", label: "創業からの歴史", note: "1980 年" },
   { value: 163, suffix: "名", label: "社員数", note: "'24 年 3 月" },
-  { value: 79.9, decimals: 1, suffix: "%", label: "有給取得率", note: "実績" },
+  { value: 88.6, decimals: 1, suffix: "%", label: "有給取得率", note: "実績" },
 ];
 
 export default function AboutUs() {
