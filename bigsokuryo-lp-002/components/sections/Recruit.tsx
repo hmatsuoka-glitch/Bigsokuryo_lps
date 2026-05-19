@@ -1,7 +1,7 @@
 import Reveal from "@/components/Reveal";
 
 const flow = [
-  { no: "01", label: "エントリー", body: "本サイトのフォーム、または saiyou@bigsdc.co.jp へご連絡ください。" },
+  { no: "01", label: "エントリー", body: "本サイトのフォーム、または公式 LINE よりご連絡ください。" },
   { no: "02", label: "書類選考", body: "履歴書・職務経歴書をもとに選考します。" },
   { no: "03", label: "1 次面接", body: "現場責任者との個別面接。技術と現場のフィットを確認します。" },
   { no: "04", label: "最終面接", body: "部署責任者との個別面接。配属領域も相談します。" },
@@ -20,7 +20,7 @@ const summary = [
   { k: "賞与", v: "年 2 回 (計 2 ヶ月分) / 昇給 年 1 回 (4 月)" },
   { k: "休日", v: "週休 2 日 (土・日・祝) / 夏季 / 年末年始 / GW" },
   { k: "保険", v: "健康・厚生年金・雇用・労災" },
-  { k: "採用窓口", v: "人事部 須藤 翠 / saiyou@bigsdc.co.jp" },
+  { k: "採用窓口", v: "採用担当 / 公式 LINE よりご連絡ください" },
 ];
 
 export default function Recruit() {
