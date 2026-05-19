@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState, useTransition } from "react";
-import { COMPANY, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/Motion";
 import { submitEntry, type EntryState } from "@/app/actions";
 
@@ -85,8 +85,7 @@ export default function EntryForm() {
                 送信ありがとうございました
               </h3>
               <p className="mt-3 text-sm text-zinc-700 leading-relaxed">
-                {COMPANY.recruitContact.department} {COMPANY.recruitContact.name}
-                より2営業日以内にご連絡いたします。
+                採用担当より2営業日以内にご連絡いたします。
                 <br />
                 急ぎの場合は公式LINEからもご連絡ください。
               </p>
@@ -194,17 +193,7 @@ export default function EntryForm() {
                 </motion.p>
               )}
 
-              <p className="text-center text-xs text-zinc-500 mt-2">
-                直接のお問い合わせは{" "}
-                <a
-                  href={`mailto:${COMPANY.recruitContact.email}`}
-                  className="text-gold-dark underline-grow"
-                >
-                  {COMPANY.recruitContact.email}
-                </a>{" "}
-                まで。
-              </p>
-              <p className="text-center text-[11px] text-zinc-400 mt-1 leading-relaxed">
+              <p className="text-center text-[11px] text-zinc-400 mt-2 leading-relaxed">
                 採用選考時、合否をちらつかせた連絡先要求等の不適切な行為は一切行いません。
               </p>
             </motion.form>
