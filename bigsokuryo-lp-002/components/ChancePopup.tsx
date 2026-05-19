@@ -93,17 +93,9 @@ export default function ChancePopup() {
 
           <LineButton size="lg" className="mt-7 w-full" />
 
-          <a
-            href="mailto:saiyou@bigsdc.co.jp"
-            onClick={close}
-            className="mt-3 flex items-center justify-center gap-2 border border-brand text-brand hover:bg-brand hover:text-white font-bold text-sm tracking-wider px-6 py-3 rounded-full transition-colors"
-          >
-            メールで応募する
-            <span aria-hidden>→</span>
-          </a>
           <button
             onClick={close}
-            className="mt-3 block mx-auto text-xs text-black/45 hover:text-black/70 transition"
+            className="mt-4 block mx-auto text-xs text-black/45 hover:text-black/70 transition"
           >
             今は閉じる
           </button>
