@@ -15,12 +15,12 @@ export default function SiteHeader({
         <a href="#" className="flex items-center gap-2 md:gap-3 min-w-0">
           <img
             src="/header_logo.png"
-            alt="ビック測量株式会社"
+            alt="ビッグ測量株式会社"
             className="h-8 md:h-10 w-auto flex-none"
           />
           <span className="flex items-baseline gap-1.5 md:gap-2 min-w-0">
             <span className="font-bold text-navy text-sm md:text-base truncate">
-              ビック測量株式会社
+              ビッグ測量株式会社
             </span>
             <span className="hidden sm:inline text-[10px] md:text-xs tracking-[0.15em] text-black/55 flex-none">
               since 1980
