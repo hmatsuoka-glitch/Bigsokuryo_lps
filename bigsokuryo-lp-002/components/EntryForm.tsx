@@ -60,7 +60,7 @@ export default function EntryForm({
           <p className="mt-5 text-sm md:text-base text-black/70 leading-relaxed">
             {category}採用へのご応募・ご質問はこちらから。
             カジュアル面談のみのお問い合わせも歓迎です。
-            公式 LINE・メール・フォームの 3 つからお選びください。
+            公式 LINE またはフォームからお選びください。
           </p>
         </Reveal>
 
@@ -70,16 +70,7 @@ export default function EntryForm({
               <p className="text-xs tracking-[0.4em] text-brand">QUICK CONTACT</p>
               <p className="text-[11px] text-black/55">最短ルートで応募する</p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <LineButton size="lg" className="w-full" />
-              <a
-                href="mailto:saiyou@bigsdc.co.jp"
-                className="inline-flex items-center justify-center gap-2 border border-brand text-brand hover:bg-brand hover:text-white font-bold text-sm md:text-base tracking-wider px-6 py-4 rounded-full transition-colors"
-              >
-                メールで応募する
-                <span aria-hidden>→</span>
-              </a>
-            </div>
+            <LineButton size="lg" className="w-full" />
             <p className="mt-3 text-[11px] text-black/55 text-center">
               ※ LINE は匿名でのご相談も可能です
             </p>
