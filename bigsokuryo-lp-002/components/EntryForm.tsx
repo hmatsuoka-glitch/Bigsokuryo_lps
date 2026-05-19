@@ -128,8 +128,10 @@ export default function EntryForm({
             </Field>
 
             {status === "ok" && (
-              <div className="bg-brand/10 border border-brand/30 text-brand-dark text-sm px-4 py-3">
-                送信ありがとうございました。確認メールをお送りしましたのでご確認ください。2〜3 営業日以内にご連絡いたします。
+              <div className="bg-brand/10 border border-brand/30 text-brand-dark text-sm px-4 py-3 leading-relaxed">
+                <p className="font-bold">送信ありがとうございました。</p>
+                <p className="mt-1">採用担当より 2 営業日以内にご連絡いたします。</p>
+                <p className="mt-1">急ぎの場合は公式 LINE からもご連絡ください。</p>
               </div>
             )}
             {status === "error" && (

@@ -1,3 +1,5 @@
+import { LINE_URL } from "./LineButton";
+
 type Props = {
   lpCode: string;
   ctaLabel?: string;
@@ -5,10 +7,10 @@ type Props = {
 };
 
 export default function SiteHeader({
-  lpCode,
-  ctaLabel = "エントリー",
-  ctaHref = "#entry",
+  ctaLabel = "公式LINEから応募する",
+  ctaHref = LINE_URL,
 }: Props) {
+  const isExternal = ctaHref.startsWith("http");
   return (
     <header className="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-navy/10">
       <div className="max-w-6xl mx-auto px-4 md:px-5 h-14 md:h-16 flex items-center justify-between gap-3">
@@ -36,7 +38,10 @@ export default function SiteHeader({
         </nav>
         <a
           href={ctaHref}
-          className="inline-flex items-center px-3 md:px-4 py-2 text-[11px] md:text-xs tracking-widest bg-brand text-white rounded-full hover:bg-brand-dark transition flex-none"
+          {...(isExternal
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+          className="inline-flex items-center px-3 md:px-4 py-2 text-[10px] md:text-xs tracking-widest bg-brand text-white rounded-full hover:bg-brand-dark transition flex-none whitespace-nowrap"
         >
           {ctaLabel}
         </a>

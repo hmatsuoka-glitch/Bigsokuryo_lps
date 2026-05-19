@@ -14,7 +14,7 @@ import FAQ from "@/components/sections/FAQ";
 export default function Page() {
   return (
     <>
-      <SiteHeader lpCode="LP-002 / 中途採用" ctaLabel="エントリー" />
+      <SiteHeader lpCode="LP-002 / 中途採用" />
       <main>
         <Hero />
         <OurBusiness />
