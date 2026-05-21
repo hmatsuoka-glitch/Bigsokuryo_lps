@@ -14,20 +14,12 @@ export default function SiteHeader({
   return (
     <header className="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-navy/10">
       <div className="max-w-6xl mx-auto px-4 md:px-5 h-14 md:h-16 flex items-center justify-between gap-3">
-        <a href="#" className="flex items-center gap-2 md:gap-3 min-w-0">
+        <a href="#" className="flex items-center min-w-0">
           <img
-            src="/header_logo.png"
-            alt="ビッグ測量株式会社"
-            className="h-8 md:h-10 w-auto flex-none"
+            src="/logo-02.png"
+            alt="ビッグ測量設計株式会社"
+            className="h-8 md:h-11 w-auto flex-none"
           />
-          <span className="flex items-baseline gap-1.5 md:gap-2 min-w-0">
-            <span className="font-bold text-navy text-sm md:text-base truncate">
-              ビッグ測量株式会社
-            </span>
-            <span className="hidden sm:inline text-[10px] md:text-xs tracking-[0.15em] text-black/55 flex-none">
-              since 1980
-            </span>
-          </span>
         </a>
         <nav className="hidden lg:flex items-center gap-6 text-sm text-black/80">
           <a href="#business" className="hover:text-brand">事業内容</a>
