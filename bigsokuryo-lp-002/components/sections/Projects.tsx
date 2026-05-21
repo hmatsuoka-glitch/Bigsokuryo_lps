@@ -36,7 +36,7 @@ export default function Projects() {
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/project_img_03.jpg')" }}
+        style={{ backgroundImage: "url('/site-photo.jpg')" }}
       />
       <div aria-hidden className="absolute inset-0 bg-white/97" />
       <div
