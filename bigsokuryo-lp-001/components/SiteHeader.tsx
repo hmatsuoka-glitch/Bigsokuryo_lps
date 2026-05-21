@@ -38,20 +38,15 @@ export default function SiteHeader() {
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-6">
         <a href="#" className="flex items-center gap-2.5 shrink-0">
           <Image
-            src="/header_logo.png"
+            src="/logo-02.png"
             alt="ビッグ測量設計株式会社"
-            width={94}
-            height={70}
+            width={3175}
+            height={773}
             priority
-            className="h-9 w-auto"
+            className="h-9 md:h-10 w-auto"
           />
-          <span className="hidden sm:flex items-baseline gap-2">
-            <span className="font-sans font-black text-base md:text-lg text-navy heading-display leading-none">
-              ビッグ測量株式会社
-            </span>
-            <span className="text-[10px] tracking-[0.3em] text-zinc-500">
-              since 1980
-            </span>
+          <span className="hidden sm:inline text-[10px] tracking-[0.3em] text-zinc-500">
+            since 1980
           </span>
         </a>
         <nav className="hidden lg:flex items-center gap-7 text-sm text-zinc-700">

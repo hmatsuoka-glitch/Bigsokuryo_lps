@@ -8,11 +8,11 @@ export default function SiteFooter() {
         <div>
           <div className="flex items-center gap-2.5">
             <Image
-              src="/header_logo.png"
+              src="/logo-03.png"
               alt="ビッグ測量設計株式会社"
-              width={94}
-              height={70}
-              className="h-9 w-auto bg-white p-1"
+              width={1461}
+              height={1093}
+              className="h-10 w-auto bg-white p-1"
             />
             <p className="font-sans font-black text-lg text-white heading-display leading-none">
               BIG <span className="text-white/80">SOKURYO</span>

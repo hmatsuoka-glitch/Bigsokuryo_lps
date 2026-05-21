@@ -38,7 +38,7 @@ export default function Page() {
         <Voices />
         <ProjectStories />
         <PhotoBand
-          src="/big-phot2.jpg"
+          src="/DSC_3338.JPG"
           alt="大規模工事現場"
           caption="PROJECTS — 首都圏の大規模インフラを支える"
         />
