@@ -24,8 +24,8 @@ export const COMPANY = {
 };
 
 export const SITE = {
-  // 公式LINE（実値が決まったら差し替えてください）
-  lineUrl: "https://lin.ee/REPLACE_ME",
+  // 公式LINE
+  lineUrl: "https://lin.ee/Upv91hI",
   lineId: "@bigsokuryo",
   // フォーム送信API。空ならコンソールログで挙動確認のみ。
   entryEndpoint: "",
