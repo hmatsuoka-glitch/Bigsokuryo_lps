@@ -1,6 +1,6 @@
 // 公式 LINE 応募導線
-// TODO: ビッグ測量設計の公式 LINE URL に差し替えてください (例: https://lin.ee/xxxxxx)
-export const LINE_URL = "https://lin.ee/your-line-id";
+// ビッグ測量設計 公式 LINE
+export const LINE_URL = "https://lin.ee/Upv91hI";
 export const LINE_ID = "@bigsdc";
 
 export function LineIcon({ className = "w-5 h-5" }: { className?: string }) {
