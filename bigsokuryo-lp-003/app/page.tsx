@@ -13,8 +13,8 @@ export default function Page() {
   return (
     <>
       <SiteHeader
-        lpCode="LP-003 / U・Iターン"
-        ctaLabel="移住相談"
+        lpCode="LP-003 / 人柄採用"
+        ctaLabel="話を聞いてみる"
       />
       <main>
         <Hero />
@@ -25,7 +25,7 @@ export default function Page() {
         <Benefits />
         <FAQ />
         <EntryForm
-          category="U・Iターン"
+          category="人柄採用"
           accentClass="bg-emerald-700 hover:bg-emerald-900"
         />
       </main>

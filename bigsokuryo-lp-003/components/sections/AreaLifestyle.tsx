@@ -1,45 +1,84 @@
-const lifestyle = [
+"use client";
+
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/Motion";
+
+const points = [
   {
-    title: "通勤15分の生活圏",
-    body: "電車のラッシュとは無縁。徒歩・自転車・車、自分にあった通勤手段を選べます。",
+    icon: "🚉",
+    title: "上野・御徒町から徒歩圏",
+    body: "JR御徒町駅から徒歩4分、つくばエクスプレス新御徒町駅から徒歩1分、各線上野駅から徒歩10分。乗換に強い都心立地です。",
+    accent: "from-emerald-100 to-emerald-50",
   },
   {
-    title: "家賃は都市圏の半分以下",
-    body: "2LDKで月5〜7万円。庭付き一戸建ても十分に視野に入る家賃感です。",
+    icon: "📅",
+    title: "完全週休2日・年休125日",
+    body: "土日祝休み、夏季休暇（8/10〜15）、GW、年末年始（12/30〜1/5）、慶弔特別休暇。区切られた休みでメリハリ良く働けます。",
+    accent: "from-amber-100 to-amber-50",
   },
   {
-    title: "週末は山・川・海の選択肢",
-    body: "事業所から1時間圏内に登山・キャンプ・サーフィンスポット。アウトドア好きには天国です。",
+    icon: "🌿",
+    title: "有給取得率 79.9%",
+    body: "執行役員からの公表値。繁忙期の偏りはあれど、休みやすい空気が日々の前提です。",
+    accent: "from-teal-100 to-teal-50",
   },
   {
-    title: "子育て・教育がしやすい",
-    body: "保育園入園待機なし、医療費助成、自治体独自の教育支援も。共働き世帯でも安心です。",
+    icon: "🏅",
+    title: "「健康企業宣言」銀の認定",
+    body: "2025年7月取得。有資格者による無料マッサージ、夜食手当（夜勤1日1,000円）など、現場の体を守る制度を整えています。",
+    accent: "from-sky-100 to-sky-50",
   },
 ];
 
 export default function AreaLifestyle() {
   return (
-    <section id="area" className="py-24 bg-emerald-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <p className="text-xs tracking-[0.4em] text-emerald-700 text-center">
-          LIFESTYLE
-        </p>
-        <h2 className="mt-3 font-serif text-3xl md:text-4xl text-navy text-center">
-          地方暮らしの、4つの実感。
-        </h2>
-        <div className="mt-14 grid sm:grid-cols-2 gap-5">
-          {lifestyle.map((l) => (
-            <article
-              key={l.title}
-              className="bg-white rounded-2xl p-7 border border-emerald-700/15 hover:border-emerald-700/40 transition"
-            >
-              <h3 className="font-serif text-xl text-navy">{l.title}</h3>
-              <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                {l.body}
-              </p>
-            </article>
+    <section
+      id="area"
+      className="relative py-28 bg-gradient-to-b from-emerald-50 to-emerald-100/40 overflow-hidden"
+    >
+      <div
+        aria-hidden
+        className="absolute top-1/3 -left-20 w-[400px] h-[400px] rounded-full bg-white/60 blur-3xl"
+      />
+
+      <div className="relative max-w-6xl mx-auto px-6">
+        <Reveal className="text-center">
+          <p className="text-xs tracking-[0.4em] text-emerald-700 font-bold">
+            WORK STYLE
+          </p>
+          <h2 className="mt-4 font-serif text-3xl md:text-5xl text-navy font-bold tracking-tight">
+            長く続けられる、<span className="text-emerald-700">4つの理由</span>。
+          </h2>
+        </Reveal>
+
+        <StaggerGroup className="mt-16 grid grid-cols-2 gap-3 md:gap-5">
+          {points.map((p) => (
+            <StaggerItem key={p.title}>
+              <article
+                className={`group relative h-full overflow-hidden bg-gradient-to-br ${p.accent} p-5 md:p-7 border border-white/60 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500`}
+              >
+                <div
+                  aria-hidden
+                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/40 blur-2xl group-hover:bg-white/70 transition-colors duration-500"
+                />
+                <div className="relative">
+                  <span className="text-2xl md:text-3xl">{p.icon}</span>
+                  <h3 className="mt-3 md:mt-4 font-serif text-base md:text-2xl text-navy font-bold leading-snug">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 md:mt-3 text-[12px] md:text-sm text-navy/75 leading-[1.8]">
+                    {p.body}
+                  </p>
+                </div>
+                <span
+                  aria-hidden
+                  className="absolute bottom-3 right-4 md:bottom-5 md:right-6 text-emerald-700 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
+                >
+                  →
+                </span>
+              </article>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </section>
   );
