@@ -25,7 +25,7 @@ export const COMPANY = {
 
 export const SITE = {
   // 公式LINE
-  lineUrl: "https://lin.ee/Upv91hI",
+  lineUrl: "https://lin.ee/Oa3R89D",
   lineId: "@bigsokuryo",
   // フォーム送信API。空ならコンソールログで挙動確認のみ。
   entryEndpoint: "",
