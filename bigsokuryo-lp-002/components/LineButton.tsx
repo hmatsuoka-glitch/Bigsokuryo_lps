@@ -1,6 +1,6 @@
 // 公式 LINE 応募導線
 // ビッグ測量設計 公式 LINE
-export const LINE_URL = "https://lin.ee/Upv91hI";
+export const LINE_URL = "https://lin.ee/Oa3R89D";
 export const LINE_ID = "@bigsdc";
 
 export function LineIcon({ className = "w-5 h-5" }: { className?: string }) {
