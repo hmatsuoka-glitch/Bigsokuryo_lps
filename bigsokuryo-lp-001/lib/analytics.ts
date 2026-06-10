@@ -19,17 +19,17 @@ declare global {
 /**
  * 公式LINEボタンクリック時に発火。
  * TikTok Pixel `Contact` ＋ GA4 `line_click`。
+ * <a target="_blank"> のクリックハンドラ内で同期的に呼ぶこと
+ * (遷移より前にビーコンを発火させるため)。
  */
 export function trackLineClick(location?: string) {
   if (typeof window === "undefined") return;
+  const label = location ?? "line_button";
   try {
-    window.ttq?.track("Contact", { content_id: location ?? "line_button" });
+    window.ttq?.track("Contact", { content_id: label });
   } catch {}
   try {
-    window.gtag?.("event", "line_click", {
-      event_category: "engagement",
-      event_label: location ?? "line_button",
-    });
+    window.gtag?.("event", "line_click", { event_label: label });
   } catch {}
 }
 
@@ -40,13 +40,11 @@ export function trackLineClick(location?: string) {
  */
 export function trackFormSubmit(location?: string) {
   if (typeof window === "undefined") return;
+  const id = location ?? "entry_form";
   try {
-    window.ttq?.track("SubmitForm", { content_id: location ?? "entry_form" });
+    window.ttq?.track("SubmitForm", { content_id: id });
   } catch {}
   try {
-    window.gtag?.("event", "form_submit", {
-      event_category: "conversion",
-      event_label: location ?? "entry_form",
-    });
+    window.gtag?.("event", "form_submit", { content_id: id });
   } catch {}
 }
