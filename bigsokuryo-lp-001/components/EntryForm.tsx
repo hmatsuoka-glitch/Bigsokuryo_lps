@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState, useTransition } from "react";
 import { SITE } from "@/lib/site";
+import { trackFormSubmit, trackLineClick } from "@/lib/analytics";
 import { Reveal } from "@/components/Motion";
 import { submitEntry, type EntryState } from "@/app/actions";
 
@@ -17,6 +18,7 @@ export default function EntryForm() {
       setState(result);
       if (result.status === "success") {
         formRef.current?.reset();
+        trackFormSubmit("entry_form");
       }
     });
   }
@@ -50,6 +52,7 @@ export default function EntryForm() {
                 href={SITE.lineUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackLineClick("entry_form_subline")}
                 className="text-navy underline-grow text-xs"
               >
                 公式LINEを開く →

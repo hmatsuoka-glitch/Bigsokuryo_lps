@@ -1,5 +1,7 @@
 // 公式 LINE 応募導線
 // ビッグ測量設計 公式 LINE
+import { trackLineClick } from "@/lib/analytics";
+
 export const LINE_URL = "https://lin.ee/Oa3R89D";
 export const LINE_ID = "@bigsdc";
 
@@ -20,12 +22,15 @@ type LineButtonProps = {
   label?: string;
   size?: "sm" | "md" | "lg";
   className?: string;
+  /** クリック計測用の発火元ラベル (例: "entry_form" / "chance_popup") */
+  location?: string;
 };
 
 export function LineButton({
   label = "公式LINEで応募する",
   size = "md",
   className = "",
+  location,
 }: LineButtonProps) {
   const sizeClass =
     size === "lg"
@@ -38,6 +43,7 @@ export function LineButton({
       href={LINE_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackLineClick(location ?? "line_button")}
       className={`inline-flex items-center justify-center gap-3 bg-line hover:bg-line-dark text-white font-bold tracking-wider rounded-full transition-colors ${sizeClass} ${className}`}
     >
       <span className="w-7 h-7 rounded-full bg-white text-line grid place-items-center flex-none">

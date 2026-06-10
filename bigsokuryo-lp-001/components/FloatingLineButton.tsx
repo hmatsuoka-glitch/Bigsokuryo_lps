@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { SITE } from "@/lib/site";
+import { trackLineClick } from "@/lib/analytics";
 
 export default function FloatingLineButton() {
   const { scrollY } = useScroll();
@@ -13,6 +14,7 @@ export default function FloatingLineButton() {
       href={SITE.lineUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackLineClick("floating_button")}
       style={{ opacity, y }}
       className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-40"
       aria-label="公式LINE"

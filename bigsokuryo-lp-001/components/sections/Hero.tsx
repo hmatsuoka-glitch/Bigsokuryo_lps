@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { SITE } from "@/lib/site";
+import { trackLineClick } from "@/lib/analytics";
 
 const tags = [
   "鉄道工事測量",
@@ -91,6 +92,7 @@ export default function Hero() {
             href={SITE.lineUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackLineClick("hero")}
             className="inline-flex items-center gap-2 bg-[#06C755] text-white px-7 py-3.5 text-sm tracking-[0.2em] font-bold hover:opacity-90 transition-opacity"
           >
             <span className="w-5 h-5 rounded-full bg-white text-[#06C755] grid place-items-center text-xs font-black">

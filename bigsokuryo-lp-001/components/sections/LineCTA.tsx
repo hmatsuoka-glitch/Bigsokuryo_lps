@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SITE } from "@/lib/site";
+import { trackLineClick } from "@/lib/analytics";
 import { Reveal } from "@/components/Motion";
 
 export default function LineCTA() {
@@ -61,6 +62,7 @@ export default function LineCTA() {
             href={SITE.lineUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackLineClick("line_cta_section")}
             className="group relative inline-flex items-center gap-3 bg-white text-navy font-bold px-8 py-5 rounded-full shadow-soft-lg hover:shadow-gold transition-shadow"
           >
             <span className="absolute inset-0 rounded-full bg-white animate-pulse opacity-50 -z-10 group-hover:animate-none" />

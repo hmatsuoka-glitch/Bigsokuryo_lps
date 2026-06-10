@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 import { LineButton } from "./LineButton";
+import { trackFormSubmit } from "@/lib/analytics";
 
 type Props = {
   accentClass?: string;
@@ -41,6 +42,7 @@ export default function EntryForm({
       if (!res.ok) throw new Error(data?.error || "送信に失敗しました");
       setStatus("ok");
       formEl.reset();
+      trackFormSubmit("entry_form");
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "送信に失敗しました");
@@ -70,7 +72,7 @@ export default function EntryForm({
               <p className="text-xs tracking-[0.4em] text-brand">QUICK CONTACT</p>
               <p className="text-[11px] text-black/55">最短ルートで応募する</p>
             </div>
-            <LineButton size="lg" className="w-full" />
+            <LineButton size="lg" className="w-full" location="entry_form" />
             <p className="mt-3 text-[11px] text-black/55 text-center">
               ※ LINE は匿名でのご相談も可能です
             </p>
