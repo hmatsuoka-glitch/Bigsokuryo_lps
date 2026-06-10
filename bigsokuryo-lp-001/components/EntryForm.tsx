@@ -1,22 +1,28 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useRef, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { SITE } from "@/lib/site";
+import { trackFormSubmit, trackLineClick } from "@/lib/analytics";
 import { Reveal } from "@/components/Motion";
 import { submitEntry, type EntryState } from "@/app/actions";
 
 export default function EntryForm() {
   const [state, setState] = useState<EntryState>({ status: "idle" });
   const [isPending, startTransition] = useTransition();
-  const formRef = useRef<HTMLFormElement>(null);
 
-  function handleAction(formData: FormData) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    // 通常のフォームネイティブ送信を抑止し、必ず JS でハンドリングする
+    event.preventDefault();
+    const formEl = event.currentTarget;
+    const formData = new FormData(formEl);
     startTransition(async () => {
       const result = await submitEntry(formData);
       setState(result);
       if (result.status === "success") {
-        formRef.current?.reset();
+        formEl.reset();
+        // 送信成功時のみ計測イベントを発火 (バリデーション失敗/エラー時は発火しない)
+        trackFormSubmit("entry_form");
       }
     });
   }
@@ -50,6 +56,7 @@ export default function EntryForm() {
                 href={SITE.lineUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackLineClick("entry_form_subline")}
                 className="text-navy underline-grow text-xs"
               >
                 公式LINEを開く →
@@ -100,8 +107,8 @@ export default function EntryForm() {
           ) : (
             <motion.form
               key="form"
-              ref={formRef}
-              action={handleAction}
+              onSubmit={handleSubmit}
+              noValidate
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="mt-12 grid gap-6 bg-white border border-navy/10 shadow-soft p-6 md:p-10"

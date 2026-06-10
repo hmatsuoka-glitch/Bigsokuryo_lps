@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { SITE } from "@/lib/site";
+import { trackLineClick } from "@/lib/analytics";
 
 const navItems = [
   { href: "#numbers", label: "数字" },
@@ -67,6 +68,7 @@ export default function SiteHeader() {
             href={SITE.lineUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackLineClick("header_desktop")}
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs tracking-[0.2em] bg-[#06C755] text-white rounded-full hover:opacity-90 transition-opacity font-bold shadow-soft"
           >
             <span className="w-4 h-4 rounded-full bg-white text-[#06C755] grid place-items-center text-[10px] font-black">
@@ -121,7 +123,10 @@ export default function SiteHeader() {
                   href={SITE.lineUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    trackLineClick("header_mobile_menu");
+                    setOpen(false);
+                  }}
                   className="flex items-center justify-center gap-2 bg-[#06C755] text-white py-3 rounded-full font-bold text-xs tracking-[0.2em]"
                 >
                   <span className="w-4 h-4 rounded-full bg-white text-[#06C755] grid place-items-center text-[10px] font-black">

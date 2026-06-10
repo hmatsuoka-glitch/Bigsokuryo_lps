@@ -91,7 +91,7 @@ export default function ChancePopup() {
             </li>
           </ul>
 
-          <LineButton size="lg" className="mt-7 w-full" />
+          <LineButton size="lg" className="mt-7 w-full" location="chance_popup" />
 
           <button
             onClick={close}

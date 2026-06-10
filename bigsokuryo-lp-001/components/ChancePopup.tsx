@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
+import { trackLineClick } from "@/lib/analytics";
 
 const STORAGE_KEY = "bigsokuryo:chance-popup-dismissed";
 const DELAY_MS = 30_000;
@@ -149,7 +150,10 @@ export default function ChancePopup() {
                   href={SITE.lineUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={dismiss}
+                  onClick={() => {
+                    trackLineClick("chance_popup");
+                    dismiss();
+                  }}
                   className="group inline-flex items-center justify-center gap-3 bg-[#06C755] text-white py-3.5 rounded-full text-sm tracking-[0.2em] font-bold hover:opacity-90 transition-opacity shadow-soft"
                 >
                   <span className="w-6 h-6 rounded-full bg-white text-[#06C755] grid place-items-center text-xs font-black">

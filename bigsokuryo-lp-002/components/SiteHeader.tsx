@@ -1,4 +1,7 @@
+"use client";
+
 import { LINE_URL } from "./LineButton";
+import { trackLineClick } from "@/lib/analytics";
 
 type Props = {
   lpCode: string;
@@ -33,6 +36,9 @@ export default function SiteHeader({
           {...(isExternal
             ? { target: "_blank", rel: "noopener noreferrer" }
             : {})}
+          onClick={() => {
+            if (isExternal && ctaHref === LINE_URL) trackLineClick("header");
+          }}
           className="inline-flex items-center px-3 md:px-4 py-2 text-[10px] md:text-xs tracking-widest bg-brand text-white rounded-full hover:bg-brand-dark transition flex-none whitespace-nowrap"
         >
           {ctaLabel}
