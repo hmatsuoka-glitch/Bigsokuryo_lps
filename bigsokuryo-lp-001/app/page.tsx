@@ -18,6 +18,7 @@ import SelectionFlow from "@/components/sections/SelectionFlow";
 import LineCTA from "@/components/sections/LineCTA";
 import TopicsBand from "@/components/sections/TopicsBand";
 import Merits from "@/components/sections/Merits";
+import TeamPhoto from "@/components/sections/TeamPhoto";
 
 export default function Page() {
   return (
@@ -35,6 +36,7 @@ export default function Page() {
           caption="OUR FIELD — 空港・道路・鉄道・公共インフラの現場"
         />
         <CEOMessage />
+        <TeamPhoto />
         <Voices />
         <ProjectStories />
         <PhotoBand
