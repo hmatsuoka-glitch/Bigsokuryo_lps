@@ -36,7 +36,25 @@ export default function OurBusiness() {
           </p>
         </Reveal>
 
-        <div className="mt-12 md:mt-16 grid md:grid-cols-3 gap-px bg-navy/15 border border-navy/15">
+        <Reveal delay={120} className="mt-10 md:mt-14">
+          <figure className="relative overflow-hidden border border-navy/10">
+            <img
+              src="/DSC_0760%202.jpg"
+              alt="トータルステーションで測量する若手社員"
+              className="w-full h-auto block"
+            />
+            <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent text-white px-5 md:px-7 py-4 md:py-5">
+              <p className="text-[10px] md:text-xs tracking-[0.3em] text-white/85">
+                ON SITE
+              </p>
+              <p className="mt-1 font-sans font-bold text-sm md:text-base">
+                都心の現場で、ミリ単位の観測を。
+              </p>
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-px bg-navy/15 border border-navy/15">
           {blocks.map((b) => (
             <article
               key={b.no}
