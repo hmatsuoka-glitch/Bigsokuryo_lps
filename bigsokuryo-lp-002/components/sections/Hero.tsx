@@ -1,4 +1,4 @@
-const HERO_IMAGE_SRC = "/DSC_0760%202.jpg";
+const HERO_IMAGE_SRC = "/top-img.JPG";
 
 export default function Hero() {
   return (
