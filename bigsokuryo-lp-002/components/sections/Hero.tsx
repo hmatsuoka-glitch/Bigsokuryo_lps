@@ -13,7 +13,7 @@ export default function Hero() {
         className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/75 via-black/40 to-transparent"
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 min-h-screen flex items-end pt-20 pb-12 md:pb-16">
+      <div className="relative max-w-6xl mx-auto px-6 min-h-[78vh] md:min-h-[82vh] flex items-end pt-20 pb-10 md:pb-14">
         <div>
           <p className="text-[10px] md:text-xs tracking-[0.4em] text-brand mb-5">
             未経験 OK / 国家資格 フルサポート
