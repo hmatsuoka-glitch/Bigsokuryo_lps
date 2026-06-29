@@ -1,11 +1,10 @@
 import Reveal from "@/components/Reveal";
 
-const flow = [
-  { no: "01", label: "エントリー", body: "本サイトのフォーム、または公式 LINE よりご連絡ください。" },
-  { no: "02", label: "書類選考", body: "履歴書・職務経歴書をもとに選考します。" },
-  { no: "03", label: "1 次面接", body: "現場責任者との個別面接。技術と現場のフィットを確認します。" },
-  { no: "04", label: "最終面接", body: "部署責任者との個別面接。配属領域も相談します。" },
-  { no: "05", label: "内定", body: "内定通知を郵送。入社時期は柔軟に相談に応じます。" },
+const salaryTrack = [
+  { y: "1 年目", v: "390 万" },
+  { y: "2 年目", v: "470 万" },
+  { y: "3 年目", v: "500 万" },
+  { y: "5 年目", v: "520 万" },
 ];
 
 const summary = [
@@ -39,46 +38,32 @@ export default function Recruit() {
         </Reveal>
 
         <Reveal delay={150} className="mt-10 md:mt-14">
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3">
-            {flow.map((f, i) => (
-              <li
-                key={f.no}
-                className="relative bg-brand text-white p-5 md:p-6 flex flex-col"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-3xl md:text-4xl font-bold text-white leading-none">
-                    {f.no}
+          <div className="bg-navy text-white p-8 md:p-12">
+            <p className="text-[10px] md:text-xs tracking-[0.4em] text-brand">
+              SALARY TRACK
+            </p>
+            <h3 className="mt-3 font-sans font-bold text-2xl md:text-3xl tracking-tight">
+              30 歳 経験者 年収実績
+            </h3>
+            <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {salaryTrack.map((s) => (
+                <li
+                  key={s.y}
+                  className="flex flex-col border-l-2 border-brand pl-4 md:pl-5"
+                >
+                  <span className="text-[11px] md:text-xs tracking-widest text-white/60">
+                    {s.y}
                   </span>
-                  <span
-                    aria-hidden
-                    className="h-px flex-1 bg-white/40"
-                  />
-                </div>
-                <p className="mt-4 font-sans font-bold text-base md:text-lg leading-tight">
-                  {f.label}
-                </p>
-                <p className="mt-3 text-xs md:text-[13px] text-white/85 leading-relaxed">
-                  {f.body}
-                </p>
-                {i < flow.length - 1 && (
-                  <>
-                    <span
-                      aria-hidden
-                      className="hidden lg:grid absolute top-1/2 -right-3 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-white text-brand place-items-center text-sm font-bold shadow"
-                    >
-                      ›
+                  <span className="mt-2 font-sans font-bold text-2xl md:text-4xl tracking-tight">
+                    {s.v}
+                    <span className="ml-1 text-sm md:text-base font-normal text-white/70">
+                      円
                     </span>
-                    <span
-                      aria-hidden
-                      className="lg:hidden sm:hidden absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-6 h-6 rounded-full bg-white text-brand grid place-items-center text-sm font-bold shadow"
-                    >
-                      ↓
-                    </span>
-                  </>
-                )}
-              </li>
-            ))}
-          </ol>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
 
         <Reveal delay={250} className="mt-10 md:mt-14">
