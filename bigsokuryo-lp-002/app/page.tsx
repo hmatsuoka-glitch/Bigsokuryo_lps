@@ -14,7 +14,7 @@ import FAQ from "@/components/sections/FAQ";
 export default function Page() {
   return (
     <>
-      <SiteHeader lpCode="LP-002 / 中途採用" />
+      <SiteHeader lpCode="LP-002 / 未経験歓迎" />
       <main>
         <Hero />
         <OurBusiness />
@@ -25,7 +25,7 @@ export default function Page() {
         <Recruit />
         <FAQ />
         <EntryForm
-          category="中途・キャリア"
+          category="未経験・キャリアチェンジ"
           accentClass="bg-gradient-to-r from-brand to-brand-dark hover:opacity-90"
         />
       </main>

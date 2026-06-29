@@ -73,17 +73,17 @@ export default function ChancePopup() {
 
         <div className="px-6 py-7 md:px-8 md:py-8">
           <p className="text-center text-sm md:text-base text-black/85 leading-relaxed">
-            中途・経験者の<strong className="text-black">エントリー受付中</strong>。<br />
+            未経験から<strong className="text-black">国家資格を取って人生を変える</strong>。<br />
             カジュアル面談だけのご相談も歓迎です。
           </p>
           <ul className="mt-5 space-y-2 text-sm text-black/80 max-w-xs mx-auto">
             <li className="flex items-start gap-2">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-none" />
-              <span>人柄重視・筆記試験なし</span>
+              <span>未経験歓迎・学歴不問・人柄重視</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-none" />
-              <span>30 歳経験者 5 年目 年収実績 520 万円</span>
+              <span>測量士・測量士補の試験費用 会社全額負担</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-none" />
