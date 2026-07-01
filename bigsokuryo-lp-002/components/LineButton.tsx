@@ -2,7 +2,7 @@
 // ビッグ測量設計 公式 LINE
 import { trackLineClick } from "@/lib/analytics";
 
-export const LINE_URL = "https://lin.ee/Oa3R89D";
+export const LINE_URL = "https://lmasters.aigrowthx.pro/r/cmr1grzbk000d7opih9jrvrr1";
 export const LINE_ID = "@bigsdc";
 
 export function LineIcon({ className = "w-5 h-5" }: { className?: string }) {

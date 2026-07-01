@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3 md:gap-4">
             <a
-              href="https://lin.ee/Oa3R89D"
+              href="https://lmasters.aigrowthx.pro/r/cmr1grzbk000d7opih9jrvrr1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3 bg-line hover:bg-line-dark text-white font-bold text-xs md:text-sm tracking-widest transition-colors"
