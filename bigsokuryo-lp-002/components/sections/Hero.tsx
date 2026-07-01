@@ -29,10 +29,12 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3 md:gap-4">
             <a
-              href="#entry"
-              className="inline-flex items-center gap-2 px-7 py-3 bg-brand text-white font-bold text-xs md:text-sm tracking-widest hover:bg-white transition-colors"
+              href="https://lin.ee/Oa3R89D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-line hover:bg-line-dark text-white font-bold text-xs md:text-sm tracking-widest transition-colors"
             >
-              エントリー
+              公式 LINE で相談する
               <span aria-hidden>→</span>
             </a>
             <a

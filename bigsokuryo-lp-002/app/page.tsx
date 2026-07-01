@@ -1,6 +1,5 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import EntryForm from "@/components/EntryForm";
 import ChancePopup from "@/components/ChancePopup";
 import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
@@ -11,6 +10,7 @@ import Projects from "@/components/sections/Projects";
 import Voices from "@/components/sections/Voices";
 import Recruit from "@/components/sections/Recruit";
 import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
 
 export default function Page() {
   return (
@@ -19,17 +19,14 @@ export default function Page() {
       <main>
         <Hero />
         <Manifesto />
+        <Projects />
+        <AboutUs />
         <OurBusiness />
         <WorkFlow />
-        <AboutUs />
-        <Projects />
         <Voices />
         <Recruit />
         <FAQ />
-        <EntryForm
-          category="未経験・キャリアチェンジ"
-          accentClass="bg-gradient-to-r from-brand to-brand-dark hover:opacity-90"
-        />
+        <FinalCTA />
       </main>
       <SiteFooter />
       <ChancePopup />
