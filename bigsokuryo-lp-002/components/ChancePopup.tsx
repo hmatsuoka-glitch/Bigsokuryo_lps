@@ -91,7 +91,12 @@ export default function ChancePopup() {
             </li>
           </ul>
 
-          <LineButton size="lg" className="mt-7 w-full" location="chance_popup" />
+          <LineButton
+            size="lg"
+            className="mt-7 w-full"
+            location="chance_popup"
+            label="さらに詳しく見る"
+          />
 
           <button
             onClick={close}

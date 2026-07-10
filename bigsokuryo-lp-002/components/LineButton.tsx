@@ -29,7 +29,7 @@ type LineButtonProps = {
 };
 
 export function LineButton({
-  label = "公式LINEで応募する",
+  label = "カジュアル面談を申し込む",
   size = "md",
   className = "",
   location,

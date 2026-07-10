@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function SiteHeader({
-  ctaLabel = "公式LINEから応募する",
+  ctaLabel = "さらに詳しく見る",
   ctaHref = LINE_URL,
 }: Props) {
   const isExternal = ctaHref.startsWith("http");

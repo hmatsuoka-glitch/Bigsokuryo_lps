@@ -21,11 +21,11 @@ export default function FinalCTA() {
             CONTACT
           </p>
           <h2 className="mt-4 font-sans font-bold text-3xl md:text-5xl leading-[1.3] tracking-tight">
-            まずは公式 LINE で、<br className="md:hidden" />
-            気軽に相談。
+            まずは、<br className="md:hidden" />
+            カジュアル面談から。
           </h2>
           <p className="mt-6 text-sm md:text-base text-white/85 leading-relaxed">
-            応募・カジュアル面談のご相談は、公式 LINE から。<br />
+            公式 LINE を追加いただくだけで、カジュアル面談の日程調整が始められます。<br />
             匿名でのご質問だけでも大歓迎です。担当より
             2 営業日以内にご返信いたします。
           </p>

@@ -37,7 +37,7 @@ export default function SiteFooter() {
               <li><a href="#about" className="hover:text-brand transition-colors">数字で見る</a></li>
               <li><a href="#voice" className="hover:text-brand transition-colors">社員紹介</a></li>
               <li><a href="#recruit" className="hover:text-brand transition-colors">募集要項</a></li>
-              <li><a href="#entry" className="hover:text-brand transition-colors">公式 LINE で応募</a></li>
+              <li><a href="#entry" className="hover:text-brand transition-colors">カジュアル面談</a></li>
             </ul>
           </div>
         </div>
