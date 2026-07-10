@@ -1,28 +1,33 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ChancePopup from "@/components/ChancePopup";
+import Marquee from "@/components/Marquee";
 import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
-import OurBusiness from "@/components/sections/OurBusiness";
-import WorkFlow from "@/components/sections/WorkFlow";
 import AboutUs from "@/components/sections/AboutUs";
+import OurBusiness from "@/components/sections/OurBusiness";
 import Projects from "@/components/sections/Projects";
 import Voices from "@/components/sections/Voices";
+import Special from "@/components/sections/Special";
+import WorkFlow from "@/components/sections/WorkFlow";
 import Recruit from "@/components/sections/Recruit";
 import FinalCTA from "@/components/sections/FinalCTA";
 
 export default function Page() {
   return (
     <>
-      <SiteHeader lpCode="LP-002 / 未経験歓迎" />
+      <SiteHeader />
       <main>
         <Hero />
         <Manifesto />
-        <Projects />
         <AboutUs />
+        <Marquee />
         <OurBusiness />
-        <WorkFlow />
+        <Projects />
         <Voices />
+        <Special />
+        <Marquee />
+        <WorkFlow />
         <Recruit />
         <FinalCTA />
       </main>

@@ -1,50 +1,68 @@
-const HERO_IMAGE_SRC = "/top-img.JPG";
+import LetterPop from "@/components/LetterPop";
+
+const SLIDES = ["/top-img.JPG", "/site-photo.jpg", "/works_img.jpg"];
 
 export default function Hero() {
+  const perSlide = 6;
+  const total = SLIDES.length * perSlide;
   return (
-    <section className="relative overflow-hidden bg-black text-white">
+    <section
+      id="top"
+      className="relative overflow-hidden bg-black text-white min-h-[100svh] flex items-center"
+    >
+      {SLIDES.map((src, i) => (
+        <div
+          key={src}
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center animate-kenburns"
+          style={{
+            backgroundImage: `url('${src}')`,
+            animation: `kvfade ${total}s ease-in-out ${i * perSlide}s infinite`,
+          }}
+        />
+      ))}
       <div
         aria-hidden
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${HERO_IMAGE_SRC}')` }}
+        className="absolute inset-0 bg-black/45"
       />
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/75 via-black/40 to-transparent"
+        className="absolute inset-x-0 bottom-0 h-40 md:h-56 bg-gradient-to-t from-brand-deep/85 to-transparent"
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 min-h-[62vh] md:min-h-[82vh] flex items-end pt-20 pb-8 md:pb-14">
-        <div>
-          <p className="text-[10px] md:text-xs tracking-[0.4em] text-brand mb-5">
-            未経験 OK / 国家資格 フルサポート
+      <div
+        aria-hidden
+        className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 flex-col gap-3 z-10"
+      >
+        {SLIDES.map((_, i) => (
+          <span
+            key={i}
+            className={`block w-2 h-2 rounded-full ${
+              i === 0 ? "bg-white" : "bg-white/40"
+            }`}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-10 py-24 md:py-32 text-center">
+        <p className="font-display font-semibold tracking-[0.4em] text-[11px] md:text-sm text-white/85">
+          BIG SURVEY &amp; DESIGN
+        </p>
+        <h1 className="mt-4 md:mt-6 font-display font-extrabold text-[64px] md:text-[120px] leading-none tracking-tight">
+          <LetterPop text="RECRUIT" />
+        </h1>
+
+        <div className="mt-8 md:mt-12 inline-block border-2 md:border-[3px] border-white px-6 md:px-12 py-5 md:py-8">
+          <p className="font-sans font-extrabold text-xl md:text-3xl leading-[1.5] tracking-tight">
+            &quot;未経験から、<br />
+            国家資格で人生を変える。&quot;
           </p>
-          <h1 className="font-sans font-bold text-3xl md:text-6xl lg:text-7xl leading-[1.25] tracking-tight drop-shadow-lg">
-            未経験から、<br />
-            <span className="underline underline-offset-[10px] decoration-2 decoration-white/40">国家資格</span>で人生を変える。
-          </h1>
-          <p className="mt-6 max-w-xl text-sm md:text-base text-white/90 leading-relaxed drop-shadow">
-            1980 年創業・社員 179 名のビッグ測量設計。<br />
-            学歴・職歴・経験は問いません。試験費用は会社全額負担で、
-            未経験から測量士・測量士補の国家資格取得をフルサポートします。
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3 md:gap-4">
-            <a
-              href="https://lmasters.aigrowthx.pro/r/cmr1grzbk000d7opih9jrvrr1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3 bg-line hover:bg-line-dark text-white font-bold text-xs md:text-sm tracking-widest transition-colors"
-            >
-              カジュアル面談を申し込む
-              <span aria-hidden>→</span>
-            </a>
-            <a
-              href="#business"
-              className="inline-flex items-center gap-2 px-7 py-3 border border-white/40 text-white text-xs md:text-sm tracking-widest hover:bg-white hover:text-navy hover:border-white transition-colors"
-            >
-              事業内容を見る
-            </a>
-          </div>
         </div>
+
+        <p className="mt-8 max-w-2xl mx-auto text-xs md:text-sm text-white/85 leading-relaxed">
+          1980 年創業・社員 179 名。試験費用は会社全額負担で、<br className="hidden md:block" />
+          未経験から国家資格取得をフルサポート。
+        </p>
       </div>
     </section>
   );
