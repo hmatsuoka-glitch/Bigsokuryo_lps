@@ -48,21 +48,29 @@ export default function WorkFlow() {
                 key={s.time}
                 delay={i * 50}
                 as="li"
-                className="group relative grid grid-cols-[auto_1fr] md:grid-cols-[120px_1fr] gap-4 md:gap-8 items-start bg-white border border-navy/10 p-5 md:p-6"
+                className="bg-white border border-navy/10"
               >
-                <div className="md:flex md:flex-col md:items-start">
-                  <span className="font-mono text-2xl md:text-3xl font-bold text-brand leading-none">
-                    {s.time}
-                  </span>
-                </div>
-                <div className="min-w-0">
-                  <h3 className="font-sans font-bold text-base md:text-lg text-navy leading-snug">
-                    {s.label}
-                  </h3>
-                  <p className="mt-2 text-sm md:text-[15px] text-black/75 leading-relaxed">
-                    {s.body}
-                  </p>
-                </div>
+                <details className="group">
+                  <summary className="grid grid-cols-[auto_1fr_auto] md:grid-cols-[120px_1fr_auto] gap-4 md:gap-8 items-center p-5 md:p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span className="font-mono text-2xl md:text-3xl font-bold text-brand leading-none">
+                      {s.time}
+                    </span>
+                    <h3 className="font-sans font-bold text-base md:text-lg text-navy leading-snug min-w-0">
+                      {s.label}
+                    </h3>
+                    <span
+                      aria-hidden
+                      className="flex-none w-7 h-7 rounded-full border border-navy/25 text-navy grid place-items-center text-xs transition-transform duration-300 group-open:rotate-180"
+                    >
+                      ▾
+                    </span>
+                  </summary>
+                  <div className="px-5 md:px-6 pb-5 md:pb-6 md:pl-[152px]">
+                    <p className="text-sm md:text-[15px] text-black/75 leading-relaxed border-t border-navy/10 pt-4">
+                      {s.body}
+                    </p>
+                  </div>
+                </details>
               </Reveal>
             ))}
           </div>

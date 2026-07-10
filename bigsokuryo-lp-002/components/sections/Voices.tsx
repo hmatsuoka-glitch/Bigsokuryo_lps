@@ -113,23 +113,6 @@ export default function Voices() {
           </p>
         </Reveal>
 
-        <Reveal delay={120} className="mt-10 md:mt-14">
-          <figure className="relative overflow-hidden border border-navy/10 bg-sand">
-            <img
-              src="/PXL_20250410_012026618.MP.jpg"
-              alt="ビッグ測量設計のチーム集合写真"
-              className="w-full h-auto block"
-            />
-            <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent text-white px-5 md:px-7 py-4 md:py-5">
-              <p className="text-[10px] md:text-xs tracking-[0.3em] text-white/80">
-                OUR TEAM
-              </p>
-              <p className="mt-1 font-sans font-bold text-sm md:text-base">
-                ビッグ測量設計のメンバー
-              </p>
-            </figcaption>
-          </figure>
-        </Reveal>
       </div>
 
       <div className="mt-10 md:mt-14">
