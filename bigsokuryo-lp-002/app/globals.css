@@ -17,6 +17,13 @@ body {
   scroll-margin-top: 96px;
 }
 
+/* SP: 追従 CTA バー分の下余白 */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

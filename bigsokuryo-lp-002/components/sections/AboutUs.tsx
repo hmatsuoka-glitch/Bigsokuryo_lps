@@ -9,23 +9,39 @@ const stats = [
 
 export default function AboutUs() {
   return (
-    <section id="about" className="relative bg-white py-24 md:py-32">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+    <section id="about" className="relative bg-white py-16 md:py-32">
+      {/* SP: 全幅写真 + 英字オーバーレイ */}
+      <div className="md:hidden relative aspect-[4/3] overflow-hidden bg-brand-soft mb-10">
+        <img
+          src="/DSC_0760%202.jpg"
+          alt="ビッグ測量設計の現場"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div aria-hidden className="absolute inset-0 bg-black/25" />
+        <p
+          aria-hidden
+          className="absolute inset-x-4 bottom-4 font-display font-semibold text-[13px] tracking-[0.3em] text-white/85"
+        >
+          BIG SURVEY &amp; DESIGN
+        </p>
+      </div>
+
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
           <div className="md:col-span-7">
             <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
               [ About us ]
             </p>
-            <h2 className="mt-3 font-display font-extrabold text-[56px] md:text-[96px] lg:text-[105px] leading-[0.95] tracking-tight text-brand-deep">
-              About<br className="md:hidden" /> us
+            <h2 className="mt-3 font-display font-extrabold text-[48px] md:text-[96px] lg:text-[105px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
+              About us
             </h2>
-            <p className="mt-3 font-sans font-bold text-lg md:text-2xl tracking-wide text-ink">
+            <p className="mt-3 font-sans font-bold text-base md:text-2xl tracking-wide text-ink">
               私たちについて
             </p>
 
             <TextReveal
               as="h3"
-              className="mt-10 md:mt-14 font-sans font-extrabold text-2xl md:text-4xl text-brand-deep leading-[1.5] tracking-tight"
+              className="mt-8 md:mt-14 font-sans font-extrabold text-xl md:text-4xl text-brand-deep leading-[1.5] tracking-tight"
             >
               一歩踏み出す、その先に。
             </TextReveal>
@@ -33,7 +49,7 @@ export default function AboutUs() {
             <TextReveal
               as="p"
               delay={100}
-              className="mt-6 md:mt-8 text-base md:text-[17px] text-sub leading-[2] max-w-xl"
+              className="mt-6 md:mt-8 text-[15px] md:text-[17px] text-sub leading-[1.95] max-w-xl"
             >
               鉄道工事測量を起点に、東京の重要インフラ整備を技術で支えてきた総合測量会社。
               1980 年の創業以来、公共・民間を問わず多様な現場に携わり、
@@ -42,7 +58,7 @@ export default function AboutUs() {
             </TextReveal>
           </div>
 
-          <div className="md:col-span-5">
+          <div className="hidden md:block md:col-span-5">
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
                 src="/DSC_0760%202.jpg"
@@ -53,21 +69,21 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 border-t border-black/10 pt-10 md:pt-14">
+        <div className="mt-12 md:mt-24 grid grid-cols-3 gap-3 md:gap-4 border-t border-black/10 pt-8 md:pt-14">
           {stats.map((s) => (
             <div key={s.label} className="text-center md:text-left">
-              <p className="font-display font-semibold text-[10px] md:text-xs tracking-[0.3em] text-brand">
+              <p className="font-display font-semibold text-[9px] md:text-xs tracking-[0.25em] text-brand">
                 {s.note}
               </p>
               <p className="mt-2 font-display font-extrabold text-brand leading-none">
-                <span className="text-5xl md:text-6xl">
+                <span className="text-[32px] md:text-6xl">
                   <AnimatedNumber end={s.value} decimals={s.decimals ?? 0} />
                 </span>
-                <span className="ml-1 text-lg md:text-2xl font-bold">
+                <span className="ml-0.5 text-sm md:text-2xl font-bold">
                   {s.suffix}
                 </span>
               </p>
-              <p className="mt-3 text-sm md:text-base font-bold text-sub">
+              <p className="mt-2 md:mt-3 text-[11px] md:text-base font-bold text-sub">
                 {s.label}
               </p>
             </div>

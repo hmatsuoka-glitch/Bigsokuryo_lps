@@ -36,7 +36,7 @@ export default function OurBusiness() {
             <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
               [ Jobs ]
             </p>
-            <h2 className="mt-3 font-display font-extrabold text-[56px] md:text-[96px] lg:text-[105px] leading-[0.95] tracking-tight text-brand-deep">
+            <h2 className="mt-3 font-display font-extrabold text-[52px] md:text-[96px] lg:text-[105px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
               Jobs
             </h2>
             <p className="mt-3 font-sans font-bold text-lg md:text-2xl tracking-wide text-ink">

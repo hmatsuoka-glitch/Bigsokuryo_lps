@@ -60,32 +60,32 @@ const members: Member[] = [
 
 function Card({ m, offset }: { m: Member; offset: boolean }) {
   return (
-    <article className={`relative ${offset ? "md:mt-24" : ""}`}>
+    <article className={`relative ${offset ? "mt-16 md:mt-24" : ""}`}>
       <div className="relative aspect-[3/4] overflow-hidden bg-brand-soft">
         <img
           src={m.photo}
           alt={m.name}
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-4 left-4 flex items-end gap-2 leading-none">
-          <span className="font-display font-extrabold text-white text-[64px] md:text-[80px] drop-shadow-lg">
+        <div className="absolute top-2 left-2 md:top-4 md:left-4 flex items-end gap-1.5 leading-none">
+          <span className="font-display font-extrabold text-white text-[40px] md:text-[80px] drop-shadow-lg">
             {m.no}
           </span>
-          <span className="font-display font-semibold text-white text-[10px] md:text-xs tracking-[0.3em] pb-3">
+          <span className="font-display font-semibold text-white text-[9px] md:text-xs tracking-[0.3em] pb-1.5 md:pb-3">
             PERSON
           </span>
         </div>
       </div>
-      <p className="mt-5 text-xs text-sub tracking-wide">
+      <p className="mt-3 md:mt-5 text-[11px] md:text-xs text-sub tracking-wide">
         {m.dept} / {m.joined}
       </p>
-      <h3 className="mt-1 font-sans font-extrabold text-2xl md:text-3xl text-brand-deep leading-tight">
+      <h3 className="mt-1 font-sans font-extrabold text-base md:text-3xl text-brand-deep leading-tight">
         {m.name}
       </h3>
-      <p className="mt-3 font-sans font-extrabold text-xl md:text-2xl text-brand leading-snug">
+      <p className="mt-2 md:mt-3 font-sans font-extrabold text-sm md:text-2xl text-brand leading-snug">
         「{m.catch}」
       </p>
-      <p className="mt-4 text-sm md:text-[15px] text-sub leading-[2]">
+      <p className="mt-3 md:mt-4 text-[13px] md:text-[15px] text-sub leading-[1.9]">
         {m.body}
       </p>
     </article>
@@ -101,7 +101,7 @@ export default function Voices() {
             <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
               [ Person ]
             </p>
-            <h2 className="mt-3 font-display font-extrabold text-[56px] md:text-[96px] lg:text-[105px] leading-[0.95] tracking-tight text-brand-deep">
+            <h2 className="mt-3 font-display font-extrabold text-[52px] md:text-[96px] lg:text-[105px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
               Person
             </h2>
             <p className="mt-3 font-sans font-bold text-lg md:text-2xl tracking-wide text-ink">
@@ -116,7 +116,7 @@ export default function Voices() {
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-x-10 md:gap-y-20">
+        <div className="mt-12 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-x-10 md:gap-y-20">
           {members.map((m, i) => (
             <TextReveal key={m.name} delay={i * 80}>
               <Card m={m} offset={i % 2 === 1} />

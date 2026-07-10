@@ -21,6 +21,13 @@ export default function TextReveal({
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+    const rect = node.getBoundingClientRect();
+    const vh =
+      typeof window !== "undefined" ? window.innerHeight : 800;
+    if (rect.top < vh * 0.9) {
+      setVisible(true);
+      return;
+    }
     const io = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
@@ -28,7 +35,7 @@ export default function TextReveal({
           io.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
     );
     io.observe(node);
     return () => io.disconnect();

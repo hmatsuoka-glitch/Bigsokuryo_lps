@@ -36,7 +36,7 @@ export default function Projects() {
             <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
               [ Projects ]
             </p>
-            <h2 className="mt-3 font-display font-extrabold text-[56px] md:text-[96px] lg:text-[105px] leading-[0.95] tracking-tight text-brand-deep">
+            <h2 className="mt-3 font-display font-extrabold text-[48px] md:text-[96px] lg:text-[105px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
               Projects
             </h2>
             <p className="mt-3 font-sans font-bold text-lg md:text-2xl tracking-wide text-ink">
