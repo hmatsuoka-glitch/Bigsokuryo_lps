@@ -34,7 +34,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3 bg-line hover:bg-line-dark text-white font-bold text-xs md:text-sm tracking-widest transition-colors"
             >
-              公式 LINE で相談する
+              カジュアル面談を申し込む
               <span aria-hidden>→</span>
             </a>
             <a

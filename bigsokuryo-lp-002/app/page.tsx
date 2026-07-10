@@ -9,7 +9,6 @@ import AboutUs from "@/components/sections/AboutUs";
 import Projects from "@/components/sections/Projects";
 import Voices from "@/components/sections/Voices";
 import Recruit from "@/components/sections/Recruit";
-import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
 
 export default function Page() {
@@ -25,7 +24,6 @@ export default function Page() {
         <WorkFlow />
         <Voices />
         <Recruit />
-        <FAQ />
         <FinalCTA />
       </main>
       <SiteFooter />
