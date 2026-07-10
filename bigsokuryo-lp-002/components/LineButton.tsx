@@ -1,3 +1,5 @@
+"use client";
+
 // 公式 LINE 応募導線
 // ビッグ測量設計 公式 LINE
 import { trackLineClick } from "@/lib/analytics";
