@@ -78,12 +78,12 @@ export default function Hero() {
           <span className="block w-px h-8 bg-white/70" />
         </div>
 
-        <div className="relative z-10 w-full min-h-[62vh] md:min-h-[100svh] flex items-center px-5 md:px-10 py-8 md:py-32 text-center">
+        <div className="relative z-10 w-full min-h-[62vh] md:min-h-[100svh] flex items-center px-5 md:px-10 py-8 md:py-32 text-center text-white">
           <div className="w-full max-w-[1200px] mx-auto">
-            <p className="font-display font-semibold tracking-[0.3em] md:tracking-[0.4em] text-[11px] md:text-sm text-white/85">
+            <p className="font-display font-semibold tracking-[0.3em] md:tracking-[0.4em] text-[11px] md:text-sm text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
               BIG SURVEY &amp; DESIGN
             </p>
-            <h1 className="mt-4 md:mt-6 font-display font-extrabold text-[56px] md:text-[120px] leading-none tracking-tight whitespace-nowrap">
+            <h1 className="mt-4 md:mt-6 font-display font-extrabold text-[56px] md:text-[120px] leading-none tracking-tight whitespace-nowrap text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.6)]">
               <LetterPop text="RECRUIT" />
             </h1>
 
