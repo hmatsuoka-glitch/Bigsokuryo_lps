@@ -13,14 +13,14 @@ export default function Hero() {
       {/* SP: 額縁レイアウト（左緑帯 + オフセット深緑帯） */}
       <div
         aria-hidden
-        className="md:hidden absolute left-0 top-[72px] bottom-16 w-10 bg-brand"
+        className="md:hidden absolute left-0 top-[72px] bottom-6 w-10 bg-brand"
       />
       <div
         aria-hidden
-        className="md:hidden absolute left-4 right-0 bottom-6 h-14 bg-brand-deep"
+        className="md:hidden absolute left-4 right-0 bottom-0 h-8 bg-brand-deep"
       />
 
-      <div className="relative ml-10 md:ml-0 mr-0 mt-4 md:mt-0 mb-24 md:mb-0 md:min-h-[100svh] overflow-hidden bg-black">
+      <div className="relative ml-10 md:ml-0 mr-0 mt-0 md:mt-0 mb-8 md:mb-0 md:min-h-[100svh] overflow-hidden bg-black">
         {SLIDES.map((src, i) => (
           <div
             key={src}
@@ -78,7 +78,7 @@ export default function Hero() {
           <span className="block w-px h-8 bg-white/70" />
         </div>
 
-        <div className="relative z-10 w-full min-h-[70vh] md:min-h-[100svh] flex items-center px-5 md:px-10 py-16 md:py-32 text-center">
+        <div className="relative z-10 w-full min-h-[62vh] md:min-h-[100svh] flex items-center px-5 md:px-10 py-8 md:py-32 text-center">
           <div className="w-full max-w-[1200px] mx-auto">
             <p className="font-display font-semibold tracking-[0.3em] md:tracking-[0.4em] text-[11px] md:text-sm text-white/85">
               BIG SURVEY &amp; DESIGN
