@@ -1,18 +1,18 @@
-import Reveal from "@/components/Reveal";
+import TextReveal from "@/components/TextReveal";
 
 const flow = [
-  { no: "01", label: "公式 LINE 追加", body: "まずは公式 LINE を友だち追加。匿名で質問だけでも OK。" },
-  { no: "02", label: "カジュアル面談", body: "オンライン or 対面で 30 分程度。お互いを知る場です。" },
-  { no: "03", label: "面接", body: "現場責任者との個別面接。仕事内容や現場のリアルを共有。" },
-  { no: "04", label: "最終面接", body: "部署責任者との面接。配属領域や入社時期の希望も相談。" },
-  { no: "05", label: "内定", body: "内定通知を郵送。入社時期は柔軟に相談に応じます。" },
+  { no: "01", label: "公式 LINE 追加" },
+  { no: "02", label: "カジュアル面談" },
+  { no: "03", label: "面接" },
+  { no: "04", label: "最終面接" },
+  { no: "05", label: "内定" },
 ];
 
-const salaryTrack = [
-  { y: "1 年目", v: "390 万" },
-  { y: "2 年目", v: "470 万" },
-  { y: "3 年目", v: "500 万" },
-  { y: "5 年目", v: "520 万" },
+const salary = [
+  { y: "1 年目", v: 390 },
+  { y: "2 年目", v: 470 },
+  { y: "3 年目", v: 500 },
+  { y: "5 年目", v: 520 },
 ];
 
 const summary = [
@@ -30,121 +30,129 @@ const summary = [
   { k: "採用窓口", v: "採用担当 / 公式 LINE よりご連絡ください" },
 ];
 
+const maxSalary = Math.max(...salary.map((s) => s.v));
+
 export default function Recruit() {
   return (
-    <section id="recruit" className="py-20 md:py-28 bg-white">
-      <div className="relative max-w-6xl mx-auto px-6">
-        <Reveal>
-          <p className="text-xs tracking-[0.4em] text-brand">RECRUIT</p>
-          <h2 className="mt-3 font-sans font-bold text-3xl md:text-5xl text-navy leading-tight">
-            募集要項
-          </h2>
-          <p className="mt-5 text-sm md:text-base text-black/70 max-w-2xl leading-relaxed">
-            未経験歓迎の測量アシスタント (正社員) を募集中。
-            まずはカジュアル面談から、お気軽にご連絡ください。
-          </p>
-        </Reveal>
+    <section id="recruit" className="relative bg-white py-24 md:py-32">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+        <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
+          <div className="md:col-span-6 md:order-2">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src="/DSC_0760%202.jpg"
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="md:col-span-6 md:order-1 md:-mr-16 md:mt-24 bg-white p-8 md:p-14 shadow-[0_20px_60px_-30px_rgba(11,64,34,0.35)] relative z-10">
+            <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
+              [ Recruit info ]
+            </p>
+            <h2 className="mt-3 font-display font-extrabold text-[48px] md:text-[80px] leading-[0.95] tracking-tight text-brand-deep">
+              Recruit
+            </h2>
+            <p className="mt-3 font-sans font-bold text-base md:text-xl tracking-wide text-ink">
+              採用情報
+            </p>
+            <p className="mt-6 text-sm md:text-[15px] text-sub leading-[2]">
+              未経験歓迎の測量アシスタント (正社員) を募集中。
+              まずはカジュアル面談から、お気軽にご連絡ください。
+            </p>
+          </div>
+        </div>
 
-        <Reveal delay={100} className="mt-10 md:mt-14">
-          <p className="text-[10px] md:text-xs tracking-[0.4em] text-brand">
+        <div className="mt-16 md:mt-24">
+          <p className="font-display font-bold text-xs md:text-sm tracking-widest text-brand">
             SELECTION FLOW
           </p>
-          <h3 className="mt-3 font-sans font-bold text-xl md:text-2xl text-navy leading-snug">
+          <h3 className="mt-2 font-sans font-extrabold text-2xl md:text-4xl text-brand-deep">
             選考フロー
           </h3>
-          <ol className="mt-6 grid sm:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3">
+
+          <ol className="mt-8 grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4">
             {flow.map((f, i) => (
               <li
                 key={f.no}
-                className="relative bg-brand text-white p-5 md:p-6 flex flex-col"
+                className="relative border border-brand/25 bg-white p-5 md:p-6 flex flex-col"
               >
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-3xl md:text-4xl font-bold text-white leading-none">
-                    {f.no}
-                  </span>
-                  <span aria-hidden className="h-px flex-1 bg-white/40" />
-                </div>
-                <p className="mt-4 font-sans font-bold text-base md:text-lg leading-tight">
+                <span className="font-display font-extrabold text-3xl md:text-4xl text-brand leading-none">
+                  {f.no}
+                </span>
+                <p className="mt-4 font-sans font-extrabold text-base md:text-lg text-brand-deep leading-tight">
                   {f.label}
                 </p>
-                <p className="mt-3 text-xs md:text-[13px] text-white/85 leading-relaxed">
-                  {f.body}
-                </p>
                 {i < flow.length - 1 && (
-                  <>
-                    <span
-                      aria-hidden
-                      className="hidden lg:grid absolute top-1/2 -right-3 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-white text-brand place-items-center text-sm font-bold shadow"
-                    >
-                      ›
-                    </span>
-                    <span
-                      aria-hidden
-                      className="lg:hidden sm:hidden absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-6 h-6 rounded-full bg-white text-brand grid place-items-center text-sm font-bold shadow"
-                    >
-                      ↓
-                    </span>
-                  </>
+                  <span
+                    aria-hidden
+                    className="hidden md:grid absolute top-1/2 -right-3 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-brand text-white place-items-center text-xs font-bold"
+                  >
+                    ›
+                  </span>
                 )}
               </li>
             ))}
           </ol>
-        </Reveal>
+        </div>
 
-        <Reveal delay={200} className="mt-10 md:mt-14">
-          <div className="bg-navy text-white p-8 md:p-12">
-            <p className="text-[10px] md:text-xs tracking-[0.4em] text-brand">
-              SALARY TRACK
-            </p>
-            <h3 className="mt-3 font-sans font-bold text-2xl md:text-3xl tracking-tight">
-              30 歳 経験者 年収実績
-            </h3>
-            <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {salaryTrack.map((s) => (
-                <li
-                  key={s.y}
-                  className="flex flex-col border-l-2 border-brand pl-4 md:pl-5"
-                >
-                  <span className="text-[11px] md:text-xs tracking-widest text-white/60">
-                    {s.y}
-                  </span>
-                  <span className="mt-2 font-sans font-bold text-2xl md:text-4xl tracking-tight">
+        <div className="mt-16 md:mt-24">
+          <p className="font-display font-bold text-xs md:text-sm tracking-widest text-brand">
+            SALARY TRACK
+          </p>
+          <h3 className="mt-2 font-sans font-extrabold text-2xl md:text-4xl text-brand-deep">
+            30 歳 経験者 年収実績
+          </h3>
+
+          <div className="mt-8 md:mt-12 grid grid-cols-4 gap-3 md:gap-6 items-end min-h-[220px] md:min-h-[280px]">
+            {salary.map((s) => {
+              const h = (s.v / maxSalary) * 100;
+              return (
+                <div key={s.y} className="flex flex-col items-center">
+                  <p className="font-display font-bold text-brand-deep text-lg md:text-3xl leading-none">
                     {s.v}
-                    <span className="ml-1 text-sm md:text-base font-normal text-white/70">
-                      円
+                    <span className="ml-1 text-xs md:text-base font-normal text-sub">
+                      万円
                     </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
-
-        <Reveal delay={250} className="mt-10 md:mt-14">
-          <div className="border border-navy/10">
-            <div className="flex items-baseline justify-between flex-wrap gap-3 px-6 md:px-10 pt-6 pb-4 border-b border-navy/15">
-              <p className="text-xs tracking-[0.4em] text-brand">REQUIREMENTS</p>
-              <p className="text-[11px] text-black/55">中途・正社員</p>
-            </div>
-            <dl>
-              {summary.map((item, i) => (
-                <div
-                  key={item.k}
-                  className={`grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-6 px-6 md:px-10 py-4 md:py-5 ${
-                    i % 2 === 0 ? "bg-white" : "bg-sand/30"
-                  }`}
-                >
-                  <dt className="md:col-span-1 text-sm md:text-[15px] font-bold text-navy">
-                    {item.k}
-                  </dt>
-                  <dd className="md:col-span-3 text-sm md:text-[15px] text-black/85 leading-relaxed">
-                    {item.v}
-                  </dd>
+                  </p>
+                  <div
+                    className="mt-3 w-full bg-gradient-to-t from-brand-dark to-brand"
+                    style={{ height: `${h * 1.8}px` }}
+                    aria-hidden
+                  />
+                  <p className="mt-3 text-[11px] md:text-sm font-bold text-sub tracking-wide">
+                    {s.y}
+                  </p>
                 </div>
-              ))}
-            </dl>
+              );
+            })}
           </div>
-        </Reveal>
+        </div>
+
+        <div className="mt-16 md:mt-24">
+          <p className="font-display font-bold text-xs md:text-sm tracking-widest text-brand">
+            REQUIREMENTS
+          </p>
+          <h3 className="mt-2 font-sans font-extrabold text-2xl md:text-4xl text-brand-deep">
+            募集要項
+          </h3>
+
+          <dl className="mt-8 border-t border-black/10">
+            {summary.map((item) => (
+              <div
+                key={item.k}
+                className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-6 py-5 md:py-6 border-b border-black/10"
+              >
+                <dt className="md:col-span-1 text-sm md:text-[15px] font-bold text-brand-deep">
+                  {item.k}
+                </dt>
+                <dd className="md:col-span-3 text-sm md:text-[15px] text-sub leading-relaxed">
+                  {item.v}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   );

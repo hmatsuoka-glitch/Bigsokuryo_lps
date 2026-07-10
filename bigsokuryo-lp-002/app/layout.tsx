@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Noto_Sans_JP, Poppins, Caveat } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 
@@ -9,6 +9,20 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-sans",
   display: "swap",
   preload: true,
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-script",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,8 +38,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja" className={notoSansJP.variable}>
-      <body className="bg-sand text-navy font-sans">
+    <html
+      lang="ja"
+      className={`${notoSansJP.variable} ${poppins.variable} ${caveat.variable}`}
+    >
+      <body className="bg-white text-ink font-sans antialiased">
         {children}
         <Analytics />
       </body>
