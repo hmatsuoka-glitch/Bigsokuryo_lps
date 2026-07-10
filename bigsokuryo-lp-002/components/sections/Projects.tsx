@@ -56,40 +56,47 @@ export default function Projects() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-2 gap-3 md:gap-6">
-          {projects.map((p, i) => (
-            <Reveal
-              key={p.title}
-              delay={i * 100}
-              className="group relative overflow-hidden border border-navy/10 bg-white/95 backdrop-blur-sm p-5 md:p-8 cursor-default"
-            >
-              <div
-                aria-hidden
-                className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-brand/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              />
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[10px] tracking-widest text-brand font-bold">
-                    {p.tag}
-                  </span>
-                  <span className="h-px flex-1 bg-gradient-to-r from-brand/40 to-transparent" />
-                </div>
-                <h3 className="font-sans font-bold text-xl md:text-2xl text-navy leading-snug group-hover:text-navy-dark transition-colors">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-xs text-black/55">{p.year}</p>
-                <p className="mt-4 text-sm text-black/75 leading-relaxed">
-                  {p.body}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-1 text-xs tracking-widest text-brand opacity-70 group-hover:opacity-100 group-hover:gap-2 transition-all">
-                  READ MORE
-                  <span className="transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </span>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-14 flex gap-4 md:gap-8">
+          <div className="flex-1 space-y-8 md:space-y-12">
+            {[projects[0], projects[1]].map((p, i) => (
+              <Reveal key={p.title} delay={i * 100}>
+                <article>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-[10px] md:text-xs tracking-widest text-brand font-bold">
+                      {p.tag}
+                    </span>
+                    <span className="h-px flex-1 bg-brand/30" />
+                  </div>
+                  <h3 className="font-sans font-bold text-2xl md:text-4xl text-brand leading-[1.25]">
+                    {p.title}
+                  </h3>
+                  <p className="mt-3 text-xs md:text-sm text-black/70 leading-relaxed">
+                    {p.year}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <div className="flex-1 space-y-8 md:space-y-12 mt-16 md:mt-24">
+            {[projects[2], projects[3]].map((p, i) => (
+              <Reveal key={p.title} delay={(i + 2) * 100}>
+                <article>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-[10px] md:text-xs tracking-widest text-brand font-bold">
+                      {p.tag}
+                    </span>
+                    <span className="h-px flex-1 bg-brand/30" />
+                  </div>
+                  <h3 className="font-sans font-bold text-2xl md:text-4xl text-brand leading-[1.25]">
+                    {p.title}
+                  </h3>
+                  <p className="mt-3 text-xs md:text-sm text-black/70 leading-relaxed">
+                    {p.year}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
