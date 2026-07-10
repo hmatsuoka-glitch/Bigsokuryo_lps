@@ -1,4 +1,5 @@
 import TextReveal from "@/components/TextReveal";
+import { LineButton } from "@/components/LineButton";
 
 type Member = {
   no: string;
@@ -122,6 +123,14 @@ export default function Voices() {
               <Card m={m} offset={i % 2 === 1} />
             </TextReveal>
           ))}
+        </div>
+
+        <div className="mt-14 md:mt-20 flex justify-center">
+          <LineButton
+            size="md"
+            location="person_cta"
+            label="カジュアル面談を申し込む"
+          />
         </div>
       </div>
     </section>
