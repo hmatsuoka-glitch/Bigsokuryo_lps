@@ -8,7 +8,6 @@ import AboutUs from "@/components/sections/AboutUs";
 import OurBusiness from "@/components/sections/OurBusiness";
 import Projects from "@/components/sections/Projects";
 import Voices from "@/components/sections/Voices";
-import Special from "@/components/sections/Special";
 import WorkFlow from "@/components/sections/WorkFlow";
 import Recruit from "@/components/sections/Recruit";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -25,7 +24,6 @@ export default function Page() {
         <OurBusiness />
         <Projects />
         <Voices />
-        <Special />
         <Marquee />
         <WorkFlow />
         <Recruit />

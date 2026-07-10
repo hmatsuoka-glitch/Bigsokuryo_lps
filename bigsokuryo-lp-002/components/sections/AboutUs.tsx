@@ -24,8 +24,16 @@ export default function AboutUs() {
             </p>
 
             <TextReveal
+              as="h3"
+              className="mt-10 md:mt-14 font-sans font-extrabold text-2xl md:text-4xl text-brand-deep leading-[1.5] tracking-tight"
+            >
+              一歩踏み出す、その先に。
+            </TextReveal>
+
+            <TextReveal
               as="p"
-              className="mt-10 md:mt-14 text-base md:text-[17px] text-sub leading-[2] max-w-xl"
+              delay={100}
+              className="mt-6 md:mt-8 text-base md:text-[17px] text-sub leading-[2] max-w-xl"
             >
               鉄道工事測量を起点に、東京の重要インフラ整備を技術で支えてきた総合測量会社。
               1980 年の創業以来、公共・民間を問わず多様な現場に携わり、
