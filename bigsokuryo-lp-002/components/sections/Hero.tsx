@@ -87,8 +87,8 @@ export default function Hero() {
               <LetterPop text="RECRUIT" />
             </h1>
 
-            <div className="mt-6 md:mt-12 inline-block border-2 md:border-[3px] border-white px-4 md:px-12 py-4 md:py-8">
-              <p className="font-sans font-extrabold text-lg md:text-3xl leading-[1.5] tracking-tight">
+            <div className="mt-6 md:mt-12 inline-block border-2 md:border-[3px] border-white bg-brand-deep/60 backdrop-blur-sm px-4 md:px-12 py-4 md:py-8">
+              <p className="font-sans font-extrabold text-lg md:text-3xl leading-[1.5] tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
                 &quot;未経験から、<br />
                 国家資格で人生を変える。&quot;
               </p>
