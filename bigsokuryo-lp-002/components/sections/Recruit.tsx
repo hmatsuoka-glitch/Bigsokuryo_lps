@@ -36,34 +36,7 @@ export default function Recruit() {
   return (
     <section id="recruit" className="relative bg-white py-24 md:py-32">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-        <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
-          <div className="md:col-span-6 md:order-2">
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <img
-                src="/DSC_0760%202.jpg"
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="md:col-span-6 md:order-1 md:-mr-16 md:mt-24 bg-white p-8 md:p-14 shadow-[0_20px_60px_-30px_rgba(11,64,34,0.35)] relative z-10">
-            <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
-              [ Recruit info ]
-            </p>
-            <h2 className="mt-3 font-display font-extrabold text-[44px] md:text-[80px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
-              Recruit
-            </h2>
-            <p className="mt-3 font-sans font-bold text-base md:text-xl tracking-wide text-ink">
-              採用情報
-            </p>
-            <p className="mt-6 text-sm md:text-[15px] text-sub leading-[2]">
-              未経験歓迎の測量アシスタント (正社員) を募集中。
-              まずはカジュアル面談から、お気軽にご連絡ください。
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-16 md:mt-24">
+        <div>
           <p className="font-display font-bold text-xs md:text-sm tracking-widest text-brand">
             SELECTION FLOW
           </p>
