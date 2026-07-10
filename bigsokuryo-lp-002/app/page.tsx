@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ChancePopup from "@/components/ChancePopup";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 import Marquee from "@/components/Marquee";
 import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
@@ -31,6 +32,7 @@ export default function Page() {
       </main>
       <SiteFooter />
       <ChancePopup />
+      <StickyMobileCTA />
     </>
   );
 }

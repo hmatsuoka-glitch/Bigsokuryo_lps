@@ -50,7 +50,7 @@ export default function Recruit() {
             <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
               [ Recruit info ]
             </p>
-            <h2 className="mt-3 font-display font-extrabold text-[48px] md:text-[80px] leading-[0.95] tracking-tight text-brand-deep">
+            <h2 className="mt-3 font-display font-extrabold text-[44px] md:text-[80px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
               Recruit
             </h2>
             <p className="mt-3 font-sans font-bold text-base md:text-xl tracking-wide text-ink">
@@ -75,21 +75,29 @@ export default function Recruit() {
             {flow.map((f, i) => (
               <li
                 key={f.no}
-                className="relative border border-brand/25 bg-white p-5 md:p-6 flex flex-col"
+                className="relative border border-brand/25 bg-white p-5 md:p-6 flex md:flex-col gap-4 md:gap-0 items-center md:items-start"
               >
-                <span className="font-display font-extrabold text-3xl md:text-4xl text-brand leading-none">
+                <span className="font-display font-extrabold text-3xl md:text-4xl text-brand leading-none flex-none w-14 md:w-auto">
                   {f.no}
                 </span>
-                <p className="mt-4 font-sans font-extrabold text-base md:text-lg text-brand-deep leading-tight">
+                <p className="md:mt-4 font-sans font-extrabold text-base md:text-lg text-brand-deep leading-tight">
                   {f.label}
                 </p>
                 {i < flow.length - 1 && (
-                  <span
-                    aria-hidden
-                    className="hidden md:grid absolute top-1/2 -right-3 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-brand text-white place-items-center text-xs font-bold"
-                  >
-                    ›
-                  </span>
+                  <>
+                    <span
+                      aria-hidden
+                      className="hidden md:grid absolute top-1/2 -right-3 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-brand text-white place-items-center text-xs font-bold"
+                    >
+                      ›
+                    </span>
+                    <span
+                      aria-hidden
+                      className="md:hidden absolute -bottom-2.5 left-8 z-10 w-5 h-5 rounded-full bg-brand text-white grid place-items-center text-[10px] font-bold"
+                    >
+                      ↓
+                    </span>
+                  </>
                 )}
               </li>
             ))}
@@ -104,14 +112,35 @@ export default function Recruit() {
             30 歳 経験者 年収実績
           </h3>
 
-          <div className="mt-8 md:mt-12 grid grid-cols-4 gap-3 md:gap-6 items-end min-h-[220px] md:min-h-[280px]">
+          {/* SP: 縦積みステップ表 */}
+          <ul className="md:hidden mt-8 divide-y divide-black/10 border-y border-black/10">
+            {salary.map((s) => (
+              <li
+                key={s.y}
+                className="flex items-baseline justify-between py-4"
+              >
+                <span className="font-sans font-bold text-sm text-sub tracking-wide">
+                  {s.y}
+                </span>
+                <span className="font-display font-bold text-brand-deep text-2xl leading-none">
+                  {s.v}
+                  <span className="ml-1 text-sm font-normal text-sub">
+                    万円
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          {/* PC: 棒グラフ */}
+          <div className="hidden md:grid mt-12 grid-cols-4 gap-6 items-end min-h-[280px]">
             {salary.map((s) => {
               const h = (s.v / maxSalary) * 100;
               return (
                 <div key={s.y} className="flex flex-col items-center">
-                  <p className="font-display font-bold text-brand-deep text-lg md:text-3xl leading-none">
+                  <p className="font-display font-bold text-brand-deep text-3xl leading-none">
                     {s.v}
-                    <span className="ml-1 text-xs md:text-base font-normal text-sub">
+                    <span className="ml-1 text-base font-normal text-sub">
                       万円
                     </span>
                   </p>

@@ -38,7 +38,7 @@ export default function WorkFlow() {
             <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
               [ Environment ]
             </p>
-            <h2 className="mt-3 font-display font-extrabold text-[48px] md:text-[80px] leading-[0.95] tracking-tight text-brand-deep">
+            <h2 className="mt-3 font-display font-extrabold text-[40px] md:text-[80px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
               <LetterPop text="Environment" />
             </h2>
             <p className="mt-3 font-sans font-bold text-base md:text-xl tracking-wide text-ink">
