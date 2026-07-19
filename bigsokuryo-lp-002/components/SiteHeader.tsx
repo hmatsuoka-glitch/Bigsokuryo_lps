@@ -20,13 +20,11 @@ export default function SiteHeader({
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-black/5">
         <div className="max-w-[1440px] mx-auto pl-4 md:pl-8 pr-16 md:pr-0 h-[72px] md:h-[90px] flex items-center justify-between">
           <a href="#top" className="flex items-center min-w-0 relative">
-            <span className="bg-white shadow-[0_4px_18px_-8px_rgba(0,0,0,0.25)] border border-black/5 p-2 md:p-3 -mb-6 md:-mb-8">
-              <img
-                src="/logo-02.png"
-                alt="ビッグ測量設計株式会社"
-                className="h-8 md:h-11 w-auto flex-none"
-              />
-            </span>
+            <img
+              src="/logo-02.png"
+              alt="ビッグ測量設計株式会社"
+              className="h-9 md:h-12 w-auto flex-none"
+            />
           </a>
 
           <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-ink">
