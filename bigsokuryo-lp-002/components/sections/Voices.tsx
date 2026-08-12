@@ -9,6 +9,8 @@ type Member = {
   joined: string;
   catch: string;
   body: string;
+  /** CSS フィルタで露出補正 (画像差替までの暫定対応) */
+  photoStyle?: React.CSSProperties;
 };
 
 const members: Member[] = [
@@ -29,6 +31,8 @@ const members: Member[] = [
     joined: "2008 年入社",
     catch: "文系でも大丈夫！",
     body: "文系出身でしたが、研修・資格支援・先輩のフォローで段々と現場で使える技術が身につきました。「人柄重視」と本気で言える環境で、不器用でも前向きなら必ず育ててもらえます。",
+    // TODO: 元画像が白飛びしているため CSS で暫定補正。画像自体の露出補正版に差し替え要。
+    photoStyle: { filter: "brightness(0.9) contrast(1.15) saturate(1.05)" },
   },
   {
     no: "03",
@@ -67,6 +71,7 @@ function Card({ m, offset }: { m: Member; offset: boolean }) {
           src={m.photo}
           alt={m.name}
           className="w-full h-full object-cover"
+          style={m.photoStyle}
         />
         <div className="absolute top-2 left-2 md:top-4 md:left-4 flex items-end gap-1.5 leading-none">
           <span className="font-display font-extrabold text-white text-[40px] md:text-[80px] drop-shadow-lg">
@@ -95,7 +100,7 @@ function Card({ m, offset }: { m: Member; offset: boolean }) {
 
 export default function Voices() {
   return (
-    <section id="person" className="relative py-24 md:py-32 bg-white">
+    <section id="person" className="relative py-16 md:py-24 bg-white">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
           <div className="md:col-span-7">
@@ -111,7 +116,7 @@ export default function Voices() {
           </div>
           <div className="md:col-span-5">
             <p className="text-sm md:text-base text-sub leading-[2]">
-              「優しさと思いやり」を企業理念にする、いわゆる &quot;野武士集団&quot;。
+              「優しさと思いやり」を企業理念に、現場では頼れるプロフェッショナル集団。
               仲間を大切にする文化が、長く続く理由です。
             </p>
           </div>
@@ -125,12 +130,20 @@ export default function Voices() {
           ))}
         </div>
 
-        <div className="mt-14 md:mt-20 flex justify-center">
+        <div className="mt-14 md:mt-20 flex flex-col items-center gap-3">
           <LineButton
             size="md"
-            location="person_cta"
+            location="mid"
             label="カジュアル面談を申し込む"
           />
+          <a
+            href="https://lmasters.aigrowthx.pro/r/cmr1grzbk000d7opih9jrvrr1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-brand-deep hover:text-brand underline underline-offset-4 transition-colors"
+          >
+            まずは LINE で質問だけしてみる →
+          </a>
         </div>
       </div>
     </section>

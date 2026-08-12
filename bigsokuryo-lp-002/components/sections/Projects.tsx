@@ -29,7 +29,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 md:py-32 bg-white">
+    <section id="projects" className="relative py-16 md:py-24 bg-white">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
           <div className="md:col-span-7">

@@ -1,11 +1,15 @@
 import TextReveal from "@/components/TextReveal";
 
 const flow = [
-  { no: "01", label: "公式 LINE 追加" },
-  { no: "02", label: "カジュアル面談" },
-  { no: "03", label: "面接" },
-  { no: "04", label: "最終面接" },
-  { no: "05", label: "内定" },
+  { no: "01", label: "公式 LINE 追加", note: "" },
+  {
+    no: "02",
+    label: "カジュアル面談",
+    note: "※選考ではありません（服装自由・オンライン OK）",
+  },
+  { no: "03", label: "面接", note: "" },
+  { no: "04", label: "最終面接", note: "" },
+  { no: "05", label: "内定", note: "" },
 ];
 
 const salary = [
@@ -23,7 +27,10 @@ const summary = [
     k: "勤務時間",
     v: "8:00 - 17:00 (実働 8h / 休憩 60 分) / 鉄道夜勤 20:00 - 翌 5:00 ※夜勤は短縮労働もあります",
   },
-  { k: "月給", v: "21 万円以上 (前職・経験考慮 / 試用期間 3 ヶ月)" },
+  {
+    k: "月給",
+    v: "21 万円以上 (前職・経験考慮 / 試用期間 3 ヶ月) ／ 別途各種手当あり",
+  },
   { k: "賞与", v: "年 2 回 (計 2 ヶ月分) / 昇給 年 1 回 (4 月)" },
   { k: "休日", v: "週休 2 日 (土・日・祝) / 夏季 / 年末年始 / GW" },
   { k: "保険", v: "健康・厚生年金・雇用・労災" },
@@ -34,7 +41,7 @@ const maxSalary = Math.max(...salary.map((s) => s.v));
 
 export default function Recruit() {
   return (
-    <section id="recruit" className="relative bg-white py-24 md:py-32">
+    <section id="recruit" className="relative bg-white py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <div>
           <p className="font-display font-bold text-xs md:text-sm tracking-widest text-brand">
@@ -53,9 +60,16 @@ export default function Recruit() {
                 <span className="font-display font-extrabold text-3xl md:text-4xl text-brand leading-none flex-none w-14 md:w-auto">
                   {f.no}
                 </span>
-                <p className="md:mt-4 font-sans font-extrabold text-base md:text-lg text-brand-deep leading-tight">
-                  {f.label}
-                </p>
+                <div>
+                  <p className="md:mt-4 font-sans font-extrabold text-base md:text-lg text-brand-deep leading-tight">
+                    {f.label}
+                  </p>
+                  {f.note && (
+                    <p className="mt-1 md:mt-2 text-[11px] md:text-xs text-brand font-bold leading-snug">
+                      {f.note}
+                    </p>
+                  )}
+                </div>
                 {i < flow.length - 1 && (
                   <>
                     <span
@@ -75,6 +89,11 @@ export default function Recruit() {
               </li>
             ))}
           </ol>
+
+          <p className="mt-8 md:mt-10 text-sm md:text-[15px] text-sub leading-[1.9] max-w-3xl">
+            カジュアル面談後、選考に進むかどうかはあなたが決められます。
+            面談だけで終えていただいても構いません。
+          </p>
         </div>
 
         <div className="mt-16 md:mt-24">
@@ -84,6 +103,14 @@ export default function Recruit() {
           <h3 className="mt-2 font-sans font-extrabold text-2xl md:text-4xl text-brand-deep">
             30 歳 経験者 年収実績
           </h3>
+
+          {/*
+            TODO (発注者確認): 未経験入社 1 年目 モデル月収を追加する。
+            例:「未経験入社 1 年目 モデル月収: 月給 21 万円 + 夜勤手当 + 残業代 = 月収 ○○ 万円前後」
+            <p className="mt-4 text-sm md:text-[15px] text-sub leading-relaxed">
+              未経験入社 1 年目 モデル月収: 月給 21 万円 + 夜勤手当 + 残業代 = 月収 ○○ 万円前後
+            </p>
+          */}
 
           {/* SP: 縦積みステップ表 */}
           <ul className="md:hidden mt-8 divide-y divide-black/10 border-y border-black/10">

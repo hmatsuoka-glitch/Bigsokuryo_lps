@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { LineButton } from "./LineButton";
 
-const DELAY_MS = 35_000;
-const STORAGE_KEY = "bigsokuryo_lp002_chance_popup_dismissed";
+const STORAGE_KEY = "bigsokuryo_lp002_chance_popup_shown";
 
 export default function ChancePopup() {
   const [open, setOpen] = useState(false);
@@ -15,16 +14,55 @@ export default function ChancePopup() {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem(STORAGE_KEY)) return;
 
-    const timer = setTimeout(() => setOpen(true), DELAY_MS);
-    return () => clearTimeout(timer);
+    let shown = false;
+    const show = () => {
+      if (shown) return;
+      shown = true;
+      sessionStorage.setItem(STORAGE_KEY, "1");
+      setOpen(true);
+    };
+
+    // 50% スクロールトリガー
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const scrolled =
+        (doc.scrollTop + window.innerHeight) /
+        (doc.scrollHeight || 1);
+      if (scrolled >= 0.5) show();
+    };
+
+    // exit intent (PC): マウスが上端から離脱
+    const onMouseOut = (e: MouseEvent) => {
+      if (e.clientY <= 0 && !e.relatedTarget) show();
+    };
+
+    // 速い上方向スクロール (SP)
+    let lastY = window.scrollY;
+    let lastT = performance.now();
+    const onScrollFast = () => {
+      const y = window.scrollY;
+      const t = performance.now();
+      const dy = y - lastY;
+      const dt = t - lastT;
+      if (dt > 0) {
+        const v = dy / dt;
+        if (v < -1.5 && lastY > window.innerHeight) show();
+      }
+      lastY = y;
+      lastT = t;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScrollFast, { passive: true });
+    document.addEventListener("mouseout", onMouseOut);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScrollFast);
+      document.removeEventListener("mouseout", onMouseOut);
+    };
   }, []);
 
-  const close = () => {
-    setOpen(false);
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem(STORAGE_KEY, "1");
-    }
-  };
+  const close = () => setOpen(false);
 
   if (!mounted || !open) return null;
 
@@ -42,17 +80,8 @@ export default function ChancePopup() {
       >
         <div
           aria-hidden
-          className="relative bg-brand text-white px-6 pt-12 pb-9 text-center overflow-hidden"
+          className="relative bg-brand text-white px-6 pt-10 pb-8 text-center overflow-hidden"
         >
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-[0.08]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-            }}
-          />
           <button
             onClick={close}
             aria-label="閉じる"
@@ -60,14 +89,12 @@ export default function ChancePopup() {
           >
             ×
           </button>
-          <p className="relative text-[10px] tracking-[0.4em] text-white/85">
-            LIMITED CHANCE
-          </p>
           <h3
             id="chance-popup-title"
-            className="relative mt-3 font-sans font-bold text-3xl md:text-4xl tracking-tight"
+            className="relative font-sans font-bold text-2xl md:text-3xl tracking-tight leading-snug"
           >
-            今がチャンス。
+            まずは、話を聞くだけでも<br />
+            OK です。
           </h3>
         </div>
 
@@ -94,8 +121,8 @@ export default function ChancePopup() {
           <LineButton
             size="lg"
             className="mt-7 w-full"
-            location="chance_popup"
-            label="さらに詳しく見る"
+            location="modal"
+            label="LINE でカジュアル面談を申し込む"
           />
 
           <button

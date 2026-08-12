@@ -22,14 +22,20 @@ declare global {
  * <a target="_blank"> のクリックハンドラ内で同期的に呼ぶこと
  * (遷移より前にビーコンを発火させるため)。
  */
+/**
+ * position: hero / sticky / mid / entry / modal / qr / header / hamburger
+ */
 export function trackLineClick(location?: string) {
   if (typeof window === "undefined") return;
-  const label = location ?? "line_button";
+  const position = location ?? "unknown";
   try {
-    window.ttq?.track("Contact", { content_id: label });
+    window.ttq?.track("Contact", { content_id: position });
   } catch {}
   try {
-    window.gtag?.("event", "line_click", { event_label: label });
+    // 新イベント
+    window.gtag?.("event", "line_cta_click", { position });
+    // 旧イベント (後方互換)
+    window.gtag?.("event", "line_click", { event_label: position });
   } catch {}
 }
 

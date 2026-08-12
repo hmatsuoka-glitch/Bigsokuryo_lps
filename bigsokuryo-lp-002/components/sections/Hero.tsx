@@ -1,4 +1,5 @@
 import LetterPop from "@/components/LetterPop";
+import { LineButton } from "@/components/LineButton";
 
 const SLIDES = ["/top-img.JPG", "/site-photo.jpg", "/works_img.jpg"];
 
@@ -98,6 +99,17 @@ export default function Hero() {
               1980 年創業・社員 179 名。試験費用は会社全額負担で、<br className="hidden md:block" />
               未経験から国家資格取得をフルサポート。
             </p>
+
+            <div className="mt-6 md:mt-10 flex flex-col items-center gap-3">
+              <LineButton
+                size="lg"
+                location="hero"
+                label="LINE でカジュアル面談を申し込む"
+              />
+              <p className="text-[11px] md:text-xs text-white/80 tracking-wide">
+                登録は 30 秒 / 匿名の質問だけでも OK / 選考ではありません
+              </p>
+            </div>
           </div>
         </div>
       </div>

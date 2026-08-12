@@ -22,7 +22,7 @@ const benefits = [
 
 export default function WorkFlow() {
   return (
-    <section id="environment" className="relative bg-white py-24 md:py-32">
+    <section id="environment" className="relative bg-white py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <div className="relative grid md:grid-cols-12 gap-6 md:gap-10 items-start">
           <div className="md:col-span-6">
