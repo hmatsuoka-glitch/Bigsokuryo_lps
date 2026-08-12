@@ -7,12 +7,12 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative bg-white pt-[72px] md:pt-0 md:min-h-[100svh]"
+      className="relative bg-white md:min-h-[100svh]"
     >
       {/* SP: 額縁レイアウト（左緑帯 + オフセット深緑帯） */}
       <div
         aria-hidden
-        className="md:hidden absolute left-0 top-[72px] bottom-6 w-10 bg-brand"
+        className="md:hidden absolute left-0 top-0 bottom-6 w-10 bg-brand"
       />
       <div
         aria-hidden

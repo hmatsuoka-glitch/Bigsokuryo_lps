@@ -59,14 +59,14 @@ export default function OurBusiness() {
                   i % 2 === 1 ? "md:[direction:rtl]" : ""
                 }`}
               >
-                <div className="md:col-span-6 relative aspect-[4/3] md:aspect-auto md:[direction:ltr]">
+                <div className="md:col-span-4 relative aspect-[16/9] md:aspect-auto md:min-h-[240px] md:[direction:ltr]">
                   <img
                     src={b.photo}
                     alt=""
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
-                <div className="md:col-span-6 relative p-8 md:p-14 md:[direction:ltr]">
+                <div className="md:col-span-8 relative p-6 md:p-10 md:[direction:ltr]">
                   <span
                     aria-hidden
                     className="absolute top-4 right-6 md:top-8 md:right-10 font-display font-extrabold text-[100px] md:text-[160px] leading-none text-brand-deep/10 select-none"

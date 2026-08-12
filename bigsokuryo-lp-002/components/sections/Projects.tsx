@@ -5,32 +5,28 @@ const projects = [
     tag: "PUBLIC / OLYMPIC",
     title: "海の森水上競技場 地形測量",
     year: "2020 東京オリンピック・パラリンピック",
-    photo: "/site-photo.jpg",
   },
   {
     tag: "HISTORIC RESTORATION",
     title: "東京駅 丸の内駅舎 復原工事",
     year: "戦前創建当時の姿への復原",
-    photo: "/works_img.jpg",
   },
   {
     tag: "RAILWAY / 高難度",
     title: "東京メトロ銀座線 渋谷駅 移設工事",
     year: "ホーム 130m 表参道側へ移設",
-    photo: "/DSC_0760%202.jpg",
   },
   {
     tag: "PLANNING / CONTENT",
     title: "工事展示室の企画・制作",
     year: "受注からオープンまで 3 ヶ月",
-    photo: "/top-img.JPG",
   },
 ];
 
 export default function Projects() {
   return (
     <section id="projects" className="relative py-16 md:py-24 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
         <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
           <div className="md:col-span-7">
             <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
@@ -51,28 +47,23 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <ul className="mt-12 md:mt-16 divide-y divide-black/10 border-y border-black/10">
           {projects.map((p, i) => (
-            <TextReveal key={p.title} delay={i * 100}>
-              <article className="group cursor-default">
-                <div className="relative aspect-[4/3] overflow-hidden bg-brand-soft">
-                  <img
-                    src={p.photo}
-                    alt={p.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <p className="mt-5 font-display font-bold text-[11px] md:text-xs tracking-[0.3em] text-brand">
+            <TextReveal key={p.title} delay={i * 60} as="li">
+              <div className="py-6 md:py-8 grid grid-cols-[auto_1fr] md:grid-cols-[220px_1fr] gap-4 md:gap-10 items-start">
+                <p className="font-display font-bold text-[10px] md:text-xs tracking-[0.3em] text-brand pt-1">
                   {p.tag}
                 </p>
-                <h3 className="mt-2 font-sans font-extrabold text-xl md:text-3xl text-brand-deep leading-tight group-hover:underline underline-offset-4 decoration-2">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-xs md:text-sm text-sub">{p.year}</p>
-              </article>
+                <div>
+                  <h3 className="font-sans font-extrabold text-lg md:text-3xl text-brand-deep leading-tight">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-xs md:text-sm text-sub">{p.year}</p>
+                </div>
+              </div>
             </TextReveal>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

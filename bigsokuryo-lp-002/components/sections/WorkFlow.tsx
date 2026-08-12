@@ -1,4 +1,3 @@
-import LetterPop from "@/components/LetterPop";
 import TextReveal from "@/components/TextReveal";
 
 const steps = [
@@ -23,66 +22,67 @@ const benefits = [
 export default function WorkFlow() {
   return (
     <section id="environment" className="relative bg-white py-16 md:py-24">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-        <div className="relative grid md:grid-cols-12 gap-6 md:gap-10 items-start">
-          <div className="md:col-span-6">
-            <div className="relative aspect-[4/5] md:aspect-[4/5] overflow-hidden">
-              <img
-                src="/works_img.jpg"
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="md:col-span-6 md:-ml-16 md:mt-24 bg-white p-8 md:p-14 shadow-[0_20px_60px_-30px_rgba(11,64,34,0.35)]">
-            <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
-              [ Environment ]
-            </p>
-            <h2 className="mt-3 font-display font-extrabold text-[40px] md:text-[80px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
-              <LetterPop text="Environment" />
-            </h2>
-            <p className="mt-3 font-sans font-bold text-base md:text-xl tracking-wide text-ink">
-              働く環境を知る
-            </p>
-            <TextReveal
-              as="p"
-              className="mt-6 text-sm md:text-[15px] text-sub leading-[2]"
-            >
-              出勤から退勤まで、現場で働く 1 日のスケジュール例です。
-              週休 2 日と資格取得サポートで、無理なく長く働ける環境を整えています。
-            </TextReveal>
-          </div>
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
+        <div>
+          <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
+            [ Environment ]
+          </p>
+          <h2 className="mt-3 font-display font-extrabold text-[40px] md:text-[80px] leading-[0.95] tracking-tight text-brand-deep whitespace-nowrap">
+            Environment
+          </h2>
+          <p className="mt-3 font-sans font-bold text-base md:text-xl tracking-wide text-ink">
+            働く環境を知る
+          </p>
         </div>
 
-        <div className="mt-16 md:mt-24">
+        {/* 待遇ハイライト (セクション名直下に配置) */}
+        <div className="mt-8 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          {benefits.map((b, i) => (
+            <TextReveal
+              key={b.k}
+              delay={i * 60}
+              className="p-5 md:p-8 border border-brand/25 bg-brand-soft/40"
+            >
+              <p className="font-sans font-extrabold text-sm md:text-lg text-brand-deep leading-snug">
+                {b.k}
+              </p>
+              <p className="mt-2 md:mt-3 text-xs md:text-sm text-sub leading-relaxed">
+                {b.v}
+              </p>
+            </TextReveal>
+          ))}
+        </div>
+
+        {/* 1 日の流れ */}
+        <div className="mt-14 md:mt-20">
           <p className="font-display font-bold text-xs md:text-sm tracking-widest text-brand">
             DAILY SCHEDULE
           </p>
-          <h3 className="mt-2 font-sans font-extrabold text-2xl md:text-4xl text-brand-deep">
+          <h3 className="mt-2 font-sans font-extrabold text-xl md:text-3xl text-brand-deep">
             1 日の流れ
           </h3>
 
-          <ol className="mt-8 md:mt-12 relative">
+          <ol className="mt-6 md:mt-8 relative">
             <span
               aria-hidden
-              className="hidden md:block absolute left-[68px] top-2 bottom-2 w-px bg-brand/30"
+              className="hidden md:block absolute left-[56px] top-2 bottom-2 w-px bg-brand/30"
             />
-            <div className="space-y-3 md:space-y-4">
+            <div className="divide-y divide-black/10 border-y border-black/10">
               {steps.map((s, i) => (
                 <TextReveal
                   key={s.time}
-                  delay={i * 40}
+                  delay={i * 30}
                   as="li"
-                  className="grid grid-cols-[auto_1fr] md:grid-cols-[130px_1fr] gap-4 md:gap-8 items-start bg-white border-b border-black/10 py-4 md:py-5"
+                  className="grid grid-cols-[auto_1fr] md:grid-cols-[110px_1fr] gap-3 md:gap-6 items-baseline py-3 md:py-4"
                 >
-                  <span className="font-display font-bold text-2xl md:text-3xl text-brand leading-none">
+                  <span className="font-display font-bold text-lg md:text-2xl text-brand leading-none">
                     {s.time}
                   </span>
                   <div className="min-w-0">
-                    <h4 className="font-sans font-extrabold text-base md:text-lg text-brand-deep leading-snug">
+                    <h4 className="font-sans font-extrabold text-sm md:text-base text-brand-deep leading-snug">
                       {s.label}
                     </h4>
-                    <p className="mt-1 text-sm md:text-[15px] text-sub leading-relaxed">
+                    <p className="mt-0.5 md:mt-1 text-xs md:text-sm text-sub leading-relaxed">
                       {s.body}
                     </p>
                   </div>
@@ -90,23 +90,6 @@ export default function WorkFlow() {
               ))}
             </div>
           </ol>
-        </div>
-
-        <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-          {benefits.map((b, i) => (
-            <TextReveal
-              key={b.k}
-              delay={i * 60}
-              className="p-6 md:p-8 border border-brand/25 bg-brand-soft/40"
-            >
-              <p className="font-sans font-extrabold text-sm md:text-lg text-brand-deep leading-snug">
-                {b.k}
-              </p>
-              <p className="mt-3 text-xs md:text-sm text-sub leading-relaxed">
-                {b.v}
-              </p>
-            </TextReveal>
-          ))}
         </div>
       </div>
     </section>

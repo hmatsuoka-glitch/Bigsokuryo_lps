@@ -11,7 +11,7 @@ const LINES = [
 export default function Manifesto() {
   return (
     <section id="message" className="relative bg-white py-24 md:py-40">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+      <div className="max-w-4xl mx-auto px-5 md:px-10 text-left">
         <p className="font-display font-bold text-xs md:text-sm tracking-widest text-brand-deep">
           [ Our Message ]
         </p>

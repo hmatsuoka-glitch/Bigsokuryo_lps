@@ -9,7 +9,6 @@ type Member = {
   joined: string;
   catch: string;
   body: string;
-  /** CSS フィルタで露出補正 (画像差替までの暫定対応) */
   photoStyle?: React.CSSProperties;
 };
 
@@ -31,7 +30,6 @@ const members: Member[] = [
     joined: "2008 年入社",
     catch: "文系でも大丈夫！",
     body: "文系出身でしたが、研修・資格支援・先輩のフォローで段々と現場で使える技術が身につきました。「人柄重視」と本気で言える環境で、不器用でも前向きなら必ず育ててもらえます。",
-    // TODO: 元画像が白飛びしているため CSS で暫定補正。画像自体の露出補正版に差し替え要。
     photoStyle: { filter: "brightness(0.9) contrast(1.15) saturate(1.05)" },
   },
   {
@@ -63,37 +61,41 @@ const members: Member[] = [
   },
 ];
 
-function Card({ m, offset }: { m: Member; offset: boolean }) {
+function Card({ m }: { m: Member }) {
   return (
-    <article className={`relative ${offset ? "mt-16 md:mt-24" : ""}`}>
-      <div className="relative aspect-[3/4] overflow-hidden bg-brand-soft">
-        <img
-          src={m.photo}
-          alt={m.name}
-          className="w-full h-full object-cover"
-          style={m.photoStyle}
-        />
-        <div className="absolute top-2 left-2 md:top-4 md:left-4 flex items-end gap-1.5 leading-none">
-          <span className="font-display font-extrabold text-white text-[40px] md:text-[80px] drop-shadow-lg">
-            {m.no}
-          </span>
-          <span className="font-display font-semibold text-white text-[9px] md:text-xs tracking-[0.3em] pb-1.5 md:pb-3">
-            PERSON
-          </span>
+    <article className="snap-center flex-none w-[85vw] sm:w-[70vw] md:w-[720px] max-w-[720px]">
+      <div className="grid md:grid-cols-2 gap-0 bg-white shadow-[0_20px_60px_-30px_rgba(11,64,34,0.35)] overflow-hidden">
+        <div className="relative aspect-[3/4] md:aspect-auto md:min-h-[480px] bg-brand-soft">
+          <img
+            src={m.photo}
+            alt={m.name}
+            className="w-full h-full object-cover"
+            style={m.photoStyle}
+          />
+          <div className="absolute top-3 left-3 flex items-end gap-2 leading-none">
+            <span className="font-display font-extrabold text-white text-[56px] md:text-[80px] drop-shadow-lg">
+              {m.no}
+            </span>
+            <span className="font-display font-semibold text-white text-[10px] tracking-[0.3em] pb-2 md:pb-3">
+              PERSON
+            </span>
+          </div>
+        </div>
+        <div className="p-6 md:p-10 flex flex-col justify-center">
+          <p className="text-[11px] md:text-xs text-sub tracking-wide">
+            {m.dept} / {m.joined}
+          </p>
+          <h3 className="mt-2 font-sans font-extrabold text-2xl md:text-3xl text-brand-deep leading-tight">
+            {m.name}
+          </h3>
+          <p className="mt-4 font-sans font-extrabold text-xl md:text-2xl text-brand leading-snug border-l-2 border-brand pl-3">
+            「{m.catch}」
+          </p>
+          <p className="mt-5 text-[14px] md:text-[15px] text-sub leading-[1.95]">
+            {m.body}
+          </p>
         </div>
       </div>
-      <p className="mt-3 md:mt-5 text-[11px] md:text-xs text-sub tracking-wide">
-        {m.dept} / {m.joined}
-      </p>
-      <h3 className="mt-1 font-sans font-extrabold text-base md:text-3xl text-brand-deep leading-tight">
-        {m.name}
-      </h3>
-      <p className="mt-2 md:mt-3 font-sans font-extrabold text-sm md:text-2xl text-brand leading-snug">
-        「{m.catch}」
-      </p>
-      <p className="mt-3 md:mt-4 text-[13px] md:text-[15px] text-sub leading-[1.9]">
-        {m.body}
-      </p>
     </article>
   );
 }
@@ -101,7 +103,7 @@ function Card({ m, offset }: { m: Member; offset: boolean }) {
 export default function Voices() {
   return (
     <section id="person" className="relative py-16 md:py-24 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
         <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
           <div className="md:col-span-7">
             <p className="font-display font-semibold text-xs md:text-sm tracking-widest text-brand">
@@ -121,30 +123,37 @@ export default function Voices() {
             </p>
           </div>
         </div>
+      </div>
 
-        <div className="mt-12 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-x-10 md:gap-y-20">
-          {members.map((m, i) => (
-            <TextReveal key={m.name} delay={i * 80}>
-              <Card m={m} offset={i % 2 === 1} />
-            </TextReveal>
+      {/* 横スワイプカルーセル: 1 人ずつ大きく表示 */}
+      <div className="mt-10 md:mt-16">
+        <div className="overflow-x-auto snap-x snap-mandatory flex gap-4 md:gap-6 px-5 md:px-10 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {members.map((m) => (
+            <Card key={m.name} m={m} />
           ))}
+          <span aria-hidden className="flex-none w-2" />
         </div>
+        <div className="mt-4 flex items-center justify-center gap-3 text-[10px] tracking-[0.3em] text-black/45">
+          <span aria-hidden>←</span>
+          <span>SWIPE</span>
+          <span aria-hidden>→</span>
+        </div>
+      </div>
 
-        <div className="mt-14 md:mt-20 flex flex-col items-center gap-3">
-          <LineButton
-            size="md"
-            location="mid"
-            label="カジュアル面談を申し込む"
-          />
-          <a
-            href="https://lmasters.aigrowthx.pro/r/cmr1grzbk000d7opih9jrvrr1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-brand-deep hover:text-brand underline underline-offset-4 transition-colors"
-          >
-            まずは LINE で質問だけしてみる →
-          </a>
-        </div>
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10 mt-10 md:mt-16 flex flex-col items-center gap-3">
+        <LineButton
+          size="md"
+          location="mid"
+          label="カジュアル面談を申し込む"
+        />
+        <a
+          href="https://lmasters.aigrowthx.pro/r/cmr1grzbk000d7opih9jrvrr1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-brand-deep hover:text-brand underline underline-offset-4 transition-colors"
+        >
+          まずは LINE で質問だけしてみる →
+        </a>
       </div>
     </section>
   );
