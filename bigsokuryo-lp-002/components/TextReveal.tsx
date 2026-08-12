@@ -21,10 +21,12 @@ export default function TextReveal({
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+
+    // 画面内なら即時表示
     const rect = node.getBoundingClientRect();
     const vh =
       typeof window !== "undefined" ? window.innerHeight : 800;
-    if (rect.top < vh * 0.9) {
+    if (rect.top < vh * 0.95) {
       setVisible(true);
       return;
     }
@@ -35,7 +37,7 @@ export default function TextReveal({
           io.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
     );
     io.observe(node);
     return () => io.disconnect();

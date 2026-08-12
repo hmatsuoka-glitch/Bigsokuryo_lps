@@ -74,8 +74,18 @@ export default function SiteFooter() {
 
           <div className="mt-10 md:mt-14 text-center md:text-left text-[12px] leading-[1.9] text-white/55">
             〒110-0015 東京都台東区東上野 1-26-8<br />
+            {/* TODO (発注者確認): 代表電話番号を追記してください */}
             FAX: 03-3837-5694 / 営業時間: 8:00 - 17:00 (土日祝定休)<br />
             測量業者登録 国土交通大臣登録 一般 第 (9)-14858 号
+          </div>
+
+          <div className="mt-6 text-center md:text-left text-[12px]">
+            <a
+              href="/privacy"
+              className="text-white/70 hover:text-brand underline underline-offset-4 transition-colors"
+            >
+              プライバシーポリシー
+            </a>
           </div>
 
           <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-[11px] text-white/45">

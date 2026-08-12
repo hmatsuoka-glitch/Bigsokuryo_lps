@@ -3,8 +3,8 @@ import TextReveal from "@/components/TextReveal";
 
 const stats = [
   { value: 1980, suffix: "年", label: "創業", note: "SINCE" },
-  { value: 179, suffix: "名", label: "社員数", note: "'26 年 5 月" },
-  { value: 88.6, decimals: 1, suffix: "%", label: "有給取得率", note: "実績" },
+  { value: 179, suffix: "名", label: "社員数 ('26 年 5 月時点)", note: "MEMBERS" },
+  { value: 88.6, decimals: 1, suffix: "%", label: "有給取得率 (実績)", note: "PAID LEAVE" },
 ];
 
 export default function AboutUs() {

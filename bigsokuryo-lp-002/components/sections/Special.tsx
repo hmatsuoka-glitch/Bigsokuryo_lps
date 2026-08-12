@@ -4,7 +4,7 @@ export default function Special() {
   return (
     <section
       id="special"
-      className="relative bg-brand-deep text-white py-24 md:py-32 overflow-hidden"
+      className="relative bg-brand-deep text-white py-16 md:py-24 overflow-hidden"
     >
       <div
         aria-hidden
