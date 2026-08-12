@@ -1,7 +1,7 @@
 import LetterPop from "@/components/LetterPop";
 import { LineButton } from "@/components/LineButton";
 
-const HERO_IMAGE = "/bigsokuryo_top.jpg";
+const HERO_IMAGE = "/DSC00589.JPG";
 
 export default function Hero() {
   return (
