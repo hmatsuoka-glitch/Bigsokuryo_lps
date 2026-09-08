@@ -18,9 +18,10 @@ declare global {
 
 /**
  * 公式LINEボタンクリック時に発火。
- * TikTok Pixel `Contact` ＋ GA4 `line_click`。
- * <a target="_blank"> のクリックハンドラ内で同期的に呼ぶこと
- * (遷移より前にビーコンを発火させるため)。
+ * GA4 `line_cta_click` / `line_click`。
+ * TikTok Pixel `Contact` はここでは発火させない
+ * (遷移先の中間ページ /line-thanks/ 到達時に trackLineThanksReached() で発火させ、
+ * ページ離脱による計測漏れ・二重計測を防ぐ)。
  */
 /**
  * position: hero / sticky / mid / entry / modal / qr / header / hamburger
@@ -29,13 +30,21 @@ export function trackLineClick(location?: string) {
   if (typeof window === "undefined") return;
   const position = location ?? "unknown";
   try {
-    window.ttq?.track("Contact", { content_id: position });
-  } catch {}
-  try {
-    // 新イベント
     window.gtag?.("event", "line_cta_click", { position });
     // 旧イベント (後方互換)
     window.gtag?.("event", "line_click", { event_label: position });
+  } catch {}
+}
+
+/**
+ * 中間ページ (/line-thanks/) 到達時に発火。
+ * TikTok Pixel `Contact`。lmasters への自動リダイレクト前に
+ * 同期的に呼ぶこと。
+ */
+export function trackLineThanksReached() {
+  if (typeof window === "undefined") return;
+  try {
+    window.ttq?.track("Contact", { content_id: "line_thanks_page" });
   } catch {}
 }
 
