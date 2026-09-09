@@ -14,7 +14,8 @@ export default function SiteHeader({
   ctaLabel = "カジュアル面談",
   ctaHref = LINE_URL,
 }: Props) {
-  const isExternal = ctaHref.startsWith("http");
+  const isLineCta = ctaHref === LINE_URL;
+  const isExternal = ctaHref.startsWith("http") || isLineCta;
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-black/5">
@@ -57,7 +58,7 @@ export default function SiteHeader({
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {})}
             onClick={() => {
-              if (isExternal && ctaHref === LINE_URL) trackLineClick("header");
+              if (isLineCta) trackLineClick("header");
             }}
             className="group hidden md:flex h-full flex-col items-center justify-center px-6 md:px-10 bg-brand hover:bg-brand-dark text-white transition-colors"
           >

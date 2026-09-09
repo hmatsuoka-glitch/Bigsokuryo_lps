@@ -2,9 +2,15 @@
 
 // 公式 LINE 応募導線
 // ビッグ測量設計 公式 LINE
+//
+// TikTok Pixel の Contact 計測はページ離脱により送信が漏れやすいため、
+// ボタンは lmasters へ直接遷移させず、同一ドメイン内の中間ページ
+// (/line-thanks/) を経由させる。Contact の発火は中間ページ側で行う
+// (see app/line-thanks/)。lmasters への最終遷移先は LMASTERS_URL。
 import { trackLineClick } from "@/lib/analytics";
 
-export const LINE_URL = "https://lmasters.aigrowthx.pro/r/cmr1grzbk000d7opih9jrvrr1";
+export const LMASTERS_URL = "https://lmasters.aigrowthx.pro/r/cmr1grzbk000d7opih9jrvrr1";
+export const LINE_URL = "/line-thanks/";
 export const LINE_ID = "@bigsdc";
 
 export function LineIcon({ className = "w-5 h-5" }: { className?: string }) {
