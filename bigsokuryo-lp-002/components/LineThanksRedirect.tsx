@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { LMASTERS_URL } from "@/components/LineButton";
-import { trackLineThanksReached } from "@/lib/analytics";
+import { trackLineThanksReached, trackMetaLeadReached } from "@/lib/analytics";
 
 const REDIRECT_DELAY_MS = 4000;
 
@@ -12,8 +12,9 @@ export default function LineThanksRedirect() {
   );
 
   useEffect(() => {
-    // ページ到達直後、自動リダイレクトより前に TikTok Pixel Contact を発火
+    // ページ到達直後、自動リダイレクトより前に TikTok Pixel Contact / Meta Pixel Lead を発火
     trackLineThanksReached();
+    trackMetaLeadReached();
 
     const redirectTimer = window.setTimeout(() => {
       window.location.href = LMASTERS_URL;

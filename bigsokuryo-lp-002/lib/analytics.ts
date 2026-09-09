@@ -7,12 +7,14 @@ type Ttq = {
   page?: TtqMethod;
 };
 type Gtag = (...args: unknown[]) => void;
+type Fbq = (...args: unknown[]) => void;
 
 declare global {
   interface Window {
     ttq?: Ttq;
     gtag?: Gtag;
     dataLayer?: unknown[];
+    fbq?: Fbq;
   }
 }
 
@@ -45,6 +47,19 @@ export function trackLineThanksReached() {
   if (typeof window === "undefined") return;
   try {
     window.ttq?.track("Contact", { content_id: "line_thanks_page" });
+  } catch {}
+}
+
+/**
+ * 中間ページ (/line-thanks/) 到達時に発火。
+ * Meta Pixel `Lead`。TikTok の Contact と同じタイミング (lmasters への
+ * 自動リダイレクト前) に同期的に呼ぶこと。Meta ベースコード未設置時は
+ * window.fbq が存在しないため何もしない。
+ */
+export function trackMetaLeadReached() {
+  if (typeof window === "undefined") return;
+  try {
+    window.fbq?.("track", "Lead");
   } catch {}
 }
 
